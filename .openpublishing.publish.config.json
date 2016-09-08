@@ -1,0 +1,25 @@
+{
+  "build_entry_point": "op",
+  "need_generate_pdf": false,
+  "need_generate_intellisense": false,
+  "docsets_to_publish": [
+    {
+      "docset_name": "icms_e2e_test0",
+      "build_source_folder": "icms_e2e_test0",
+      "build_output_subfolder": "icms_e2e_test0",
+      "locale": "de-DE",
+      "version": 0,
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "op"
+    }
+  ],
+  "notification_subscribers": [],
+  "branches_to_filter": [],
+  "skip_source_output_uploading": false,
+  "dependent_repositories": []
+}
