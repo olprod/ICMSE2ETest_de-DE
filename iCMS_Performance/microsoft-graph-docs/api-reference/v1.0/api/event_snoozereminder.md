@@ -1,0 +1,82 @@
+# <a name="event-snoozereminder"></a>event: snoozeReminder
+
+Postpone a reminder until a new time.
+
+## <a name="prerequisites"></a>Voraussetzungen
+One of the following **scopes** is required to execute this API: *Calendars.ReadWrite*
+## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+<!-- { "blockType": "ignored" } -->
+```http
+POST /me/events/<id>/snoozeReminder
+POST /users/<id | userPrincipalName>/events/<id>/snoozeReminder
+POST /groups/<id>/events/<id>/snoozeReminder
+
+POST /me/calendar/events/<id>/snoozeReminder
+POST /users/<id | userPrincipalName>/calendar/events/<id>/snoozeReminder
+POST /groups/<id>/calendar/events/<id>/snoozeReminder
+
+POST /me/calendars/<id>/events/<id>/snoozeReminder
+POST /users/<id | userPrincipalName>/calendars/<id>/events/<id>/snoozeReminder
+
+POST /me/calendargroup/calendars/<id>/events/<id>/snoozeReminder
+POST /users/<id | userPrincipalName>/calendargroup/calendars/<id>/events/<id>/snoozeReminder
+
+POST /me/calendargroups/<id>/calendars/<id>/events/<id>/snoozeReminder
+POST /users/<id | userPrincipalName>/calendargroups/<id>/calendars/<id>/events/<id>/snoozeReminder
+```
+## <a name="request-headers"></a>Anforderungsheader
+| Name       | Typ | Beschreibung|
+|:---------------|:--------|:----------|
+| Autorisierung  | string  | Bearer <token>. Required. |
+| contentType | string  | Nature of the data in the body of an entity. Required. |
+
+## <a name="request-body"></a>Anforderungstextkörper
+In the request body, provide a JSON object with the following parameters.
+
+| Parameter    | Typ   |Beschreibung|
+|:---------------|:--------|:----------|
+|newReminderTime|DateTimeTimeZone|The new date and time to trigger the reminder.|
+
+## <a name="response"></a>Antwort
+If successful, this method returns `200, OK` response code. It does not return anything in the response body.
+
+## <a name="example"></a>Beispiel
+Here is an example of how to call this API.
+##### <a name="request"></a>Anforderung
+Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+<!-- {
+  "blockType": "request",
+  "name": "event_snoozereminder"
+}-->
+```http
+POST https://graph.microsoft.com/v1.0/me/events/<id>/snoozeReminder
+Content-type: application/json
+Content-length: 97
+
+{
+  "newReminderTime": {
+    "dateTime": "dateTime-value",
+    "timeZone": "timeZone-value"
+  }
+}
+```
+
+##### <a name="response"></a>Antwort
+Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+<!-- {
+  "blockType": "response",
+  "truncated": true
+} -->
+```http
+HTTP/1.1 200 OK
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!-- {
+  "type": "#page.annotation",
+  "description": "event: snoozeReminder",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": ""
+}-->

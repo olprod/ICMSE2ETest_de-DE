@@ -1,0 +1,151 @@
+# <a name="application-restore"></a>application: restore
+
+
+## <a name="prerequisites"></a>Voraussetzungen
+The following **scopes** are required to execute this API:
+## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+<!-- { "blockType": "ignored" } -->
+```http
+POST /applications/<id>/restore
+
+```
+## <a name="request-headers"></a>Anforderungsheader
+| Name       | Typ | Beschreibung|
+|:---------------|:--------|:----------|
+| Autorisierung  | string  | Bearer <token>. Required. |
+
+## <a name="request-body"></a>Anforderungstextkörper
+In the request body, provide a JSON object with the following parameters.
+
+| Parameter    | Typ   |Beschreibung|
+|:---------------|:--------|:----------|
+|identifierUris|String||
+
+## <a name="response"></a>Antwort
+If successful, this method returns `200, OK` response code and [application](../resources/application.md) object in the response body.
+
+## <a name="example"></a>Beispiel
+Here is an example of how to call this API.
+##### <a name="request"></a>Anforderung
+Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+<!-- {
+  "blockType": "request",
+  "name": "application_restore"
+}-->
+```http
+POST https://graph.microsoft.com/beta/applications/<id>/restore
+Content-type: application/json
+Content-length: 56
+
+{
+  "identifierUris": [
+    "identifierUris-value"
+  ]
+}
+```
+
+##### <a name="response"></a>Antwort
+Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.application"
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+Content-length: 2150
+
+{
+  "appId": "appId-value",
+  "appRoles": [
+    {
+      "allowedMemberTypes": [
+        "allowedMemberTypes-value"
+      ],
+      "description": "description-value",
+      "displayName": "displayName-value",
+      "id": "id-value",
+      "isEnabled": true,
+      "value": "value-value"
+    }
+  ],
+  "availableToOtherTenants": true,
+  "displayName": "displayName-value",
+  "errorUrl": "errorUrl-value",
+  "groupMembershipClaims": "groupMembershipClaims-value",
+  "homepage": "homepage-value",
+  "identifierUris": [
+    "identifierUris-value"
+  ],
+  "keyCredentials": [
+    {
+      "customKeyIdentifier": "customKeyIdentifier-value",
+      "endDate": "datetime-value",
+      "keyId": "keyId-value",
+      "startDate": "datetime-value",
+      "type": "type-value",
+      "usage": "usage-value",
+      "value": "value-value"
+    }
+  ],
+  "knownClientApplications": [
+    "guid"
+  ],
+  "mainLogo": "stream",
+  "logoutUrl": "logoutUrl-value",
+  "oauth2AllowImplicitFlow": true,
+  "oauth2AllowUrlPathMatching": true,
+  "oauth2Permissions": [
+    {
+      "adminConsentDescription": "adminConsentDescription-value",
+      "adminConsentDisplayName": "adminConsentDisplayName-value",
+      "id": "id-value",
+      "isEnabled": true,
+      "type": "type-value",
+      "userConsentDescription": "userConsentDescription-value",
+      "userConsentDisplayName": "userConsentDisplayName-value",
+      "value": "value-value"
+    }
+  ],
+  "oauth2RequirePostResponse": true,
+  "passwordCredentials": [
+    {
+      "customKeyIdentifier": "customKeyIdentifier-value",
+      "endDate": "datetime-value",
+      "keyId": "keyId-value",
+      "startDate": "datetime-value",
+      "value": "value-value"
+    }
+  ],
+  "publicClient": true,
+  "replyUrls": [
+    "replyUrls-value"
+  ],
+  "requiredResourceAccess": [
+    {
+      "resourceAppId": "resourceAppId-value",
+      "resourceAccess": [
+        {
+          "id": "id-value",
+          "type": "type-value"
+        }
+      ]
+    }
+  ],
+  "samlMetadataUrl": "samlMetadataUrl-value",
+  "objectType": "objectType-value",
+  "objectId": "objectId-value",
+  "deletionTimestamp": "datetime-value"
+}
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!-- {
+  "type": "#page.annotation",
+  "description": "application: restore",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": ""
+}-->

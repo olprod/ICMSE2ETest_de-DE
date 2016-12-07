@@ -1,0 +1,78 @@
+# <a name="list-users"></a>List users
+
+Retrieve a list of user objects.
+
+> Note: Listing users returns a default set of properties only (*businessPhones, displayName, givenName, id, jobTitle, mail, mobilePhone, officeLocation, preferredLanguage, surname, userPrincipalName*). Use `$select` to get the other properties and relationships for the [user](../resources/user.md) object.
+
+## <a name="prerequisites"></a>Voraussetzungen
+One of the following **scopes** is required to execute this API: *User.ReadBasic.All; User.Read.All; User.ReadWrite.All; Directory.Read.All; Directory.ReadWrite.All; Directory.AccessAsUser.All*
+## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+<!-- { "blockType": "ignored" } -->
+```http
+GET /users
+```
+## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="request-headers"></a>Anforderungsheader
+| Kopfzeile       | Wert|
+|:-----------|:------|
+| Autorisierung  | Bearer <token>. Required.  |
+| Accept-Methode  | application/json|
+
+## <a name="request-body"></a>Anforderungstextkörper
+Do not supply a request body for this method.
+## <a name="response"></a>Antwort
+If successful, this method returns a `200 OK` response code and collection of [user](../resources/user.md) objects in the response body.
+## <a name="example"></a>Beispiel
+##### <a name="request"></a>Anforderung
+Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+<!-- {
+  "blockType": "request",
+  "name": "get_users"
+}-->
+```http
+GET https://graph.microsoft.com/v1.0/users
+```
+##### <a name="response"></a>Antwort
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.user",
+  "isCollection": true
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+Content-length: 608
+
+{
+  "value": [
+    {
+      "businessPhones": [
+        "businessPhones-value"
+      ],
+      "displayName": "displayName-value",
+      "givenName": "givenName-value",
+      "jobTitle": "jobTitle-value",
+      "mail": "mail-value",
+      "mobilePhone": "mobilePhone-value",
+      "officeLocation": "officeLocation-value",
+      "preferredLanguage": "preferredLanguage-value",
+      "surname": "surname-value",
+      "userPrincipalName": "userPrincipalName-value",
+      "id": "id-value"
+    }
+  ]
+}
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!-- {
+  "type": "#page.annotation",
+  "description": "List users",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": ""
+}-->

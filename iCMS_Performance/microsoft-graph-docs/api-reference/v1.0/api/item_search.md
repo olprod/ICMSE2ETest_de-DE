@@ -1,0 +1,103 @@
+# <a name="search-for-an-item"></a>Search for an item
+
+Search the hierarchy of items for items matching a query. You can search and/or filter results to find the items your app is looking for.
+
+Search returns matching results from the item specified in the URL and all children of that item. Filtering works on the collection of items returned, which can be either all children when using search, or just the immediate children when using a collection.
+
+## <a name="prerequisites"></a>Voraussetzungen
+One of the following **scopes** is required to execute this API:
+
+  * Files.Read
+  * Files.ReadWrite
+
+## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+<!-- { "blockType": "ignored" } -->
+```
+GET /me/drive/root/search(q='vacation')
+GET /me/drive/items/{item-id}/search(q='vacation')
+GET /me/drive/root:/{item-path}:/search(q='vacation')
+```
+
+## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+
+## <a name="request-headers"></a>Anforderungsheader
+
+| Name          | Typ   | Beschreibung               |
+|:--------------|:-------|:--------------------------|
+| Autorisierung | string | Bearer <token>. Required. |
+
+
+## <a name="request-body"></a>Anforderungstextkörper
+Do not supply a request body for this method.
+
+#### <a name="function-parameters"></a>Function parameters
+
+| Name | Wert  | Beschreibung                                                                                                                          |
+|:-----|:-------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| `q`  | string | The query text used to search for items. Values may be matched across several fields including filename, metadata, and file content. |
+
+## <a name="example"></a>Beispiel
+Here is an example of how to call this API.
+
+##### <a name="request"></a>Anforderung
+
+Here is an example of the request searching the signed in user's OneDrive
+<!-- {
+  "blockType": "request",
+  "name": "item_search"
+}-->
+```http
+GET /me/drive/root/search(q='{search-query}')
+```
+
+##### <a name="response"></a>Antwort
+This method returns an object containing an array of [driveItems](../resources/driveitem.md) that match the search criteria. If no items were found, an empty array is returned.
+
+If there are too many matches the response will be paged and an **@odata.nextLink** property will contain a URL to the next page of results. You can use the `top` query parameter to specify the number of items in the page.
+
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.driveItem",
+  "isCollection": true
+} -->
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+    "value": [
+      {
+        "id": "0123456789abc!123",
+        "name": "Vacation photos",
+        "folder": {},
+        "searchResult": { "onClickTelemetryUrl": "https://bing.com/0123456789abc!123" }
+      },
+      {
+        "id": "0123456789abc!456",
+        "name": "Summer Vacation Rentals.docx",
+        "file": {},
+        "searchResult": { "onClickTelemetryUrl": "https://bing.com/0123456789abc!456" }
+      }
+    ],
+    "@odata.nextLink": "https://graph.microsoft.com/v1.0/drive/root/search(query='vacation')&skipToken=1asdlnjnkj1nalkm!asd"
+}
+```
+
+## <a name="remarks"></a>Hinweise
+
+**Note:** In OneDrive for Business and SharePoint, search does not return the following properties:
+
+* `parentReference`
+
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!-- {
+  "type": "#page.annotation",
+  "description": "item: search",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": "OneDrive/Items/Search items"
+}-->
