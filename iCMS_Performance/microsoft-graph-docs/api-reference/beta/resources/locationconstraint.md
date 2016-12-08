@@ -1,10 +1,10 @@
-# <a name="locationconstraint-resource-type"></a>locationConstraint resource type
+# <a name="locationconstraint-resource-type"></a>LocationConstraint Ressourcentyp
 
-The conditions stated by a client for the location of a meeting.
+Die Bedingungen, die von einem Client für den Ort einer Besprechung angegeben.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -25,9 +25,9 @@ Here is a JSON representation of the resource
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|isRequired|Boolean|The client requests the service to include in the response a meeting location for the meeting.|
-|locations|[location](location.md) collection|One or more locations that the client requests for the meeting.|
-|suggestLocation|Boolean|The client requests the service to suggest one or more meeting locations.|
+|isRequired|Boolean|Der Client fordert den Dienst in der Antwort enthalten einen Besprechungsort für die Besprechung.|
+|Speicherorte|[Standort](location.md) -Auflistung|Eine oder mehrere Standorte, die die Clientanforderungen für die Besprechung.|
+|suggestLocation|Boolean|Der Client fordert den Dienst zum Vorschlagen des Meeting-Speicherorte.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

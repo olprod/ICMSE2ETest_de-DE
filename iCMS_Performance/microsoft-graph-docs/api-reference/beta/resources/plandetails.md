@@ -1,10 +1,10 @@
-# <a name="plandetails-resource-type"></a>planDetails resource type
+# <a name="plandetails-resource-type"></a>PlanDetails Ressourcentyp
 
-The PlanDetails resource represents the additional information about a plan. Each [plan](plan.md) object has a details object.
+Die Ressource PlanDetails stellt zusätzliche Informationen zum eines Plans. Jedes [Plan](plan.md) -Objekt ist ein Details-Objekt.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -30,14 +30,14 @@ Here is a JSON representation of the resource
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|category0Description|String| Description of the category (or label) that can be applied to the task. |
-|category1Description|String| Description of the category (or label) that can be applied to the task. |
-|category2Description|String| Description of the category (or label) that can be applied to the task. |
-|category3Description|String| Description of the category (or label) that can be applied to the task. |
-|category4Description|String| Description of the category (or label) that can be applied to the task. |
-|category5Description|String| Description of the category (or label) that can be applied to the task. |
-|id|String| Read-only. Id of the plan. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer.md) is done on the service.|
-|sharedWith|[userIdCollection](useridcollection.md)| List of user ids that this plan is shared with. If you are leveraging Office 365 Groups, use the Groups API to manage group membership to share the [group's](group.md) plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group. |
+|category0Description|String| Beschreibung der Kategorie (oder Beschriftung), das die Aufgabe zugewiesen werden kann. |
+|category1Description|String| Beschreibung der Kategorie (oder Beschriftung), das die Aufgabe zugewiesen werden kann. |
+|category2Description|String| Beschreibung der Kategorie (oder Beschriftung), das die Aufgabe zugewiesen werden kann. |
+|category3Description|String| Beschreibung der Kategorie (oder Beschriftung), das die Aufgabe zugewiesen werden kann. |
+|category4Description|String| Beschreibung der Kategorie (oder Beschriftung), das die Aufgabe zugewiesen werden kann. |
+|category5Description|String| Beschreibung der Kategorie (oder Beschriftung), das die Aufgabe zugewiesen werden kann. |
+|id|String| Schreibgeschützt. ID des Plans. Es ist eine 28 Zeichen lang und Groß-/Kleinschreibung beachtet. [Format Validierung](tasks_identifiers_disclaimer.md) erfolgt für den Dienst.|
+|sharedWith|[userIdCollection](useridcollection.md)| Liste der Benutzer-Ids, denen mit diesem Plan freigegeben werden. Wenn Sie Office 365 Gruppen nutzen, verwenden Sie die API-Gruppen zum Verwalten der Gruppenmitgliedschaft zum Planen [der Gruppe](group.md) freigeben. Sie können auch vorhandene Mitglieder der Gruppe zu dieser Auflistung hinzufügen, obwohl es nicht erforderlich, damit sie Zugriff auf den Besitz der Gruppe Plan ist. |
 
 ## <a name="relationships"></a>Beziehungen
 Keine
@@ -47,8 +47,8 @@ Keine
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get planDetails](../api/plandetails_get.md) | [planDetails](plandetails.md) |Read properties and relationships of planDetails object.|
-|[Update planDetails](../api/plandetails_update.md) | Keine  |Update planDetails object. |
+|[PlanDetails abrufen](../api/plandetails_get.md) | [planDetails](plandetails.md) |Lesen Sie Eigenschaften und Beziehungen PlanDetails-Objekts.|
+|[PlanDetails aktualisieren](../api/plandetails_update.md) | Keine  |PlanDetails-Objekt zu aktualisieren. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

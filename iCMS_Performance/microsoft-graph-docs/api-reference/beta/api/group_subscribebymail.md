@@ -1,11 +1,11 @@
-# <a name="group-subscribebymail"></a>group: subscribeByMail
+# <a name="group-subscribebymail"></a>Gruppe: SubscribeByMail
 
-Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group. Supported for only Office 365 groups.
+Durch Aufrufen dieser Methode wird den aktuellen Benutzer zum Empfangen von e-Mail-Benachrichtigungen für diese Gruppe, zu der neuen Beiträge, Ereignisse und Dateien in dieser Gruppe aktivieren. Unterstützt nur die Office 365-Gruppen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Group.ReadWrite.All* 
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Group.ReadWrite.All* 
 *Group.ReadWrite.All*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /groups/<id>/subscribeByMail
@@ -13,17 +13,17 @@ POST /groups/<id>/subscribeByMail
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
+## <a name="request-body"></a>Anforderungstext
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "group_subscribebymail"
@@ -33,7 +33,7 @@ POST https://graph.microsoft.com/beta/groups/<id>/subscribeByMail
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 <!-- {
   "blockType": "response",
   "truncated": true

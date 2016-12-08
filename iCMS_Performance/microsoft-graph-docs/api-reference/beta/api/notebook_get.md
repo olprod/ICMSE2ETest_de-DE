@@ -1,34 +1,34 @@
-# <a name="get-notebook"></a>Get notebook
+# <a name="get-notebook"></a>Abrufen des Notizbuchs
 
-Retrieve the properties and relationships of a [notebook](../resources/notebook.md) object.
+Rufen Sie die Eigenschaften und die Beziehungen eines [Notebook](../resources/notebook.md) -Objekts ab.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:  
-Notes.Read, Notes.ReadWrite.CreatedByApp, Notes.ReadWrite, Notes.Read.All, or Notes.ReadWrite.All 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:  
+Notes.Read, Notes.ReadWrite.CreatedByApp, Notes.ReadWrite, Notes.Read.All oder Notes.ReadWrite.All 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/notes/notebooks/<id>
 GET /users/<id | userPrincipalName>/notes/notebooks/<id>
 GET /groups/<id>/notes/notebooks/<id>
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the `select` and `expand` [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die `select` und `expand` [OData-Abfrageparameter](http://graph.microsoft.io/docs/overview/query_parameters) helfen, die Antwort anzupassen.
 
-Valid `expand` values for notebooks are `sections` and `sectionGroups`.
+Gültige `expand` Werte für Notebooks sind `sections` und `sectionGroups`.
 
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer tokenString`Bearer <token>`Ein gültiges OAuth-Token, das der App basierend auf den Anmeldeinformationen des Benutzers und dem Benutzer bereitgestellt wird, der autorisierten Zugriff hat. Weitere Informationen finden Sie unter . |
-| Accept-Methode | string | `application/json` | 
+| Autorisierung  | string  | `Bearer <token>`Ein gültiges OAuth-Token bereitgestellt, um die app basierend auf die Anmeldeinformationen des Benutzers und der Benutzer haben Zugriff autorisiert. |
+| Akzeptieren | string | `application/json` | 
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and a [notebook](../resources/notebook.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortcode und eines [Notebook](../resources/notebook.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_notebook"
@@ -37,7 +37,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/beta/me/notes/notebooks/<id>
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here is truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt wird aus Platzgründen Zahl gekürzt. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

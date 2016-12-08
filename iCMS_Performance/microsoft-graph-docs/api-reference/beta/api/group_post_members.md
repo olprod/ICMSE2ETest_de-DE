@@ -1,11 +1,11 @@
-# <a name="add-member"></a>Add member
+# <a name="add-member"></a>Mitglied hinzufügen
 
-Use this API to add a member to an Office 365 group, a security group or a mail-enabled security group through the **members** navigation property. You can add users or other groups. Important: You can add only users to Office 365 groups.
+Verwenden Sie diese API, um ein Mitglied einer Office 365, eine Sicherheitsgruppe oder eine e-Mail-aktivierte Sicherheitsgruppe über die Navigationseigenschaft **Mitglieder** hinzufügen. Sie können Benutzer oder andere Gruppen hinzufügen. Wichtig: Sie können nur von Benutzern zu Gruppen von Office 365 hinzufügen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Group.ReadWrite.All* or *Directory.ReadWrite.All* or *Directory.AccessAsUser.All*
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Group.ReadWrite.All* oder *Directory.ReadWrite.All* oder *Directory.AccessAsUser.All*
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /groups/<id>/members/$ref
@@ -13,18 +13,18 @@ POST /groups/<id>/members/$ref
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of a [directoryObject](../resources/directoryobject.md), [user](../resources/user.md) or [group](../resources/group.md) object to be added.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung eines Objekts [DirectoryObject](../resources/directoryobject.md), [Benutzer](../resources/user.md) oder eine [Gruppe](../resources/group.md) hinzugefügt werden soll.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `204, No Content` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `204, No Content` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_directoryobject_from_group"
@@ -38,9 +38,9 @@ Content-length: 30
   "@odata.id": "https://graph.microsoft.com/beta/directoryObjects/<id>"
 }
 ```
-In the request body, supply a JSON representation of the `id` of the [directoryObject](../resources/directoryobject.md), [user](../resources/user.md) or [group](../resources/group.md) object you want to add.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung der die `id` des Objekts [DirectoryObject](../resources/directoryobject.md), [Benutzer](../resources/user.md) oder [Gruppe](../resources/group.md) hinzufügen möchten.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

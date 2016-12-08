@@ -1,27 +1,27 @@
-# <a name="get-directoryobject"></a>Get directoryObject
+# <a name="get-directoryobject"></a>Abrufen von directoryObject
 
-Retrieve the properties and relationships of directoryobject object.
+Rufen Sie die Eigenschaften und Beziehungen Directoryobject-Objekts ab.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: _Directory.Read.All_ OR _Directory.AccessAsUser.All_
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: _Directory.Read.All_ ODER _Directory.AccessAsUser.All_
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /directoryObjects/<id>
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [directoryObject](../resources/directoryobject.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortobjekt Code und [DirectoryObject](../resources/directoryobject.md) im Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_directoryobject"
@@ -30,7 +30,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/beta/directoryObject/<id>
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

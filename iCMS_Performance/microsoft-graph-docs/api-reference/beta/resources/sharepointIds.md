@@ -1,20 +1,20 @@
-# <a name="sharepointids-resource-type"></a>SharePointIds resource type
+# <a name="sharepointids-resource-type"></a>Ressourcentyp SharePointIds
 
-The **sharepointIds** resource groups the various identifiers for an item stored in a SharePoint site or OneDrive for Business into a single structure.
+Die Ressource **SharepointIds** gruppiert die verschiedenen Bezeichner für ein Element in einer SharePoint-Website oder OneDrive for Business in einer einzelnen Struktur gespeichert.
 
 ### <a name="properties"></a>Eigenschaften
 
 | Eigenschaft          | Typ    | Beschreibung                                                          |
 |:------------------|:--------|:---------------------------------------------------------------------|
-| ListId            | string  | The unique identifier for the item's list in SharePoint.                          |
-| listItemId        | string  | An integer identifier for the item within the containing list.                    |
-| listItemUniqueId  | string  | The unique identifier for the item within OneDrive for Busienss or a SharePoint site. |
-| siteId            | string  | The unique identifier for the item's site collection. |
-| WebId             | string  | The unique identifier for the item's site.                          |
+| listId            | string  | Der eindeutige Bezeichner für das Element Liste in SharePoint.                          |
+| listItemId        | string  | Ein Integer-Bezeichner für das Element innerhalb der Liste.                    |
+| listItemUniqueId  | string  | Der eindeutige Bezeichner für das Element innerhalb von OneDrive für Busienss oder einer SharePoint-Website. |
+| Website-ID            | string  | Der eindeutige Bezeichner für das Element-Websitesammlung. |
+| Web-ID             | string  | Der eindeutige Bezeichner für das Element Website.                          |
 
-### <a name="json-representation"></a>JSON representation
+### <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

@@ -1,28 +1,28 @@
-# <a name="formatprotection-resource-type"></a>FormatProtection resource type
+# <a name="formatprotection-resource-type"></a>Ressourcentyp FormatProtection
 
-Stellt den Hintergrund eines Bereichsobjekts dar.
+Den Format-Schutz, der ein Range-Objekt darstellt.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get FormatProtection](../api/formatprotection_get.md) | [FormatProtection](formatprotection.md) |Read properties and relationships of formatProtection object.|
-|[Update](../api/formatprotection_update.md) | [FormatProtection](formatprotection.md)  |Update FormatProtection object. |
+|[Abrufen von FormatProtection](../api/formatprotection_get.md) | [FormatProtection](formatprotection.md) |Lesen Sie Eigenschaften und Beziehungen des FormatProtection-Objekts.|
+|[Update](../api/formatprotection_update.md) | [FormatProtection](formatprotection.md)  |Update FormatProtection-Objekt. |
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|formulaHidden|boolean|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|
-|locked, lock_text|boolean|Gibt an, ob Excel den Text im Objekt umbricht. Ein Nullwert gibt an, dass der gesamte Bereich keine einheitliche Textumbruch-Einstellung hat|
+|formulaHidden|boolean|Gibt an, ob Excel die Formel für die Zellen im Bereich werden ausgeblendet. Ein null-Wert gibt an, dass der gesamte Bereich uniform Formel ausgeblendete Einstellung hat.|
+|gesperrt|boolean|Gibt an, ob Excel die Zellen in das Objekt gesperrt. Ein null-Wert gibt an, dass der gesamte Bereich uniform Sperrung nicht.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

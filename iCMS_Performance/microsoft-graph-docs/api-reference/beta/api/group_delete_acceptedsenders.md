@@ -1,9 +1,9 @@
-# <a name="remove-acceptedsender"></a>Remove acceptedSender
+# <a name="remove-acceptedsender"></a>AcceptedSender entfernen
 
-Remove a user or group from the acceptedSenders list. 
+Entfernen Sie einen Benutzer oder eine Gruppe aus der Liste AcceptedSenders. 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Group.ReadWrite.All*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** zum Ausführen diese API ist erforderlich: *Group.ReadWrite.All*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /groups/<id>/acceptedSenders/$ref?$id=<id>
@@ -12,18 +12,18 @@ DELETE /groups/<id>/acceptedSenders/$ref?$id=<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `204, No Content` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `204, No Content` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Here are a couple of examples of the request.
+Es folgen einige Beispiele der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_directoryobject_from_group"
@@ -35,7 +35,7 @@ DELETE https://graph.microsoft.com/beta/groups/<id>/acceptedSenders/$ref?$id="gr
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 <!-- {
   "blockType": "response",
   "truncated": true

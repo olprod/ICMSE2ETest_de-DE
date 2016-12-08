@@ -1,10 +1,10 @@
-# <a name="event-dismissreminder"></a>event: dismissReminder
+# <a name="event-dismissreminder"></a>Ereignis: DismissReminder
 
-Dissmiss a reminder that has been triggered.
+Dissmiss eine Erinnerung, das ausgelöst wurde.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Calendars.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/events/<id>/dismissReminder
@@ -27,17 +27,17 @@ POST /users/<id | userPrincipalName>/calendargroups/<id>/calendars/<id>/events/<
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
+## <a name="request-body"></a>Anforderungstext
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode. Es werden keine etwas in der Antworttext zurückgegeben.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "event_dismissreminder"
@@ -48,7 +48,7 @@ POST https://graph.microsoft.com/v1.0/me/events/<id>/dismissReminder
 
 ##### <a name="response"></a>Antwort
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true

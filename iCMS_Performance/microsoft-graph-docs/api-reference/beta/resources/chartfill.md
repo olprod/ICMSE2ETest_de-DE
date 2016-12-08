@@ -1,14 +1,14 @@
-# <a name="chartfill-resource-type"></a>ChartFill resource type
+# <a name="chartfill-resource-type"></a>Ressourcentyp ChartFill
 
-Die Füllung für ein Diagrammelement.
+Stellt die Formatierung für ein Diagrammelement Füllung an.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[clear()](../api/chartfill_clear.md)|Keine|Entfernen der Füllfarbe eines Diagrammelements|
-|[Setsolidcolor](../api/chartfill_setsolidcolor.md)|Keine|Legt die Füllung eines Diagrammelements auf einfarbige Füllung fest.|
+|[Deaktivieren](../api/chartfill_clear.md)|Keine|Deaktivieren Sie die Füllfarbe des Diagrammelements.|
+|[Setsolidcolor](../api/chartfill_setsolidcolor.md)|Keine|Legt die Formatierung ein Diagrammelement eine einfarbige Füllung.|
 
 ## <a name="properties"></a>Eigenschaften
 Keine

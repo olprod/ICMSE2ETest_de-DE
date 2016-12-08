@@ -1,22 +1,22 @@
-# <a name="create-group"></a>Zum Erstellen einer Gruppe:
+# <a name="create-group"></a>Gruppe erstellen
 
-Use this API to create a new group as specified in the request body. You can create one of 3 types of groups:
-* Office 365 group (aka unified group)
-* Dynamic group
+Verwenden Sie diese API, um eine neue Gruppe im Textkörper Anforderung gemäß erstellen. Sie können eine der 3 Arten von Gruppen erstellen:
+* Office 365-Gruppe (auch bekannt als unified Gruppe)
+* Dynamische Gruppe
 * Sicherheitsgruppe
 
-At a minimum, you must specify the properties required for the type of group you're creating. This includes:
+Zumindest müssen Sie angeben, die Eigenschaften für den von Ihnen erstellten Gruppe erforderlich. Dazu gehören:
 
-| Type of group | **groupTypes** property | **securityEnabled** property |
+| Art der Gruppe | **GroupTypes** -Eigenschaft | **SecurityEnabled** -Eigenschaft |
 |:--------------|:------------------------|:-----------------------------|
 | Office 365 | "Unified" | falsch |
 | Dynamik | "DynamicMembership" | falsch |
-| Sicherheit | Do not set. | wahr |
+| Sicherheit | Legen Sie nicht. | wahr |
 
-Specify other writable properties as necessary, such as **mailEnabled** for mail-enabled groups. For more information, see the properties of the [group](../resources/group.md) resource.
+Andere schreibbaren Eigenschaften wie nötig, wie **MailEnabled** für e-Mail-aktivierte Gruppen angeben. Weitere Informationen finden Sie unter den Eigenschaften des [Group](../resources/group.md) -Ressource.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scope** is required to execute this API: _Group.ReadWrite.All_ 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Der **Bereich** ist erforderlich, um diese API ausführen: _Group.ReadWrite.All_ 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /groups
@@ -24,26 +24,26 @@ POST /groups
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [group](../resources/group.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung der [Group](../resources/group.md) -Objekt.
 
-The following table shows the properties that are required when you create a group.
+In der folgenden Tabelle werden die Eigenschaften gezeigt, die erforderlich sind, wenn Sie eine Gruppe erstellen.
 
 | Parameter | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| DisplayName | string | The name to display in the address book for the group. |
-| mailEnabled | boolean | Set to **true** for mail-enabled groups. |
-| mailNickname | string | The mail alias for the group. |
-| securityEnabled | boolean | Set to **true** for security-enabled groups. Set to **false** if creating an Office 365 group. |
+| displayName | string | Der Name im Adressbuch für die Gruppe angezeigt. |
+| mailEnabled | boolean | Legen Sie auf **"true"** für e-Mail-aktivierte Gruppen. |
+| mailNickname | string | Der e-Mail-Alias für die Gruppe. |
+| securityEnabled | boolean | Festgelegt auf **true** für Sicherheit-aktivierte Gruppen. Auf **false** festgelegt, wenn eine Office 365-Gruppe zu erstellen. |
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [group](../resources/group.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortobjekt Code und [Gruppe](../resources/group.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_group_from_groups"
@@ -64,9 +64,9 @@ Content-length: 244
   "securityEnabled": false
 }
 ```
-In the request body, supply a JSON representation of [group](../resources/group.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung der [Group](../resources/group.md) -Objekt.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

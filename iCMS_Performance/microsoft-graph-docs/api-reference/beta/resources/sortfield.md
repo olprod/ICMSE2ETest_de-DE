@@ -1,24 +1,24 @@
-# <a name="sortfield-resource-type"></a>SortField resource type
+# <a name="sortfield-resource-type"></a>SortField-Ressourcentyp
 
-Represents a condition in a sorting operation.
+Stellt eine Bedingung in einem Sortiervorgang dar.
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Aufsteigend|boolean|Represents whether the sorting is done in an ascending fashion.|
-|color|string|Represents the color that is the target of the condition if the sorting is on font or cell color.|
-|dataOption|string|Represents additional sorting options for this field. Possible values are: `Normal`, `TextAsNumber`.|
-|Key|int|Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).|
-|sortOn|string|Represents the type of sorting of this condition. Possible values are: `Value`, `CellColor`, `FontColor`, `Icon`.|
+|Aufsteigend|boolean|Stellt dar, ob die Sortierung in aufsteigender Weise erfolgt.|
+|color|string|Stellt die Farbe, die als Ziel für die Bedingung wird, falls der Sortierung auf Schriftart oder einer Zelle Farbe angezeigt wird.|
+|dataOption|string|Weitere Sortieroptionen für dieses Feld darstellt. Mögliche Werte sind: `Normal`, `TextAsNumber`.|
+|Key|int|Stellt die Spalte (oder Zeile, je nach Ausrichtung der Sortierung), in der die Bedingung ist. Dargestellt als Offset aus der ersten Spalte (oder Zeile) ein.|
+|sortOn|string|Stellt den Typ der Sortierung der diese Bedingung. Mögliche Werte sind: `Value`, `CellColor`, `FontColor`, `Icon`.|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Symbol|[Symbol](icon.md)|Represents the icon that is the target of the condition if the sorting is on the cell's icon.|
+|Symbol|[Symbol](icon.md)|Stellt das Symbol, das das Ziel der Bedingung ist, wenn der Sortierung auf die Zelle Symbol befindet.|
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

@@ -1,9 +1,9 @@
-# <a name="create-calendargroup"></a>Create CalendarGroup
+# <a name="create-calendargroup"></a>Erstellen von CalendarGroup
 
-Use this API to create a new CalendarGroup.
+Verwenden Sie diese API, um eine neue CalendarGroup erstellen.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Calendars.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /users/<id | userPrincipalName>/calendarGroups
@@ -11,18 +11,18 @@ POST /users/<id | userPrincipalName>/calendarGroups
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
-| contentType  | application/json  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
+| Inhaltstyp  | Application/json  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [CalendarGroup](../resources/calendargroup.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [CalendarGroup](../resources/calendargroup.md) -Objekts.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [CalendarGroup](../resources/calendargroup.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortcode und [CalendarGroup](../resources/calendargroup.md) -Objekts in der Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_calendargroup_from_user"
@@ -38,9 +38,9 @@ Content-length: 90
   "changeKey": "changeKey-value"
 }
 ```
-In the request body, supply a JSON representation of [calendarGroup](../resources/calendargroup.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [CalendarGroup](../resources/calendargroup.md) -Objekts.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

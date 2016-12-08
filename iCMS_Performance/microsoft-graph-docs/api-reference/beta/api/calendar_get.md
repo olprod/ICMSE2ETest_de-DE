@@ -1,17 +1,17 @@
-# <a name="get-calendar"></a>Get calendar
+# <a name="get-calendar"></a>Abrufen von Kalender
 
-Retrieve the properties and relationships of calendar object.
+Rufen Sie die Eigenschaften und Beziehungen des Calendar-Objekt ab.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.Read*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** zum Ausführen diese API ist erforderlich: *Calendars.Read*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
-A user's or group's default [calendar](../resources/calendar.md).
+Eines Benutzers oder einer Gruppe als [Kalender](../resources/calendar.md).
 ```http
 GET /me/calendar
 GET /users/<id | userPrincipalName>/calendar
 GET /groups/<id>/calendar
 ```
-A user's [calendar](../resources/calendar.md) in the default [calendarGroup](../resources/calendargroup.md).
+Ein Benutzer [Kalender](../resources/calendar.md) in die Standard- [CalendarGroup](../resources/calendargroup.md).
 ```http
 GET /me/calendars/<id>
 GET /users/<id | userPrincipalName>/calendars/<id>
@@ -19,25 +19,25 @@ GET /users/<id | userPrincipalName>/calendars/<id>
 GET /me/calendarGroup/calendars/<id>
 GET /users/<id | userPrincipalName>/calendarGroup/calendars/<id>
 ```
-A user's [calendar](../resources/calendar.md) in a specific [calendarGroup](../resources/calendargroup.md).
+Ein Benutzer [Kalender](../resources/calendar.md) in einer bestimmten [CalendarGroup](../resources/calendargroup.md).
 ```http
 GET /me/calendarGroups/<id>/calendars/<id>
 GET /users/<id | userPrincipalName>/calendarGroups/<id>/calendars/<id>
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [calendar](../resources/calendar.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortobjekt Code und [Kalender](../resources/calendar.md) in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_calendar"
@@ -46,7 +46,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/beta/me/calendar
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

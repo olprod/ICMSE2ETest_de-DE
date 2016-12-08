@@ -1,13 +1,13 @@
-# <a name="list-recently-used-files"></a>List recently used files
+# <a name="list-recently-used-files"></a>Liste der zuletzt verwendeten Dateien
 
-List a set of items that have been recently used by the signed in user. This list includes items that are in the user's drive as well as items they have access to from other drives.
+Auflisten einer Reihe von Elementen, die vom angemeldeten Benutzer zuletzt verwendet wurden. Diese Liste enthält Elemente, die sich in dem Laufwerk des Benutzers sowie Elemente, die von anderen Laufwerken zugreifen kann.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.Read
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 
 <!-- { "blockType": "ignored" } -->
 ```
@@ -18,10 +18,10 @@ GET /me/drive/recent
 
 | Name          | Typ   | Beschreibung                                                                                                                                                                                       |
 |:--------------|:-------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Autorisierung | string | Bearer <token>. Required.                                                                                                                                                                         |
+| Autorisierung | string | Bearer <token>. Erforderlich.                                                                                                                                                                         |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="example"></a>Beispiel
 
@@ -32,7 +32,7 @@ GET /me/drive/recent
 
 ## <a name="response"></a>Antwort
 
-This returns a collection of [driveItem resources](../resources/driveitem.md) that contains items which have been shared with the signed-in user.
+Dies gibt eine Auflistung von [DriveItem Ressourcen](../resources/driveitem.md) , die Elemente enthält, die mit dem angemeldeten Benutzer freigegeben wurden.
 
 
 <!-- { "blockType": "response", "@odata.type": "microsoft.graph.driveItem", "isCollection": true, "truncated": true } -->
@@ -72,7 +72,7 @@ Content-Type: application/json
 
 ## <a name="remarks"></a>Hinweise
 
-Some driveItems returned from the **recent** action will include the **remoteItem** facet which indicates they are items from another drive. To access the original driveItem object, you will need to make a request using the information provided in **remoteItem** in the following format:
+Einige DriveItems zurückgegeben, die durch die **letzte** Aktion wird das **RemoteItem** Facetten enthalten, die gibt an, dass sie Elemente aus einem anderen Laufwerk sind. Zugriff auf das ursprüngliche DriveItem-Objekt müssen Sie die Anforderung mithilfe der Informationen in **RemoteItem** im folgenden Format:
 
 <!-- {"blockType": "ignored"} -->
 ```http

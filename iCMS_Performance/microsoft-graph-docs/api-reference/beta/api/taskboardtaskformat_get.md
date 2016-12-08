@@ -1,33 +1,33 @@
-# <a name="get-taskboardtaskformat"></a>Get taskBoardTaskFormat
+# <a name="get-taskboardtaskformat"></a>Abrufen von taskBoardTaskFormat
 
-Retrieve the properties and relationships of taskboardtaskformat object.
+Rufen Sie die Eigenschaften und Beziehungen des Taskboardtaskformat-Objekts ab.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
  
-Group.Read.All, Group.ReadWrite.All
+Group.Read.All Group.ReadWrite.All
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /tasks/<id>/bucketTaskBoardFormat
 GET /tasks/<id>/progressTaskBoardFormat
 GET /tasks/<id>/assignedToTaskBoardFormat
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
 Keine
 
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Value should be set to "Bearer (access-token)" |
+| Autorisierung  | string  | Wert sollte auf "Bearer (Zugriffstoken)" festgelegt werden |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [taskBoardTaskFormat](../resources/taskboardtaskformat.md) object in the response body.
+Wenn erfolgreich, diese Methode gibt eine `200 OK` Antwortobjekt Code und [TaskBoardTaskFormat](../resources/taskboardtaskformat.md) im Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_taskboardtaskformat"
@@ -36,7 +36,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/beta/tasks/<id>/bucketTaskBoardFormat
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 <!-- {
   "blockType": "response",
   "truncated": true,

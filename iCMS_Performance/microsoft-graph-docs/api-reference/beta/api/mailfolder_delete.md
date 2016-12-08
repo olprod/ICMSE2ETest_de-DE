@@ -1,9 +1,9 @@
-# <a name="delete-mailfolder"></a>Delete mailFolder
+# <a name="delete-mailfolder"></a>MailFolder löschen
 
-Delete mailFolder.
+Löschen Sie MailFolder.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Mail.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Mail.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /me/mailFolders/<id>
@@ -12,18 +12,18 @@ DELETE /users/<id | userPrincipalName>/mailFolders/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `204, No Content` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `204, No Content` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "delete_mailfolder"
@@ -32,7 +32,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 DELETE https://graph.microsoft.com/beta/me/mailFolders/<id>
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 <!-- {
   "blockType": "response",
   "truncated": true

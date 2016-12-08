@@ -1,17 +1,17 @@
-# <a name="update-profilephoto"></a>Update profilephoto
+# <a name="update-profilephoto"></a>Profilephoto aktualisieren
 
-Update the photo for the signed-in **user**, or the specified **group** or **contact**. Since there is currently a limit of 4MB on the total size of each REST request, this limits the size of the photo you can add to under 4MB.
+Aktualisieren Sie das Foto für den angemeldeten **Benutzer**, oder der angegebenen **Gruppe** oder **wenden Sie sich an**. Da es derzeit maximal 4MB für die Gesamtgröße der einzelnen REST-Anforderungen ist, beschränkt dies die Größe des Fotos, das größer als 4 MB hinzugefügt werden können.
 
-You can use either PATCH or PUT for this operation in version 1.0.
+Sie können entweder PATCH verwenden "oder" PUT für diesen Vorgang in der Version 1.0.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API for:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API für ausführen:
 
-- Profile photo of signed-in **user** - *User.ReadWrite*
-- Profile photo of a **group** - *Group.ReadWrite.All*
-- Photo of a **contact** - *Contacts.ReadWrite*
+- Profilfotos des angemeldeten **Benutzers** - *User.ReadWrite*
+- Profilfoto einer **Gruppe** - *Group.ReadWrite.All*
+- Foto von **wenden Sie sich an** - *Contacts.ReadWrite*
 
-## <a name="http-request-to-update-the-photo"></a>HTTP request to update the photo
+## <a name="http-request-to-update-the-photo"></a>HTTP-Anforderung an das Foto aktualisieren
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /me/photo/$value
@@ -33,17 +33,17 @@ PUT /users/<id | userPrincipalName>/contactfolders/<contactFolderId>/contacts/<i
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
-| contentType  | image/jpeg. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
+| Inhaltstyp  | Image/Jpeg festgelegt. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, include the binary data of the photo in the request body.
+## <a name="request-body"></a>Anforderungstext
+Enthalten Sie im Textkörper Anforderung die binären Daten des Fotos im Textkörper Anforderung.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortcode.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_profilephoto"
@@ -56,7 +56,7 @@ Binary data for the image
 
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

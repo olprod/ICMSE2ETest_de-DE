@@ -1,98 +1,99 @@
-# <a name="group-resource-type"></a>group resource type
+# <a name="group-resource-type"></a>Gruppe Ressourcentyp
 
-Represents an Azure Active Directory group, which can be an Office 365 group, dynamic group, or security group. Inherits from [directoryObject](directoryobject.md).
+Stellt eine Azure Active Directory-Gruppe, die ein Office 365-Gruppe, dynamische Gruppe oder Sicherheitsgruppe sein kann.
+Erbt vom [DirectoryObject](directoryobject.md).
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[Zum Erstellen einer Gruppe:](../api/group_post_groups.md) | [Group](group.md) |Create a new group as specified. It can be an Office 365 group, dynamic group or security group.|
-|[Get group](../api/group_get.md) | [Group](group.md) |Read properties and relationships of group object.|
-|[Update group](../api/group_update.md) | [Group](group.md) |Update the properties of a group object. |
-|[Delete group](../api/group_delete.md) | Keine |Delete group object. |
-|[List owners](../api/group_list_owners.md) |[directoryObject](directoryobject.md) collection| Get the owners of the group from the **owners** navigation property.|
-|[Add owner](../api/group_post_owners.md) |[directoryObject](directoryobject.md)| Add a new owner for the group by posting to the **owners** navigation property (supported for security groups and mail-enabled security groups only).|
-|[List members](../api/group_list_members.md) |[directoryObject](directoryobject.md) collection| Get the users and groups that are direct members of this group from the **members** navigation property.|
-|[Add member](../api/group_post_members.md) |[directoryObject](directoryobject.md)| Add a user or group to this group by posting to the **members** navigation property (supported for security groups and mail-enabled security groups only).|
-|[Remove member](../api/group_delete_members.md) | Keine |Remove a member from an Office 365 group, a security group or a mail-enabled security group through the **members** navigation property. You can remove users or other groups. |
-|[List memberOf](../api/group_list_memberof.md) |[directoryObject](directoryobject.md) collection| Get the groups and administative units that this group is a direct member of, from the **memberOf** navigation property.|
-|[checkMemberGroups](../api/group_checkmembergroups.md)|String collection|Check for membership in a list of groups. The function is transitive.|
-|[getMemberGroups](../api/group_getmembergroups.md)|String collection|Return all the groups that the group is a member of. The function is transitive.|
-|[getMemberObjects](../api/group_getmemberobjects.md)|String collection|Return all of the groups and administrative units that the group is a member of. The function is transitive. |
-|[List events](../api/group_list_events.md) |[Event](event.md) collection| Get a Event object collection.|
-|[Create event](../api/group_post_events.md) |[Ereignis](event.md)| Create a new Event by posting to the events collection.|
-|[List calendarView](../api/group_list_calendarview.md) |[Event](event.md) collection| Get a collection of events in a specified time window.|
-|[List conversations](../api/group_list_conversations.md) |[Conversation](conversation.md) collection| Get a Conversation object collection.|
-|[Create conversation](../api/group_post_conversations.md) |[Unterhaltung](conversation.md)| Create a new Conversation by posting to the conversations collection.|
-|[List threads](../api/group_list_threads.md) |[ConversationThread](conversationthread.md) collection| Get all the threads of a group.|
-|[List acceptedSenders](../api/group_list_acceptedsenders.md) |[directoryObject](directoryobject.md) collection| Get a list of users or groups that are in the acceptedSenders list for this group.|
-|[Add acceptedSender](../api/group_post_acceptedsenders.md) |[directoryObject](directoryobject.md)| Add a User or Group to the acceptSenders collection.|
-|[Remove acceptedSender](../api/group_delete_acceptedsenders.md) |[directoryObject](directoryobject.md)| Remove a User or Group from the acceptedSenders collection.|
-|[List rejectedSenders](../api/group_list_rejectedsenders.md) |[directoryObject](directoryobject.md) collection| Get a list of users or groups that are in the rejectedSenders list for this group.|
-|[Add rejectedSender](../api/group_post_rejectedsenders.md) |[directoryObject](directoryobject.md)| Add a new User or Group to the rejectedSenders collection.|
-|[List plans](../api/group_list_plans.md) |[plan](plan.md) collection| Get a plan object collection.|
-|[Remove rejectedSender](../api/group_delete_rejectedsenders.md) |[directoryObject](directoryobject.md)| Remove new new User or Group from the rejectedSenders collection.|
-|[addFavorite](../api/group_addfavorite.md)|Keine|Add the group to the list of the current user's favorite groups. Supported for only Office 365 groups.|
-|[removeFavorite](../api/group_removefavorite.md)|Keine|Remove the group from the list of the current user's favorite groups. Supported for only Office 365 groups.|
-|[subscribeByMail](../api/group_subscribebymail.md)|Keine|Set the isSubscribedByMail property to **true**. Enabling the current user to receive email conversations. Supported for only Office 365 groups.|
-|[unsubscribeByMail](../api/group_unsubscribebymail.md)|Keine|Set the isSubscribedByMail property to **false**. Disabling the current user from receive email conversations. Supported for only Office 365 groups.|
-|[resetUnseenCount](../api/group_resetunseencount.md)|Keine|Reset the unseenCount to 0 of all the posts that the current user has not seen since their last visit. Supported for only Office 365 groups.|
-|[List photos](../api/group_list_photos.md) |[Photo](photo.md) collection| Get a photo object collection.|
-|[Create setting](../api/directorysetting_post_settings.md) | [directorySetting](directorysetting.md) |Create a setting object based on a directorySettingTemplate. The POST request must provide settingValues for all the settings defined in the template. Only groups specific templates may be used for this operation.|
-|[Get setting](../api/directorysetting_get.md) | [directorySetting](directorysetting.md) |Read properties of a specific setting object.|
-|[List settings](../api/directorysetting_list.md) | [directorySetting](directorysetting.md) collection |List properties of all setting objects.|
-|[Update setting](../api/directorysetting_update.md) | [directorySetting](directorysetting.md)  |Update a setting object. |
-|[Delete setting](../api/directorysetting_delete.md) | Keine |Löschen eines Datenbankobjekts |
+|[Gruppe erstellen](../api/group_post_groups.md) | [Gruppe](group.md) |Erstellen einer neuen Gruppe wie angegeben. Es kann ein Office 365, dynamische Gruppe oder Sicherheitsgruppe sein.|
+|[Erste Gruppe](../api/group_get.md) | [Gruppe](group.md) |Eigenschaften lesen und Beziehungen des Group-Objekts.|
+|[Aktualisierungsgruppe](../api/group_update.md) | [Gruppe](group.md) |Aktualisieren Sie die Eigenschaften eines Group-Objekts. |
+|[Gruppe löschen](../api/group_delete.md) | Keine |Group-Objekt zu löschen. |
+|[Liste Besitzer](../api/group_list_owners.md) |[DirectoryObject](directoryobject.md) -Auflistung| Rufen Sie den Besitzer der Gruppe aus der Navigationseigenschaft **Besitzer** .|
+|[Besitzer hinzufügen](../api/group_post_owners.md) |[directoryObject](directoryobject.md)| Fügen Sie einen neuen Besitzer für die Gruppe durch die Veröffentlichung auf die **Besitzer** Navigation-Eigenschaft (für Sicherheitsgruppen und e-Mail-aktivierte Sicherheitsgruppen nur unterstützt).|
+|[Mitglieder der Liste](../api/group_list_members.md) |[DirectoryObject](directoryobject.md) -Auflistung| Rufen Sie die Benutzer und Gruppen, die direkte Mitglieder aus der Navigationseigenschaft **Mitglieder** dieser Gruppe sind.|
+|[Mitglied hinzufügen](../api/group_post_members.md) |[directoryObject](directoryobject.md)| Fügen Sie einen Benutzer oder eine Gruppe dieser Gruppe durch die Veröffentlichung auf die **Mitglieder** Navigation-Eigenschaft (für Sicherheitsgruppen und e-Mail-aktivierte Sicherheitsgruppen nur unterstützt).|
+|[Entfernen von Mitgliedern](../api/group_delete_members.md) | Keine |Entfernen Sie ein Mitglied aus einer Office 365, eine Sicherheitsgruppe oder eine e-Mail-aktivierte Sicherheitsgruppe über die **Mitglieder** Navigation-Eigenschaft. Sie können Benutzer oder andere Gruppen entfernen. |
+|[Liste Mitglied](../api/group_list_memberof.md) |[DirectoryObject](directoryobject.md) -Auflistung| Rufen Sie die Gruppen und administrativer Einheiten, dass diese Gruppe direktes Mitglied, aus der Navigationseigenschaft **Mitglied** ist.|
+|[checkMemberGroups](../api/group_checkmembergroups.md)|Zeichenfolgenauflistung|Überprüfen Sie die Mitgliedschaft in einer Liste von Gruppen. Die Funktion ist transitiv.|
+|[getMemberGroups](../api/group_getmembergroups.md)|Zeichenfolgenauflistung|Zurückgeben Sie aller Gruppen, denen die Gruppe ein Mitglied ist. Die Funktion ist transitiv.|
+|[getMemberObjects](../api/group_getmemberobjects.md)|Zeichenfolgenauflistung|Zurückgeben Sie aller Gruppen und administrative Einheiten, denen die Gruppe ein Mitglied ist. Die Funktion ist transitiv. |
+|[List-Ereignisse](../api/group_list_events.md) |[Ereignissammlung](event.md)| Rufen Sie eine Auflistung der Ereignis-Objekts.|
+|[Ereignis erstellen](../api/group_post_events.md) |[Ereignis](event.md)| Erstellen Sie ein neues Ereignis, indem Sie das Veröffentlichen in der Auflistung Ereignisse.|
+|[Liste calendarView](../api/group_list_calendarview.md) |[Ereignissammlung](event.md)| Rufen Sie eine Auflistung von Ereignissen in einem angegebenen Zeitpunkt Fenster.|
+|[Liste Unterhaltungen](../api/group_list_conversations.md) |[Unterhaltung](conversation.md) -Auflistung| Rufen Sie eine Auflistung der Unterhaltung-Objekts.|
+|[Unterhaltung erstellen](../api/group_post_conversations.md) |[Unterhaltung](conversation.md)| Erstellen Sie eine neue Unterhaltung durch das Veröffentlichen in der Auflistung Unterhaltungen.|
+|[Liste threads](../api/group_list_threads.md) |[ConversationThread](conversationthread.md) -Auflistung| Rufen Sie alle Threads einer Gruppe.|
+|[Liste acceptedSenders](../api/group_list_acceptedsenders.md) |[DirectoryObject](directoryobject.md) -Auflistung| Rufen Sie eine Liste von Benutzern oder Gruppen, die in der Liste AcceptedSenders für diese Gruppe sind.|
+|[AcceptedSender hinzufügen](../api/group_post_acceptedsenders.md) |[directoryObject](directoryobject.md)| Fügen Sie einen Benutzer oder eine Gruppe zur AcceptSenders-Auflistung hinzu.|
+|[Entfernen acceptedSender](../api/group_delete_acceptedsenders.md) |[directoryObject](directoryobject.md)| Entfernen Sie einen Benutzer oder eine Gruppe aus der AcceptedSenders-Auflistung.|
+|[Liste rejectedSenders](../api/group_list_rejectedsenders.md) |[DirectoryObject](directoryobject.md) -Auflistung| Rufen Sie eine Liste von Benutzern oder Gruppen, die in der Liste RejectedSenders für diese Gruppe sind.|
+|[RejectedSender hinzufügen](../api/group_post_rejectedsenders.md) |[directoryObject](directoryobject.md)| Fügen Sie der RejectedSenders-Auflistung einen neuen Benutzer oder eine Gruppe hinzu.|
+|[Liste Pläne](../api/group_list_plans.md) |[Plan](plan.md) -Auflistung| Rufen Sie eine Auflistung der Plan-Objekts.|
+|[Entfernen rejectedSender](../api/group_delete_rejectedsenders.md) |[directoryObject](directoryobject.md)| Entfernen Sie die neue neuen Benutzer oder eine Gruppe aus der RejectedSenders-Auflistung.|
+|[addFavorite](../api/group_addfavorite.md)|Keine|Fügen Sie die Gruppe, zu der Liste der bevorzugten Gruppen des aktuellen Benutzers. Unterstützt nur die Office 365-Gruppen.|
+|[removeFavorite](../api/group_removefavorite.md)|Keine|Entfernen Sie die Gruppe aus der Liste der bevorzugten Gruppen des aktuellen Benutzers. Unterstützt nur die Office 365-Gruppen.|
+|[subscribeByMail](../api/group_subscribebymail.md)|Keine|Die IsSubscribedByMail-Eigenschaft auf **true**festgelegt. Aktivieren den aktuellen Benutzer zum Empfangen von e-Mail-Unterhaltungen. Unterstützt nur die Office 365-Gruppen.|
+|[unsubscribeByMail](../api/group_unsubscribebymail.md)|Keine|Legen Sie die IsSubscribedByMail-Eigenschaft auf **false fest**. Deaktivieren den aktuellen Benutzer aus e-Mail-Unterhaltungen empfangen. Unterstützt nur die Office 365-Gruppen.|
+|[resetUnseenCount](../api/group_resetunseencount.md)|Keine|Setzen Sie die UnseenCount auf 0 der alle Beiträge, die der aktuelle Benutzer seit seinem letzten Besuch nicht erkannt wurde. Unterstützt nur die Office 365-Gruppen.|
+|[Fotos](../api/group_list_photos.md) |[Fotosammlung](photo.md)| Rufen Sie eine Fotosammlung-Objekt.|
+|[Erstellen Sie die Einstellung](../api/directorysetting_post_settings.md) | [Verzeichnisberechtigungen](directorysetting.md) |Erstellen einer Einstellungsobjekt basierend auf einer DirectorySettingTemplate. Die POST-Anforderung muss EinstellenWerte für alle in der Vorlage definierten Einstellungen angeben. Für diesen Vorgang dürfen nur bestimmten Gruppen-Vorlagen verwendet werden.|
+|[Get-Einstellung](../api/directorysetting_get.md) | [Verzeichnisberechtigungen](directorysetting.md) |Lesen Sie die Eigenschaften eines bestimmten Einstellung-Objekts.|
+|[Einstellungen für die Liste](../api/directorysetting_list.md) | [Verzeichnisberechtigungen](directorysetting.md) -Auflistung |Listeneigenschaften aller Einstellung-Objekte.|
+|[Update-Einstellung](../api/directorysetting_update.md) | [Verzeichnisberechtigungen](directorysetting.md)  |Aktualisieren eines Einstellung-Objekts. |
+|[Löschen Sie die Einstellung](../api/directorysetting_delete.md) | Keine |Löscht ein Einstellungsobjekt. |
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|allowExternalSenders|Boolean|Default is **false**. Indicates if external members can send email to group. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group.|
-|autoSubscribeNewMembers|Boolean|Default is **false**. Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group.|
-|classification|String|Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList [setting](directorySetting.md) value, based on the [template definition](directorySettingTemplate.md).|
-|description|String|An optional description for the group.|
-|DisplayName|String|The display name for the group. This property is required when a group is created and it cannot be cleared during updates. Supports $filter and $orderby.|
-|groupTypes|String collection| Specifies the type of group to create. Possible values are **Unified** to create an Office 365 group, or **DynamicMembership** for dynamic groups.  For all other group types, like security-enabled groups and email-enabled security groups, do not set this property.|
-|id|String|The unique identifier for the group. Inherited from [directoryObject](directoryobject.md). Key. Not nullable. Read-only.|
-|isSubscribedByMail|Boolean|Default value is **true**. Indicates whether the current user is subscribed to receive email conversations.|
-|Mail|String|The SMTP address for the group, for example, "serviceadmins@contoso.onmicrosoft.com". Read-only. Supports $filter.|
-|mailEnabled|Boolean|Specifies whether the group is mail-enabled. If the **securityEnabled** property is also **true**, the group is a mail-enabled security group; otherwise, the group is a Microsoft Exchange distribution group.|
-|mailNickname|String|The mail alias for the group. This property must be specified when a group is created. Supports $filter.|
-|onPremisesLastSyncDateTime|DateTimeOffset|Indicates the last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only. Supports $filter.|
-|onPremisesSecurityIdentifier|String|Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Read-only. |
-|onPremisesSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter.|
-|proxyAddresses|String collection| The **any** operator is required for filter expressions on multi-valued properties. Read-only. Not nullable. Supports $filter. |
-|securityEnabled|Boolean|Specifies whether the group is a security group. If the **mailEnabled** property is also true, the group is a mail-enabled security group; otherwise it is a security group. Must be **false** for Office 365 groups. Supports $filter.|
-|unseenCount|Int32|Count of posts that the current  user has not seen since his last visit.|
-|visibility|String| Specifies the visibility of an Office 365 group. Possible values are: **Private**, **Public**, or empty (which is interpreted as **Public**).|
+|allowExternalSenders|Boolean|Standard ist **false**. Gibt an, ob externe Mitglieder e-Mail an Gruppe senden können. Sie können diese Eigenschaft in einer PATCH-Anforderung für die Gruppe festgelegt. Legen Sie sie nicht in der anfänglichen POST-Anforderung, die die Gruppe erstellt.|
+|autoSubscribeNewMembers|Boolean|Standard ist **false**. Gibt an, ob neue Mitglieder der Gruppe hinzugefügt automatisch zum Empfangen von e-Mail-Benachrichtigungen abonniert werden. Sie können diese Eigenschaft in einer PATCH-Anforderung für die Gruppe festgelegt. Setzen Sie sie nicht in der anfänglichen POST-Anforderung, die die Gruppe wird erstellt.|
+|Klassifizierung|String|Beschreibt eine Klassifizierung für die Gruppe (z. B. niedrig, Mittel oder hoch geschäftliche Relevanz). Gültige Werte für diese Eigenschaft werden durch Erstellen [eines Einstellungswerts ClassificationList, basierend auf der [Vorlagendefinition](directorySettingTemplate.md)](directorySetting.md) definiert.|
+|description|String|Eine optionale Beschreibung für die Gruppe.|
+|displayName|String|Der Anzeigename für die Gruppe. Diese Eigenschaft ist erforderlich, wenn eine Gruppe erstellt wird und kann nicht während des Updates deaktiviert werden. Unterstützt $filter und $orderby.|
+|groupTypes|Zeichenfolgenauflistung| Gibt den Typ der Gruppe erstellen. Mögliche Werte sind **Unified** zum Erstellen einer Gruppe von Office 365 oder **DynamicMembership** für dynamische Gruppen.  Für alle anderen Gruppe Typen, wie Sicherheit-aktivierten Gruppen und e-Mail-aktivierte Sicherheitsgruppen diese Eigenschaft nicht festlegen.|
+|id|String|Der eindeutige Bezeichner für die Gruppe. Geerbt von [DirectoryObject](directoryobject.md). -Taste. Nicht auf NULL festgelegt. Schreibgeschützt.|
+|isSubscribedByMail|Boolean|Standardwert ist **true**. Gibt an, ob der aktuelle Benutzer zum Empfangen von e-Mail-Unterhaltungen abonniert ist.|
+|Mail|String|Die SMTP-Adresse für die Gruppe "serviceadmins@contoso.onmicrosoft.com". schreibgeschützt. $Filter unterstützt.|
+|mailEnabled|Boolean|Gibt an, ob die Gruppe e-Mail-aktiviert ist. Wenn auch die **SecurityEnabled** -Eigenschaft **true**ist, ist die Gruppe eine e-Mail-aktivierte Sicherheitsgruppe an. Andernfalls ist die Gruppe eine Verteilergruppe Microsoft Exchange.|
+|mailNickname|String|Der e-Mail-Alias für die Gruppe. Diese Eigenschaft muss angegeben werden, wenn eine Gruppe erstellt wird. $Filter unterstützt.|
+|onPremisesLastSyncDateTime|DateTimeOffset|Gibt das letzte Mal an dem das Objekt mit dem lokalen Verzeichnis synchronisiert wurde. Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Um Mitternacht UTC 1 Jan 2014 würde beispielsweise wie folgt aussehen: `'2014-01-01T00:00:00Z'`. Schreibgeschützt. $Filter unterstützt.|
+|onPremisesSecurityIdentifier|String|Enthält die lokalen Sicherheits-ID (SID) für die Gruppe, die lokal in der Cloud synchronisiert wurde. Schreibgeschützt. |
+|onPremisesSyncEnabled|Boolean|**true,** Wenn dieses Objekt aus einem lokalen Verzeichnis synchronisiert ist. **false,** Wenn dieses Objekt ursprünglich aus einem lokalen Verzeichnis synchronisiert wurde, aber nicht mehr synchronisiert ist. **null,** Wenn dieses Objekt nie aus einem lokalen Verzeichnis (Standard) synchronisiert wurden. Schreibgeschützt. $Filter unterstützt.|
+|Proxyadressen|Zeichenfolgenauflistung| Der **any** -Operator ist für Filterausdrücke auf mehrwertige Eigenschaften erforderlich. Schreibgeschützt. Nicht auf NULL festgelegt. $Filter unterstützt. |
+|securityEnabled|Boolean|Gibt an, ob die Gruppe eine Sicherheitsgruppe ist. Wenn auch die **MailEnabled** -Eigenschaft true ist, ist die Gruppe eine e-Mail-aktivierte Sicherheitsgruppe; Andernfalls ist er eine Sicherheitsgruppe. Muss auf **"false"** für Office 365-Gruppen sein. $Filter unterstützt.|
+|unseenCount|Int32|Anzahl an Beiträgen, die der aktuelle Benutzer seit der letzten Besuch nicht erkannt wurde.|
+|visibility|String| Gibt die Sichtbarkeit einer Office 365-Gruppe. Mögliche Werte sind: **Private**, **Public**oder leer (die als **Öffentliche**interpretiert wird).|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|acceptedSenders|[directoryObject](directoryobject.md) collection|The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.|
-|calendar|[Kalender](calendar.md)|The group's calendar. Read-only.|
-|calendarView|[event](event.md) collection|The calendar view for the calendar. Read-only.|
-|Unterhaltungen|[conversation](conversation.md) collection|The group's conversations.|
-|createdOnBehalfOf|[directoryObject](directoryobject.md)| ReadOnly|
-|drive|[drive](drive.md)|The group's drive. Read-only.|
-|Ereignisse|[event](event.md) collection|The group's events.|
-|memberOf|[directoryObject](directoryobject.md) collection|Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.|
-|Member|[directoryObject](directoryobject.md) collection| Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.|
-|Hinweise|[Hinweise](notes.md)| ReadOnly|
-|owners (Administrator)|[directoryObject](directoryobject.md) collection|The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.|
-|photo|[profilePhoto](profilephoto.md)| The group's profile photo |
-|photos|[Photo](photo.md) collection| Read-only. Nullable.|
-|plans|[plan](plan.md) collection| Read-only. Nullable. Plans owned by the group. A group can own no more than one plan. |
-|rejectedSenders|[directoryObject](directoryobject.md) collection|The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable|
-|settings|[directorySetting](directorySetting.md) collection| Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.|
-|Threads|[conversationThread](conversationthread.md) collection| The group's conversation threads. Nullable.|
+|acceptedSenders|[DirectoryObject](directoryobject.md) -Auflistung|Die Liste der Benutzer oder Gruppen, die zum Erstellen des Post oder Kalenderereignisse in dieser Gruppe zulässig sind. Wenn die Liste nicht leer ist, ist nur Benutzer oder Gruppen, die hier aufgeführten dürfen für die Bereitstellung.|
+|calendar|[Kalender](calendar.md)|Die Gruppe Kalender. Schreibgeschützt.|
+|calendarView|[Ereignissammlung](event.md)|Die Kalenderansicht für den Kalender. Schreibgeschützt.|
+|Gespräche|[Unterhaltung](conversation.md) -Auflistung|Unterhaltungen der Gruppe.|
+|createdOnBehalfOf|[directoryObject](directoryobject.md)| Schreibgeschützt.|
+|Laufwerk|[Laufwerk](drive.md)|Laufwerk der Gruppe. Schreibgeschützt.|
+|Ereignisse|[Ereignissammlung](event.md)|Ereignisse, die der Gruppe.|
+|Mitglied|[DirectoryObject](directoryobject.md) -Auflistung|Gruppen und administrative Einheiten, denen dieser Gruppe ein Mitglied ist. HTTP-Methoden: ABRUFEN (unterstützt für alle Gruppen). Schreibgeschützt. NULL-Werte zulässt.|
+|Member|[DirectoryObject](directoryobject.md) -Auflistung| Benutzer, Kontakte und Gruppen, die Mitglieder dieser Gruppe sind. HTTP-Methoden: ABRUFEN (unterstützt für alle Gruppen), POST (unterstützt für Sicherheitsgruppen und e-Mail-aktivierten Sicherheitsgruppen), DELETE (unterstützt nur für Sicherheitsgruppen) schreibgeschützt. NULL-Werte zulässt.|
+|Notizen|[Notes](notes.md)| Schreibgeschützt.|
+|Besitzer|[DirectoryObject](directoryobject.md) -Auflistung|Der Besitzer der Gruppe. Die Besitzer sind eine Reihe von nicht-Administratoren, die berechtigt sind, um dieses Objekt zu ändern. HTTP-Methoden: ABRUFEN (unterstützt für alle Gruppen), POST (unterstützt für Sicherheitsgruppen und e-Mail-aktivierten Sicherheitsgruppen), DELETE (unterstützt nur für Sicherheitsgruppen) schreibgeschützt. NULL-Werte zulässt.|
+|Foto|[profilePhoto](profilephoto.md)| Die Gruppe Profilfoto |
+|Fotos|[Fotosammlung](photo.md)| Schreibgeschützt. NULL-Werte zulässt.|
+|Pläne|[Plan](plan.md) -Auflistung| Schreibgeschützt. NULL-Werte zulässt. Pläne Besitz der Gruppe. Eine Gruppe kann nicht mehr als einen Plan besitzen. |
+|rejectedSenders|[DirectoryObject](directoryobject.md) -Auflistung|Die Liste der Benutzer oder Gruppen, die zum Erstellen von Beiträgen oder Ereignisse im Kalender in dieser Gruppe nicht zulässig sind. Nullwerte zulassen|
+|settings|[Verzeichnisberechtigungen](directorySetting.md) -Auflistung| Einstellungen, die dieser Gruppe Verhalten, z. B., ob Mitglieder Gastbenutzer der Gruppe einladen können steuern können. NULL-Werte zulässt.|
+|Threads|[ConversationThread](conversationthread.md) -Auflistung| Die Gruppe Unterhaltung Threads. NULL-Werte zulässt.|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

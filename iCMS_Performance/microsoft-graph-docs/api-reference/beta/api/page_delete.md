@@ -1,10 +1,10 @@
-# <a name="delete-page"></a>Löschen einer Toolbox-Seite
+# <a name="delete-page"></a>Seite löschen
 
-Delete a Toolbox page
+Löschen einer OneNote-Seite.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:   
-Notes.ReadWrite.CreatedByApp, Notes.ReadWrite, or Notes.ReadWrite.All 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:   
+Notes.ReadWrite.CreatedByApp, Notes.ReadWrite oder Notes.ReadWrite.All 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /me/notes/pages/<id>
@@ -14,15 +14,15 @@ DELETE /groups/<id>/notes/pages/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer tokenString`Bearer <token>`Ein gültiges OAuth-Token, das der App basierend auf den Anmeldeinformationen des Benutzers und dem Benutzer bereitgestellt wird, der autorisierten Zugriff hat. Weitere Informationen finden Sie unter . |
+| Autorisierung  | string  | `Bearer <token>`Ein gültiges OAuth-Token bereitgestellt, um die app basierend auf die Anmeldeinformationen des Benutzers und der Benutzer haben Zugriff autorisiert. |
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `204 No Content` response code. It does not return anything in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `204 No Content` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "delete_page"
@@ -31,7 +31,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 DELETE https://graph.microsoft.com/beta/me/notes/pages/<id>
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true

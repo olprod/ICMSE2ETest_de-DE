@@ -1,29 +1,30 @@
-# <a name="get-data-extension"></a>Get data extension
+# <a name="get-data-extension"></a>Abrufen von Daten-Erweiterung
 
-Get a data extension ([openTypeExtension](../resources/openTypeExtension.md) object) identified by name or fully qualified name.
+Rufen Sie eine Daten-Erweiterung ([OpenTypeExtension](../resources/openTypeExtension.md) -Objekt) durch den Namen oder den vollqualifizierten Namen identifiziert.
 
-Resources that support open type Office 365 data extensions include a message, calendar event, or contact of the signed-in user's on Office 365 or Outlook.com. Or, it can be an event or post for an Office 365 group. Depending on the resource type, there are a few ways to get a data extension.
+Ressourcen, die open-Typ Office 365 Daten Extensions unterstützen gehören einer Nachricht, Kalenderereignis oder Kontakt der des angemeldeten Benutzers auf Office 365 oder Outlook.com. Alternativ kann ein Ereignis oder eine Post für eine Office 365-Gruppe sein.
+Je nach dem Ressourcentyp stehen verschiedene Möglichkeiten zum Abrufen von Daten der Erweiterung.
 
-|**GET description**|**Supported resources**|**Response body**|
+|**BESCHREIBUNG**|**Unterstützte Ressourcen**|**Antworttext**|
 |:-----|:-----|:-----|
-|Get a specific extension in a known resource instance.|Message, event, contact, group event, group post | Data extension only.|
-|Get a known resource instance expanded with a specific extension.|Message, event, contact, group event|A resource instance expanded with the data extension.|
-|Find and expand resource instances with a specific extension. |Message, event, contact, group event|Resource instances expanded with the data extension.|
+|Abrufen einer bestimmten Erweiterungs in einer Ressourceninstanz einer bekannten.|Meldung, Ereignis, Kontakt, Gruppe Ereignis, Gruppe Beitrag | Erweiterung nur Daten.|
+|Rufen Sie eine bekannte Ressourceninstanz erweitert mit einer bestimmten Erweiterung.|Meldung, Ereignis, Kontakt, Gruppe-Ereignis|Eine Ressourceninstanz erweitert mit der Erweiterung Daten verwendet werden.|
+|Suchen und Ressourceninstanzen mit einer bestimmten Erweiterung erweitern. |Meldung, Ereignis, Kontakt, Gruppe-Ereignis|Ressourceninstanzen erweitert, mit der Erweiterung Daten.|
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-One of the following **scopes** is required to execute this API, depending on the resource you're getting the extension from:
+Einen der folgenden **Bereiche** ist, diese API, abhängig von der Ressource auszuführen, Sie die Erweiterung von erhalten, erforderlich:
 
-- _Lesen von E-Mail_
+- _Mail.Read_
 - _Calendars.Read_
 - _Contacts.Read_
 - _Group.Read.All_
  
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 
 
-To get a specific extension in a known resource instance:
+Zum Abrufen einer bestimmten Erweiterungs in einer Ressourceninstanz der bekannten:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/messages/<Id>/extensions/<extensionId>
@@ -42,7 +43,7 @@ GET /groups/<Id>/threads/<Id>/posts/<Id>/extensions/<extensionId>
 GET /groups/<Id>/conversations/<Id>/threads/<Id>/posts/<Id>/extensions/<extensionId>
 ```
 
-To get a known resource instance expanded with an extension that matches a filter on the **id** property:
+So rufen Sie eine bekannte Ressourceninstanz erweitert mit einer Erweiterung, die einen Filter in der **Id** -Eigenschaft entspricht:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/messages/<Id>?$expand=extensions($filter=id eq '<extensionId>')
@@ -58,7 +59,7 @@ GET /users/<Id|userPrincipalName>/contacts/<Id>?$expand=extensions($filter=id eq
 GET /groups/<Id>/events/<Id>?$expand=extensions($filter=id eq '<extensionId>')
 ```
 
-To filter for resource instances that contain an extension matching a filter on the **id** property, and get these instances expanded with the extension:
+Zum Filtern von Resource-Instanzen, die diese Instanzen abgerufen oder enthalten eine Erweiterung einem Filter auf die **Id** -Eigenschaft erweitert, mit der Erweiterung:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/messages?$filter=Extensions/any(f:f/id eq '<extensionId>')&$expand=Extensions($filter=id eq '<extensionId>')
@@ -78,39 +79,40 @@ GET /groups/<Id>/events?$filter=Extensions/any(f:f/id eq '<extensionId>')&$expan
 ## <a name="parameters"></a>Parameter
 |**Parameter**|**Typ**|**Beschreibung**|
 |:-----|:-----|:-----|
-|_URL parameters_|
-|ID|string|Placeholder for a unique identifier for an object in the corresponding collection such as messages, events, contacts. Required. Not to be confused with the **id** property of an **openTypeExtension**.|
-|extensionId|string|Placeholder for an extension name which is a unique text identifier for an extension, or a fully qualified name which concatenates the extension type and unique text identifier. The fully qualified name is returned in the **id** property when you create the extension. Required.|
+|_URL-Parameter_|
+|ID|string|Platzhalter für einen eindeutigen Bezeichner für ein Objekt in der entsprechenden Auflistung wie Nachrichten, Ereignisse, Kontakte. Erforderlich. Wird nicht mit dem **Id** -Eigenschaft für ein **OpenTypeExtension**verwechselt werden.|
+|extensionID geändert|string|Platzhalter für eine Erweiterung der ist eine eindeutige ID einer Erweiterung oder einen voll gekennzeichneten Namen, der den Erweiterungstyp und eindeutige Text-ID verkettet. Wenn Sie die Erweiterung Erstellen der vollständig qualifizierte Namen in der **Id** -Eigenschaft zurückgegeben. Erforderlich.|
 
 
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
 
-Make sure you apply [URL encoding](http://www.w3schools.com/tags/ref_urlencode.asp) to the space characters in the `$filter` string.
+Stellen Sie sicher, dass Sie auf die Leerzeichen in [URL-Codierung](http://www.w3schools.com/tags/ref_urlencode.asp) anwenden, die `$filter` Zeichenfolge.
 
-|**name**|**value**|**Beschreibung**|
+|**Name**|**Wert**|**Beschreibung**|
 |:---------------|:--------|:-------|
-|Filter|Zeichenfolge|Returns an extension with its **id** matching the `extensionId` parameter value.|
-|$filter with **any** operator|string|Returns instances of a resource collection that contain an extension with its **id** matching the `extensionId` parameter value.| 
-|expand|Zeichenfolge|Expands a resource instance to include an extension. |
+|$filter|Zeichenfolge|Gibt eine Erweiterung mit der **Id** entsprechenden die `extensionId` Wert des Parameters.|
+|$filter mit **any** -operator|string|Gibt Instanzen einer Ressource-Auflistung, die eine Erweiterung mit der **Id** entsprechenden enthalten die `extensionId` Wert des Parameters.| 
+|$Erweitern|Zeichenfolge|Erweitert eine Ressourceninstanz um eine Erweiterung einzuschließen. |
 
 
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Wert |
 |:---------------|:----------|
-| Autorisierung | Bearer %token%|
+| Autorisierung | Bearer token %|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [openTypeExtension](../resources/opentypeextension.md) object in the response body. Depending on the GET query, the exact response body differs.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortobjekt Code und [OpenTypeExtension](../resources/opentypeextension.md) im Antworttext.
+Je nach Abfrage GET unterscheidet sich der genauen Antworttext.
 ## <a name="example"></a>Beispiel
 
-#### <a name="request-1"></a>Request 1
+#### <a name="request-1"></a>Anforderung 1
 
-The first example shows 2 ways of referencing an extension and gets the extension in the specified message. The response is the same regardless of the way used to reference the extension.
+Im ersten Beispiel 2 Möglichkeiten verweisen auf eine Erweiterung und ruft die Erweiterung in der angegebenen Nachricht ab. Die Antwort ist gleich, unabhängig von der Möglichkeit verwendet, um die Erweiterung verweisen.
 
-First, by its name: 
+Erstens anhand des Namens: 
 
 <!-- {
   "blockType": "request",
@@ -120,15 +122,15 @@ First, by its name:
 GET https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions('Com.Contoso.Referral')
 ```
 
-Second, by its ID (fully qualified name):
+Zweitens durch seine ID (vollqualifizierter Name):
 
 <!-- { "blockType": "ignored" } -->
 ```http
 GET https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')
 ```
 
-#### <a name="response-1"></a>Response 1
-Here is the response for the first example.
+#### <a name="response-1"></a>Antwort 1
+Nachfolgend finden Sie die Antwort für das erste Beispiel.
 <!-- {
   "blockType": "response",
   "truncated": false,
@@ -154,9 +156,9 @@ Content-type: application/json
 ****
 
 
-#### <a name="request-2"></a>Request 2
+#### <a name="request-2"></a>Anforderung 2
 
-The second example references an extension by its name and gets the extension in the specified group event.
+Im zweite Beispiel verweist auf eine Erweiterung anhand des Namens und ruft die Erweiterung im Ereignis angegebenen Gruppe ab.
 
 <!-- {
   "blockType": "request",
@@ -166,9 +168,9 @@ The second example references an extension by its name and gets the extension in
 GET https://graph.microsoft.com/beta/groups('f5480dfd-7d77-4d0b-ba2e-3391953cc74a')/events('AAMkADVl17IsAAA=')/extensions('Com.Contoso.Deal') 
 ```
 
-#### <a name="response-2"></a>Response 2
+#### <a name="response-2"></a>Antwort 2
 
-Here is the response from the second example.
+Nachfolgend finden Sie die Antwort aus dem zweiten Beispiel.
 
 <!-- {
   "blockType": "response",
@@ -192,9 +194,9 @@ Content-type: application/json
 
 ****
 
-#### <a name="request-3"></a>Request 3
+#### <a name="request-3"></a>Anforderung 3
 
-The third example gets and expands the specified message by including the extension returned from a filter. The filter returns the extension that has its **id** matching a fully qualified name.
+Im dritte Beispiel dient zum Abrufen und erweitert die angegebene Nachricht durch das Einbeziehen von der Erweiterungs von einem Filter zurückgegeben. Der Filter gibt die Erweiterung mit dessen **Id** übereinstimmenden einen voll gekennzeichneten Namen zurück.
 
 <!-- {
   "blockType": "request",
@@ -205,9 +207,9 @@ GET https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi
 ```
 
 
-#### <a name="response-3"></a>Response 3
+#### <a name="response-3"></a>Antwort 3
 
-And here is the response from the third example. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Und Hier wird die Antwort im dritten Beispiel. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 
 <!-- {
   "blockType": "response",
@@ -289,9 +291,9 @@ Content-type: application/json
 
 ****
 
-#### <a name="request-4"></a>Request 4
+#### <a name="request-4"></a>Anfordern von 4
 
-The fourth example references an extension by its fully qualified name and gets the extension in the specified group post.
+Im vierte Beispiel verweist auf eine Erweiterung durch den vollqualifizierten Namen und ruft die Erweiterung im Beitrag angegebene Gruppe ab.
 
 <!-- {
   "blockType": "request",
@@ -301,9 +303,9 @@ The fourth example references an extension by its fully qualified name and gets 
 GET https://graph.microsoft.com/beta/groups('37df2ff0-0de0-4c33-8aee-75289364aef6')/threads('AAQkADJizZJpEWwqDHsEpV_KA==')/posts('AAMkADJiUg96QZUkA-ICwMubAADDEd7UAAA=')/extensions('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Estimate') 
 ```
 
-#### <a name="response-4"></a>Response 4
+#### <a name="response-4"></a>Antwort 4
 
-Here is the response from the fourth example. 
+Nachfolgend finden Sie die Antwort aus dem vierten Beispiel. 
 
 <!-- {
   "blockType": "response",
@@ -331,9 +333,9 @@ Content-Type: application/json
 ```
 
 
-#### <a name="request-5"></a>Request 5
+#### <a name="request-5"></a>Anforderung 5
 
-The fifth example looks at all messages in the signed-in user's mailbox to find those that contain an extension matching a filter, and expands them by including the extension. The filter returns extensions that has the **id** property matching the extension name `Com.Contoso.Referral`.
+Alle Nachrichten im Postfach des angemeldeten Benutzers Einträge gesucht, die enthalten eine Erweiterung einem Filter und erweitern sie durch die Erweiterung einschließlich sieht das fünfte Beispiel. Der Filter gibt Erweiterungen, die die **Id** -Eigenschaft entsprechen den Erweiterungsnamen `Com.Contoso.Referral`.
 
 <!-- {
   "blockType": "request",
@@ -344,11 +346,11 @@ GET https://graph.microsoft.com/beta/me/messages?$filter=Extensions/any(f:f/id%2
 ```
 
 
-####<a name="response-5"></a>Response 5
+####<a name="response-5"></a>Antwort 5
 
-In this response for the fifth example, there is only one message in the user's mailbox that has an extension with its **id** equal to `Com.Contoso.Referral`.
+In dieser Antwort für das fünfte Beispiel, besteht nur eine Nachricht in das Postfach des Benutzers mit der Erweiterung mit der **Id** gleich `Com.Contoso.Referral`.
 
-Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 
 <!-- {
   "blockType": "response",

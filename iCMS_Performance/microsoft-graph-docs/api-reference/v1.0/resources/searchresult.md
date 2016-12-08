@@ -1,6 +1,6 @@
-# <a name="searchresult-resource-type"></a>searchResult resource type
+# <a name="searchresult-resource-type"></a>SearchResult Ressourcentyp
 
-The **searchResult** resource indicates than an item is the response to a search.
+Die Ressource **SearchResult** gibt an, als ein Element, das die Antwort auf eine Suche ist.
 
 
 
@@ -8,11 +8,11 @@ The **searchResult** resource indicates than an item is the response to a search
 
 | Eigenschaft            | Typ   | Beschreibung                                                                                                                                                                         |
 |:--------------------|:-------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| onClickTelemetryUrl | String | A callback URL that is used to record telemetry information. The application should issue a GET on this URL if the user interacts with this item to improve the quality of results. |
+| onClickTelemetryUrl | String | Eine Callback-URL, die zum Aufzeichnen von Telemetriedaten verwendet wird. Die Anwendung sollte einen GET auf diese URL senden, falls dieses Element, um die Qualität der Ergebnisse zu verbessern, dem der Benutzer interagiert. |
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

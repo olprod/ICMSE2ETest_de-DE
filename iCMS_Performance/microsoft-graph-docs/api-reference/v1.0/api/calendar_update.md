@@ -1,17 +1,17 @@
-# <a name="update-calendar"></a>Update calendar
+# <a name="update-calendar"></a>Update-Kalender
 
-Update the properties of calendar object.
+Aktualisieren Sie die Eigenschaften des Calendar-Objekt.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Calendars.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
-A user's or group's default [calendar](../resources/calendar.md).
+Eines Benutzers oder einer Gruppe als [Kalender](../resources/calendar.md).
 ```http
 PATCH /me/calendar
 PATCH /users/<id | userPrincipalName>/calendar
 PATCH /groups/<id>/calendar
 ```
-A user's [calendar](../resources/calendar.md) in the default [calendarGroup](../resources/calendargroup.md).
+Ein Benutzer [Kalender](../resources/calendar.md) in die Standard- [CalendarGroup](../resources/calendargroup.md).
 ```http
 PATCH /me/calendars/<id>
 PATCH /users/<id | userPrincipalName>/calendars/<id>
@@ -19,7 +19,7 @@ PATCH /users/<id | userPrincipalName>/calendars/<id>
 PATCH /me/calendarGroup/calendars/<id>
 PATCH /users/<id | userPrincipalName>/calendarGroup/calendars/<id>
 ```
-A user's [calendar](../resources/calendar.md) in a specific [calendarGroup](../resources/calendargroup.md).
+Ein Benutzer [Kalender](../resources/calendar.md) in einer bestimmten [CalendarGroup](../resources/calendargroup.md).
 ```http
 PATCH /me/calendarGroups/<id>/calendars/<id>
 PATCH /users/<id | userPrincipalName>/calendarGroups/<id>/calendars/<id>
@@ -27,22 +27,22 @@ PATCH /users/<id | userPrincipalName>/calendarGroups/<id>/calendars/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
-| contentType  | application/json. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
+| Inhaltstyp  | Application/Json. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung die Werte für die entsprechenden Felder, die aktualisiert werden soll. Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind werden die vorherigen Werte verwalten oder neu berechnet basierend auf Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandenen Werte enthalten, die nicht geändert haben.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|color|String|Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: LightBlue=0, LightGreen=1, LightOrange=2, LightGray=3, LightYellow=4, LightTeal=5, LightPink=6, LightBrown=7, LightRed=8, MaxColor=9, Auto=-1|
-|name|String|Der Kalendername ist null.|
+|color|String|Gibt die Farbdesigns, um den Kalender von anderen Kalender in einer Benutzeroberfläche zu unterscheiden. Die Eigenschaftswerte werden: Hellblau = 0, LightGreen = 1, LightOrange = 2, LightGray = 3, LightYellow = 4, LightTeal = 5, LightPink = 6, LightBrown = 7 LightRed = 8, MaxColor = 9, Auto =-1|
+|name|String|Der Kalendername.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and updated [calendar](../resources/calendar.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und aktualisierte [Kalender](../resources/calendar.md) -Objekt aus der Antwort.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_calendar"
@@ -59,7 +59,7 @@ Content-length: 48
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

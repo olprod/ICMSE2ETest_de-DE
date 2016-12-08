@@ -1,14 +1,14 @@
-# <a name="get-drive"></a>Get drive
+# <a name="get-drive"></a>Abrufen von Laufwerk
 
-Retrieve the properties and relationships of the drive object. A drive represents a user's OneDrive or OneDrive for Business or a SharePoint document library associated with an Office 365 group.
+Rufen Sie die Eigenschaften und Beziehungen des Drive-Objekts ab. Ein Laufwerk darstellt des Benutzers OneDrive oder OneDrive for Business oder eine SharePoint-Dokumentbibliothek ein Office 365-Gruppe zugeordnet.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.Read
   * Files.ReadWrite
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/drive
@@ -17,27 +17,27 @@ GET /users/<id | userPrincipalName>/drive
 GET /groups/<id>/drive
 ```
 
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 
 ## <a name="request-headers"></a>Anforderungsheader
 
 | Name          | Typ   | Beschreibung                 |
 |:--------------|:-------|:----------------------------|
-| Autorisierung | string | Bearer \<token\>. Required. |
+| Autorisierung | string | Bearer \<token\>. Erforderlich. |
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [drive](../resources/drive.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Code und [Laufwerk](../resources/drive.md) Antwortobjekt im Antworttext.
 
 ## <a name="example"></a>Beispiel
 
 ##### <a name="request"></a>Anforderung
 
-Here is an example of the request to get the sign-in user's OneDrive or OneDrive for Business.
+Hier ist ein Beispiel für die Anforderung an die Anmeldung des Benutzers OneDrive oder OneDrive für Unternehmen zu erhalten.
 
 <!-- {
   "blockType": "request",
@@ -47,7 +47,7 @@ Here is an example of the request to get the sign-in user's OneDrive or OneDrive
 GET https://graph.microsoft.com/v1.0/me/drive
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true,

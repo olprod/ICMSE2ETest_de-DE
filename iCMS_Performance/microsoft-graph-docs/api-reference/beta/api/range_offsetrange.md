@@ -1,9 +1,9 @@
-# <a name="range-offsetrange"></a>Range: OffsetRange
+# <a name="range-offsetrange"></a>Bereich: OffsetRange
 
-Ruft ein Objekt ab, das einen Bereich darstellt, der aus dem angegebenen Bereich versetzt ist. Die Dimension des zurückgegebenen Bereichs entspricht diesem Bereich. Wenn der resultierende Bereich außerhalb des Arbeitsblatt-Rasters erzwungen wird, wird eine Ausnahme ausgelöst.
+Ruft ein Objekt, das einen Bereich darstellt, der gegenüber dem angegebenen Bereich versetzt ist. Der zurückgegebene Bereich wird dieses Bereichs überein. Wenn der resultierende Bereich außerhalb des Arbeitsblatts Raster erzwungen wird, wird eine Ausnahme ausgelöst.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /workbook/names(<name>)/range/OffsetRange
@@ -14,24 +14,24 @@ POST /workbook/tables(<id|name>)/columns(<id|name>)/range/OffsetRange
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|rowOffset|number|Die Anzahl an Zeilen (positiv, negativ oder 0), um die der Bereich versetzt werden muss. Bei positiven Werten wird der Bereich nach unten versetzt. Bei negativen Werten wird der Bereich nach oben versetzt.|
-|columnOffset|number|Die Anzahl an Spalten (positiv, negativ oder 0), um die der Bereich versetzt werden muss. Bei positiven Werten wird der Bereich nach unten versetzt. Bei negativen Werten wird der Bereich nach oben versetzt.|
+|rowOffset|number|Die Anzahl der Zeilen (positiv, negativ oder 0), wird der Bereich versetzt werden soll. Positive Werte Versatz nach unten, und negative Werte nach oben versetzt.|
+|columnOffset|number|Die Anzahl der Spalten (positiv, negativ oder 0), wird der Bereich versetzt werden soll. Positive Werte werden rechts versetzt, und negative Werte eine Verschiebung nach links.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and [Range](../resources/range.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `200, OK` Antwortcode und [Range](../resources/range.md) -Objekt aus der Antwort.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "range_offsetrange"
@@ -50,7 +50,7 @@ Content-length: 49
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

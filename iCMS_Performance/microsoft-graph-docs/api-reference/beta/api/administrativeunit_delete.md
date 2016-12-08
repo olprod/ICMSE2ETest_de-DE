@@ -1,10 +1,10 @@
-# <a name="delete-administrativeunit"></a>Delete administrativeUnit
-Delete an [administrativeUnit](../resources/administrativeunit.md).
+# <a name="delete-administrativeunit"></a>AdministrativeUnit löschen
+Löschen einer [AdministrativeUnit](../resources/administrativeunit.md).
 
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: *Directory.AccessAsUser.All*
+Die folgenden **Bereiche** sind erforderlich, um diese API ausführen: *Directory.AccessAsUser.All*
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /administrativeUnits/<id>
@@ -13,18 +13,18 @@ DELETE /administrativeUnits/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <token>. Required.|
+| Autorisierung  | Bearer <token>. Erforderlich.|
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `204, No Content` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `204, No Content` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "delete_administrativeunit"
@@ -33,7 +33,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 DELETE https://graph.microsoft.com/beta/administrativeUnits/<id>
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true

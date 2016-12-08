@@ -1,29 +1,29 @@
-# <a name="directoryroletemplate-resource-type"></a>directoryRoleTemplate resource type
+# <a name="directoryroletemplate-resource-type"></a>Ressourcentyp directoryRoleTemplate
 
-Represents a directory role template. A directory role template specifies the property values of a directory role ([directoryRole](directoryrole.md)). There is an associated directory role template object for each of the directory roles that may be activated in a tenant. To read a directory role or update its members, it must first be activated in the tenant. Only the Company Administrators directory role is activated by default. To activate other available directory roles you send a POST request to the `/directoryRoles` endpoint with the ID of the directory role template on which the directory role is based specified in the **roleTemplateId** parameter of the request. Upon successful completion of this request, you can then start to read and assign members to the directory role. **Note**: A directory role template is exposed for the Users directory role. The Users directory role is implicit and is not visible to directory clients. Every User in the tenant is assigned to this role by the infrastructure. The role is already activated. Do not use this template.
+Stellt eine Verzeichnis Rollenvorlage dar. Vorlage Rolle Directory gibt die Eigenschaftswerte einer Rolle Verzeichnis ([DirectoryRole](directoryrole.md)). Es ist eine zugehörige Verzeichnis Rolle Template-Objekt für jede der Directory Rollen, die in einem Mandanten aktiviert werden können. Um eine Rolle Directory lesen oder deren Member aktualisieren möchten, müssen sie zuerst im Mandanten aktiviert werden. Nur die Administratoren im Unternehmen Directory Rolle ist standardmäßig aktiviert. Andere Rollen verfügbaren Verzeichnis zu aktivieren, die Sie Senden einer POST-Anforderung an den `/directoryRoles` Endpunkt mit der ID des Directory Rolle die Rolle Directory auf dem basiert angegebenen Vorlage im **RoleTemplateId** -Parameter der Anforderung. Nach dem erfolgreichen Abschluss dieser Anforderung können Sie dann zum Lesen und Zuweisen von Mitgliedern zur Rolle Directory starten. **Hinweis**: Directory Rollenvorlage ist für die Rolle der Benutzer Directory verfügbar gemacht werden. Die Rolle der Benutzer Verzeichnis ist implizit und ist für Directory-Clients nicht sichtbar. Jeder Benutzer in den Mandanten wird von der Infrastruktur dieser Rolle zugewiesen. Die Rolle ist bereits aktiviert. Verwenden Sie diese Vorlage nicht.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get directoryRoleTemplate](../api/directoryroletemplate_get.md) | [directoryRoleTemplate](directoryroletemplate.md) |Read properties and relationships of directoryRoleTemplate object.|
+|[Abrufen von directoryRoleTemplate](../api/directoryroletemplate_get.md) | [directoryRoleTemplate](directoryroletemplate.md) |Lesen Sie Eigenschaften und Beziehungen des DirectoryRoleTemplate-Objekts.|
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|description|String|The description to set for the directory role. Read-only.|
-|DisplayName|String|The display name to set for the directory role. Read-only. |
-|id|String|The unique identifier for the template. Inherited from [directoryObject](directoryobject.md). You specify the **id** of the directory role template for the **roleTemplateId** property in the POST request activate a [directoryRole](directoryrole.md) in a tenant. Key, Not nullable. Read-only.|
+|description|String|Die Beschreibung für die Rolle Directory festgelegt. Schreibgeschützt.|
+|displayName|String|Der Anzeigename für die Rolle Directory festgelegt. Schreibgeschützt. |
+|id|String|Der eindeutige Bezeichner für die Vorlage. Geerbt von [DirectoryObject](directoryobject.md). Sie können für die **RoleTemplateId** -Eigenschaft in der POST-Anforderung Aktivieren einer [DirectoryRole](directoryrole.md) in einem Mandanten die **Id** der Vorlage Rolle Directory festlegen. Wichtige, nicht NULL-Werte zulässt. Schreibgeschützt.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

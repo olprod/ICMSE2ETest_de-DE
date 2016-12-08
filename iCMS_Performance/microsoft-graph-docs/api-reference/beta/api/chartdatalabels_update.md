@@ -1,38 +1,38 @@
-# <a name="update-chartdatalabels"></a>Update chartdatalabels
+# <a name="update-chartdatalabels"></a>Chartdatalabels aktualisieren
 
-Update the properties of chartdatalabels object.
+Aktualisieren Sie die Eigenschaften des Chartdatalabels-Objekts.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /workbook/worksheets(<id|name>)/charts(<name>)/datalabels
 ```
-## <a name="optional-request-headers"></a>Optional request headers
+## <a name="optional-request-headers"></a>Optionale Anforderungsheader
 | Name       | Beschreibung|
 |:-----------|:-----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung die Werte für die entsprechenden Felder, die aktualisiert werden soll. Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind werden die vorherigen Werte verwalten oder neu berechnet basierend auf Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandenen Werte enthalten, die nicht geändert haben.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|position|string|DataLabelPosition-Wert, der die Position der Datenbeschriftung darstellt. Die folgenden Werte sind möglich: Keine, Mitte, InsideEnd, InsideBase, OutsideEnd, links, rechts, oben, unten, BestFit, Callout. Schreibzugriff.|
-|Separator|string|Zeichenfolge, die das Trennzeichen für die Datenbeschriftungen in einem Diagramm darstellt. Schreibzugriff.|
-|showBubbleSize|boolean|Boolescher Wert, der angibt, ob die Größe der Datenbeschriftungs-Sprechblase angezeigt wird. Schreibzugriff.|
-|showCategoryName|boolean|Boolescher Wert, der angibt, ob der Kategoriename der Datenbeschriftung angezeigt wird. Schreibzugriff.|
-|showLegendKey|boolean|Boolescher Wert, der angibt, ob das Legendensymbol der Datenbeschriftung angezeigt wird. Schreibzugriff.|
-|showPercentage|boolean|Boolescher Wert, der angibt, ob der Prozentsatz der Datenbeschriftung angezeigt wird. Schreibzugriff.|
-|showSeriesName|boolean|Boolescher Wert, der angibt, ob der Name der Datenbeschriftungsreihe angezeigt wird. Schreibzugriff.|
-|showValue|boolean|Boolescher Wert, der angibt, ob der Datenbeschriftungswert angezeigt wird. Schreibzugriff.|
+|position|string|DataLabelPosition-Wert, der die Position der Datenbeschriftung darstellt. Possible values are: `None`, `Center`, `InsideEnd`, `InsideBase`, `OutsideEnd`, `Left`, `Right`, `Top`, `Bottom`, `BestFit`, `Callout`.|
+|Separator|string|Eine Zeichenfolge, die das Trennzeichen für die datenbeschriftungen in einem Diagramm darstellt.|
+|showBubbleSize|boolean|Boolean-Wert, der darstellt, wenn die Daten Blasengröße bezeichnen ist sichtbar oder nicht.|
+|showCategoryName|boolean|Boolean-Wert, darstellt, wenn die Daten Kategoriename bezeichnen ist sichtbar oder nicht.|
+|showLegendKey|boolean|Boolean-Wert, wenn die Daten, Legendensymbol bezeichnen darstellt ist sichtbar oder nicht.|
+|showPercentage|boolean|Boolean-Wert zurück, wenn die Daten Prozentsatz bezeichnen darstellt ist sichtbar oder nicht.|
+|showSeriesName|boolean|Boolean-Wert zurück, wenn die Daten Datenreihennamen bezeichnen darstellt ist sichtbar oder nicht.|
+|showValue|boolean|Boolean-Wert zurück, wenn die Daten Wert beschriften darstellt ist sichtbar oder nicht.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and updated [ChartDataLabels](../resources/chartdatalabels.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und aktualisierten [ChartDataLabels](../resources/chartdatalabels.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_chartdatalabels"
@@ -51,7 +51,7 @@ Content-length: 134
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

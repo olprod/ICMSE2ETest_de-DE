@@ -1,9 +1,9 @@
-# <a name="tablesort-clear"></a>TableSort: clear
+# <a name="tablesort-clear"></a>TableSort: Deaktivieren
 
-Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.
+Löscht die Sortierung, die derzeit in der Tabelle ist. Während dies nicht geändert, Sortierung der Tabelle, den Status der Kopfzeile Schaltflächen gelöscht.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /workbook/tables(<id|name>)/sort/clear
@@ -13,18 +13,18 @@ POST /workbook/worksheets(<id|name>)/tables(<id|name>)/sort/clear
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
+## <a name="request-body"></a>Anforderungstext
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "tablesort_clear"
@@ -34,7 +34,7 @@ POST https://graph.microsoft.com/beta/me/drive/items/<id>/workbook/tables(<id|na
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 <!-- {
   "blockType": "response",
   "truncated": true,

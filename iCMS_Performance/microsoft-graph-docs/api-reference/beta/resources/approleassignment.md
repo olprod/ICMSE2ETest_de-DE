@@ -1,11 +1,11 @@
-# <a name="approleassignment-resource-type"></a>appRoleAssignment resource type
+# <a name="approleassignment-resource-type"></a>Ressourcentyp appRoleAssignment
 
-Used to record when a user or group is assigned to an application. In this case, the role assignment will result in an application tile showing up on the user's app access panel. This entity may also be used to grant another application (modeled as a service principal) access to a resource application in a particular role. You can create, read, update, and delete role assignments.
+Verwendet zum Aufzeichnen, wenn ein Benutzer oder eine Gruppe zu einer Anwendung zugewiesen wird. In diesem Fall führt die rollenzuweisung Kachel Anwendung angezeigt Einrichten des Benutzers app Zugriff im Bereich. Dieser Entität kann auch zum Erteilen von einer anderen (als Dienst principal modelliert) Anwendungszugriff auf eine Ressource-Anwendung in einer bestimmten Rolle verwendet werden. Sie können erstellen, lesen, aktualisieren und Löschen von rollenzuweisungen.
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -30,13 +30,13 @@ Here is a JSON representation of the resource
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|creationTimestamp|DateTimeOffset|The time when the grant was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|id|Guid|The role id that was assigned to the principal.  This role must be declared by the target resource application **resourceId** in its **appRoles** property. Where the resource does not declare any permissions, a default id (zero GUID) must be specified. Key. Not nullable. |
-|principalDisplayName|String|The display name of the principal that was granted the access.|
-|principalId|Guid|The unique identifier (**id**) for the principal being granted the access. Required on create.            |
-|principalType|String|The type of principal.  This can either be "User", "Group" or "ServicePrincipal".|
-|resourceDisplayName|String|The display name of the resource to which the assignment was made.|
-|resourceId|Guid|The unique identifier (**id**) for the target resource (service principal) for which the assignment was made.|
+|creationTimestamp|DateTimeOffset|Die Uhrzeit der Erstellung der erteilen. Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Beispielsweise würde Uhr UTC auf 1 Jan 2014 sieht folgendermaßen aus:`'2014-01-01T00:00:00Z'`|
+|id|Guid|Die Rolle-Id, die den Prinzipal zugewiesen wurde.  Diese Rolle muss mit der Ziel-Ressource Anwendung **ResourceId** in seiner **AppRoles** -Eigenschaft deklariert werden. In denen die Ressource keine Berechtigungen nicht deklarieren, muss eine Standard-Id (0 (null) GUID) angegeben werden. -Taste. Nicht NULL-Werte zulässt. |
+|principalDisplayName|String|Der Anzeigename des Prinzipals, denen den Zugriff gewährt wurde.|
+|principalId|Guid|Der eindeutige Bezeichner (**Id**) für den Prinzipal, den Zugriff gewährt wird. Erforderliche auf erstellen.            |
+|principalType|String|Der Typ des Prinzipals.  Dies kann entweder "User", "Group" oder "ServicePrincipal" sein.|
+|resourceDisplayName|String|Der Anzeigename der Ressource mit der die Zuordnung hergestellt wurde.|
+|resourceId|Guid|Der eindeutige Bezeichner (**Id**) für die Zielressource (Service Principal) für die die Zuordnung erstellt wurde.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
@@ -46,9 +46,9 @@ Keine
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get appRoleAssignment](../api/approleassignment_get.md) | [appRoleAssignment](approleassignment.md) |Read properties and relationships of appRoleAssignment object.|
-|[Update](../api/approleassignment_update.md) | [appRoleAssignment](approleassignment.md)   |Update appRoleAssignment object. |
-|[delete()](../api/approleassignment_delete.md) | Keine |Delete appRoleAssignment object. |
+|[Abrufen von appRoleAssignment](../api/approleassignment_get.md) | [appRoleAssignment](approleassignment.md) |Lesen Sie Eigenschaften und Beziehungen des AppRoleAssignment-Objekts.|
+|[Update](../api/approleassignment_update.md) | [appRoleAssignment](approleassignment.md)   |Aktualisieren Sie AppRoleAssignment-Objekts. |
+|[Löschen](../api/approleassignment_delete.md) | Keine |Löschen Sie AppRoleAssignment Objekt. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

@@ -1,17 +1,17 @@
-# <a name="identity-resource-type"></a>identity resource type
+# <a name="identity-resource-type"></a>Identität Ressourcentyp
 
-The **identity** resource represents an identity of an _actor_. For example, an actor can be a user, device, or application.
+Die **Identität** Ressource stellt eine Identität eines _Akteur_dar. Ein Akteur kann beispielsweise ein Benutzer, eine Gerät oder eine Anwendung sein.
 
 ## <a name="properties"></a>Eigenschaften
 
 | Eigenschaft    | Typ   | Beschreibung                                                                                                                                                                                                                                                                                                           |
 |:------------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| DisplayName | String | The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using [find changes](../api/item_delta.md) |
-| id          | String | Unique identifier for the identity.                                                                                                                                                                                                                                                                                   |
+| displayName | String | Die Identität der Anzeigename. Beachten Sie, dass dies möglicherweise nicht immer verfügbar oder auf dem aktuellen Stand. Beispielsweise wenn ein Benutzer auf ihren Anzeigenamen ändert, die API kann in einer zukünftigen Antwort den neuen Wert anzeigen, jedoch der Elemente des Benutzers werden nicht angezeigt, [Suchen Sie nach Änderungen](../api/item_delta.md) Verwendung geändert hat |
+| id          | String | Eindeutiger Bezeichner für die Identität.                                                                                                                                                                                                                                                                                   |
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

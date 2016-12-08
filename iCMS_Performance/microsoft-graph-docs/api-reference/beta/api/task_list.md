@@ -1,42 +1,42 @@
-# <a name="list-tasks"></a>List tasks
+# <a name="list-tasks"></a>Listenaufgaben
 
-Retrieve a list of task* objects.
+Eine Liste der Aufgabe *-Objekte abzurufen.
 
-*Note that filter is required for this method.
+* Beachten Sie diesen Filter für diese Methode erforderlich ist.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
  
-Group.Read.All, Group.ReadWrite.All
+Group.Read.All Group.ReadWrite.All
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /tasks
 ```
-## <a name="required-query-parameters"></a>Required query parameters
+## <a name="required-query-parameters"></a>Erforderliche Abfrageparameter
 |Name|Wert|Beschreibung|
 |:---------------|:--------|:-------|
-|Filter|Zeichenfolge| Only filtering based on the `createdBy` property is supported. |
+|$filter|Zeichenfolge| Nur Filtern basierend auf den `createdBy` Eigenschaft unterstützt wird. |
 
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Value should be set to "Bearer (access-token)" |
+| Autorisierung  | string  | Wert sollte auf "Bearer (Zugriffstoken)" festgelegt werden |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and collection of [task](../resources/task.md) objects in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und Auflistung von [Task](../resources/task.md) -Objekten im Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- { "blockType": "ignored" } -->
 ```http
 GET https://graph.microsoft.com/beta/tasks?$filter=createdBy eq 'me'
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 <!-- { "blockType": "ignored" } -->
 ```http
 HTTP/1.1 200 OK

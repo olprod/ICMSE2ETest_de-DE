@@ -1,19 +1,19 @@
-# <a name="settingtemplatevalue-resource-type"></a>settingTemplateValue resource type
+# <a name="settingtemplatevalue-resource-type"></a>Ressourcentyp settingTemplateValue
 
-Represents an individual template setting definition, including the default value for the setting, if the setting is not instantiated.
+Stellt eine einzelne Einstellung Vorlagendefinition, einschließlich den Standardwert für die Einstellung, wenn die Einstellung nicht instanziiert wird.
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|defaultvalue|string|Default value for the setting. Read-only.|
-|description|string|Description of the setting. Read-only.|
-|name|string|Name of the setting. Read-only.|
-|Typ|string|Type of the setting. Read-only.|
+|defaultValue|string|Der Standardwert für die Einstellung. Schreibgeschützt.|
+|description|string|Beschreibung der Einstellung. Schreibgeschützt.|
+|name|string|Name der Einstellung. Schreibgeschützt.|
+|Typ|string|Typ der Einstellung. Schreibgeschützt.|
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

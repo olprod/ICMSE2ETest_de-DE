@@ -1,12 +1,12 @@
-# <a name="useridcollection-resource-type"></a>userIdCollection resource type
+# <a name="useridcollection-resource-type"></a>Ressourcentyp userIdCollection
 
-The UserIdCollection* resource represents the list of users ids that a [plan](plan.md) is shared with. If you are leveraging Office 365 Groups, use the Groups API to manage group membership to share the [group's](group.md) plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.
+Die Ressource UserIdCollection * stellt die Liste der Benutzer-Ids, denen für einen [Plan](plan.md) freigegeben ist. Wenn Sie Office 365 Gruppen nutzen, verwenden Sie die API-Gruppen zum Verwalten der Gruppenmitgliedschaft zum Planen [der Gruppe](group.md) freigeben. Sie können auch vorhandene Mitglieder der Gruppe zu dieser Auflistung hinzufügen, obwohl es nicht erforderlich, damit sie Zugriff auf den Besitz der Gruppe Plan ist.
 
-*Note that this is an Open Type.
+* Beachten Sie, dass dies vom Typ geöffnet ist.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -21,7 +21,7 @@ Here is a JSON representation of the resource
 }
 ```
 
-// Example
+Beispiel
 ```json
 {
   "400723e1-102b-43aa-aba9-f35524827084": true, // property name is user id

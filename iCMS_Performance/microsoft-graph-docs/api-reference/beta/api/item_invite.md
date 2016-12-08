@@ -1,13 +1,13 @@
-# <a name="send-a-sharing-invitation"></a>Stellt eine Freigabeeinladung dar.
+# <a name="send-a-sharing-invitation"></a>Senden Sie eine Einladung zur Freigabe
 
-Sends a sharing invitation to an existing item. A sharing invitation creates a unique sharing link and sends an email to the recipient of the invitation that includes the sharing link.
+Sendet eine Einladung zur Freigabe an ein vorhandenes Element. Eine Einladung zur Freigabe erstellt einen eindeutigen Freigabe Link und sendet eine e-Mail an den Empfänger der Einladung, die den Freigabe Link enthält.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.ReadWrite
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /drive/items/<item-id>/invite
@@ -18,28 +18,28 @@ POST /groups/<group-id>/drive/items/<item-id>/invite
 
 | Name          | Typ   | Beschreibung               |
 |:--------------|:-------|:--------------------------|
-| Autorisierung | string | Bearer <token>. Required. |
+| Autorisierung | string | Bearer <token>. Erforderlich. |
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter      | Typ                                                        | Beschreibung                                                                                                |
 |:---------------|:------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-| Empfänger     | [driveRecipient](../resources/driverecipient.md) collection | A list of recipient email addresses for the sharing invitation.                                            |
-| Message        | String                                                      | A plain text formatted message that is included in the sharing invitation. Maximum length 2000 characters. |
-| requireSignIn  | Boolean                                                     | Specifies where the recipient of the invitation is required to sign-in to view the shared item.            |
-| sendInvitation | Boolean                                                     | Specifies if an email or post is generated (false) or if the permission is just created (true).            |
-| Rollen          | String collection                                           | Specify the roles that are be granted to the recipients of the sharing invitation.                         |
+| Empfänger     | [DriveRecipient](../resources/driverecipient.md) -Auflistung | Eine Liste der Empfänger der e-Mail-Adressen für die Einladung zur Freigabe.                                            |
+| Nachricht        | String                                                      | Eine nur-Text-formatierten Nachricht, die in der Einladung zur Freigabe enthalten ist. Höchstens 2000 Zeichen. |
+| requireSignIn  | Boolean                                                     | Gibt an, in dem der Empfänger der Einladung zur Anmeldung an das freigegebene Element anzeigen erforderlich ist.            |
+| sendInvitation | Boolean                                                     | Gibt an, ob eine e-Mail oder Post generierten (False) oder wenn die Berechtigung nur (true) erstellt wird.            |
+| Rollen          | Zeichenfolgenauflistung                                           | Geben Sie die Rollen, die an den Empfänger über die Einladung zur Freigabe erteilt werden.                         |
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200 OK` response code and [permission](../resources/permission.md) collection object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `200 OK` Antwort [Berechtigung](../resources/permission.md) und Code-Auflistungsobjekt in der Antworttext.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "item_invite"
@@ -58,7 +58,7 @@ Content-type: application/json
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true,

@@ -1,10 +1,10 @@
-# <a name="event-snoozereminder"></a>event: snoozeReminder
+# <a name="event-snoozereminder"></a>Ereignis: SnoozeReminder
 
-Postpone a reminder until a new time.
+Verschieben Sie eine Erinnerung bis zu einem neuen Zeitpunkt.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Calendars.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/events/<id>/snoozeReminder
@@ -27,23 +27,23 @@ POST /users/<id | userPrincipalName>/calendargroups/<id>/calendars/<id>/events/<
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
-| contentType | string  | Nature of the data in the body of an entity. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
+| Inhaltstyp | string  | Die Art der Daten im Textkörper einer Entität. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|newReminderTime|DateTimeTimeZone|The new date and time to trigger the reminder.|
+|newReminderTime|DateTimeTimeZone|Neues Datum und Uhrzeit die Erinnerung ausgelöst.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "event_snoozereminder"
@@ -62,7 +62,7 @@ Content-length: 97
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true

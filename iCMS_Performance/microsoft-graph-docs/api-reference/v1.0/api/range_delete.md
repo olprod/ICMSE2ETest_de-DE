@@ -1,9 +1,9 @@
-# <a name="range-delete"></a>Range: delete
+# <a name="range-delete"></a>Bereich: Löschen
 
-Löscht die einem Bereich zugeordneten Zellen.
+Löscht die Zellen im Bereich verknüpft ist.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /workbook/names(<name>)/range/delete
@@ -14,23 +14,23 @@ POST /workbook/tables(<id|name>)/columns(<id|name>)/range/delete
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Shift|string|Gibt an, wohin die Zellen verschoben werden.  Die folgenden Werte sind möglich: Nach unten, nach rechts|
+|Shift|string|Gibt an, wie die Zellen verschoben.  Mögliche Werte sind: `Up`, `Left`.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "range_delete"
@@ -46,7 +46,7 @@ Content-length: 28
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 <!-- {
   "blockType": "response",
   "truncated": true,

@@ -1,38 +1,38 @@
-# <a name="privilegedroleassignment-resource-type"></a>privilegedRoleAssignment resource type
+# <a name="privilegedroleassignment-resource-type"></a>Ressourcentyp privilegedRoleAssignment
 
-Represents a privileged role assignment for a particular user. 
+Stellt eine privilegierten rollenzuweisung für einen bestimmten Benutzer. 
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[List privilegedRoleAssignment collection](../api/privilegedroleassignment_list.md) | [privilegedRoleAssignment](privilegedroleassignment.md) collection|Get the collection of privilegedRoleAssignment objects.|
-|[Get privilegedRoleAssignment](../api/privilegedroleassignment_get.md) | [privilegedRoleAssignment](privilegedroleassignment.md) |Read properties and relationships of privilegedRoleAssignment object.|
-|[Create assignment](../api/privilegedroleassignment_post_privilegedroleassignments.md) |[privilegedRoleAssignment](privilegedroleassignment.md)| Create a new assignment by posting to the assignments collection.|
-|[delete()](../api/privilegedroleassignment_delete.md) | Keine |Delete privilegedRoleAssignment object. |
-|[makePermanent](../api/privilegedroleassignment_makepermanent.md)|[privilegedRoleAssignment](privilegedroleassignment.md)|Make the role assignment as permanent.|
-|[makeEligible](../api/privilegedroleassignment_makeeligible.md)|[privilegedRoleAssignment](privilegedroleassignment.md)|Make the role assignment as eligible.|
-|[my](../api/privilegedroleassignment_my.md)|[privilegedRoleAssignment](privilegedroleassignment.md) collection|Get the current user's privileged role assignments.|
+|[Liste PrivilegedRoleAssignment-Auflistung](../api/privilegedroleassignment_list.md) | [PrivilegedRoleAssignment](privilegedroleassignment.md) -Auflistung|Rufen Sie die Auflistung der PrivilegedRoleAssignment-Objekte.|
+|[Abrufen von privilegedRoleAssignment](../api/privilegedroleassignment_get.md) | [privilegedRoleAssignment](privilegedroleassignment.md) |Lesen Sie Eigenschaften und Beziehungen des PrivilegedRoleAssignment-Objekts.|
+|[Zuordnung erstellen](../api/privilegedroleassignment_post_privilegedroleassignments.md) |[privilegedRoleAssignment](privilegedroleassignment.md)| Erstellen Sie eine neue Zuordnung, indem Sie das Veröffentlichen in der Assignments-Auflistung.|
+|[Löschen](../api/privilegedroleassignment_delete.md) | Keine |Löschen Sie PrivilegedRoleAssignment Objekt. |
+|[makePermanent](../api/privilegedroleassignment_makepermanent.md)|[privilegedRoleAssignment](privilegedroleassignment.md)|Stellen Sie die rollenzuweisung als dauerhaft entfernt.|
+|[makeEligible](../api/privilegedroleassignment_makeeligible.md)|[privilegedRoleAssignment](privilegedroleassignment.md)|Stellen Sie die rollenzuweisung als geeignet.|
+|[Meine](../api/privilegedroleassignment_my.md)|[PrivilegedRoleAssignment](privilegedroleassignment.md) -Auflistung|Abrufen des aktuellen Benutzers privilegierten rollenzuweisungen.|
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|expirationDateTime|dateTimeOffset|The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.|
-|id|string| The unique identifier for the privileged role assignment. Read-only. It is in the format of 'userId_roleId', where userId is the GUID string for Azure AD user id, and roleId is the GUID string for Azure administrator role id.|
-|isElevated|boolean|**true** if the role assignment is activated. **false** if the role assignment is deactivated.|
-|resultMessage|string|Result message set by the service.|
-|roleId|string|Role identifier. In GUID string format.|
-|userID|string|User identifier. In GUID string format.|
+|expirationDateTime|dateTimeOffset|Die UTC-DateTime, die temporäre privilegierten rollenzuweisung abgelaufen sein wird. Für permanente rollenzuweisung ist der Wert null.|
+|id|string| Der eindeutige Bezeichner für die privilegierten rollenzuweisung. Schreibgeschützt. Es ist im Format "UserId_roleId", wobei Benutzer-ID ist die GUID-Zeichenfolge für Azure AD-Benutzer-Id und RoleId ist die GUID für Azure Administrator Role-Id-Zeichenfolge.|
+|isElevated|boolean|**true,** Wenn die rollenzuweisung aktiviert ist. **false,** Wenn die rollenzuweisung deaktiviert wird.|
+|resultMessage|string|Ergebnisnachricht vom Dienst festgelegt.|
+|roleId|string|Rollenbezeichner. Im Zeichenformat GUID.|
+|Benutzer-ID|string|Benutzer-ID. Im Zeichenformat GUID.|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|roleInfo|[privilegedRole](privilegedrole.md)| Read-only. Nullable. The associated role information.|
+|roleInfo|[privilegedRole](privilegedrole.md)| Schreibgeschützt. NULL-Werte zulässt. Die zugehörige Rolle-Informationen.|
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

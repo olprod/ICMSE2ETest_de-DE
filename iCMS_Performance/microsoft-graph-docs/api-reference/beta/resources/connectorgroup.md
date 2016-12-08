@@ -1,4 +1,4 @@
-# <a name="connectorgroup-resource-type"></a>connectorGroup resource type
+# <a name="connectorgroup-resource-type"></a>Ressourcentyp connectorGroup
 
 
 
@@ -7,31 +7,31 @@
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get connectorGroup](../api/connectorgroup_get.md) | [connectorGroup](connectorgroup.md) |Read properties and relationships of connectorGroup object.|
-|[Erstellen einer Dienstanwendung](../api/connectorgroup_post_applications.md) |[Application](application.md)| Associate an application with the connector group by posting to the applications collection.|
-|[List applications](../api/connectorgroup_list_applications.md) |[application](application.md) collection| Get the associated application object collection.|
-|[Create connector](../api/connectorgroup_post_members.md) |[Connector](connector.md)| Add a connector to the connector Group by posting to the members collection.|
-|[List members](../api/connectorgroup_list_members.md) |[connector](connector.md) collection| Get a connector object collection.|
-|[Update](../api/connectorgroup_update.md) | [connectorGroup](connectorgroup.md)    |Update connectorGroup object. |
-|[delete()](../api/connectorgroup_delete.md) | Keine |Delete connectorGroup object. All connectors must be remove before a conector group can be deleted. |
+|[Abrufen von connectorGroup](../api/connectorgroup_get.md) | [connectorGroup](connectorgroup.md) |Lesen Sie Eigenschaften und Beziehungen des ConnectorGroup-Objekts.|
+|[Anwendung erstellen](../api/connectorgroup_post_applications.md) |[Anwendung](application.md)| Ordnen Sie eine Anwendung mit der Connector-Gruppe durch das Veröffentlichen in der Auflistung Applications.|
+|[Liste applications](../api/connectorgroup_list_applications.md) |[Application](application.md) -Auflistung| Ruft die Auflistung der verbundenen Anwendung-Objekts.|
+|[Erstellen Sie connector](../api/connectorgroup_post_members.md) |[Connector](connector.md)| Hinzufügen einer Verbindung an den Konnektor Gruppe durch die Veröffentlichung auf die Members-Auflistung.|
+|[Mitglieder der Liste](../api/connectorgroup_list_members.md) |[Connector](connector.md) -Auflistung| Rufen Sie einen Connector-Auflistung-Objekts.|
+|[Update](../api/connectorgroup_update.md) | [connectorGroup](connectorgroup.md)    |Aktualisieren Sie ConnectorGroup-Objekts. |
+|[Löschen](../api/connectorgroup_delete.md) | Keine |Löschen Sie ConnectorGroup Objekt. Sämtliche Verbinder muss entfernen, bevor eine Gruppe Connector gelöscht werden kann. |
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|connectorGroupType|string| The type of connectors that will be used with the group. Possible values are: `applicationProxy`.|
-|id|String| The object id of the connectorGroup|
-|isDefault|Boolean| Indicates if the connectorGroup is the default connector group. Only a single connector Group can be the default connectorGroup and is set by the system.|
-|name|String| Der Name der physischen Datei, die mit dem aktuellen Fehler zusammenhängt|
+|connectorGroupType|string| Der Typ des Connectors, die mit der Gruppe verwendet werden. Mögliche Werte sind: `applicationProxy`.|
+|id|String| Die Objekt-Id der connectorGroup|
+|isDefault|Boolean| Gibt an, ob die ConnectorGroup der Standardgruppe Connector. Nur ein einzelner Connector Gruppe kann die Standard-ConnectorGroup und wird vom System festgelegt.|
+|name|String| Der Name der ConnectorGroup zugeordnet.|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Anwendungen|[application](application.md) collection| Read-only. Nullable.|
-|Member|[connector](connector.md) collection| Read-only. Nullable.|
+|Anwendungen|[Application](application.md) -Auflistung| Schreibgeschützt. NULL-Werte zulässt.|
+|Member|[Connector](connector.md) -Auflistung| Schreibgeschützt. NULL-Werte zulässt.|
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

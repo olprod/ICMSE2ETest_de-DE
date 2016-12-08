@@ -1,33 +1,33 @@
-# <a name="get-photo"></a>Foto abrufen
+# <a name="get-photo"></a>Abrufen von Fotos
 
-Retrieve the properties and relationships of photo object.
+Rufen Sie die Eigenschaften und Beziehungen Foto-Objekts ab.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.Read
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /users/<id | userPrincipalName>/photo
 GET /groups/<id>/photo
 GET /drive/root/createdByUser/photo
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [photo](../resources/photo.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortobjekt Code und [Fotos](../resources/photo.md) in den Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_photo"
@@ -36,7 +36,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/beta/users/<id|userPrincipalName>/photo
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": false,

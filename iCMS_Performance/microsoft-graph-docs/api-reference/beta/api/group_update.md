@@ -1,10 +1,10 @@
-# <a name="update-group"></a>Update group
+# <a name="update-group"></a>Aktualisierungsgruppe
 
-Update the properties of a group object.
+Aktualisieren Sie die Eigenschaften eines Group-Objekts.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scope** is required to execute this API: *Group.ReadWrite.All*
+Der **Bereich** ist erforderlich, um diese API ausführen: *Group.ReadWrite.All*
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /groups/<id>
@@ -12,28 +12,28 @@ PATCH /groups/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung die Werte für die entsprechenden Felder, die aktualisiert werden soll. Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind werden die vorherigen Werte verwalten oder neu berechnet basierend auf Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandenen Werte enthalten, die nicht geändert haben.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|allowExternalSenders|Boolean|Default is **false**. Indicates if external members can send email to group.|
-|autoSubscribeNewMembers|Boolean|Default is **false**. Indicates if new members added to the group will be auto-subscribed to receive email notifications.|
-|description|String|An optional description for the group. |
-|DisplayName|String|The display name for the group. This property is required when a group is created and it cannot be cleared during updates. Supports $filter and $orderby.|
-|groupTypes|String collection|Specifies the type of group to create. Possible values are **Unified** to create an Office 365 group, or **DynamicMembership** for dynamic groups.  For all other group types, like security-enabled groups and email-enabled security groups, do not set this property.|
-|visibility|Boolean|Specifies the visibility of an Office 365 group. Possible values are: **Private**, **Public**, or empty (which is interpreted as **Public**).|
-|mailEnabled|Boolean|Specifies whether the group is mail-enabled. If the **securityEnabled** property is also **true**, the group is a mail-enabled security group; otherwise, the group is a Microsoft Exchange distribution group.|
-|mailNickname|String|The mail alias for the group. This property must be specified when a group is created. Supports $filter.|
-|securityEnabled|Boolean|Specifies whether the group is a security group. If the **mailEnabled** property is also true, the group is a mail-enabled security group; otherwise it is a security group. Must be **false** for Office 365 groups. Supports $filter..|
+|allowExternalSenders|Boolean|Standard ist **false**. Gibt an, ob externe Mitglieder e-Mail an Gruppe senden können.|
+|autoSubscribeNewMembers|Boolean|Standard ist **false**. Gibt an, ob neue Mitglieder der Gruppe hinzugefügt automatisch zum Empfangen von e-Mail-Benachrichtigungen abonniert werden.|
+|description|String|Eine optionale Beschreibung für die Gruppe. |
+|displayName|String|Der Anzeigename für die Gruppe. Diese Eigenschaft ist erforderlich, wenn eine Gruppe erstellt wird und kann nicht während des Updates deaktiviert werden. Unterstützt $filter und $orderby.|
+|groupTypes|String-Auflistung|Gibt den Typ der Gruppe zu erstellen. Mögliche Werte sind **Unified** zum Erstellen einer Gruppe von Office 365 oder **DynamicMembership** für dynamische Gruppen.  Für alle anderen Gruppe Typen, wie Sicherheit-aktivierten Gruppen und e-Mail-aktivierte Sicherheitsgruppen diese Eigenschaft nicht festlegen.|
+|visibility|Boolean|Gibt die Sichtbarkeit einer Office 365-Gruppe. Mögliche Werte sind: **Private**, **Public**oder leer (die als **Öffentliche**interpretiert wird).|
+|mailEnabled|Boolean|Gibt an, ob die Gruppe e-Mail-aktiviert ist. Wenn auch die **SecurityEnabled** -Eigenschaft **true**ist, ist die Gruppe eine e-Mail-aktivierte Sicherheitsgruppe; Andernfalls ist die Gruppe eine Verteilergruppe Microsoft Exchange.|
+|mailNickname|String|Der e-Mail-Alias für die Gruppe. Diese Eigenschaft muss angegeben werden, wenn eine Gruppe erstellt wird. $Filter unterstützt.|
+|securityEnabled|Boolean|Gibt an, ob die Gruppe eine Sicherheitsgruppe ist. Wenn auch die **MailEnabled** -Eigenschaft true ist, ist die Gruppe eine e-Mail-aktivierte Sicherheitsgruppe an. Andernfalls handelt es sich um eine Sicherheitsgruppe. **"False"** für Office 365-Gruppen muss sein. $Filter unterstützt.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and updated [group](../resources/group.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortcode und aktualisierte [Group](../resources/group.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_group"
@@ -55,7 +55,7 @@ Content-length: 211
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

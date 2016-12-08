@@ -1,26 +1,26 @@
-# <a name="remoteitem-resource-type"></a>remoteItem resource type
+# <a name="remoteitem-resource-type"></a>RemoteItem Ressourcentyp
 
-The **remoteItem** resource type indicates that a [driveItem](driveitem.md) references an item that exist in another drive and provides a pointer to that drive.
+Der Ressourcentyp **RemoteItem** gibt an, dass ein [DriveItem](driveitem.md) verweist auf ein Element, das in einem anderen Laufwerk vorhanden und enthält einen Zeiger auf dem Laufwerk.
 
-It is available on the `remoteItem` property of [driveItem](driveitem.md) resources that have been shared and added to a drive, for example, by using the "Add to OneDrive" feature.
+Es steht auf der `remoteItem` -Eigenschaft des [DriveItem](driveitem.md) Ressourcen, die freigegeben haben und das feature mithilfe der "fügen zu OneDrive" beispielsweise auf einem Laufwerk hinzugefügt.
 
-**Note:** Unlike with folders in the same drive, an item moved into a remote item might have its `id` changed.
+**Hinweis:** Im Gegensatz zu mit Ordnern in dem gleichen Laufwerk ein Element in ein Remoteelement verschoben möglicherweise seine `id` geändert.
 
 
 ## <a name="properties"></a>Eigenschaften
 
-| Eigenschaftsname   | Typ                                           | Beschreibung                                                              |
+| Name der Eigenschaft   | Typ                                           | Beschreibung                                                              |
 |:----------------|:-----------------------------------------------|:-------------------------------------------------------------------------|
-| File            | [File](file.md)                          | Indicates that the remote item is a file. Read-only.                     |
-| fileSystemInfo  | [FileSystemInfo](filesysteminfo.md)      | Information about the remote item from the local file system. Read-only. |
-| Ordner          | [Folder](folder.md)                      | Indicates that the remote item is a folder. Read-only.                   |
-| id              | String                                         | Unique identifier for the remote item in its drive. Read-only.           |
-| name            | String                                         | Optional. Filename of the remote item. Read-only.                        |
-| parentReference | [ItemReference](itemreference.md) | Properties of the parent of the remote item. Read-only.                  |
-| size            | Int64                                          | Size of the remote item. Read-only.                                      |
+| Datei            | [Datei](file.md)                          | Gibt an, dass das entfernte Element um eine Datei handelt. Schreibgeschützt.                     |
+| fileSystemInfo  | [FileSystemInfo](filesysteminfo.md)      | Informationen über das entfernte Element aus dem lokalen Dateisystem. Schreibgeschützt. |
+| Ordner          | [Ordner](folder.md)                      | Gibt an, dass das entfernte Element einen Ordner handelt. Schreibgeschützt.                   |
+| id              | String                                         | Eindeutiger Bezeichner für das Remoteelement in dem Laufwerk. Schreibgeschützt.           |
+| name            | String                                         | Optional Der Dateiname des remote-Elements. Schreibgeschützt.                        |
+| parentReference | [ItemReference](itemreference.md) | Die Eigenschaften des übergeordneten Elements des remote-Elements. Schreibgeschützt.                  |
+| size            | Int64                                          | Die Größe des remote-Elements. Schreibgeschützt.                                      |
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
 <!-- { "blockType": "resource", "@odata.type": "microsoft.graph.remoteItem", optionalProperties: ["name", "fileSystemInfo", "file", "folder"] } -->
 ```json

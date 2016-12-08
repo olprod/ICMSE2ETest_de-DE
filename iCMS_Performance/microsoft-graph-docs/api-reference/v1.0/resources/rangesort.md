@@ -1,13 +1,13 @@
-# <a name="rangesort-resource-type"></a>RangeSort resource type
+# <a name="rangesort-resource-type"></a>Ressourcentyp RangeSort
 
-Manages sorting operations on Range objects.
+Sortierung Vorgänge auf Range-Objekte verwaltet.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Übernehmen](../api/rangesort_apply.md)|Keine|Perform a sort operation.|
+|[Anwenden](../api/rangesort_apply.md)|Keine|Führen Sie eine Sortierung durchgeführt.|
 
 ## <a name="properties"></a>Eigenschaften
 Keine

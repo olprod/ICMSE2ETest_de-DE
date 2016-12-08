@@ -1,4 +1,4 @@
-# <a name="chunkeduploadsessiondescriptor-resource-type"></a>chunkedUploadSessionDescriptor resource type
+# <a name="chunkeduploadsessiondescriptor-resource-type"></a>Ressourcentyp chunkedUploadSessionDescriptor
 
 
 ## <a name="properties"></a>Eigenschaften
@@ -8,9 +8,9 @@
 
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

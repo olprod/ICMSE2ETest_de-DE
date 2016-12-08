@@ -1,9 +1,9 @@
-# <a name="chart-setposition"></a>Chart: setPosition
+# <a name="chart-setposition"></a>Diagramm: SetPosition
 
-Positioniert das Diagramm im Verhältnis zu den Zellen im Arbeitsblatt.
+Positioniert das Diagramm relativ zur Zellen im Arbeitsblatt.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /workbook/worksheets(<id|name>)/charts(<name>)/setPosition
@@ -12,24 +12,24 @@ POST /workbook/worksheets(<id|name>)/charts(<name>)/setPosition
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|startCell|string|Die Startzelle. An diese Position wird das Diagramm verschoben. Die Startzelle ist die obere linke oder die obere rechte Zelle, abhängig davon, ob die eingestellte Textrichtung des Benutzers von links nach rechts oder von rechts nach links ist.|
-|endCell|string|Optional. (Optional) Die Endzelle. Wenn angegeben, werden Breite und Höhe des Diagramms so eingestellt, dass diese Zelle/dieser Bereich vollständig bedeckt ist.|
+|startCell|string|Die Zelle Start. Dies ist, in dem das Diagramm in verschoben werden sollen. Die Zelle Start ist die Zelle oben links oder rechts oben je nach rechts-nach-links-Anzeigeoptionen des Benutzers.|
+|endCell|string|Optional Die Endzelle. Wenn angegeben, werden dieser Zellbereich vollständig Abdeckung Breite und Höhe des Diagramms festgelegt werden.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode. Es werden keine etwas in der Antworttext zurückgegeben.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "chart_setposition"
@@ -46,7 +46,7 @@ Content-length: 66
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 <!-- {
   "blockType": "response",
   "truncated": true,

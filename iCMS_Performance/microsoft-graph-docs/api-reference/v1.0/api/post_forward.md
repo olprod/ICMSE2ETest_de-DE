@@ -1,13 +1,13 @@
-# <a name="post-forward"></a>post: forward
+# <a name="post-forward"></a>buchen: weiterleiten
 
-Forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
+Weiterleiten Sie eine POST-Anforderung an einem Empfänger. Sie können die übergeordnete Unterhaltung und die Thread angeben, in der Anforderung, oder Sie können nur den übergeordneten Thread ohne die Unterhaltung übergeordneten angeben. 
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
 *Group.ReadWrite*, *Group.Readwrite.All*
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /groups/<id>/threads/<id>/posts/<id>/forward
@@ -17,23 +17,23 @@ POST /groups/<id>/conversations/<id>/threads/<id>/posts/<id>/forward
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Kommentar|String|Optional comment that is forwarded together with the post.|
-|toRecipients|[recipient](../resources/recipient.md) collection|The recipients to whom the threaded is forwarded to.|
+|Kommentar|String|Optionaler Kommentar, der zusammen mit der POST-Anforderung weitergeleitet wird.|
+|toRecipients|[Empfänger](../resources/recipient.md) -Auflistung|Die Empfänger, denen die verkettete zum weitergeleitet wird.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "post_forward"
@@ -57,7 +57,7 @@ Content-length: 166
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true

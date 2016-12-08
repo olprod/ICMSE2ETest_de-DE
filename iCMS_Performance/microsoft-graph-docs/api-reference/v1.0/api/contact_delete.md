@@ -1,21 +1,21 @@
-# <a name="delete-contact"></a>Delete contact
+# <a name="delete-contact"></a>Kontakt löschen
 
-Delete a contact.
+Löschen eines Kontakts an.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Contacts.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Contacts.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
-A [contact](../resources/contact.md) from a user's default [contactFolder](../resources/contactfolder.md).
+[Wenden Sie sich](../resources/contact.md) von einem Benutzer standardmäßig [ContactFolder](../resources/contactfolder.md).
 ```http
 DELETE /me/contacts/<id>
 DELETE /users/<id | userPrincipalName>/contacts/<id>
 ```
-A [contact](../resources/contact.md) from a user's top level [contactFolder](../resources/contactfolder.md).
+[Wenden Sie sich an](../resources/contact.md) von eines Benutzers oberen Ebene [ContactFolder](../resources/contactfolder.md).
 ```http
 DELETE /me/contactFolders/<id>/contacts/<id>
 DELETE /users/<id | userPrincipalName>/contactFolders/<id>/contacts/<id>
 ```
-A [contact](../resources/contact.md) contained in a child folder of a [contactFolder](../resources/mailfolder.md). The example below shows one level of nesting, but a contact can be located in a child of a child and so on.
+[Wenden Sie sich](../resources/contact.md) in einem untergeordneten Ordner von einem [ContactFolder](../resources/mailfolder.md)enthaltenen. Das folgende Beispiel zeigt eine Ebene der Schachtelung, aber ein Kontakt kann befindet sich ein untergeordnetes Element des ein untergeordnetes Element und so weiter.
 ```http
 DELETE /me/contactFolder/<id>/childFolders/<id>/.../contacts/<id>
 DELETE /users/<id | userPrincipalName>/contactFolders/<id>/childFolders/<id>/contacts/<id>
@@ -23,18 +23,18 @@ DELETE /users/<id | userPrincipalName>/contactFolders/<id>/childFolders/<id>/con
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `204, No Content` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `204, No Content` Antwortcode. Es werden keine etwas in der Antworttext zurückgegeben.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-AnforderungsheaderNachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "delete_contact"
@@ -43,7 +43,7 @@ AnforderungsheaderNachfolgend finden Sie ein Beispiel für das Markup des Nummer
 DELETE https://graph.microsoft.com/v1.0/me/contacts/<id>
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true

@@ -1,9 +1,9 @@
-# <a name="add-connector-to-connectorgroup"></a>Add Connector to connectorGroup
+# <a name="add-connector-to-connectorgroup"></a>Hinzufügen von Connectors zu connectorGroup
 
-Use this API to add a connector to a new connectorGroup.
+Verwenden Sie diese API, um eine Verbindung zu einer neuen ConnectorGroup hinzufügen.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: *Directory.ReadWrite.All Or Directory.AccessAsUser.All*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, um diese API ausführen: *Directory.ReadWrite.All oder Directory.AccessAsUser.All*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /connectors/<id>/memberOf
@@ -12,18 +12,18 @@ POST /connectors/<id>/memberOf
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer. Required|
+| Autorisierung  | Bearer. Erforderlich|
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [connectorGroup](../resources/connectorgroup.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [ConnectorGroup](../resources/connectorgroup.md) -Objekts.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [connectorGroup](../resources/connectorgroup.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortobjekt Code und [ConnectorGroup](../resources/connectorgroup.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_connectorgroup_from_connector"
@@ -37,9 +37,9 @@ Content-length: 99
   "@odata.id": "https://graph.microsoft.com/{ver}/connectorGroups/<id>"
 }
 ```
-In the request body, supply a JSON representation of [connectorGroup](../resources/connectorgroup.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [ConnectorGroup](../resources/connectorgroup.md) -Objekts.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

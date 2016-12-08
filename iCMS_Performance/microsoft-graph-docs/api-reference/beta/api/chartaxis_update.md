@@ -1,36 +1,36 @@
-# <a name="update-chartaxis"></a>Update chartaxis
+# <a name="update-chartaxis"></a>Chartaxis aktualisieren
 
-Update the properties of chartaxis object.
+Aktualisieren Sie die Eigenschaften des Chartaxis-Objekts.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /workbook/worksheets(<id|name>)/charts(<name>)/axes/valueaxis
 PATCH /workbook/worksheets(<id|name>)/charts(<name>)/axes/seriesaxis
 PATCH /workbook/worksheets(<id|name>)/charts(<name>)/axes/categoryaxis
 ```
-## <a name="optional-request-headers"></a>Optional request headers
+## <a name="optional-request-headers"></a>Optionale Anforderungsheader
 | Name       | Beschreibung|
 |:-----------|:-----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung die Werte für die entsprechenden Felder, die aktualisiert werden soll. Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind werden die vorherigen Werte verwalten oder neu berechnet basierend auf Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandenen Werte enthalten, die nicht geändert haben.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|majorUnit|object|Stellt das Intervall zwischen zwei Hauptteilstrichen dar. Kann auf einen numerischen Wert oder eine leere Zeichenfolge festgelegt werden.  Der zurückgegebene Wert ist immer eine Zahl.|
-|maximum|object|Stellt den Maximalwert auf der Größenachse dar.  Kann auf einen numerischen Wert oder eine leere Zeichenfolge festgelegt werden (für automatische Achsenwerte).  Der zurückgegebene Wert ist immer eine Zahl.|
-|minimum|object|Stellt den Mindestwert auf der Größenachse dar. Kann auf einen numerischen Wert oder eine leere Zeichenfolge festgelegt werden (für automatische Achsenwerte).  Der zurückgegebene Wert ist immer eine Zahl.|
-|minorUnit|object|Stellt das Intervall zwischen zwei Hilfsteilstrichen dar. Kann auf einen numerischen Wert oder eine leere Zeichenfolge festgelegt werden (für automatische Achsenwerte). Der zurückgegebene Wert ist immer eine Zahl.|
+|majorUnit|object|Stellt das Intervall zwischen zwei Hauptteilstriche dar. Kann auf einen numerischen Wert oder eine leere Zeichenfolge festgelegt werden.  Der zurückgegebene Wert ist immer eine Zahl.|
+|maximum|object|Stellt den Maximalwert für die Größenachse.  Kann auf einen numerischen Wert oder eine leere Zeichenfolge (für automatische Achsenwerte) festgelegt sein.  Der zurückgegebene Wert ist immer eine Zahl.|
+|minimum|object|Stellt den kleinsten Wert für die Größenachse. Kann auf einen numerischen Wert oder eine leere Zeichenfolge (für automatische Achsenwerte) festgelegt sein.  Der zurückgegebene Wert ist immer eine Zahl.|
+|minorUnit|object|Stellt das Intervall zwischen zwei Hilfsteilstriche dar. "Kann auf einen numerischen Wert oder eine leere Zeichenfolge (für automatische Achsenwerte) festgelegt werden. Der zurückgegebene Wert ist immer eine Zahl.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and updated [ChartAxis](../resources/chartaxis.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und aktualisierten [ChartAxis](../resources/chartaxis.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_chartaxis"
@@ -50,7 +50,7 @@ Content-length: 64
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

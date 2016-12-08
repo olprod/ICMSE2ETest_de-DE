@@ -1,77 +1,77 @@
-# <a name="event-resource-type"></a>event resource type
+# <a name="event-resource-type"></a>Ereignistyp-Ressource
 
-An event in a calendar.
+Ein Ereignis in einem Kalender.
 
 ## <a name="methods"></a>Methoden
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[List events](../api/user_list_events.md)|[event](event.md) collection |Retrieve a list of [event](../resources/event.md) objects in the user's mailbox. The list contains single instance meetings and series masters.|
-|[Create Event](../api/user_post_events.md) |[Ereignis](event.md)| Create a new Event by posting to the instances collection.|
-|[Get event](../api/event_get.md) | [Ereignis](event.md) |Read properties and relationships of event object.|
-|[Update](../api/event_update.md) | [Ereignis](event.md) |Update event object. |
-|[delete()](../api/event_delete.md) | Keine |Delete event object. |
-|[accept](../api/event_accept.md)|Keine|Accept the specified event.|
-|[tentativelyAccept](../api/event_tentativelyaccept.md)|Keine|Tentatively accept the specified event.|
-|[decline](../api/event_decline.md)|Keine|Decline invitation to the specified event.|
-|[dismissReminder](../api/event_dismissreminder.md)|Keine|Dismiss the reminder for the specified event.|
-|[snoozeReminder](../api/event_snoozereminder.md)|Keine|Snooze the reminder for the specified event.|
-|[List instances](../api/event_list_instances.md) |[event](event.md) collection| Get the instances (occurrences) of an event for a specified time range. If the event is a `SeriesMaster` type, this returns the occurrences and exceptions of the event in the specified time range.|
-|[List attachments](../api/event_list_attachments.md) |[attachment](attachment.md) collection| Get a Attachment object collection.|
-|[Create Attachment](../api/event_post_attachments.md) |[Attachment](attachment.md)| Create a new Attachment by posting to the attachments collection.|
-|[Create data extension](../api/opentypeextension_post_opentypeextension.md) |[openTypeExtension](opentypeextension.md)| Create an open type data extension and add custom properties in a new or existing instance of a resource.|
-|[Get data extension](../api/opentypeextension_get.md) |[openTypeExtension](opentypeextension.md) collection| Get an **openTypeExtension** object or objects identified by name or fully qualified name.|
+|[List-Ereignisse](../api/user_list_events.md)|[Ereignissammlung](event.md) |Abrufen einer Liste der [Ereignisobjekte im Postfach des Benutzers](../resources/event.md) an. Die Liste enthält Einzelinstanz Besprechungen und Series-Master.|
+|[Ereignis erstellen](../api/user_post_events.md) |[Ereignis](event.md)| Erstellen Sie ein neues Ereignis durch die Veröffentlichung auf der Instanzen-Auflistung.|
+|[-Ereignis](../api/event_get.md) | [Ereignis](event.md) |Lesen Sie Eigenschaften und Beziehungen des Event-Objekts.|
+|[Update](../api/event_update.md) | [Ereignis](event.md) |Event-Objekt zu aktualisieren. |
+|[Löschen](../api/event_delete.md) | Keine |Event-Objekt zu löschen. |
+|[akzeptieren](../api/event_accept.md)|Keine|Akzeptieren Sie das angegebene Ereignis.|
+|[tentativelyAccept](../api/event_tentativelyaccept.md)|Keine|Das angegebene Ereignis mit Vorbehalt annehmen.|
+|[Ablehnen](../api/event_decline.md)|Keine|Auf das angegebene Ereignis Einladung ablehnen.|
+|[dismissReminder](../api/event_dismissreminder.md)|Keine|Schließen Sie die Erinnerung für das angegebene Ereignis.|
+|[snoozeReminder](../api/event_snoozereminder.md)|Keine|Erneut erinnern Sie die Erinnerung für das angegebene Ereignis aus.|
+|[Listeninstanzen](../api/event_list_instances.md) |[Ereignissammlung](event.md)| Rufen Sie die Instanzen (vorkommen) eines Ereignisses für einen angegebenen Zeitraum. Wenn das Ereignis gehört zu einer `SeriesMaster` Typ, dies gibt die Vorkommen und Ausnahmen des Ereignisses in den angegebenen Zeitraum.|
+|[Anlagen auflisten](../api/event_list_attachments.md) |[Anlage](attachment.md) -Auflistung| Rufen Sie eine Auflistung des Attachment-Objekt.|
+|[Erstellen der Anlage](../api/event_post_attachments.md) |[Anlage](attachment.md)| Erstellen Sie eine neue Anlage, indem Sie das Veröffentlichen in der Attachments-Auflistung.|
+|[Erstellen von Daten-Erweiterung](../api/opentypeextension_post_opentypeextension.md) |[openTypeExtension](opentypeextension.md)| Erstellen Sie eine open Typ Daten Erweiterung und Hinzufügen von benutzerdefinierten Eigenschaften in einer neuen oder vorhandenen Instanz einer Ressource.|
+|[Abrufen von Daten-Erweiterung](../api/opentypeextension_get.md) |[OpenTypeExtension](opentypeextension.md) -Auflistung| Rufen Sie ein **OpenTypeExtension** oder Objekte nach Name oder den vollqualifizierten Namen identifiziert.|
 
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|attendees|[attendee](attendee.md) collection|The collection of attendees for the event.|
-|body|[itemBody](itembody.md)|The body of the message associated with the event.|
-|bodyPreview|String|The preview of the message associated with the event.|
-|Kategorien|String collection|The categories associated with the event.|
-|changeKey|String|Identifies the version of the event object. Every time the event is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object.|
-|createdDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|End|[dateTimeTimeZone](datetimetimezone.md)|The date, time, and time zone that the event ends.|
-|hasAttachments|Boolean|Set to true if the event has attachments.|
-|iCalUId|String|A unique identifier that is shared by all instances of an event across different calendars.|
-|id|String| ReadOnly|
-|Importance|String|The importance of the event: Low = 0, Normal = 1, High = 2. Possible values are: `Low`, `Normal`, `High`.|
-|isAllDay|Boolean|Set to true if the event lasts all day.|
-|isCancelled|Boolean|Set to true if the event has been canceled.|
-|isOrganizer|Boolean|Set to true if the message sender is also the organizer.|
-|isReminderOn|Boolean|Set to true if an alert is set to remind the user of the event.|
-|lastModifiedDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|Location|[Location](location.md)|Speicherort des Designs.|
-|Organisator|[Recipient](recipient.md)|The organizer of the event.|
-|originalEndTimeZone|String|The end time zone that was set when the event was created.|
-|originalStart|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|originalStartTimeZone|String|The start time zone that was set when the event was created. |
-|Serie|[patternedRecurrence](patternedrecurrence.md)|The recurrence patern for the event.|
-|ReminderMinutesBeforeStart|Int32|The number of minutes before the event start time that the reminder alert occurs.|
-|responseRequested|Boolean|Set to true if the sender would like a response when the event is accepted or declined.|
-|responseStatus|[responseStatus](responsestatus.md)|Indicates the type of response sent in response to an event message.|
-|Sensitivity|String| Possible values are: `Normal`, `Personal`, `Private`, `Confidential`.|
-|seriesMasterId|String|The categories assigned to the item.|
-|showAs|String|The status to show: Free = 0, Tentative = 1, Busy = 2, Oof = 3, WorkingElsewhere = 4, Unknown = -1. Possible values are: `Free`, `Tentative`, `Busy`, `Oof`, `WorkingElsewhere`, `Unknown`.|
-|Start|[dateTimeTimeZone](datetimetimezone.md)|The date, time, and time zone that the event starts.|
-|Betreff|String|The text of the event's subject line.|
-|Typ|String|The event type: SingleInstance = 0, Occurrence = 1, Exception = 2, SeriesMaster = 3. Possible values are: `SingleInstance`, `Occurrence`, `Exception`, `SeriesMaster`.|
-|webLink|String|The URL to open the event in Outlook Web App.<br/><br/>The event will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.<br/><br/>This URL can be accessed from within an iFrame.|
+|Teilnehmer|[ATTENDEE](attendee.md) -Auflistung|Die Auflistung der Teilnehmer für das Ereignis.|
+|body|[itemBody](itembody.md)|Der Textkörper der Nachricht mit dem Ereignis verknüpft ist.|
+|bodyPreview|String|Die Vorschau der Nachricht mit dem Ereignis verknüpft ist.|
+|Kategorien|Zeichenfolgenauflistung|Die Kategorien, die mit dem Ereignis verknüpft ist.|
+|changeKey|String|Identifiziert die Version des Event-Objekts. Jedes Mal, wenn das Ereignis geändert wird, ändert ChangeKey sowie. Dies ermöglicht Exchange zu Änderungen an die richtige Version des Objekts zu übernehmen.|
+|createdDateTime|DateTimeOffset|Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Uhr UTC auf 1 Jan 2014 würde beispielsweise wie folgt aussehen:`'2014-01-01T00:00:00Z'`|
+|Ende|[dateTimeTimeZone](datetimetimezone.md)|Das Datum, Uhrzeit und Zeitzone, die das Ereignis aus.|
+|hasAttachments|Boolean|Wenn das Ereignis Anlagen enthält true festgelegt.|
+|iCalUId|String|Ein eindeutiger Bezeichner, der von allen Instanzen eines Ereignisses in unterschiedlichen Kalendern freigegeben ist.|
+|id|String| Schreibgeschützt.|
+|Bedeutung|String|Die Bedeutung des Ereignisses: Niedrig = 0 Normal = 1, hoch = 2. Mögliche Werte sind: `Low`, `Normal`, `High`.|
+|isAllDay|Boolean|Legen Sie auf true zurück, wenn das Ereignis den ganzen Tag dauert.|
+|isCancelled|Boolean|Auf true festgelegt, wenn das Ereignis abgebrochen wurde.|
+|isOrganizer|Boolean|Wenn der Absender der Nachricht der Organisator auch ist true festgelegt.|
+|isReminderOn|Boolean|Legen Sie auf true zurück, wenn eine Warnung an den Benutzer über das Ereignis erinnern festgelegt ist.|
+|lastModifiedDateTime|DateTimeOffset|Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Uhr UTC auf 1 Jan 2014 würde beispielsweise wie folgt aussehen:`'2014-01-01T00:00:00Z'`|
+|Speicherort|[Speicherort](location.md)|Der Speicherort des Ereignisses.|
+|Organizer|[Empfänger](recipient.md)|Der Organisator des Ereignisses.|
+|originalEndTimeZone|String|Die End-Zeitzone, die festgelegt wurde, wenn das Ereignis erstellt wurde.|
+|originalStart|DateTimeOffset|Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Uhr UTC auf 1 Jan 2014 würde beispielsweise wie folgt aussehen:`'2014-01-01T00:00:00Z'`|
+|originalStartTimeZone|String|Die Start-Zeitzone, die festgelegt wurde, wenn das Ereignis erstellt wurde. |
+|Serie|[patternedRecurrence](patternedrecurrence.md)|Die Serie Patern für das Ereignis.|
+|reminderMinutesBeforeStart|Int32|Die Anzahl der Minuten, bevor das Ereignis Startzeit, die die Erinnerung Warnung auftritt.|
+|responseRequested|Boolean|Legen Sie auf true zurück, wenn der Absender eine Antwort erhalten möchte, wenn das Ereignis angenommen oder abgelehnt wird.|
+|responseStatus|[responseStatus](responsestatus.md)|Gibt den Typ der Antwort, die als Antwort auf ein Ereignisnachricht gesendet.|
+|Vertraulichkeit|String| Mögliche Werte sind: `Normal`, `Personal`, `Private`, `Confidential`.|
+|seriesMasterId|String|Die Kategorien, die das Element zugewiesen.|
+|showAs|String|Der Status angezeigt: freien = 0, mit Vorbehalt = 1, beschäftigt = 2, Oof = 3, WorkingElsewhere = 4, Unknown =-1. Possible values are: `Free`, `Tentative`, `Busy`, `Oof`, `WorkingElsewhere`, `Unknown`.|
+|Start|[dateTimeTimeZone](datetimetimezone.md)|Das Datum, Uhrzeit und Zeitzone, die das Ereignis beginnt.|
+|Betreff|String|Der Text der Betreffzeile des Ereignisses.|
+|Typ|String|Den Ereignistyp: SingleInstance = 0, Vorkommen = 1, Ausnahme = 2, SeriesMaster = 3. Mögliche Werte sind: `SingleInstance`, `Occurrence`, `Exception`, `SeriesMaster`.|
+|webLink|String|Die URL, die das Ereignis in Outlook Web App zu öffnen.<br/><br/>Das Ereignis wird im Browser geöffnet, wenn Sie mit Ihrem Postfach über Outlook Web App angemeldet sind. Sie werden aufgefordert, anmelden, wenn Sie sich mit dem Browser nicht bereits angemeldet sind.<br/><br/>Diese URL kann innerhalb eines iFrame aus zugegriffen werden.|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Anlagen|[attachment](attachment.md) collection|The collection of [fileAttachment](fileAttachment.md) and [itemAttachment](itemAttachment.md) attachments for the event. Navigation property. Read-only. Nullable.|
-|calendar|[Kalender](calendar.md)|The calendar that contains the event. Navigation property. Read-only.|
-|Extensions|[Extension](extension.md) collection|The collection of open type data extensions defined for the contact. Read-only. Nullable.|
-|Methodeninstanzen|[event](event.md) collection|The instances of the event. Navigation property. Read-only. Nullable.|
+|Anlagen|[Anlage](attachment.md) -Auflistung|Die Auflistung von [FileAttachment](fileAttachment.md) und [ItemAttachment](itemAttachment.md) Anlagen für das Ereignis. Navigationseigenschaft. Schreibgeschützt. NULL-Werte zulässt.|
+|calendar|[Kalender](calendar.md)|Der Kalender, der das Ereignis enthält. Navigationseigenschaft. Schreibgeschützt.|
+|Erweiterungen|[Erweiterungssammlung](extension.md)|Die Auflistung der geöffneten Typ Daten Erweiterungen für den Kontakt definiert. Schreibgeschützt. NULL-Werte zulässt.|
+|Instanzen|[Ereignissammlung](event.md)|Die Instanzen des Ereignisses. Navigationseigenschaft. Schreibgeschützt. NULL-Werte zulässt.|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

@@ -1,42 +1,42 @@
-# <a name="identityriskevent-resource-type"></a>identityRiskEvent resource type
+# <a name="identityriskevent-resource-type"></a>Ressourcentyp identityRiskEvent
 
-A risk event detected by [Azure Active Directory Identity Protection](https://azure.microsoft.com/en-us/documentation/articles/active-directory-identityprotection/). Specific risk event types include:
-* [sign-ins from anonymous IP addresses](anonymousipriskevent.md)
-* [sign-ins from malware-infected devices](malwareriskevent.md)
-* [impossible travel to atypical locations](impossibletravelriskevent.md)
-* [users with leaked credentials](leakedcredentialsriskevent.md)
-* [sign-ins from suspicious IP addresses](suspiciousipriskevent.md)
-* [sign-ins from unfamiliar locations](unfamiliarlocationriskevent.md) Complete information about risk events can be found in the [Azure AD Identity Protection documentation](https://azure.microsoft.com/en-us/documentation/articles/active-directory-identityprotection-risk-events-types/).
+Ein Risikoereignis von [Azure Active Directory-Identität Protection](https://azure.microsoft.com/en-us/documentation/articles/active-directory-identityprotection/)erkannt. Spezifische Risikotypen werden unterstützt:
+* [Anmeldungen von anonymen IP-Adressen](anonymousipriskevent.md)
+* [Anmeldungen von Geräten Malware infiziert](malwareriskevent.md)
+* [unmöglich Reisen zu untypischen Speicherorte](impossibletravelriskevent.md)
+* [Benutzer mit verlorene Anmeldeinformationen](leakedcredentialsriskevent.md)
+* [Anmeldungen von verdächtigen IP-Adressen](suspiciousipriskevent.md)
+* [Anmeldungen von unbekannten Standorten](unfamiliarlocationriskevent.md) Umfassende Informationen zum Risikoereignisse finden Sie in der [Dokumentation von Azure AD-Schutz](https://azure.microsoft.com/en-us/documentation/articles/active-directory-identityprotection-risk-events-types/).
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get identityRiskEvent](../api/identityriskevent_get.md) | [identityRiskEvent](identityriskevent.md) |Read properties and relationships of identityRiskEvent object.|
+|[Abrufen von identityRiskEvent](../api/identityriskevent_get.md) | [identityRiskEvent](identityriskevent.md) |Lesen Sie Eigenschaften und Beziehungen des IdentityRiskEvent-Objekts.|
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|closedDateTime|dateTimeOffset| The date and time that the risk event was closed|
-|createdDateTime|dateTimeOffset| The date and time that the risk event was created. This is always greater than or equal to the datetime of the risk event itself. This is the correct property to use as a filter when querying risk events.|
-|id|string| ReadOnly|
-|riskEventDateTime|dateTimeOffset| The date and time when the risk event occurred|
+|closedDateTime|dateTimeOffset| Datum und Uhrzeit, die das Risikoereignis geschlossen wurde|
+|createdDateTime|dateTimeOffset| Datum und Uhrzeit der Erstellung des Ereignisses Risiko. Dies ist immer größer als oder gleich dem Datetime des Ereignisses Risiko selbst. Dies ist die entsprechende Eigenschaft eines Filters beim Risikoereignisse Abfragen verwendet.|
+|id|string| Nur-Lese-|
+|riskEventDateTime|dateTimeOffset| Datum und Uhrzeit, wann das Risikoereignis aufgetreten ist|
 |riskEventStatus|string| Possible values are: `active`, `remediated`, `dismissedAsFixed`, `dismissedAsFalsePositive`, `dismissedAsIgnore`, `loginBlocked`, `closedMfaAuto`, `closedMultipleReasons`.|
-|riskLevel|string| Possible values are: `low`, `medium`, `high`.|
-|riskEventType|string| The type of risk|
-|userDisplayName|string| Der Name des aktuellen Benutzers.|
-|userID|string| The id of the user at risk|
-|userPrincipalName|string| The user principal name of the user at risk|
+|riskLevel|string| Mögliche Werte sind: `low`, `medium`, `high`.|
+|riskEventType|string| Der Typ des Risikos|
+|userDisplayName|string| Der Name des Benutzers gefährdet|
+|Benutzer-ID|string| Die Id des Benutzers gefährdet|
+|userPrincipalName|string| Der Benutzerprinzipalname des Benutzers gefährdet|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|impactedUser|[User](user.md)| Read-only. Nullable.|
+|impactedUser|[Benutzer](user.md)| Schreibgeschützt. NULL-Werte zulässt.|
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

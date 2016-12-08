@@ -1,31 +1,31 @@
-# <a name="privilegedrolesummary-resource-type"></a>privilegedRoleSummary resource type
+# <a name="privilegedrolesummary-resource-type"></a>Ressourcentyp privilegedRoleSummary
 
-The statistics summary for a particular role.
+Die Zusammenfassung für eine bestimmte Rolle Statistiken.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get privilegedRoleSummary](../api/privilegedrolesummary_get.md) | [privilegedRoleSummary](privilegedrolesummary.md) |Read properties and relationships of privilegedRoleSummary object.|
+|[Abrufen von privilegedRoleSummary](../api/privilegedrolesummary_get.md) | [privilegedRoleSummary](privilegedrolesummary.md) |Lesen Sie Eigenschaften und Beziehungen des PrivilegedRoleSummary-Objekts.|
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|elevatedCount|Int32|The number of users that have the role assigned and the role is activated.|
-|id|string| The unique identifier for the role. Read-only.|
-|managedCount|Int32|The number of users that have the role assigned but the role is deactivated.|
-|mfaEnabled|boolean|**true** if the role activation requires MFA. **false** if the role activation doesn't require MFA.|
-|status|string| Possible values are: `ok`, `bad`. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, `ok` is returned. Otherwise, `bad` is returned.|
-|usersCount|Int32|The number of users that are assigned with the role.|
+|elevatedCount|Int32|Die Anzahl der Benutzer, die die Rolle zugewiesen haben, ist aktiviert.|
+|id|string| Der eindeutige Bezeichner für die Rolle. Schreibgeschützt.|
+|managedCount|Int32|Die Anzahl der Benutzer, die die Rolle zugewiesen haben, aber die Rolle ist deaktiviert.|
+|mfaEnabled|boolean|**true,** Wenn die Rolle Aktivierung mehrstufiger Authentifizierung DAS erforderlich sind. **false** , wenn die Rolle Aktivierung mehrstufiger Authentifizierung DAS erforderlich ist.|
+|status|string| Mögliche Werte sind: `ok`, `bad`. Der Wert hängt das Verhältnis von (ManagedCount / UsersCount). Wenn das Verhältnis einen vordefinierten Schwellenwert unterschreitet `ok` wird zurückgegeben. Andernfalls `bad` wird zurückgegeben.|
+|usersCount|Int32|Die Anzahl der Benutzer, die mit der Rolle zugewiesen sind.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

@@ -1,10 +1,10 @@
-# <a name="patchcontentcommand-resource-type"></a>patchContentCommand resource type
+# <a name="patchcontentcommand-resource-type"></a>Ressourcentyp patchContentCommand
 
-The changes to make to a OneNote page in a PATCH request.
+Die Änderungen an einer OneNote-Seite in einer Anforderung PATCH vornehmen.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource, which is sent in the body of the [PATCH pages/<id>`](../api/page_update.md) request. 
+Es folgt eine JSON-Darstellung der Ressource, die im Textkörper der gesendet wird die [PATCH Seiten /<id> ](../api/page_update.md) Anforderung. 
 
 <!-- {
   "blockType": "resource",
@@ -27,10 +27,10 @@ Here is a JSON representation of the resource, which is sent in the body of the 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Aktion|String|The action to perform on the target element. Possible values are: `replace`, `append`, `insert`, or `prepend`.|
-|Inhalt|String|A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the `multipart/form-data` content type with a "Commands" part. |
-|position|String|The location to add the supplied content, relative to the target element. Possible values are: `after` (default) or `before`.|
-|target|String|The element to update. Must be the `#<data-id>` or the generated `<id>` of the element, or the `body` or `title` keyword.|
+|Aktion|String|Die für das Zielelement auszuführende Aktion. Mögliche Werte sind: `replace`, `append`, `insert`, oder `prepend`.|
+|Inhalt|String|Eine Zeichenfolge wohlgeformt HTML-Code für die Seite und alle Bild oder Datei binären Daten hinzufügen. Wenn der Inhalt binäre Daten enthält, die Anforderung muss gesendet werden mithilfe der `multipart/form-data` Inhaltstyp mit einem Webpart "Befehle". |
+|position|String|Der Speicherort, um den angegebenen Inhalt, relativ zum Zielelement hinzuzufügen. Mögliche Werte sind: `after` (Standard) oder `before`.|
+|target|String|Das Element, zu aktualisieren. Muss die `#<data-id>` oder die generierte `<id>` des Elements, oder die `body` oder `title` Schlüsselwort.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

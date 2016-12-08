@@ -1,30 +1,30 @@
-# <a name="list-threads"></a>List threads
+# <a name="list-threads"></a>Liste threads
 
-Get all the threads of a group.
+Rufen Sie alle Threads einer Gruppe.
 
-Note: You can also [get all the threads of a conversation](conversation_list_threads.md).
+Hinweis: Sie können auch [Alle Threads einer Unterhaltung erhalten möchten](conversation_list_threads.md).
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:  *Group.Read.All* or *Group.ReadWrite.All*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** zum Ausführen diese API ist erforderlich: *Group.Read.All* oder *Group.ReadWrite.All*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /groups/<id>/threads
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and collection of [ConversationThread](../resources/conversationthread.md) objects in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortcode und Auflistung von [ConversationThread](../resources/conversationthread.md) -Objekten im Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_threads"
@@ -33,7 +33,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/v1.0/groups/<id>/threads
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

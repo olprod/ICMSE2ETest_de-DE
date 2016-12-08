@@ -1,10 +1,10 @@
-# <a name="notebooklinks-resource-type"></a>notebookLinks resource type
+# <a name="notebooklinks-resource-type"></a>Ressourcentyp notebookLinks
 
-Links for opening a OneNote notebook.
+Links zum Öffnen einer OneNote-Notizbuch.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",
@@ -24,8 +24,8 @@ Here is a JSON representation of the resource.
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|oneNoteClientUrl|[externalLink](externallink.md)|Opens the notebook in the OneNote native client if it's installed.|
-|oneNoteWebUrl|[externalLink](externallink.md)|Opens the notebook in OneNote Online.|
+|oneNoteClientUrl|[externalLink](externallink.md)|Öffnet das Notizbuch in den OneNote-native Client, falls installiert.|
+|Codes oneNoteWebUrl|[externalLink](externallink.md)|Öffnet das Notizbuch in OneNote Online.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

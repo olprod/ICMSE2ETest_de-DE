@@ -1,17 +1,17 @@
-# <a name="responsestatus-resource-type"></a>responseStatus resource type
+# <a name="responsestatus-resource-type"></a>ResponseStatus Ressourcentyp
 
-The response status of a meeting request.
+Der Antwortstatus eine Besprechungsanfrage.
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Antwort|String|The response type: None = 0, Organizer = 1, TentativelyAccepted = 2, Accepted = 3, Declined = 4, NotResponded = 5. Possible values are: `None`, `Organizer`, `TentativelyAccepted`, `Accepted`, `Declined`, `NotResponded`.|
-|Uhrzeit|DateTimeOffset|The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
+|Antwort|String|Die Art der Antwort: None = 0, Organisator = 1, TentativelyAccepted = 2, akzeptierte = 3, abgelehnt = 4, NotResponded = 5. Possible values are: `None`, `Organizer`, `TentativelyAccepted`, `Accepted`, `Declined`, `NotResponded`.|
+|Uhrzeit|DateTimeOffset|Datum und Uhrzeit, zu der die Antwort zurückgegeben wurde. Sie ISO 8601-Format verwendet und ist immer in UTC-Zeit. Beispielsweise würde Uhr UTC auf 1 Jan 2014 sieht folgendermaßen aus:`'2014-01-01T00:00:00Z'`|
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

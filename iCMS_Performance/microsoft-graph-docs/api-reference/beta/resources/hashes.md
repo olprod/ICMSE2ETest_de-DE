@@ -1,10 +1,10 @@
-# <a name="hashes-resource-type"></a>hashes resource type
+# <a name="hashes-resource-type"></a>Hash Ressourcentyp
 
-The **hashes** facet groups different types of hashes into a single structure, for an item.
+Die **Hashes** Facetten gruppiert verschiedene Typen des weiteren in einer einzelnen Struktur, für ein Element.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",
@@ -25,19 +25,19 @@ Here is a JSON representation of the resource.
 
 | Eigenschaft      | Typ                   | Beschreibung                                                       |
 |:--------------|:-----------------------|:------------------------------------------------------------------|
-| **sha1Hash**  | String  | SHA1 hash for the contents of the file (if available). Read-only. |
-| **crc32Hash** | String  | The CRC32 value of the file (if available). Read-only.            |
-| **quickXorHash** | String | A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only. | 
+| **sha1Hash**  | String  | SHA1-Hash für den Inhalt der Datei (sofern verfügbar). Schreibgeschützt. |
+| **crc32Hash** | String  | Der CRC32-Wert der Datei (sofern verfügbar). Schreibgeschützt.            |
+| **quickXorHash** | String | Eine proprietäre Hash der Datei, die verwendet werden kann, um festzustellen, ob der Inhalt der Datei (sofern verfügbar) geändert hat. Schreibgeschützt. | 
 
-**Note:** In some cases hash values may not be available. If this is the case, the hash values on an item will be updated after the item is downloaded.
+**Hinweis:** In einigen Fällen Hash Werte möglicherweise nicht zur Verfügung. Wenn dies der Fall ist, werden der Hashwert für ein Element nach dem Download des Elements aktualisiert.
 
 
 
 ## <a name="remarks"></a>Hinweise
 
-In OneDrive for Business, **sha1Hash** and **crc32Hash** are not available.
+In OneDrive für Unternehmen sind **sha1Hash** und **crc32Hash** nicht verfügbar.
 
-In OneDrive Personal, **quickXorHash** is not available.
+**QuickXorHash** ist in OneDrive persönlich nicht verfügbar.
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

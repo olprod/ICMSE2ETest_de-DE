@@ -1,18 +1,18 @@
-# <a name="emailaddress-resource-type"></a>emailAddress resource type
+# <a name="emailaddress-resource-type"></a>EmailAddress Ressourcentyp
 
-The name and email address of a contact or message recipient.
+Der Name und e-Mail-Adresse eines Empfängers Kontakt oder einer Nachricht.
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|address|String|The email address of the person or entity.|
-|name|String|The display name of the person or entity.|
+|address|String|Die e-Mail-Adresse der Person oder Entität.|
+|name|String|Der Anzeigename der Person oder Entität.|
 
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

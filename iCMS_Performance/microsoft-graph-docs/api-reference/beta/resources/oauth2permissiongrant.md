@@ -1,11 +1,11 @@
-# <a name="oauth2permissiongrant-resource-type"></a>oAuth2PermissionGrant resource type
+# <a name="oauth2permissiongrant-resource-type"></a>Ressourcentyp oAuth2PermissionGrant
 
-Represents the OAuth 2.0 delegated permission scopes that have been granted to an application (represented by a service principal) as part of the user or admin consent process. 
+Stellt die OAuth 2.0 delegiert berechtigungsbereiche erteilt wurden, die zu einer Anwendung (dargestellt durch ein Dienstprinzipal) im Rahmen des Prozesses Zustimmung Benutzer oder Administrator. 
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -33,12 +33,12 @@ Here is a JSON representation of the resource
 |:---------------|:--------|:----------|
 |clientId|String||
 |consentType|String||
-|expiryTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|objectId|String| ReadOnly|
+|expiryTime|DateTimeOffset|Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Beispielsweise würde Uhr UTC auf 1 Jan 2014 sieht folgendermaßen aus:`'2014-01-01T00:00:00Z'`|
+|objectId|String| Schreibgeschützt.|
 |principalId|String||
 |resourceId|String||
 |Bereich|String||
-|<starttime>|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
+|startTime|DateTimeOffset|Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Beispielsweise würde Uhr UTC auf 1 Jan 2014 sieht folgendermaßen aus:`'2014-01-01T00:00:00Z'`|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
@@ -48,9 +48,9 @@ Keine
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get oAuth2PermissionGrant](../api/oauth2permissiongrant_get.md) | [oAuth2PermissionGrant](oauth2permissiongrant.md) |Read properties and relationships of oAuth2PermissionGrant object.|
-|[Update](../api/oauth2permissiongrant_update.md) | [oAuth2PermissionGrant](oauth2permissiongrant.md)   |Update oAuth2PermissionGrant object. |
-|[delete()](../api/oauth2permissiongrant_delete.md) | Keine |Delete oAuth2PermissionGrant object. |
+|[OAuth2PermissionGrant abrufen](../api/oauth2permissiongrant_get.md) | [oAuth2PermissionGrant](oauth2permissiongrant.md) |Lesen Sie Eigenschaften und Beziehungen des oAuth2PermissionGrant-Objekts.|
+|[Update](../api/oauth2permissiongrant_update.md) | [oAuth2PermissionGrant](oauth2permissiongrant.md)   |OAuth2PermissionGrant-Objekt zu aktualisieren. |
+|[Löschen](../api/oauth2permissiongrant_delete.md) | Keine |OAuth2PermissionGrant-Objekt zu löschen. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

@@ -1,9 +1,9 @@
 # <a name="assignlicense"></a>assignLicense
-Add or remove subscriptions for the user. You can also enable and disable specific plans associated with a subscription.
+Hinzufügen oder Entfernen von Abonnements für den Benutzer. Sie können auch aktivieren und deaktivieren bestimmte Pläne ein Abonnement zugeordnet.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *User.ReadWrite.All; Directory.ReadWrite.All*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *User.ReadWrite.All; Directory.ReadWrite.All*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /users/<id | userPrincipalName>/assignLicense
@@ -11,24 +11,24 @@ POST /users/<id | userPrincipalName>/assignLicense
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
-| contentType  | application/json  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
+| Inhaltstyp  | Application/json  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|addLicenses|AssignedLicense|A collection of [assignedLicense](../resources/assignedlicense.md) objects that specify the licenses to add. You can disable plans associated with a license by setting the **disabledPlans** property on an [assignedLicense](../resources/assignedlicense.md) object.|
-|removeLicenses|Guid|A collection of GUIDs that identify the licenses to remove.|
+|addLicenses|AssignedLicense|Eine Auflistung von [AssignedLicense](../resources/assignedlicense.md) -Objekte, die die hinzuzufügenden Lizenzen angeben. Sie können eine Lizenz zugeordnet sind, indem Sie die **DisabledPlans** -Eigenschaft für ein Objekt [AssignedLicense](../resources/assignedlicense.md) Pläne deaktivieren.|
+|removeLicenses|Guid|Eine Auflistung von GUIDs, die die zu entfernenden Lizenzen zu identifizieren.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and [user](../resources/user.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortobjekt Code und [Benutzer](../resources/user.md) in der Antworttext.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "user_assignlicense"
@@ -50,7 +50,7 @@ Content-length: 185
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

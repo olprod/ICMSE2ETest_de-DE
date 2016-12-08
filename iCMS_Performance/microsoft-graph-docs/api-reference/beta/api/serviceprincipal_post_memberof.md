@@ -1,9 +1,9 @@
-# <a name="create-memberof"></a>Create memberOf
+# <a name="create-memberof"></a>Erstellen von Mitglied
 
-Use this API to create a new memberOf.
+Verwenden Sie diese API, um ein neues Mitglied zu erstellen.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /servicePrincipals/<id>/memberOf
@@ -12,18 +12,18 @@ POST /servicePrincipals/<id>/memberOf
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [directoryObject](../resources/directoryobject.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [DirectoryObject](../resources/directoryobject.md) -Objekts.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [directoryObject](../resources/directoryobject.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `201, Created` Antwortobjekt Code und [DirectoryObject](../resources/directoryobject.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_directoryobject_from_serviceprincipal"
@@ -38,9 +38,9 @@ Content-length: 30
   }
 }
 ```
-In the request body, supply a JSON representation of [directoryObject](../resources/directoryobject.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [DirectoryObject](../resources/directoryobject.md) -Objekts.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

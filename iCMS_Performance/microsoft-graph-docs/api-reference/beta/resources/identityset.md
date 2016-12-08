@@ -1,18 +1,18 @@
-# <a name="identityset-resource-type"></a>identitySet resource type
+# <a name="identityset-resource-type"></a>Ressourcentyp identitySet
 
-The **identitySet** type is a keyed collection of [identity](identity.md) objects. It is used to represent a set of identities associated with various events for an item, such as _created by_ or _last modified by_.
+Der **IdentitySet** -Typ ist eine verschlüsselte Auflistung der [Identity](identity.md) -Objekte. Es wird verwendet, um einen Satz von Identitäten zugeordnet verschiedenen Ereignisse für ein Element, wie _von erstellt_ oder _zuletzt geändert von_darstellen.
 
 ## <a name="properties"></a>Eigenschaften
 
 | Eigenschaft    | Typ                    | Beschreibung                                           |
 |:------------|:------------------------|:------------------------------------------------------|
-| application | [Identität](identity.md) | An identity resource that represents the application. |
-| Gerät      | [Identität](identity.md) | An identity resource that represents the device.      |
-| user        | [Identität](identity.md) | An identity resource that represents a user.          |
+| application | [Identität](identity.md) | Eine Identität-Ressource, die die Anwendung darstellt. |
+| Gerät      | [Identität](identity.md) | Eine Identität-Ressource, die das Gerät darstellt.      |
+| user        | [Identität](identity.md) | Eine Identität-Ressource, die einen Benutzer darstellt.          |
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

@@ -1,38 +1,38 @@
-# <a name="sharinglink-resource-type"></a>sharingLink resource type
+# <a name="sharinglink-resource-type"></a>Ressourcentyp sharingLink
 
-Provides information on a sharing link for an item.
+Enthält Informationen für ein Element eine Freigabe Verknüpfung.
 
 
 ## <a name="properties"></a>Eigenschaften
 
 | Eigenschaft    | Typ                    | Beschreibung                                                                                                                                                                                             |
 |:------------|:------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| application | [Identität](identity.md) | The app the link is associated with.                                                                                                                                                                    |
-| Typ        | String                  | The type of the link created.                                                                                                                                                                           |
-| Bereich       | String                  | The scope of the link represented by this permission. Value `anonymous` indicates the link is usable by anyone, `organization` indicates the link is only usable for users signed into the same tenant. |
-| WebUrl      | String                  | A URL that opens the item in the browser on the OneDrive website.                                                                                                                                       |
+| application | [Identität](identity.md) | Die app den Link zugeordnet ist.                                                                                                                                                                    |
+| Typ        | String                  | Der Typ der Verknüpfung erstellt.                                                                                                                                                                           |
+| Bereich       | String                  | Der Bereich der von dieser Berechtigung dargestellte Verknüpfung. Wert `anonymous` gibt an, die Verknüpfung kann durch jeden Benutzer verwendet werden `organization` gibt an, der Link kann nur für Benutzer angemeldet haben den gleichen Mandanten verwendet werden. |
+| webUrl      | String                  | Eine URL, die das Element im Browser auf der OneDrive-Website wird geöffnet.                                                                                                                                       |
 
 
-## <a name="type-enumeration"></a>Type enumeration
+## <a name="type-enumeration"></a>Typ-Aufzählung
 
-This table defines the possible values for the **type** property:
+Die folgende Tabelle sind die möglichen Werte für die **Type** -Eigenschaft definiert:
 
 | Wert   | Funktion    | Beschreibung                                                                     |
 |:--------|:--------|:--------------------------------------------------------------------------------|
-| `view`  | `read`  | A view-only sharing link, allowing read-only access.                            |
-| `edit`  | `write` | An edit sharing link, allowing read-write access.                               |
+| `view`  | `read`  | Leserechten Freigabe Link, schreibgeschützten Zugriff zulassen.                            |
+| `edit`  | `write` | Eine Änderung Freigabe Link, Lese-/ Schreibzugriff zulassen.                               |
 
-## <a name="scope-enumeration"></a>Scope enumeration
+## <a name="scope-enumeration"></a>Bereichs-Aufzählung
 
 | Wert          | Beschreibung                                                                                                                 |
 |:---------------|:----------------------------------------------------------------------------------------------------------------------------|
-| `anonymous`    | The sharing link is available for anyone to use.                                                                            |
-| `organization` | The sharing link is available for anyone within the same organization (tenant) to use. Not available for OneDrive Personal. |
+| `anonymous`    | Der Freigabe Link ist für alle Benutzer verwenden verfügbar.                                                                            |
+| `organization` | Der Freigabe Link ist verfügbar für jede Person in derselben Organisation (Mandant) verwendet. Nicht verfügbar für OneDrive persönlich. |
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

@@ -1,39 +1,39 @@
-# <a name="list-available-drives"></a>List available drives
+# <a name="list-available-drives"></a>Liste verfügbaren Laufwerke
 
-Retrieve a list of available drive objects for a user or Office 365 group.
+Abrufen einer Liste der verfügbaren Laufwerk-Objekte für einen Benutzer oder eine Gruppe von Office 365.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.Read
   * Files.ReadWrite
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/drives
 GET /groups/<id>/drives
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 
 ## <a name="request-headers"></a>Anforderungsheader
 
 | Name          | Typ   | Beschreibung               |
 |:--------------|:-------|:--------------------------|
-| Autorisierung | string | Bearer <token>. Required. |
+| Autorisierung | string | Bearer <token>. Erforderlich. |
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and collection of [drive](../resources/drive.md) objects in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und Auflistung von Objekten im Antworttext [Laufwerk](../resources/drive.md) .
 
 ## <a name="example"></a>Beispiel
 
 ##### <a name="request"></a>Anforderung
-Here is an example of the request for the user's drives.
+Es folgt ein Beispiel der Anforderung für den Laufwerken des Benutzers.
 
 <!-- {
   "blockType": "request",
@@ -44,7 +44,7 @@ GET https://graph.microsoft.com/beta/me/drives
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": false,
@@ -80,7 +80,7 @@ Content-length: 579
 
 ## <a name="remarks"></a>Hinweise
 
-Most users will only have a single OneDrive. Office 365 groups may have more than one drive available.
+Die meisten Benutzer haben nur eine einzelne OneDrive. Office 365 Gruppen möglicherweise mehr als ein Laufwerk verfügbar.
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

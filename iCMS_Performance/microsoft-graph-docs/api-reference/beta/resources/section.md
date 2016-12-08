@@ -1,10 +1,10 @@
-# <a name="section-resource-type"></a>section resource type
+# <a name="section-resource-type"></a>Abschnitt Ressourcentyp
 
-A section in a OneNote notebook. Sections can contain pages.
+Ein Abschnitt in einem OneNote-Notizbuch. Abschnitte können Seiten enthalten.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",
@@ -33,32 +33,32 @@ Here is a JSON representation of the resource.
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|createdBy|String|Der Benutzer, der den Abschnitt erstellt hat.|
-|createdTime|DateTimeOffset|The date and time when the section was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
-|id|String|The unique identifier of the section.  Read-only.|
-|isDefault|Boolean|Gibt an, ob das der Standardabschnitt des Benutzers ist.|
-|lastModifiedBy|String|Der Benutzer, der den Abschnitt zuletzt geändert hat|
-|lastModifiedTime|DateTimeOffset|The date and time when the section was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
+|createdBy|String|Der Benutzer, die der Abschnitt erstellt. Schreibgeschützt.|
+|createdTime|DateTimeOffset|Datum und Uhrzeit der Erstellung der Abschnitt. Der Zeitstempel stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Um Mitternacht UTC 1 Jan 2014 würde beispielsweise wie folgt aussehen: `'2014-01-01T00:00:00Z'`. Schreibgeschützt.|
+|id|String|Der eindeutige Bezeichner des Abschnitts.  Schreibgeschützt.|
+|isDefault|Boolean|Gibt an, ob dies Abschnitt "Default" des Benutzers ist. Schreibgeschützt.|
+|lastModifiedBy|String|Der Benutzer, die im Abschnitt der letzten Änderung. Schreibgeschützt.|
+|ZuletztGeändertUm|DateTimeOffset|Datum und Uhrzeit der letzten im Abschnitt Änderung. Der Zeitstempel stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Um Mitternacht UTC 1 Jan 2014 würde beispielsweise wie folgt aussehen: `'2014-01-01T00:00:00Z'`. Schreibgeschützt.|
 |name|String|Der Name des Abschnitts. |
-|pagesUrl|String|Der /pages-Endpunkt, von dem Sie Details für alle Seiten im Abschnitt abrufen können.|
-|self|String|Der Endpunkt, an dem Sie Details zu dem Abschnitt abrufen können.|
+|pagesUrl|String|Die `pages` Endpunkt, in dem Sie Details für alle Seiten im Abschnitt abrufen können. Schreibgeschützt.|
+|Self|String|Der Endpunkt, in dem Sie Details zum Abschnitt abrufen können. Schreibgeschützt.|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Seiten|[Page](page.md) collection|The collection of pages in the section.  Read-only. Nullable.|
-|parentNotebook|[Notizbuch](notebook.md)|The notebook that contains the section.  Read-only.|
-|parentSectionGroup|[SectionGroup-Objekt](sectiongroup.md)|The section group that contains the section.  Read-only.|
+|Seiten|[Seite](page.md) -Auflistung|Die Auflistung der Seiten im Abschnitt.  Schreibgeschützt. NULL-Werte zulässt.|
+|parentNotebook|[Notizbuch](notebook.md)|Das Notizbuch, das den Abschnitt enthält.  Schreibgeschützt.|
+|parentSectionGroup|[SectionGroup](sectiongroup.md)|Der Abschnittsgruppe, die den Abschnitt enthält.  Schreibgeschützt.|
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get section](../api/section_get.md) | [Section[]](section.md) |Read the properties and relationships of the section.|
-|[Erstellen eines Seitenlayouts](../api/section_post_pages.md) |[page](page.md)| Create a page by posting to the pages collection in the specified section.|
-|[List pages](../api/section_list_pages.md) |[Page](page.md) collection| Get a collection of pages in the specified section.|
-|[copyToNotebook](../api/section_copytonotebook.md)|Keine|Copy the section to a specific notebook.|
-|[copyToSectionGroup](../api/section_copytosectiongroup.md)|Keine|Copy the section to a specific section group.|
+|[Get-Abschnitt](../api/section_get.md) | [Abschnitt](section.md) |Lesen Sie die Eigenschaften und Beziehungen des Abschnitts.|
+|[Seite "erstellen"](../api/section_post_pages.md) |[Seite](page.md)| Erstellen Sie eine Seite durch das Veröffentlichen in der Pages-Auflistung im angegebenen Abschnitt.|
+|[Listenseiten](../api/section_list_pages.md) |[Seite](page.md) -Auflistung| Rufen Sie eine Auflistung von Seiten im angegebenen Abschnitt.|
+|[copyToNotebook](../api/section_copytonotebook.md)|Keine|Kopieren Sie im Abschnitt in einem bestimmten Notizbuch.|
+|[copyToSectionGroup](../api/section_copytosectiongroup.md)|Keine|Kopieren Sie den Abschnitt zu einer bestimmten Gruppe.|
 
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

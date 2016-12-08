@@ -1,16 +1,16 @@
-# <a name="message-createforward"></a>message: createForward
-Create a draft forward message to include a comment or update any message properties  
-all in one **createForward** call. You can then [send](../api/message_send.md) the draft message.
+# <a name="message-createforward"></a>Meldung: CreateForward
+Erstellen Sie eine Nachricht der Entwurf forward eingeschlossen einen Kommentar oder aktualisieren Sie die Nachrichteneigenschaften  
+Rufen Sie alle in einem **CreateForward** auf. Anschließend können Sie den Entwurf einer Nachricht [gesendet](../api/message_send.md) .
 
 **Hinweis**
 
-- You can specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.
-- You must specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.
+- Sie können einen Kommentar oder die **Body** -Eigenschaft des angeben der `message` Parameter. Beide angeben, gibt einen HTTP 400 Ungültige Anforderung Fehler zurück.
+- Geben Sie entweder die `toRecipients` Parameter oder die **ToRecipients** -Eigenschaft des der `message` Parameter. Beide angeben oder keine Angabe gibt einen HTTP 400 Ungültige Anforderung Fehler zurück.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: *Mail.ReadWrite*
+Der folgende **Bereiche** sind erforderlich, um diese API ausführen: *Mail.ReadWrite*
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/messages/<id>/createForward
@@ -21,25 +21,25 @@ POST /users/<id | userPrincipalName>/mailFolders/<id>/messages/<id>/createForwar
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
-| contentType | string  | Nature of the data in the body of an entity. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
+| Inhaltstyp | string  | Die Art der Daten im Textkörper einer Entität. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Kommentar|String|A comment to include. Can be an empty string.|
-|toRecipients|[recipient](../resources/recipient.md) collection|The list of recipients.|
-|Message|[Message](../resources/message.md)|Any writeable properties to update in the reply message.|
+|Kommentar|String|Ein Kommentar eingeschlossen. Eine leere Zeichenfolge kann sein.|
+|toRecipients|[Empfänger](../resources/recipient.md) -Auflistung|Die Liste der Empfänger.|
+|Nachricht|[Nachricht](../resources/message.md)|Alle schreibbaren Eigenschaften so aktualisieren Sie in der Antwortnachricht.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [message](../resources/message.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortobjekt Code und die [Nachricht](../resources/message.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "message_createforward"
@@ -65,7 +65,7 @@ Content-Type: application/json
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

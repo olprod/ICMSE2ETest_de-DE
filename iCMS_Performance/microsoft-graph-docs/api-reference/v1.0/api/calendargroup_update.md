@@ -1,11 +1,11 @@
-# <a name="update-calendargroup"></a>Update calendargroup
+# <a name="update-calendargroup"></a>Calendargroup aktualisieren
 
-Update the properties of calendargroup object.
+Aktualisieren Sie die Eigenschaften des Calendargroup-Objekts.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: _Calendars.ReadWrite_
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: _Calendars.ReadWrite_
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
-Any [calendarGroup](../resources/calendargroup.md) of a user.
+Alle [CalendarGroup](../resources/calendargroup.md) eines Benutzers.
 ```http
 PATCH /me/calendarGroups/<id>
 PATCH /users/<id | userPrincipalName>/calendarGroups/<id>
@@ -13,21 +13,21 @@ PATCH /users/<id | userPrincipalName>/calendarGroups/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
-| contentType  | application/json. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
+| Inhaltstyp  | Application/Json. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung die Werte für die entsprechenden Felder, die aktualisiert werden soll. Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind werden die vorherigen Werte verwalten oder neu berechnet basierend auf Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandenen Werte enthalten, die nicht geändert haben.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|name|String|Der Name der Ordnergruppe.|
+|name|String|Den Namen der Gruppe.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and updated [calendarGroup](../resources/calendargroup.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortcode und aktualisierte [CalendarGroup](../resources/calendargroup.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_calendargroup"
@@ -42,7 +42,7 @@ Content-length: 30
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

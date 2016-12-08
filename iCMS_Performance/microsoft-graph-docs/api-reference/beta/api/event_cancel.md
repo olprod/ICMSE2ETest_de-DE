@@ -1,16 +1,16 @@
-# <a name="event-cancel"></a>event: cancel
+# <a name="event-cancel"></a>Ereignis: Abbrechen
 
-This action allows the organizer of a meeting to send a cancellation message and cancel the event. 
+Diese Aktion ermöglicht den Organisator einer Besprechung senden eine Absage und das Ereignis abzubrechen. 
 
-The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting by providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following error message:
+Die Aktion wird das Ereignis in den Ordner Gelöschte Objekte verschoben. Der Organisator kann auch ein Vorkommen einer Besprechungsserie abzubrechen, durch Bereitstellen der Vorkommen-Ereignis-ID Diese Aktion aufrufen Teilnehmerin Ruft einen Fehler (HTTP 400 Ungültige Anforderung), wobei die folgende Fehlermeldung angezeigt:
 
-"Your request can't be completed. You need to be an organizer to cancel a meeting."
+"Die Anforderung konnte nicht abgeschlossen werden. Sie müssen ein Organisator eine Besprechung abgebrochen werden."
 
-This action differs from [Delete](event_delete.md) in that **Cancel** is available to only the organizer, and lets the organizer send a custom message to the attendees about the cancellation.
+Diese Aktion unterscheidet sich von [Löschen](event_delete.md) , nur den Organisator steht und ermöglicht es den Organisator, senden eine benutzerdefinierte Meldung an die Teilnehmer über den Abbruch **Abbrechen** .
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Calendars.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/events/<id>/cancel
@@ -33,23 +33,23 @@ POST /users/<id | userPrincipalName>/calendargroups/<id>/calendars/<id>/events/<
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
-| contentType | string  | Nature of the data in the body of an entity. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
+| Inhaltstyp | string  | Die Art der Daten im Textkörper einer Entität. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Kommentar|String|A comment about the cancellation sent to all the attendees. Optional.|
+|Kommentar|String|Einen Kommentar zu den Abbruch an alle Teilnehmer gesendet. Optional|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `202, Accepted` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `202, Accepted` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "event_cancel"
@@ -64,7 +64,7 @@ Content-type: application/json
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true

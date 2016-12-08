@@ -1,28 +1,28 @@
-# <a name="icon-resource-type"></a>Icon resource type
+# <a name="icon-resource-type"></a>Symbol Ressourcentyp
 
-Stellt einen Zellkommentar dar.
+Stellt einem Zellensymbol.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get Icon](../api/icon_get.md) | [Symbol](icon.md) |Read properties and relationships of icon object.|
-|[Update](../api/icon_update.md) | [Symbol](icon.md)  |Update Icon object. |
+|[Symbol](../api/icon_get.md) | [Symbol](icon.md) |Lesen Sie Eigenschaften und Beziehungen Symbol-Objekts.|
+|[Update](../api/icon_update.md) | [Symbol](icon.md)  |Icon-Objekt zu aktualisieren. |
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Index|int|Represents the index of the icon in the given set.|
-|Set|string|Represents the set that the icon is part of. Possible values are: `Invalid`, `ThreeArrows`, `ThreeArrowsGray`, `ThreeFlags`, `ThreeTrafficLights1`, `ThreeTrafficLights2`, `ThreeSigns`, `ThreeSymbols`, `ThreeSymbols2`, `FourArrows`, `FourArrowsGray`, `FourRedToBlack`, `FourRating`, `FourTrafficLights`, `FiveArrows`, `FiveArrowsGray`, `FiveRating`, `FiveQuarters`, `ThreeStars`, `ThreeTriangles`, `FiveBoxes`.|
+|Index|int|Den Index des Symbols in der angegebenen Gruppe darstellt.|
+|Festlegen|string|Repräsentiert den Satz an, dem das Symbol gehört. Possible values are: `Invalid`, `ThreeArrows`, `ThreeArrowsGray`, `ThreeFlags`, `ThreeTrafficLights1`, `ThreeTrafficLights2`, `ThreeSigns`, `ThreeSymbols`, `ThreeSymbols2`, `FourArrows`, `FourArrowsGray`, `FourRedToBlack`, `FourRating`, `FourTrafficLights`, `FiveArrows`, `FiveArrowsGray`, `FiveRating`, `FiveQuarters`, `ThreeStars`, `ThreeTriangles`, `FiveBoxes`.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

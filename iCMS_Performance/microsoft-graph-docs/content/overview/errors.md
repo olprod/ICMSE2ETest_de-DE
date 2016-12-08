@@ -1,4 +1,4 @@
-# <a name="microsoft-graph-error-responses-and-resource-types"></a>Microsoft Graph error responses and resource types
+# <a name="microsoft-graph-error-responses-and-resource-types"></a>Microsoft Graph Fehlerantworten und Ressourcentypen
 
 <!--In this article:
   
@@ -9,32 +9,32 @@
 <a name="msg_error_response"> </a> -->
 
 ##<a name="status-code"></a>Statuscode
-Errors in the Microsoft Graph API service are returned using standard HTTP status codes, as well as a JSON error response object. The following HTTP status codes should be expected.
+Fehler in der Microsoft Graph-API-Dienst werden mithilfe von standard-HTTP-Statuscodes als auch ein JSON-Fehler-Response-Objekt zurückgegeben. Die folgenden HTTP-Statuscodes sollte erwartet werden.
 
-| Statuscode | Status message                  | Beschreibung                                                                                                                            |
+| Statuscode | Statusmeldung                  | Beschreibung                                                                                                                            |
 |:------------|:--------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------|
-| 400         | Bad Request                     | Cannot process the request because it is malformed or incorrect.                                                                       |
-| 401         | Nicht autorisierter Benutzer.                    | Required authentication information is either missing or not valid for the resource.                                                   |
-| 403         | Forbidden                       | Access is denied to the requested resource. The user might not have enough permission.                                                 |
-| 404         | Das Stichwort wurde nicht gefunden                       | Die angeforderte Ressource ist nicht vorhanden.                                                                                                  |
-| 405         | Method Not Allowed              | The HTTP method in the request is not allowed on the resource.                                                                         |
-| 406         | Not Acceptable                  | This service doesn’t support the format requested in the Accept header.                                                                |
-| 409         | Conflict                        | The current state conflicts with what the request expects. For example, the specified parent folder might not exist.                   |
-| 410         | Gone                            | The requested resource is no longer available at the server.                                               |
-| 411         | Length Required                 | A Content-Length header is required on the request.                                                                                    |
-| 412         | Precondition Failed             | A precondition provided in the request (such as an if-match header) does not match the resource's current state.                       |
-| 413         | Request Entity Too Large        | The request size exceeds the maximum limit.                                                                                            |
-| 415         | Unsupported Media Type          | The content type of the request is a format that is not supported by the service.                                                      |
-| 416         | Requested Range Not Satisfiable | The specified byte range is invalid or unavailable.                                                                                    |
-| 422         | Unprocessable Entity            | Cannot process the request because it is semantically incorrect.                                                                       |
-| 429         | Too Many Requests               | Client application has been throttled and should not attempt to repeat the request until an amount of time has elapsed.                |
-| 500 ms         | Internal Server Error           | Beim Verarbeiten der Anforderung ist ein interner Fehler aufgetreten.                                                                       |
-| 501         | Not Implemented                 | Das angeforderte Feature ist nicht implementiert.                                                                                               |
-| HTTP 503         | Service Unavailable             | The service is temporarily unavailable. You may repeat the request after a delay. There may be a Retry-After header.                   |
-| 507         | Insufficient Storage            | The maximum storage quota has been reached.                                                                                            |
-| 509         | Bandwidth Limit Exceeded        | Your app has been throttled for exceeding the maximum bandwidth cap. Your app can retry the request again after more time has elapsed. |
+| 400         | Ungültige Anforderung                     | Die Anforderung kann nicht verarbeitet werden, da es ungültig oder falsch ist.                                                                       |
+| 401         | Nicht autorisiert                    | Authentifizierungsinformationen erforderlich ist, fehlt oder ist nicht gültig für die Ressource.                                                   |
+| 403         | Nicht zulässig                       | Der Zugriff auf die angeforderte Ressource verweigert. Der Benutzer möglicherweise nicht ausreichende Berechtigungen.                                                 |
+| 404         | Nicht gefunden                       | Die angeforderte Ressource ist nicht vorhanden.                                                                                                  |
+| 405         | Methode unzulässig              | Die HTTP-Methode in der Anforderung ist für die Ressource nicht zulässig.                                                                         |
+| 406         | Nicht akzeptabel                  | Dieser Dienst unterstützt keine im Accept-Header angeforderte Format.                                                                |
+| 409         | Conflict                        | Der aktuelle Zustand Konflikte mit, was die Anforderung erwartet. Beispielsweise kann der angegebenen übergeordneten Ordner nicht vorhanden.                   |
+| 410         | Unerwartet                            | Die angeforderte Ressource ist nicht mehr auf dem Server verfügbar.                                               |
+| 411         | Erforderliche Länge                 | Ein Content-Length-Header muss auf die Anforderung.                                                                                    |
+| 412         | Voraussetzung fehlgeschlagen             | Eine Voraussetzung, die in der Anforderung (beispielsweise ein If-Match-Header) bereitgestellten entspricht nicht den aktuellen Status der Ressource.                       |
+| 413         | Anforderungsentität ist zu groß        | Die Anforderungsgröße überschreitet die maximal zulässige.                                                                                            |
+| 415         | Nicht unterstützter Medientyp          | Der Inhaltstyp der Anforderung ist ein Format, das nicht vom Dienst unterstützt wird.                                                      |
+| 416         | Bereich nicht ausreichend angefordert | Der angegebene Bytearray Bereich ist ungültig oder nicht verfügbar.                                                                                    |
+| 422         | Einheit            | Die Anforderung kann nicht verarbeitet werden, da sie semantisch falsch ist.                                                                       |
+| 429         | Zu viele Anfragen               | Clientanwendung hat gedrosselt wurde und dürfen nicht versuchen, die Anfrage wiederholt, bis eine bestimmte Zeitspanne vergangen ist.                |
+| 500         | Interner Serverfehler           | Ein interner Serverfehler ist aufgetreten Verarbeitung der Anforderung.                                                                       |
+| 501         | Nicht implementiert                 | Das angeforderte Feature ist nicht implementiert.                                                                                               |
+| 503         | Dienst nicht verfügbar             | Der Dienst ist vorübergehend nicht verfügbar. Sie können die Anforderung nach einer kurzen Verzögerung wiederholen. Möglicherweise gibt es ein Retry-After-Header.                   |
+| 507         | Nicht genügend Speicher            | Das maximale Speicherkontingent wurde erreicht.                                                                                            |
+| 509         | Bandbreite wurde überschritten        | Ihre app wurde für die maximale Bandbreite Cap überschreiten gedrosselt wurde. Ihre app kann die Anforderung erneut wiederholen Sie nach dem mehr Zeit vergangen ist. |
 
-The error response is a single JSON object that contains a single property named **error**. This object includes all of the details of the error. You may use the information returned here instead of, or in addition to the HTTP status code returned. Here is an example of a full JSON error body.
+Die Fehlerantwort ist ein einzelnes JSON-Objekt, das eine einzelne Eigenschaft namens **Fehler**enthält. Dieses Objekt enthält alle Details des Fehlers. Sie können hier anstelle von oder zusätzlich zu den zurückgegebenen HTTP-Statuscode zurückgegebene Informationen verwenden. Es folgt ein Beispiel einer vollständigen JSON Fehler Einrichtung.
 
 <!-- { "blockType": "example", "@odata.type": "sample.error", "expectError": true, "name": "example-error-response"} -->
 ```json
@@ -52,15 +52,15 @@ The error response is a single JSON object that contains a single property named
 
 <!--<a name="msg_error_resource_type"> </a> -->
 
-# <a name="error-resource-type"></a>Error resource type
+# <a name="error-resource-type"></a>Fehler Ressourcentyp
 
-The error resource is returned whenever an error occurs in the processing of a request.
+Die Ressource Fehler wird zurückgegeben, wenn bei der Verarbeitung einer Anforderung ein Fehler auftritt.
 
-Error responses follow the definition in the [OData v4](http://docs.oasis-open.org/odata/odata-json-format/v4.0/os/odata-json-format-v4.0-os.html#_Toc372793091) specification for error responses.
+Fehlerantworten entsprechen der Definition in der Spezifikation für [OData v4](http://docs.oasis-open.org/odata/odata-json-format/v4.0/os/odata-json-format-v4.0-os.html#_Toc372793091) für Fehlerantworten.
 
-## <a name="json-representation"></a>JSON Representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-The error resource is composed of these resources:
+Die Fehler Ressource besteht aus diesen Ressourcen:
 
 <!-- { "blockType": "resource", "@odata.type": "sample.error" } -->
 ```json
@@ -69,9 +69,9 @@ The error resource is composed of these resources:
 }
 ```
 
-#### <a name="odataerror-resource-type"></a>odata.error resource type
+#### <a name="odataerror-resource-type"></a>Ressourcentyp OData.Error
 
-Inside the error response is an error resource that includes the following properties:
+Innerhalb der Fehler befindet Antwort ein Fehler Ressource, die umfasst die folgenden Eigenschaften:
 
 <!-- { "blockType": "resource", "@odata.type": "odata.error", "optionalProperties": [ "target", "details", "innererror"] } -->
 ```json
@@ -82,11 +82,11 @@ Inside the error response is an error resource that includes the following prope
 }
 ```
 
-| Eigenschaftsname  | Wert                  | Beschreibung                                                                                               |
+| Name der Eigenschaft  | Wert                  | Description\                                                                                               |
 |:---------------|:-----------------------|:-----------------------------------------------------------------------------------------------------------|
-| **Code**       | string                 | An error code string for the error that occured                                                            |
-| **Message**    | string                 | A developer ready message about the error that occured. This should not be displayed to the user directly. |
-| **innererror** | Error (Objekt)           | Optional. Additional error objects that may be more specific than the top level error.                     |
+| **Code**       | string                 | Eine Zeichenfolge des Fehlercodes für den aufgetretenen Fehler                                                            |
+| **Nachricht**    | string                 | Ein Entwickler bereit Meldung über den aufgetretenen Fehler. Dies sollte nicht für den Benutzer direkt angezeigt werden. |
+| **innererror** | Error-Objekt           | Optional Zusätzliche Error-Objekte, die möglicherweise detaillierter als der obersten Ebene Fehler.                     |
 <!-- {
   "type": "#page.annotation",
   "description": "Understand the error format for the API and error codes.",
@@ -97,31 +97,31 @@ Inside the error response is an error resource that includes the following prope
 
 <!--<a name="msg_code_property"> </a> -->
 
-##<a name="code-property"></a>Code-Eigenschaft
+##<a name="code-property"></a>Code (Eigenschaft)
 
-The `code` property contains one of the following possible values. Your apps should be prepared to handle any one of these errors.
+Die `code` -Eigenschaft enthält die folgenden möglichen Werte. Behandeln eines diese Fehler sollten Ihre apps vorbereitet werden.
 
 | Code                      | Beschreibung
 |:--------------------------|:--------------
-| **accessDenied**          | The caller doesn't have permission to perform the action. 
-| **activityLimitReached**  | The app or user has been throttled.
-| **generalException**      | Ein interner Fehler ist aufgetreten.
-| **invalidRange**          | The specified byte range is invalid or unavailable.
-| **invalidRequest**        | The request is malformed or incorrect.
-| **itemNotFound**          | Die angegebene Eigenschaft konnte nicht gefunden werden.
-| **malwareDetected**       | Malware was detected in the requested resource.
-| **nameAlreadyExists**     | The specified item name already exists.
-| **notAllowed**            | The action is not allowed by the system.
-| **notSupported**          | The request is not supported by the system.
-| **resourceModified**      | The resource being updated has changed since the caller last read it, usually an eTag mismatch.
-| **resyncRequired**        | The delta token is no longer valid, and the app must reset the sync state.
-| **serviceNotAvailable**   | The service is not available. Try the request again after a delay. There may be a Retry-After header. 
-| **quotaLimitReached**     | The user has reached their quota limit.
-| **Unauthenticated**       | The caller is not authenticated.
+| **Zugriff verweigert**          | Der Aufrufer nicht über die Berechtigung zum Ausführen der Aktion. 
+| **activityLimitReached**  | Die app oder der Benutzer hat gedrosselt wurden.
+| **generalException**      | Ein nicht spezifizierter Fehler ist aufgetreten.
+| **invalidRange**          | Der angegebene Bytearray Bereich ist ungültig oder nicht verfügbar.
+| **invalidRequest**        | Anforderung ist ungültig oder falsch.
+| **itemNotFound**          | Die Ressource konnte nicht gefunden werden.
+| **malwareDetected**       | In der angeforderten Ressource wurde Schadsoftware ermittelt.
+| **nameAlreadyExists**     | Der Name des angegebenen Elements ist bereits vorhanden.
+| **"NotAllowed" an**            | Die Aktion wird vom System nicht zulässig.
+| **notSupported**          | Die Anforderung wird vom System nicht unterstützt.
+| **resourceModified**      | Die Ressource, die aktualisiert wurde geändert, seit der Anrufer zuletzt es in der Regel ein Konflikt eTag gelesen.
+| **resyncRequired**        | Das Token Delta ist nicht mehr gültig, und die app muss den Synchronisierungsstatus zurückgesetzt.
+| **serviceNotAvailable**   | Der Dienst ist nicht verfügbar. Versuchen Sie erneut nach einer kurzen Verzögerung der Anforderung. Möglicherweise gibt es ein Retry-After-Header. 
+| **quotaLimitReached**     | Der Benutzer hat die Kontingentgrenze erreicht.
+| **nicht authentifizierte**       | Der Anrufer wird nicht authentifiziert.
 
-The `innererror` object may recursively contain more `innererror` objects with additional, more specific error codes. When handling an error, apps should loop through all the error codes available and use the most detailed one that they understand. Some of the more detailed codes are listed at the bottom of this page.
+Die `innererror` -Objekts kann enthalten rekursiv mehr `innererror` Objekte mit zusätzlichen, bestimmte Fehlercodes. Bei der Behandlung eines Fehlers sollten apps eine Schleife durch alle verfügbaren Fehlercodes und nehmen Sie die ausführlichste aus, der sie verstehen. Einige der ausführlichere Codes sind am unteren Rand auf dieser Seite aufgeführt.
 
-To verify that an error object is an error you are expecting, you must loop over the `innererror` objects, looking for the error codes you expect. For example:
+Zum bestätigen, dass ein Error-Objekt ein Fehler ist Sie erwarten, müssen Sie eine Schleife über die `innererror` Objekte, benötigen die Fehlercodes erwarten. Beispiel:
 
 ```csharp
 public bool IsError(string expectedErrorCode)
@@ -137,58 +137,58 @@ public bool IsError(string expectedErrorCode)
 }
 ```
 
-For a complete example for properly handling errors, take a look at [Error Code Handling](https://gist.github.com/rgregg/a1866be15e685983b441).
+Ein vollständiges Beispiel für die Behandlung von Fehlern ordnungsgemäß sehen Sie sich die [Fehlerbehandlung von Code](https://gist.github.com/rgregg/a1866be15e685983b441).
 
-The `message` property at the root contains an error message intended for the developer to read. Error messages are not localized and shouldn't be displayed directly to the user. When handling errors, your code should not key off of `message` values because they can change at any time, and they often contain dynamic information specific to the failed request. You should only code against error codes returned in `code` properties.
+Die `message` -Eigenschaft im Stamm enthält eine Fehlermeldung, die für die direkte Verwendung für Entwickler zum Lesen. Fehlermeldungen wurden nicht lokalisiert und sollte nicht direkt mit dem Benutzer angezeigt werden. Bei der Behandlung von Fehlern, sollte Ihr Code nicht aus der Schlüssel `message` Werte, da sie jederzeit ändern können, und sie häufig dynamischen Informationen speziell für die fehlgeschlagene Anforderung enthalten. Sie sollten nur codieren Sie mit Fehlercodes im zurückgegebenen `code` Eigenschaften.
 
-### <a name="detailed-error-codes"></a>Detailed error codes
-Below are some additional errors that your app may encounter within the nested `innererror` objects. Apps are not required to handle these, but may if they choose. The service may add new error codes or stop returning old ones at any time, so it is important that all apps be able to handle the basic error codes in the preceding section](#code-property).
+### <a name="detailed-error-codes"></a>Detaillierte Fehlercodes
+Im folgenden sind einige weitere Fehler, die Ihre app in der geschachtelten auftreten `innererror` Objekte. Apps sind nicht erforderlich, diese zu behandeln, aber können, falls gewünscht. Der Dienst neue Fehlercodes hinzuzufügen oder Beenden der alten jederzeit zurückgeben, so wichtig ist, dass alle apps die grundlegende Fehlercodes in den vorstehenden section](#code-property) verarbeiten können.
 
 | Code                               | Beschreibung
 |:-----------------------------------|:----------------------------------------------------------
-| **accessRestricted**               | Access restricted to the item's owner.
-| **cannotSnapshotTree**             | Failed to get a consistent delta snapshot. Try again later.
-| **childItemCountExceeded**         | Max limit on the number of child items was reached.
-| **entityTagDoesNotMatch**          | ETag does not match the current item's value.
-| **fragmentLengthMismatch**         | Declared total size for this fragment is different from that of the upload session.
-| **fragmentOutOfOrder**             | Uploaded fragment is out of order.
-| **fragmentOverlap**                | Uploaded fragment overlaps with existing data.
-| **invalidAcceptType**              | Invalid accept type.
-| **invalidParameterFormat**         | Invalid parameter format.
-| **invalidPath**                    | Name contains invalid characters.
-| **invalidQueryOption**             | Invalid query option.
-| **invalidStartIndex**              | Invalid start index.
-| **lockMismatch**                   | Lock token does not match existing lock.
-| **lockNotFoundOrAlreadyExpired**   | There is currently no unexpired lock on the item.
-| **lockOwnerMismatch**              | Lock Owner ID does not match provided ID.
-| **malformedEntityTag**             | ETag header is malformed. ETags must be quoted strings.
-| **maxDocumentCountExceeded**       | Max limit on number of Documents is reached.
-| **maxFileSizeExceeded**            | Max file size exceeded.
-| **maxFolderCountExceeded**         | Max limit on number of Folders is reached.
-| **maxFragmentLengthExceeded**      | Max file size exceeded.
-| **maxItemCountExceeded**           | Max limit on number of Items is reached.
-| **maxQueryLengthExceeded**         | Max query length exceeded.
-| **maxStreamSizeExceeded**          | Maximum stream size exceeded.
-| **parameterIsTooLong**             | Parameter Exceeds Maximum Length.
-| **parameterIsTooSmall**            | Parameter is smaller then minimum value.
-| **pathIsTooLong**                  | Path exceeds maximum length.
-| **pathTooDeep**                    | Folder hierarchy depth limit reached.
-| **propertyNotUpdateable**          | Property not updateable.
-| **resyncApplyDifferences**         | Resync required. Replace any local items with the server's version (including deletes) if you're sure that the service was up to date with your local changes when you last sync'd. Upload any local changes that the server doesn't know about.
-| **resyncRequired**                 | Resync is required.
-| **resyncUploadDifferences**        | Resync required. Upload any local items that the service did not return, and upload any files that differ from the server's version (keeping both copies if you're not sure which one is more up-to-date).
-| **serviceNotAvailable**            | The server is unable to process the current request.
-| **serviceReadOnly**                | Resource is temporarily read-only.
-| **throttledRequest**               | Too many requests.
-| **tooManyResultsRequested**        | Too many results requested.
-| **tooManyTermsInQuery**            | Too many terms in the query.
-| **totalAffectedItemCountExceeded** | Operation is not allowed because the number of affected items exceeds threshold.
-| **truncationNotAllowed**           | Data truncation is not allowed.
-| **uploadSessionFailed**            | Upload session failed.
-| **uploadSessionIncomplete**        | Upload session incomplete.
-| **uploadSessionNotFound**          | Upload session not found.
-| **virusSuspicious**                | This document is suspicious and may have a virus.
-| **zeroOrFewerResultsRequested**    | Zero or fewer results requested.
+| **accessRestricted**               | Zugriff auf das Element Besitzer beschränkt.
+| **cannotSnapshotTree**             | Fehler beim Abrufen einer Momentaufnahme konsistente Delta. Versuchen Sie es erneut.
+| **childItemCountExceeded**         | Maximale Grenzwert für die Anzahl der untergeordneten Elemente wurde erreicht.
+| **entityTagDoesNotMatch**          | ETag entspricht nicht der aktuelle Wert des Elements.
+| **fragmentLengthMismatch**         | Deklarierte Gesamtgröße für dieses Fragment unterscheidet sich von der der Sitzung hochladen.
+| **fragmentOutOfOrder**             | Hochgeladenen Fragment ist nicht der Reihe nach.
+| **fragmentOverlap**                | Hochgeladenen Fragment überschneidet sich mit vorhandenen Daten.
+| **invalidAcceptType**              | Ungültiger Typ akzeptieren.
+| **invalidParameterFormat**         | Ungültiger Parameterformat.
+| **invalidPath**                    | Name enthält unzulässige Zeichen.
+| **invalidQueryOption**             | Ungültige Abfrageoption.
+| **invalidStartIndex**              | Ungültiger Index.
+| **lockMismatch**                   | Sperre Token entspricht nicht vorhandene sperren.
+| **lockNotFoundOrAlreadyExpired**   | Derzeit ist keine noch nicht abgelaufenen Sperre auf das Element vorhanden.
+| **lockOwnerMismatch**              | Sperre Besitzer-ID ist keine Übereinstimmung bereitgestellten-ID.
+| **malformedEntityTag**             | ETag-Header ist ungültig. ETags müssen Zeichenfolgen in Anführungszeichen eingeschlossen werden.
+| **maxDocumentCountExceeded**       | Max maximale Anzahl von Dokumenten wird erreicht.
+| **maxFileSizeExceeded**            | Maximale Dateigröße überschritten.
+| **maxFolderCountExceeded**         | Max maximale Anzahl der Ordner wird erreicht.
+| **maxFragmentLengthExceeded**      | Maximale Dateigröße überschritten.
+| **maxItemCountExceeded**           | Max maximale Anzahl von Elementen wird erreicht.
+| **maxQueryLengthExceeded**         | Länge der Max-Abfrage überschritten.
+| **maxStreamSizeExceeded**          | Maximale Streamgröße überschritten.
+| **parameterIsTooLong**             | Der Parameter überschreitet die maximale Länge.
+| **parameterIsTooSmall**            | Parameter ist kleiner und minimale Wert.
+| **pathIsTooLong**                  | Pfad überschreitet die maximale Länge.
+| **pathTooDeep**                    | Ordner Hierarchie Tiefe Grenzwert erreicht.
+| **propertyNotUpdateable**          | Diese Eigenschaft kann nicht aktualisiert werden.
+| **resyncApplyDifferences**         | Resync erforderlich sind. Ersetzen Sie alle lokalen Objekte mit dem Server-Version (einschließlich gelöscht), wenn Sie sicher sind, dass der Dienst wurde bis zu, dass Datum mit Ihren lokalen Änderungen beim letzten synchronisieren möchten. Laden Sie alle lokalen Änderungen, denen der Server nicht bekannt ist.
+| **resyncRequired**                 | Resync ist erforderlich.
+| **resyncUploadDifferences**        | Resync erforderlich. Hochladen, die jeder lokale Elemente, dass der Dienst nicht zurückzugeben und Hochladen von Dateien, die unterscheiden sich von der Server-Version (Aktualisieren beide Kopien aus, falls Sie nicht genau wissen, welches aktuellere ist).
+| **serviceNotAvailable**            | Der Server ist die aktuelle Anforderung kann nicht verarbeitet werden.
+| **serviceReadOnly**                | Ressource ist vorübergehend schreibgeschützt.
+| **throttledRequest**               | Zu viele Anforderungen.
+| **tooManyResultsRequested**        | Zu viele Ergebnisse angefordert.
+| **tooManyTermsInQuery**            | Zu viele Ausdrücke in der Abfrage.
+| **totalAffectedItemCountExceeded** | Vorgang ist nicht zulässig, da die Anzahl der betroffenen Elemente Schwellenwert überschreitet.
+| **truncationNotAllowed**           | Abschneiden von Daten ist nicht zulässig.
+| **uploadSessionFailed**            | Hochladen Sie Sitzung ist fehlgeschlagen.
+| **uploadSessionIncomplete**        | Hochladen Sie unvollständige Sitzung.
+| **uploadSessionNotFound**          | Laden Sie die Sitzung nicht gefunden.
+| **virusSuspicious**                | In diesem Dokument wird verdächtigen und weist möglicherweise einen Virus.
+| **zeroOrFewerResultsRequested**    | NULL oder weniger Ergebnisse angefordert werden.
 
 <!-- ##Additional Resources##
 

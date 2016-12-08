@@ -1,9 +1,9 @@
 # <a name="delete-event"></a>Delete (Ereignis)
 
-Delete (Ereignis)
+Löschen Sie Ereignis.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.ReadWrite* 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Calendars.ReadWrite* 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /me/events/<id>
@@ -26,18 +26,18 @@ DELETE /users/<id | userPrincipalName>/calendargroups/<id>/calendars/<id>/events
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `202, Accepted` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `202, Accepted` Antwortcode. Es werden keine etwas in der Antworttext zurückgegeben.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "delete_event"
@@ -46,7 +46,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 DELETE https://graph.microsoft.com/v1.0/me/events/<id>
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 <!-- {
   "blockType": "response",
   "truncated": true

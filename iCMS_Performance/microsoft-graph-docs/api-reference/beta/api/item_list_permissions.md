@@ -1,24 +1,24 @@
-# <a name="list-permissions-on-a-driveitem"></a>List permissions on a driveItem
+# <a name="list-permissions-on-a-driveitem"></a>Listenberechtigungen auf eine driveItem
 
-List the effective permissions of an item.
+Auflisten die effektiven Berechtigungen eines Elements an.
 
-Permissions cannot be expanded on lists of items or a single item. You must access the permissions property directly.
+Berechtigungen können nicht auf Listen von Elementen oder ein einzelnes Element erweitert werden. Sie müssen die Berechtigungen-Eigenschaft direkt zugreifen.
 
-## <a name="access-to-permissions"></a>Access to Permissions
+## <a name="access-to-permissions"></a>Access-Berechtigungen
 
-The permissions collection includes potentially sensitive information and may not be available for every caller.
+Die Berechtigungen-Auflistung enthält möglicherweise vertraulichen Informationen und möglicherweise nicht für alle Aufrufer verfügbar.
 
-* For the owner of the item, all permissions will be returned. This includes co-owners.
-* For a non-owner caller, only the permissions that apply to the caller are returned.
-* Permission properties that contain secrets (e.g. `shareId` and `webUrl`) are only returned for callers that are able to create the Permission.
+* Für den Besitzer des Elements werden alle Berechtigungen zurückgegeben. Dazu gehören Mitbesitzer.
+* Für ein Anrufer nicht-Besitzer werden nur die Berechtigungen, die der Anrufer liegen, zurückgegeben.
+* Berechtigungseigenschaften mit Secrets (z. B. `shareId` und `webUrl`) werden nur für Anrufer, das die Berechtigung erstellen werden zurückgegeben.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.Read
   * Files.ReadWrite
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/drive/root/permissions
@@ -30,26 +30,26 @@ GET /groups/<id>/drive/items/<id>/permissions
 
 | Name          | Typ   | Beschreibung                                                                                                                                     |
 |:--------------|:-------|:------------------------------------------------------------------------------------------------------------------------------------------------|
-| Autorisierung | string | Bearer <token>. Required.                                                                                                                       |
-| if-none-match | string | If this request header is included and the etag provided matches the current etag on the item, an `HTTP 304 Not Modified` response is returned. |
+| Autorisierung | string | Bearer <token>. Erforderlich.                                                                                                                       |
+| If-none-match | string | Wenn diese Anforderungsheader enthalten ist und das Etag bereitgestellt das aktuelle Etag für das Element entspricht eine `HTTP 304 Not Modified` Antwort zurückgegeben wird. |
 
 
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and collection of [permission](../resources/permission.md) objects in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortcode und Auflistung von Objekten im Antworttext [Berechtigung](../resources/permission.md) .
 
-Effective permissions of an item can come from two sources: either permissions set directly on the item itself or that are inherited from the item's ancestors.
+Effektive Berechtigungen eines Elements können aus zwei Quellen stammen: entweder Berechtigungen direkt auf das Element selbst oder sich von Vorgänger des Elements geerbt.
 
-Callers can differentiate if the permission is inherited or not by checking the **inheritedFrom** property. This property is an [**itemReference**](../resources/itemreference.md) resource referencing the ancestor that the permission is inherited from.
+Anrufer können unterscheiden, wenn die Berechtigung geerbt wird oder nicht durch die Eigenschaft **InheritedFrom** prüfen. Diese Eigenschaft ist eine [**ItemReference**](../resources/itemreference.md) Ressource verweisen auf die Vorgänger, dem die Berechtigung geerbt wird.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_permissions"
@@ -60,7 +60,7 @@ GET /me/drive/items/<id>/permissions
 
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -111,9 +111,9 @@ Content-Type: application/json
 }
 ```
 
-**Note:** Response objects are truncated for clarity. All default properties will be returned from the actual call.
+**Hinweis:** Antwortobjekte werden aus Gründen der Übersichtlichkeit gekürzt. Alle Standard-Eigenschaften werden von den eigentlichen Aufruf zurückgegeben.
 
-See [Get permission](permission_get.md) for more details on retrieving a single permission resource.
+Einzelheiten zum Abrufen einer Ressource einzelne Berechtigung finden Sie unter [Berechtigung erhalten möchten](permission_get.md) .
 
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

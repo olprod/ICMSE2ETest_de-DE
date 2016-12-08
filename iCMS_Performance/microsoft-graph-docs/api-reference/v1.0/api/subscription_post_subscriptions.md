@@ -1,9 +1,9 @@
-# <a name="create-subscription"></a>Erstellen Sie ein neues Abonnement.
+# <a name="create-subscription"></a>Abonnement erstellen
 
-Subscribes a listener application to receive notifications when data on the Microsoft Graph changes.
+Abonniert Listener-Anwendung zum Empfangen von Benachrichtigungen, wenn Daten auf das Microsoft Graph ändert.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes**, depending on the target resource, are required to execute this API: *Mail.Read*, *Calendars.Read*, *Contacts.Read* or *Group.Read.All* 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche**, je nach der Zielressource sind erforderlich, um diese API ausführen: *Mail.Read*, *Calendars.Read*, *Contacts.Read* oder *Group.Read.All* 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 
 ```http
@@ -14,15 +14,15 @@ POST /subscriptions
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and a [subscription](../resources/subscription.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `201, Created` Antwortcode und ein [Abonnement](../resources/subscription.md) -Objekts in der Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Here is an example of the request to send a notification when the user receives a new mail.
+Es folgt ein Beispiel der Anforderung zum Senden einer Benachrichtigung, wenn der Benutzer eine neue e-Mail-Nachrichten empfängt.
 <!-- {
   "blockType": "request",
   "name": "create_subscription_from_subscriptions"
@@ -39,20 +39,21 @@ Content-type: application/json
    "clientState": "subscription-identifier"
 }
 ```
-In the request body, supply a JSON representation of the [subscription](../resources/subscription.md) object. The *clientState* field is optional.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Abonnement](../resources/subscription.md) -Objekts.
+Das Feld *ClientState* ist optional.
 
-##### <a name="resources-examples"></a>Resources examples
-The following are valid values for the resource property of the subscription:
+##### <a name="resources-examples"></a>Beispiele für Ressourcen
+Folgende sind gültige Werte für die Ressourceneigenschaft des Abonnements:
 
-| Typ "Ressourcenansicht". | Beispiele |
+| Ressourcentyp | Beispiele |
 |:------ |:----- |
-|E-Mails|me/mailfolders('inbox')/messages<br />me/messages|
-|Kontakte|me/contacts|
-|Kalender|me/events|
-|Unterhaltungen|groups('*{id}*')/conversations|
+|E-Mails|Me/Mailfolders('inbox')/Nachrichten<br />Me / Nachrichten|
+|Kontakte|Me / Kontakte|
+|Kalender|Me / Ereignisse|
+|Unterhaltungen|Groups('*{ID}*')-Unterhaltungen|
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -70,24 +71,24 @@ HTTP/1.1 201 Created
   "expirationDateTime":"2016-11-20T18:23:45.9356913Z"
 }
 ```
-## <a name="subscription-validation"></a>Subscription validation
-In order to to avoid mistaken subscriptions directing notifications to arbitrary URLs, the subscription notification endpoint must be capable of responding to a validation request. During processing of the `POST` to the `/subscriptions` endpoint, the Microsoft Graph will send a `POST` request back to your `notificationUrl` in the following form: 
+## <a name="subscription-validation"></a>Abonnement-Validierung
+Um zur Vermeidung von falschen Abonnements Umleiten von Benachrichtigungen zu beliebigen URLs muss Abonnement Benachrichtigung Endpunkts zum Reagieren auf eine Anforderung zur Überprüfung. Während der Verarbeitung von der `POST` an die `/subscriptions` Endpunkt, die Microsoft Graph sendet eine `POST` zurück zum Anfordern Ihrer `notificationUrl` im folgenden Format: 
 ```http
 POST https://webhook.azurewebsites.net/api/send/myNotifyClient?validationToken=<token>
 ```
-The notification endpoint must send a 200 response with the value of `<token>` as its body and a content type of `text/plain`, as shown below, within 10 seconds otherwise the creation request will be discarded.
+Der Benachrichtigung Endpunkt eine 200 Antwort mit dem Wert des senden muss `<token>` als Textkörper und einem Inhaltstyp des `text/plain`, siehe unten, innerhalb von 10 Sekunden, andernfalls wird die Anforderung zum Erstellen eines verworfen.
 ```http
 HTTP/1.1 200 OK
 Content-type: text/plain
 Content-length: 7
 <token>
 ```
-##### <a name="notification-payload"></a>Notification payload
-When the subscribed resource changes, the webhooks facility sends a notification to your notification URL with the following payload.  The notification endpoint must send a response of 200 or 204 with no response body within 30 seconds otherwise the notification attempt will be retried at exponentially increasing intervals.  Services that consistently take 30 seconds or more may be throttled and receive a sparser notification set.
+##### <a name="notification-payload"></a>Benachrichtigung Nutzlast
+Wenn sendet die abonnierten Ressource geändert wird, die Webhooks-Funktion eine Benachrichtigung an Ihre Benachrichtigung URL mit der folgenden Nutzlast.  Der Benachrichtigung Endpunkt muss eine Antwort von 200 oder 204 mit keinen Antworttext innerhalb von 30 Sekunden, die andernfalls senden, den der Benachrichtigung Versuch wesentlich höheren Intervallen wiederholt.  Dienste, die konsistent 30 Sekunden oder länger dauern gedrosselt werden können und kargere Benachrichtigung Satz erhalten.
 
-Services may also return a 422 response from a notification, in which case the subscription will be automatically deleted and the stream of notifications will come to a halt.
+Dienste können auch eine 422 Antwort aus einer Benachrichtigung zurückgeben, in dem Fall das Abonnement automatisch gelöscht und der Stream der Benachrichtigungen wird zum Stillstand kommen.
 
-Depending on the subscribed resource, an additional resourceData field may provide additional information.
+Je nach den abonnierten Ressource kann eine zusätzliche ResourceData Feld zusätzliche Informationen bereitstellen.
 
 ```http
 {

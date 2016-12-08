@@ -1,12 +1,12 @@
-# <a name="page-copytosection"></a>page: copyToSection
-Copies a page to a specific section.
+# <a name="page-copytosection"></a>Seite: CopyToSection
+Kopiert eine Seite auf einen bestimmten Abschnitt.
 
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Führen Sie für Copy-Vorgänge ein Muster für die asynchrones aufrufende: Rufen Sie zunächst die Aktion kopieren, und Fragen Sie den Vorgang Endpunkt für das Ergebnis.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:   
-Notes.ReadWrite.CreatedByApp, Notes.ReadWrite, or Notes.ReadWrite.All  
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:   
+Notes.ReadWrite.CreatedByApp, Notes.ReadWrite oder Notes.ReadWrite.All  
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/notes/pages/<id>/copyToSection
@@ -16,25 +16,25 @@ POST /groups/<id>/notes/pages/<id>/copyToSection
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer tokenString`Bearer <token>`Ein gültiges OAuth-Token, das der App basierend auf den Anmeldeinformationen des Benutzers und dem Benutzer bereitgestellt wird, der autorisierten Zugriff hat. Weitere Informationen finden Sie unter . |
-| contentType | string | `application/json` |
+| Autorisierung  | string  | `Bearer <token>`Ein gültiges OAuth-Token bereitgestellt, um die app basierend auf die Anmeldeinformationen des Benutzers und der Benutzer haben Zugriff autorisiert. |
+| Inhaltstyp | string | `application/json` |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object that contains the parameters that your operation needs.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt, das die Parameter enthält, die der Vorgang.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|groupId|String|The id of the group to copy to. Use only when copying to an Office 365 group.|
-|id|String|Required. The id of the destination section.|
+|groupId|String|Die Id der Gruppe zu kopieren. Verwenden Sie nur, wenn ein Office 365-Gruppe zu kopieren.|
+|id|String|Erforderlich. Die Id des im Zielabschnitt.|
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `202 Accepted` response code and an `Operation-Location` header. Poll the Operation-Location endpoint to [get the status of the copy operation](notesoperation_get.md).
+Wenn der Vorgang erfolgreich war, gibt diese Methode eine `202 Accepted` Antwortcode und ein `Operation-Location` Kopfzeile. Abfragen der Vorgang standortendpunkts zum [Abrufen des Status des Kopiervorgangs](notesoperation_get.md)an.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "page_copytosection"
@@ -51,7 +51,7 @@ Content-length: 52
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true,

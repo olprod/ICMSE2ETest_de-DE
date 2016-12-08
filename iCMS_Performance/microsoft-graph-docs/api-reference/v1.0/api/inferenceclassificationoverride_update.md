@@ -1,16 +1,16 @@
-# <a name="update-inferenceclassificationoverride"></a>Update inferenceclassificationoverride
+# <a name="update-inferenceclassificationoverride"></a>Inferenceclassificationoverride aktualisieren
 
-Change the **classifyAs** field of an override as specified. 
+Ändern Sie das **ClassifyAs** -Feld einer Außerkraftsetzung wie angegeben. 
 
-You cannot use PATCH to change any other fields in an [inferenceClassificationOverride](../resources/inferenceClassificationOverride.md) instance. 
+Sie können nicht PATCH verwenden, um alle anderen Felder in einer [InferenceClassificationOverride](../resources/inferenceClassificationOverride.md) -Instanz zu ändern. 
 
-If an override exists for a sender and the sender changes his/her display name, you can use [POST](inferenceclassification_post_overrides.md) to force an update to the name field in the existing override.
+Wenn eine Außerkraftsetzung für ein Absender vorhanden ist und der Absender seinen Anzeigename geändert, können Sie die [POST](inferenceclassification_post_overrides.md) So erzwingen Sie ein Update in das Namensfeld in der vorhandenen Überschreibung verwenden.
 
-If an override exists for a sender and the sender changes his/her SMTP address, [deleting](inferenceclassificationoverride_delete.md) the existing override and [creating](inferenceclassification_post_overrides.md) a new one with the new SMTP address is the only way to "update" the override for this sender.
+Wenn eine Außerkraftsetzung für ein Absender vorhanden ist und der Absender seinen SMTP-Adresse, und [Löschen von](inferenceclassificationoverride_delete.md) vorhandenen außer Kraft setzen und [Erstellen von ändert](inferenceclassification_post_overrides.md) ist eine neue mit der neuen SMTP-Adresse die einzige Möglichkeit, der die Außerkraftsetzung für diesen Absender "Aktualisieren".
 
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: *Mail.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Der folgende **Bereiche** sind erforderlich, um diese API ausführen: *Mail.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /me/inferenceClassification/overrides/<id>
@@ -20,22 +20,22 @@ PATCH /users/<id>/inferenceClassification/overrides/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
-| contentType | string  | Nature of the data in the body of an entity. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
+| Inhaltstyp | string  | Die Art der Daten im Textkörper einer Entität. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the new value for **classifyAs**. For best performance you shouldn't include existing values that are not changing.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie den neuen Wert für **ClassifyAs**im Textkörper Anforderung. Für eine optimale Leistung sollten nicht Sie vorhandene Werte enthalten, die nicht geändert werden.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|classifyAs|string| Specifies how incoming messages from a specific sender should always be classified as. Possible values are: `focused`, `other`.|
+|classifyAs|string| Gibt an, wie eingehende-Nachrichten von einer bestimmten Absender sollte stets als klassifiziert werden. Mögliche Werte sind: `focused`, `other`.|
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and updated [inferenceClassificationOverride](../resources/inferenceclassificationoverride.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortcode und aktualisierte [InferenceClassificationOverride](../resources/inferenceclassificationoverride.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-The following example changes the override for the SMTP address randiw@adatum.onmicrosoft.com from `other` to `focused`.
+Das folgende Beispiel ändert die Überschreibung für die SMTP-Adresse randiw@adatum.onmicrosoft.com aus `other` auf `focused`.
 
 <!-- {
   "blockType": "request",
@@ -50,7 +50,7 @@ Content-type: application/json
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

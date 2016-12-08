@@ -1,10 +1,10 @@
-# <a name="message-createforward"></a>message: createForward
+# <a name="message-createforward"></a>Meldung: CreateForward
 
-Create a draft of the Forward message. You can then [update](../api/message_update.md) or [send](../api/message_send.md) the draft.
+Erstellen Sie ein Entwurfs oder die Nachricht weiterleiten. Dann können [Aktualisieren](../api/message_update.md) oder den Entwurf [Senden](../api/message_send.md) .
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Mail.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Mail.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/messages/<id>/createForward
@@ -15,18 +15,18 @@ POST /users/<id | userPrincipalName>/mailFolders/<id>/messages/<id>/createForwar
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
-| contentType | string  | Nature of the data in the body of an entity. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
+| Inhaltstyp | string  | Die Art der Daten im Textkörper einer Entität. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
+## <a name="request-body"></a>Anforderungstext
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [Message](../resources/message.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortcode und [Message](../resources/message.md) -Objekt aus der Antwort.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "message_createforward"
@@ -54,7 +54,7 @@ Content-length: 248
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

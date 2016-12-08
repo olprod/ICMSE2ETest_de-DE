@@ -1,9 +1,9 @@
-# <a name="update-message"></a>Update message
+# <a name="update-message"></a>Aktualisierungsnachricht
 
-Update the properties of message object.
+Aktualisieren Sie die Eigenschaften des Message-Objekts.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Mail.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Mail.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /me/messages/<id>
@@ -14,34 +14,34 @@ PATCH /users/<id | userPrincipalName>/mailFolders/<id>/messages/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
-| contentType | string  | Nature of the data in the body of an entity. Required. |
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed. Writable/Updatable properties are
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
+| Inhaltstyp | string  | Die Art der Daten im Textkörper einer Entität. Erforderlich. |
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung die Werte für die entsprechenden Felder, die aktualisiert werden soll. Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind verwalten ihre vorherigen Werte oder neu berechnet auf der Grundlage Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandene Werte enthalten, die nicht geändert haben. Kein Schreibschutz/Updatable Eigenschaften sind
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|bccRecipients|Recipient|The Bcc recipients for the message. Updatable only if IsDraft = true.|
-|Kategorien|String collection|The categories associated with the message.|
-|ccRecipients|Recipient collection|The Cc recipients for the message. Updatable only if IsDraft = true.|
-|from|Recipient|The mailbox owner and sender of the message. Updatable only if IsDraft = true.|
-|Importance|String|The importance of the message. Possible values are: `Low`, `Normal`, `High`.|
-|inferenceClassification | String | The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: `focused` or `other`. |
-|Eigenschaft internetMessageId |String |The message ID in the format specified by [RFC2822](http://www.ietf.org/rfc/rfc2822.txt). Updatable only if IsDraft = true.|
-|isRead|Boolean|True/False. Gibt an, ob die Nachricht als "Gelesen" markiert wurde.|
-|replyTo|Recipient collection|The email addresses to use when replying. Updatable only if IsDraft = true.|
-|sender|Recipient|The account that is actually used to generate the message. Updatable only if IsDraft = true.|
-|toRecipients|Recipient collection|The To recipients for the message. Updatable only if IsDraft = true.|
-|body|ItemBody|The body of the message. Updatable only if IsDraft = true.|
-|isDeliveryReceiptRequested|Boolean|Indicates whether a read receipt is requested for the message.|
-|isReadReceiptRequested|Boolean|Indicates whether a read receipt is requested for the message.|
-|Betreff|String|The subject of the message. Updatable only if IsDraft = true.|
+|bccRecipients|Recipient|Die Bcc-Empfänger der Nachricht. Aktualisierbare nur, wenn IsDraft = True.|
+|Kategorien|Zeichenfolgenauflistung|Die Kategorien, die Nachricht zugeordnet.|
+|ccRecipients|Empfänger-Auflistung|Cc Empfänger der Nachricht. Aktualisierbare nur, wenn IsDraft = True.|
+|from|Recipient|Der Postfachbesitzer und der Absender der Nachricht. Aktualisierbare nur, wenn IsDraft = True.|
+|Bedeutung|String|Die Wichtigkeit der Nachricht. Mögliche Werte sind: `Low`, `Normal`, `High`.|
+|inferenceClassification | String | Die Klassifizierung der Nachricht für Benutzer, basierend auf abgeleiteten Relevanz oder Wichtigkeit oder auf eine explizite Außerkraftsetzung vorliegt. Mögliche Werte sind: `focused` oder `other`. |
+|internetMessageId |String |Die Nachrichten-ID im Format durch [RFC2822](http://www.ietf.org/rfc/rfc2822.txt)angegeben. Nur aktualisiert, wenn IsDraft = True.|
+|isRead|Boolean|Gibt an, ob die Nachricht gelesen wurde.|
+|replyTo|Empfänger-Auflistung|Die e-Mail-Adressen beim Antworten verwenden. Nur aktualisiert, wenn IsDraft = True.|
+|Absender|Recipient|Das Konto, das tatsächlich verwendet wird, um die Nachricht zu generieren. Nur aktualisiert, wenn IsDraft = True.|
+|toRecipients|Empfänger-Auflistung|Die für die Nachricht an-Empfänger. Nur aktualisiert, wenn IsDraft = True.|
+|body|ItemBody|Der Textkörper der Nachricht. Nur aktualisiert, wenn IsDraft = True.|
+|isDeliveryReceiptRequested|Boolean|Gibt an, ob eine lesebestätigung für die Nachricht angefordert wird.|
+|isReadReceiptRequested|Boolean|Gibt an, ob eine lesebestätigung für die Nachricht angefordert wird.|
+|Betreff|String|Der Betreff der Nachricht. Aktualisierbare nur, wenn IsDraft = True.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and updated [message](../resources/message.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortcode und aktualisierte [Nachricht](../resources/message.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_message"
@@ -61,7 +61,7 @@ Content-length: 248
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

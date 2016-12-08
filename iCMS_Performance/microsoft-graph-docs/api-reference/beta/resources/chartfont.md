@@ -1,32 +1,32 @@
-# <a name="chartfont-resource-type"></a>ChartFont resource type
+# <a name="chartfont-resource-type"></a>ChartFont-Ressourcentyp
 
-Dieses Objekt stellt die Zeichenformatierung (Schriftart, Schriftgrad, Farbe usw.) für ein Diagrammobjekt dar.
+Dieses Objekt stellt die Schriftattribute (Name der Schriftart, Schriftgrad, Farbe usw.) für ein Diagrammobjekt.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get ChartFont](../api/chartfont_get.md) | [ChartFont-Objekt](chartfont.md) |Read properties and relationships of chartFont object.|
-|[Update](../api/chartfont_update.md) | [ChartFont-Objekt](chartfont.md)   |Update ChartFont object. |
+|[ChartFont abrufen](../api/chartfont_get.md) | [ChartFont](chartfont.md) |Lesen Sie Eigenschaften und Beziehungen zwischen ChartFont-Objekt.|
+|[Update](../api/chartfont_update.md) | [ChartFont](chartfont.md)   |ChartFont-Objekt zu aktualisieren. |
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|bold|boolean|Stellt den Fett-Status der Schriftart dar.|
-|color|string|HTML-Farbcodedarstellung der Textfarbe. #ff0000 stellt beispielsweise Rot dar.|
-|Kursiv|boolean|Stellt den Kursiv-Status der Schriftart dar.|
-|name|string|Schriftartname (z. B. "Calibri")|
+|bold|boolean|Stellt den Schriftart fett Status dar.|
+|color|string|HTML-Farbe Code Darstellung der Textfarbe. Diese Vorgaben unter #FF0000 für Rot.|
+|italic|boolean|Stellt den Status die Schriftart kursiv formatiert.|
+|name|string|Name der Schriftart (z. B. "Calibri")|
 |Schriftgröße|double|Der Schriftgrad (z. B. 11)|
-|Unterstreichen|string|Art der auf die Schriftart angewendete Unterstreichung. Die folgenden Werte sind möglich: Keine, einfache.|
+|Unterstreichen|string|Typ der Unterstreichung auf die Schriftart. Mögliche Werte sind: `None`, `Single`.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

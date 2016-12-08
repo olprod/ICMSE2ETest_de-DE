@@ -1,11 +1,11 @@
-# <a name="list-members"></a>List members
+# <a name="list-members"></a>Mitglieder der Liste
 
-Use this API to get the members list (user and group) in an administrative unit.
+Verwenden Sie diese API zum Abrufen der Mitglieder Liste (Benutzer und Gruppen) in eine administrative Einheit.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: *Directory.Read.All* or *Directory.ReadWrite.All* or *Directory.AccessAsUser.All*.
+Die folgenden **Bereiche** sind erforderlich, um diese API ausführen: *Directory.Read.All* oder *Directory.ReadWrite.All* oder *Directory.AccessAsUser.All*.
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 
 ```http
 GET /administrativeUnits/<id>/members
@@ -14,23 +14,23 @@ GET /administrativeUnits/<id>/members/$ref
 ## <a name="request-headers"></a>Anforderungsheader
 | Name      |Beschreibung|
 |:----------|:----------|
-| Autorisierung  | Bearer <token>. Required.|
+| Autorisierung  | Bearer <token>. Erforderlich.|
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and a collection of [user](../resources/user.md) and/or [group](../resources/group.md) objects in the response body.  Instead, if you put `$ref` at the end of the request, the response will contain a collection of `@odata.id` links/URLs to the members.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und eine Auflistung von [Benutzer](../resources/user.md) und/oder [Gruppe](../resources/group.md) von Objekten im Antworttext.  Stattdessen, wenn Sie ablegen `$ref` am Ende der Anforderung, die Antwort enthält eine Auflistung von `@odata.id` Links/URLs auf die Mitglieder.
 
 ## <a name="examples"></a>Beispiele
-##### <a name="list-member-objects"></a>List member objects
-The following request will list the members of the administrative unit, returning a collection of users and/or groups.
+##### <a name="list-member-objects"></a>Liste diemember-Objekte
+Das folgende Anforderung werden die Member der administrative Einheit, zurückgeben eine Auflistung von Benutzern und/oder Gruppen aufgelistet.
 
 ```http
 GET https://graph.microsoft.com/beta/administrativeUnits/<id>/members
 ```
 
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
  
 ```http
 HTTP/1.1 200 OK
@@ -57,12 +57,12 @@ Content-length: 100
 }
 ```
 
-##### <a name="list-member-references"></a>List member references
-The following request will list the member references of the administrative unit, returning a collection of `@odata.id` references to the members.
+##### <a name="list-member-references"></a>Elementverweise Liste
+Die folgende Anforderung wird Auflisten der Memberverweise die administrative Einheit, eine Auflistung von zurückgeben `@odata.id` Verweise auf die Elemente.
 ```
 GET https://graph.microsoft.com/beta/administrativeUnits/<id>/members/$ref
 ```
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
  
 ```http
 HTTP/1.1 200 OK

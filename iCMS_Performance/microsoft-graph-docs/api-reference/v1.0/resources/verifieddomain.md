@@ -1,21 +1,21 @@
-# <a name="verifieddomain-resource-type"></a>verifiedDomain resource type
+# <a name="verifieddomain-resource-type"></a>Ressourcentyp verifiedDomain
 
-Specifies a domain for a tenant. The **verifiedDomains** property of the [organization](organization.md) entity is a collection of **VerifiedDomain**.
+Gibt eine Domäne für einen Mandanten an. Die **VerifiedDomains** -Eigenschaft der Entität [Organisation](organization.md) ist eine Auflistung von **VerifiedDomain**.
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Funktionen|String|For example, “Email”, “OfficeCommunicationsOnline”.|
-|isDefault|Boolean|                **true** if this is the default domain associated with the tenant; otherwise, **false**.            |
-|isInitial|Boolean|**true** if this is the initial domain associated with the tenant; otherwise, **false**|
-|name|String|The domain name; for example, “contoso.onmicrosoft.com”|
-|Typ|String|For example, “Managed”.|
+|Funktionen|String|Beispielsweise "E-Mail", "OfficeCommunicationsOnline".|
+|isDefault|Boolean|                **true,** Wenn dies die Standarddomäne den Mandanten zugeordnet ist. anderenfalls **false**.            |
+|isInitial|Boolean|**true,** Wenn dies die erste Domäne, die den Mandanten zugeordnet ist. andernfalls **"false"**|
+|name|String|Der Domänenname; beispielsweise "contoso.onmicrosoft.com"|
+|Typ|String|Beispielsweise verwaltet"."|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

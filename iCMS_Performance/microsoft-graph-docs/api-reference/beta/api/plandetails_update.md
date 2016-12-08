@@ -1,12 +1,12 @@
-# <a name="update-plandetails"></a>Update plandetails
+# <a name="update-plandetails"></a>Plandetails aktualisieren
 
-Update the properties of plandetails object.
+Aktualisieren Sie die Eigenschaften des Plandetails-Objekts.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
  
-Wählen Sie Group.ReadWrite.All.
+Group.ReadWrite.All
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /plans/<id>/details
@@ -15,28 +15,28 @@ PATCH /plans/<id>/details
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Value should be set to "Bearer (access-token)" |
-| If-Match | string | Value should be set to the ETag of the object |
-| Prefer | string | Value should be set to "return=representation" so that the updated object is returned in the response. This is advised so that the client can get the new ETag value of the updated object without doing an additional GET |
+| Autorisierung  | string  | Wert sollte auf "Bearer (Zugriffstoken)" festgelegt werden |
+| If-Match | string | Wert sollte auf den ETag des Objekts festgelegt werden |
+| Bevorzugen | string | Wert festgelegt werden sollte, um "zurückgeben = Darstellung" so, dass das aktualisierte Objekt in der Antwort zurückgegeben wird. Dies wird empfohlen, damit der Client den neuen ETag-Wert des aktualisierten Objekts bekommen, ohne eine zusätzliche GET |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung die Werte für die entsprechenden Felder, die aktualisiert werden soll. Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind werden die vorherigen Werte verwalten oder neu berechnet basierend auf Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandenen Werte enthalten, die nicht geändert haben.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|category0Description|String|Description of the category (or label) that can be applied to the task.|
-|category1Description|String|Description of the category (or label) that can be applied to the task.|
-|category2Description|String|Description of the category (or label) that can be applied to the task.|
-|category3Description|String|Description of the category (or label) that can be applied to the task.|
-|category4Description|String|Description of the category (or label) that can be applied to the task.|
-|category5Description|String|Description of the category (or label) that can be applied to the task.|
-|sharedWith|[userIdCollection](../resources/useridcollection.md)| List of user ids that this plan is shared with. If you are leveraging Office 365 Groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.|
+|category0Description|String|Beschreibung der Kategorie (oder Beschriftung), das die Aufgabe zugewiesen werden kann.|
+|category1Description|String|Beschreibung der Kategorie (oder Beschriftung), die die Aufgabe zugewiesen werden kann.|
+|category2Description|String|Beschreibung der Kategorie (oder Beschriftung), die die Aufgabe zugewiesen werden kann.|
+|category3Description|String|Beschreibung der Kategorie (oder Beschriftung), die die Aufgabe zugewiesen werden kann.|
+|category4Description|String|Beschreibung der Kategorie (oder Beschriftung), die die Aufgabe zugewiesen werden kann.|
+|category5Description|String|Beschreibung der Kategorie (oder Beschriftung), die die Aufgabe zugewiesen werden kann.|
+|sharedWith|[userIdCollection](../resources/useridcollection.md)| Liste der Benutzer-Ids, denen mit diesem Plan freigegeben werden. Wenn Sie Office 365 Gruppen nutzen, verwenden Sie die API-Gruppen zum Verwalten der Gruppenmitgliedschaft zum Planen der Gruppe freigeben. Sie können auch vorhandene Mitglieder der Gruppe zu dieser Auflistung hinzufügen, obwohl es nicht erforderlich, damit sie Zugriff auf den Besitz der Gruppe Plan ist.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `204 No Content` response code.
+Wenn erfolgreich ist, diese Methode gibt einen `204 No Content` Antwortcode.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_plandetails"
@@ -59,7 +59,7 @@ If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA
 }
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -68,7 +68,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 ```http
 HTTP/1.1 204 No Content
 ```
-To get the updated object, use the `Prefer` header. See Request Headers above.
+Wenn Sie das aktualisierte Objekt erhalten möchten, verwenden Sie die `Prefer` Kopfzeile. Finden Sie unter Anforderungsheader oben.
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->
 <!-- {

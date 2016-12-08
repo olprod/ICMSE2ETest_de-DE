@@ -1,10 +1,10 @@
-# <a name="create-sectiongroup"></a>Create sectionGroup
+# <a name="create-sectiongroup"></a>SectionGroup erstellen
 
-Create a new [section group](../resources/sectiongroup.md) in the specified notebook.
+Erstellt eine neue [Abschnittsgruppe im](../resources/sectiongroup.md) im angegebenen Notizbuch.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:   
-Notes.Create, Notes.ReadWrite.CreatedByApp, Notes.ReadWrite, or Notes.ReadWrite.All
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:   
+Notes.Create, Notes.ReadWrite.CreatedByApp, Notes.ReadWrite oder Notes.ReadWrite.All
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/notes/notebooks/<id>/sectionGroups
@@ -14,20 +14,20 @@ POST /groups/<id>/notes/notebooks/<id>/sectionGroups
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer tokenString`Bearer <token>`Ein gültiges OAuth-Token, das der App basierend auf den Anmeldeinformationen des Benutzers und dem Benutzer bereitgestellt wird, der autorisierten Zugriff hat. Weitere Informationen finden Sie unter . |
-| contentType | string | `application/json` |
+| Autorisierung  | string  | `Bearer <token>`Ein gültiges OAuth-Token bereitgestellt, um die app basierend auf die Anmeldeinformationen des Benutzers und der Benutzer haben Zugriff autorisiert. |
+| Inhaltstyp | string | `application/json` |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a name for the section group.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Namen für die Abschnittsgruppe im Textkörper Anforderung.
 
-Within the same hierarchy level, section group names must be unique. The name cannot contain more than 50 characters or contain the following characters:  ?*\/:<>|&#''%~
+Innerhalb der gleichen Hierarchieebene müssen Abschnitt Gruppennamen eindeutig sein. Der Name kann nicht mehr als 50 Zeichen enthalten oder die folgenden Zeichen enthalten: ? *\/: <> | & #'' % ~
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201 Created` response code and a [sectionGroup](../resources/sectiongroup.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201 Created` Antwortcode und ein [SectionGroup](../resources/sectiongroup.md) -Objekt aus der Antwort.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_sectiongroup_from_notebook"
@@ -43,7 +43,7 @@ Content-length: 30
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here is truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt wird aus Platzgründen Zahl gekürzt. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

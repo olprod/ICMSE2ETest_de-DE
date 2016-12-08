@@ -1,53 +1,56 @@
-# <a name="call-microsoft-graph-with-a-nodejs-app"></a>Call Microsoft Graph with a Node.js app
+# <a name="call-microsoft-graph-with-a-nodejs-app"></a>Rufen Sie mit einer app Node.js Microsoft Graph
 
-In diesem Artikel werden Aufgaben beschrieben, die zum Herstellen einer Verbindung zwischen Ihrer Anwendung und Office 365 und zum Aufrufen der Microsoft Graph-API mindestens erforderlich sind. Wir verwenden den Code aus [Office 365 Angular Connect-Beispiel unter Verwendung von Microsoft Graph](https://github.com/microsoftgraph/nodejs-connect-rest-sample), um die wichtigsten Konzepte zu erläutern, die Sie in Ihrer App implementieren müssen.
+In diesem Artikel betrachten wir die mindestens erforderlichen Aufgaben zum Verbinden Ihrer Anwendung zu Office 365, und rufen Sie die Microsoft Graph-API ein. Wir verwenden Code aus die [Verbindung zu Office 365 Node.js Beispiel mit Microsoft Graph](https://github.com/microsoftgraph/nodejs-connect-rest-sample) , um die wichtigsten Konzepte erläutert werden, die Sie in Ihrer app implementieren müssen.
 
-![Office 365 Node.js Connect sample screenshot](./images/web-screenshot.png)
+![Office 365 verbinden Node.js Beispiel screenshot](./images/web-screenshot.png)
 
 ## <a name="overview"></a>Übersicht
 
-Zum Aufrufen der Microsoft Graph-API muss Ihre iOS-App die folgenden Aufgaben ausführen:
+Um die Microsoft Graph-API aufzurufen, muss Ihre Web-app die folgenden Aufgaben ausführen.
 
-1. Registrieren der Anwendung in Azure Active Directory 
-2. Install the Azure Active Directory Client Library for Node
-3. Redirect the browser to the sign-in page
-4. Receive an authorization code in your reply URL page
-5. Verwenden des Autorisierungscodes zum Anfordern eines Zugriffstokens.
-6. Verwenden des Zugriffstokens in einer Anforderung an die Microsoft Graph-API
+1. Registrieren Sie die Anwendung in Azure Active Directory 
+2. Installieren der Azure Active Directory-Clientbibliothek für Knoten
+3. Umleiten des im Browser zu der Seite Anmeldung
+4. Empfangen eines Autorisierungscodes in der Antwort-URL-Seite
+5. Verwenden Sie `adal-node` ein Zugriffstoken anfordern
+6. Wenden Sie sich an die Microsoft Graph-API
 
 <!--<a name="register"/>-->
-## <a name="register-your-application-in-azure-active-directory"></a>Registrieren der Anwendung in Azure Active Directory
+## <a name="register-your-application-in-azure-active-directory"></a>Registrieren Sie Ihre Anwendung in Azure Active Directory
 
-Bevor Sie  mit Office 365 arbeiten können, müssen Sie Ihre Anwendung registrieren und die Berechtigungen für die Verwendung der Microsoft Graph-Dienste festlegen. Mithilfe des [App-Registrierungstools](https://dev.office.com/app-registration) können Sie mit nur wenigen Klicks Ihre Anwendung für den Zugriff auf ein Geschäfts- oder Schulkonto des Benutzers registrieren. Zum Verwalten müssen Sie das [Microsoft Azure-Verwaltungsportal](https://manage.windowsazure.com) verwenden.
+Bevor Sie das Arbeiten mit Office 365 beginnen können, müssen Sie Ihre Anwendung registrieren und Festlegen von Berechtigungen zum Verwenden von Microsoft Graph Services.
+Mit nur wenigen Mausklicks können Sie Ihre Anwendung für den Zugriff eines Benutzers Arbeit "oder" Schule Konto, mit dem die [Anwendung Registration-Tool](https://dev.office.com/app-registration)auf registrieren. Verwalten, die Sie benötigen, um [Microsoft Azure-Verwaltungsportal](https://manage.windowsazure.com) zu wechseln
 
-Alternativ können Sie die App manuell registrieren. Die Anweisungen dazu finden Sie im Abschnitt [Registrieren der Webserver-App mithilfe des Azure-Verwaltungsportals](https://msdn.microsoft.com/en-us/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp). Beachten Sie dabei Folgendes:
+Alternativ dazu finden Sie im Abschnitt [Registrieren Ihrer Anwendung Server mit dem Azure-Verwaltungsportal](https://msdn.microsoft.com/en-us/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) Anweisungen zum manuell registrieren der app, Bedenken Sie Folgendes ein:
 
-* Specify a page in your Node.js app as the **Sign-on URL** in step 6. In the case of the Connect sample, the URL is http://localhost:8080/login, which maps to the [/login](https://github.com/microsoftgraph/nodejs-connect-rest-sample/blob/master/routes/index.js#L33) route.
-* Konfigurieren Sie die **delegierten Berechtigungen**, die für Ihre App erforderlich sind. Für das Connect-Beispiel ist die Berechtigung zum **Senden von E-Mails als angemeldeter Benutzer** erforderlich.
+* Geben Sie eine Seite in Ihrer app Node.js als die **Sign-on URL** in Schritt 6. Im Fall der Connect-Beispiel ist die URL http://localhost: 8080/anmelden, der die [/login](https://github.com/microsoftgraph/nodejs-connect-rest-sample/blob/master/routes/index.js#L33) Route zugeordnet ist.
+* [Konfigurieren der **delegierten Berechtigungen** ](https://github.com/microsoftgraph/nodejs-connect-rest-sample/wiki/Grant-permissions-to-the-Connect-application-in-Azure) , die Ihre app benötigt. Beispiel für Connect erfordert die Berechtigung **Senden als angemeldeten Benutzers** .
 
-Notieren Sie sich die folgenden Werte auf der Seite **Konfigurieren** Ihrer Azure-Anwendung.
+Beachten Sie die folgenden Werte in der Seite zum **Konfigurieren** der Azure-Anwendung.
 
 * Client-ID
-* A valid key
-* A reply URL
+* Ein gültiger-Schlüssel
+* Eine Antwort-URL
 
-Sie benötigen diese Werte zum Konfigurieren des OAuth-Flusses in Ihrer App.
+Sie benötigen diese Werte als Parameter für den Ablauf des OAuth in Ihrer app.
 
 <!--<a name="adal">-->
-## <a name="install-the-azure-active-directory-client-library-for-node"></a>Install the Azure Active Directory Client Library for Node
+## <a name="install-the-azure-active-directory-client-library-for-node"></a>Installieren der Azure Active Directory-Clientbibliothek für Knoten
 
-The ADAL for Node.js library makes it easy for Node.js applications to authenticate to AAD in order to access AAD protected web resources. To add adal-node to your existing `package.json` enter the following into your preferred terminal.
+Das ADAL für Node.js Bibliothek vereinfacht Node.js Applications AAD authentifizieren, um AAD geschützten Webressourcen zugreifen.
+Hinzufügen adal Knoten zum vorhandenen `package.json` Geben Sie Folgendes in Ihrer bevorzugten Terminal.
 
 `npm install adal-node --save`
 
-For more information about the adal-node client library, see its package info on [npm](https://www.npmjs.com/package/adal-node). For issues, source code, and the latest in upcoming features and fixes, see adal-node's project on [Github](https://github.com/AzureAD/azure-activedirectory-library-for-nodejs).
+Weitere Informationen zu der adal-Knoten-Clientbibliothek finden Sie unter seiner Paketinfo auf [Npm](https://www.npmjs.com/package/adal-node).
+Probleme, Quellcode und die neuesten in Kürze verfügbare Funktionen und Fixes finden Sie unter adal-Knoten des Projekts auf [Github](https://github.com/AzureAD/azure-activedirectory-library-for-nodejs).
 
 <!--<a name="redirect"/>-->
-## <a name="redirect-the-browser-to-the-sign-in-page"></a>Redirect the browser to the sign-in page
+## <a name="redirect-the-browser-to-the-sign-in-page"></a>Umleiten von im Browser zur Seite-Anmeldung
 
-Your app needs to redirect the browser to the sign-in page to get an authorization code and continue the OAuth 2.0 flow.
+Ihre app muss im Browser zur Seite Anmeldung zum Abrufen eines Autorisierungscodes und weiterhin den Ablauf des OAuth 2.0 umzuleiten.
 
-In the Connect sample, the authentication URL from [`authHelper.js#getAuthUrl`](https://github.com/microsoftgraph/nodejs-connect-rest-sample/blob/master/authHelper.js#L17) is redirected by the [`login.hbs#login`](https://github.com/microsoftgraph/nodejs-connect-rest-sample/blob/master/views/login.hbs#L2) function through a client-side `onclick` event.
+Im Beispiel verbinden die URL der Authentifizierung von [`authHelper.js#getAuthUrl`](https://github.com/microsoftgraph/nodejs-connect-rest-sample/blob/master/authHelper.js#L17) umgeleitet wird, durch die [`login.hbs#login`](https://github.com/microsoftgraph/nodejs-connect-rest-sample/blob/master/views/login.hbs#L2) Funktion über eine mithilfe der clientseitigen `onclick` Ereignis.
 
 **authHelper.js#getAuthUrl**
 ```javascript
@@ -63,7 +66,7 @@ function getAuthUrl() {
 };
 ```
 
-**login.hbs#login**
+**Login.hbs#Login**
 ```javascript
 function login() {
     window.location = '{{auth_url}}'.replace(/&amp;/g, '&'); // transform HTML special char from .hbs template rendering
@@ -71,9 +74,9 @@ function login() {
 ```
 
 <!--<a name="authcode"/>-->
-## <a name="receive-an-authorization-code-in-your-reply-url-page"></a>Receive an authorization code in your reply URL page
+## <a name="receive-an-authorization-code-in-your-reply-url-page"></a>Erhalten Sie einen Autorisierungscode in der Antwort-URL-Seite
 
-After the user signs in, the flow returns the browser to the reply URL in your app. The authorization code is provided in the `code` query string variable.
+Nachdem der Benutzer anmeldet, gibt der Ablauf der Browser auf die Antwort-URL in Ihrer app. Der Autorisierungscode gemäß der `code` Abfragezeichenfolgen-Variable.
 
 ```javascript
 router.get('/<application reply url>', function (req, res, next) {
@@ -82,21 +85,21 @@ router.get('/<application reply url>', function (req, res, next) {
 });
 ```
 
-See the [relevant code](https://github.com/microsoftgraph/nodejs-connect-rest-sample/blob/master/routes/index.js#L34) in the Connect sample
+Finden Sie unter den [entsprechenden Code](https://github.com/microsoftgraph/nodejs-connect-rest-sample/blob/master/routes/index.js#L34) in der Connect-Beispiel
 
 <!--<a name="accesstoken"/>-->
-## <a name="use-adal-node-to-request-an-access-token"></a>Verwenden des Autorisierungscodes zum Anfordern eines Zugriffstokens.
+## <a name="use-adal-node-to-request-an-access-token"></a>Verwenden Sie `adal-node` ein Zugriffstoken anfordern
 
-Now that we've authenticated with Azure Active Directory, our next step is to acquire an access token via adal-node. After we've done that, we'll be ready to make REST requests to the Microsoft Graph API.
+Nachdem wir mit Azure Active Directory authentifiziert haben, besteht der nächste Schritt darin ein Zugriffstoken über adal-Knoten zu erwerben. Nachdem wir entworfen haben, werden wir vornehmen von REST-Anforderungen für die Microsoft Graph-API bereit sein.
 
-To request an access token, adal-node provides two callback functions.
+Um ein Zugriffstoken anfordern, enthält adal Knoten zwei Rückruffunktionen.
 
 |                          Funktion                         |                                      Params                                      | Beschreibung                                                                                             |
 |:---------------------------------------------------------:|:--------------------------------------------------------------------------------:|---------------------------------------------------------------------------------------------------------|
-| `AuthenticationContext.acquireTokenWithAuthorizationCode` | `authCode`, `redirect_uri`, `resource`, `client_id`, `client_secret`, `callback` | provides an access token for a specified resource based on the authorization code returned during login |
-| `AuthenticationContext.acquireTokenWithRefreshToken`      | `token`, `client_id`, `client_secret`, `resource`, `callback`                    | provides an access token for a specified resourced based on a refresh token                             |
+| `AuthenticationContext.acquireTokenWithAuthorizationCode` | `authCode`, `redirect_uri`, `resource`, `client_id`, `client_secret`, `callback` | enthält ein Zugriffstoken für eine angegebene Ressource basierend auf den Autorisierungscode zurückgegeben, bei der Anmeldung |
+| `AuthenticationContext.acquireTokenWithRefreshToken`      | `token`, `client_id`, `client_secret`, `resource`, `callback`                    | bietet ein Zugriffstoken für ein angegebenes basierend auf einer Aktualisierungstoken Ressourcen zugewiesen                             |
 
-In the Connect sample, requests are routed through [`authHelper.js`](https://github.com/microsoftgraph/nodejs-connect-rest-sample/blob/master/authHelper.js) so that the `client_id` and `client_secret` can be added.
+Im Beispiel Connect Anforderungen durch weitergeleitet [`authHelper.js`](https://github.com/microsoftgraph/nodejs-connect-rest-sample/blob/master/authHelper.js) , damit die `client_id` und `client_secret` hinzugefügt werden können.
 
 ```javascript
 // The application registration (must match Azure AD config)
@@ -127,13 +130,13 @@ function getTokenFromCode(res, code, callback) {
 ```
 
 <!--<a name="request"/>-->
-## <a name="make-a-request-to-the-microsoft-graph-api"></a>Verwenden des Zugriffstokens in einer Anforderung an die Microsoft Graph-API
+## <a name="make-a-request-to-the-microsoft-graph-api"></a>Wenden Sie sich an die Microsoft Graph-API
 
-To identify our requests to the Graph API, our requests must be signed with an `Authorization` header containing the access token for any web service resource we request. A properly formed authorization header will include the access token from adal-node and will take the following form.
+Unsere Anforderungen an das Diagramm-API um zu ermitteln, müssen unsere Anfragen mit signiert werden eine `Authorization` Header, enthält das Zugriffstoken für alle Web-service Ressource wir anfordern. Ein ordnungsgemäß gebildeten Authorization-Header enthält das Zugriffstoken vom adal Knoten und dauert das folgende Format.
 
 `Authorization: Bearer <access token>`
 
-Using `adal-node`, combined with our authentication logic from the previous section, we can now use our access token to sign requests.
+Mit `adal-node`, zusammen mit der unsere Authentifizierungslogik aus dem vorherigen Abschnitt, wir können nun unsere Zugriffstoken um Anfragen zu signieren.
 
 ```javascript
 /* GET home page. */
@@ -154,7 +157,7 @@ router.get('/<application reply url>', function (req, res, next) {
 });
 ```
 
-Microsoft Graph ist eine leistungsfähige einheitliche API, die für die Interaktion mit beliebigen Microsoft-Daten verwendet werden kann. Informationen zu weiteren Möglichkeiten mit der Microsoft Graph-API finden Sie in der [API-Referenz](http://graph.microsoft.io/docs/api-reference/v1.0).
+Das Microsoft Graph ist eine sehr leistungsstarke Unifiying API, die Interaktion mit allen Arten von Microsoft-Daten verwendet werden kann. Checken Sie die [API-Referenz](http://graph.microsoft.io/docs/api-reference/v1.0) zum untersuchen, was Sie mit der Microsoft Graph-API ausführen können.
 
 <!--## Additional resources
 

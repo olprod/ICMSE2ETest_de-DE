@@ -1,9 +1,9 @@
-# <a name="update-event"></a>Update event
+# <a name="update-event"></a>Updateereignis
 
-Update the properties of event object.
+Aktualisieren der Eigenschaften des Event-Objekts.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Calendars.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /me/events/<id>
@@ -26,34 +26,34 @@ PATCH /users/<id | userPrincipalName>/calendargroups/<id>/calendars/<id>/events/
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung die Werte für die entsprechenden Felder, die aktualisiert werden soll. Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind werden die vorherigen Werte verwalten oder neu berechnet basierend auf Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandenen Werte enthalten, die nicht geändert haben.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|attendees|[Attendee](../resources/attendee.md)|The collection of attendees for the event.|
-|body|[ItemBody](../resources/itembody.md)|The body of the message associated with the event.|
-|Kategorien|String|The categories associated with the event.|
-|End|[DateTimeTimeZone](../resources/datetimetimezone.md)|The date and time that the event ends.<br/><br/>By default, the end time is in UTC. You can specify an optional time zone in EndTimeZone, express the end time in that time zone, and include a time offset from UTC. Note that if you use EndTimeZone, you must specify a value for StartTimeZone as well.<br/><br/>This example specifies February 25, 2015, 9:34pm in Pacific Standard Time: "2015-02-25T21:34:00-08:00". |
-|Importance|String|The importance of the event: Low = 0, Normal = 1, High = 2. Possible values are: `Low`, `Normal`, `High`.|
-|isAllDay|Boolean|Set to true if the event lasts all day.|
-|isReminderOn|Boolean|Set to true if an alert is set to remind the user of the event.|
-|Location|[Location](../resources/location.md)|Speicherort des Designs.|
-|Serie|[PatternedRecurrence](../resources/patternedrecurrence.md)|The recurrence patern for the event.|
-|ReminderMinutesBeforeStart|Int32|The number of minutes before the event start time that the reminder alert occurs.|
-|responseRequested|Boolean|Set to true if the sender would like a response when the event is accepted or declined.|
-|Sensitivity|String| Possible values are: `Normal`, `Personal`, `Private`, `Confidential`.|
-|showAs|String|The status to show: Free = 0, Tentative = 1, Busy = 2, Oof = 3, WorkingElsewhere = 4, Unknown = -1. Possible values are: `Free`, `Tentative`, `Busy`, `Oof`, `WorkingElsewhere`, `Unknown`.|
-|Start|[DateTimeTimeZone](../resources/datetimetimezone.md)|Die Anfangszeit der vierten Schicht. <br/><br/>By default, the start time is in UTC. You can specify an optional time zone in StartTimeZone, express the start time in that time zone, and include a time offset from UTC. Note that if you use StartTimeZone, you must specify a value for EndTimeZone as well.<br/><br/>This example specifies February 25, 2015, 7:34pm in Pacific Standard Time: "2015-02-25T19:34:00-08:00".  |
-|Betreff|String|The text of the event's subject line.|
+|Teilnehmer|[Teilnehmer](../resources/attendee.md)|Die Auflistung der Teilnehmer für das Ereignis.|
+|body|[ItemBody](../resources/itembody.md)|Der Textkörper der Nachricht mit dem Ereignis verknüpft ist.|
+|Kategorien|String|Die Kategorien, die mit dem Ereignis verknüpft ist.|
+|Ende|[DateTimeTimeZone](../resources/datetimetimezone.md)|Das Datum und die Uhrzeit, die das Ereignis endet.<br/><br/>Standardmäßig ist die Endzeit in UTC. Sie können eine optionale Zeitzone in EndTimeZone angeben, die Endzeit in diese Zeitzone express und einen Uhrzeit-Offset von UTC enthalten. Beachten Sie, dass bei Verwendung von EndTimeZone Sie einen Wert für StartTimeZone sowie angeben müssen.<br/><br/>Dieses Beispiel gibt an, 25 Februar 2015 9:34 pm Pacific Standard Time: "2015-02-25T21:34:00-08:00". |
+|Bedeutung|String|Die Bedeutung des Ereignisses: Niedrig = 0 Normal = 1, hoch = 2. Mögliche Werte sind: `Low`, `Normal`, `High`.|
+|isAllDay|Boolean|Legen Sie auf true zurück, wenn das Ereignis den ganzen Tag dauert.|
+|isReminderOn|Boolean|Legen Sie auf true zurück, wenn eine Warnung an den Benutzer über das Ereignis erinnern festgelegt ist.|
+|Speicherort|[Speicherort](../resources/location.md)|Der Speicherort des Ereignisses.|
+|Serie|[PatternedRecurrence](../resources/patternedrecurrence.md)|Die Serie Patern für das Ereignis.|
+|reminderMinutesBeforeStart|Int32|Die Anzahl der Minuten, bevor das Ereignis Startzeit, die die Erinnerung Warnung auftritt.|
+|responseRequested|Boolean|Legen Sie auf true zurück, wenn der Absender eine Antwort erhalten möchte, wenn das Ereignis angenommen oder abgelehnt wird.|
+|Vertraulichkeit|String| Mögliche Werte sind: `Normal`, `Personal`, `Private`, `Confidential`.|
+|showAs|String|Der Status angezeigt: freien = 0, mit Vorbehalt = 1, beschäftigt = 2, Oof = 3, WorkingElsewhere = 4, unbekannt =-1. Possible values are: `Free`, `Tentative`, `Busy`, `Oof`, `WorkingElsewhere`, `Unknown`.|
+|Start|[DateTimeTimeZone](../resources/datetimetimezone.md)|Die Anfangszeit des Ereignisses. <br/><br/>Standardmäßig ist die Startzeit in UTC. Sie können eine optionale Zeitzone in StartTimeZone angeben, die Startzeit in dieser Zeitzone express und umfassen einen Uhrzeit-Offset von UTC. Beachten Sie, dass bei Verwendung von StartTimeZone Sie einen Wert für EndTimeZone sowie angeben müssen.<br/><br/>Dieses Beispiel gibt an, 25 Februar 2015 7:34 pm Pacific Standard Time: "2015-02-25T19:34:00-08:00".  |
+|Betreff|String|Der Text der Betreffzeile des Ereignisses.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and updated [event](../resources/event.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und updated- [Ereignis](../resources/event.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_event"
@@ -76,7 +76,7 @@ Content-length: 285
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

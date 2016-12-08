@@ -1,9 +1,9 @@
-# <a name="get-suspiciousipriskevent"></a>Get suspiciousIpRiskEvent
+# <a name="get-suspiciousipriskevent"></a>Abrufen von suspiciousIpRiskEvent
 
-Retrieve the properties and relationships of a suspiciousipriskevent object.
+Rufen Sie die Eigenschaften und die Beziehungen eines Suspiciousipriskevent-Objekts ab.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: *IdentityRiskEvent.Read.All*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, um diese API ausführen: *IdentityRiskEvent.Read.All*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /suspiciousIpRiskEvents/<id>
@@ -11,16 +11,16 @@ GET /suspiciousIpRiskEvents/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Name      |Beschreibung|
 |:----------|:----------|
-| Autorisierung  | Bearer <code>|
-| Workbook-Session-Id  | Workbook session Id that determines if changes are persisted or not. Optional.|
+| Autorisierung  | Bearer<code>|
+| Arbeitsmappe-Sitzung-Id  | Arbeitsmappe Sitzung-Id, die bestimmt, ob Änderungen oder nicht beibehalten werden. Optional|
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [suspiciousIpRiskEvent](../resources/suspiciousipriskevent.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortobjekt Code und [SuspiciousIpRiskEvent](../resources/suspiciousipriskevent.md) im Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_suspiciousipriskevent"
@@ -29,7 +29,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/v1.0/suspiciousIpRiskEvents/02e8bfd1-5231-1006-01cc-434f84e0859e-97b7301f-bc05-8e2c-fdfa-2004eb66ff70-287e7b9b-1d60-aa96-6ddb-65c81ee31475
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

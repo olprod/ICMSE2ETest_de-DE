@@ -1,9 +1,9 @@
 # <a name="tablecolumncollection-itemat"></a>TableColumnCollection: ItemAt
 
-Ruft eine Spalte anhand ihrer Position in der Auflistung ab.
+Ruft eine Spalte basierend auf seine Position in der Auflistung ab.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /workbook/tables(<id|name>)/columns/ItemAt
@@ -13,23 +13,23 @@ POST /workbook/worksheets(<id|name>)/tables(<id|name>)/columns/ItemAt
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Index|number|Index-Wert des abzurufenden Objekts. Nullindiziert.|
+|Index|number|Der Indexwert des Objekts abgerufen werden sollen. 0 (null) indiziert.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and [TableColumn](../resources/tablecolumn.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode und [TableColumn](../resources/tablecolumn.md) -Objekts in der Antworttext.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "tablecolumncollection_itemat"
@@ -46,7 +46,7 @@ Content-length: 20
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

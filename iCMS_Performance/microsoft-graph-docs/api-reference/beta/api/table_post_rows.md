@@ -1,9 +1,9 @@
-# <a name="create-tablerow"></a>Create TableRow
+# <a name="create-tablerow"></a>TableRow erstellen
 
-Use this API to create a new TableRow.
+Verwenden Sie diese API, um eine neue TableRow erstellen.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /workbook/tables(<id|name>)/rows
@@ -13,19 +13,19 @@ POST /workbook/worksheets(<id|name>)/tables(<id|name>)/rows
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [TableRow](../resources/tablerow.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [TableRow](../resources/tablerow.md) -Objekts.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [TableRow](../resources/tablerow.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortcode und [TableRow](../resources/tablerow.md) -Objekts in der Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_tablerow_from_table"
@@ -40,9 +40,9 @@ Content-length: 45
   "values": "values-value"
 }
 ```
-In the request body, supply a JSON representation of [TableRow](../resources/tablerow.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [TableRow](../resources/tablerow.md) -Objekts.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

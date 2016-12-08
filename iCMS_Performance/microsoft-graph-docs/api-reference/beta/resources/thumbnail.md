@@ -1,26 +1,26 @@
-# <a name="thumbnail-resource-type"></a>thumbnail resource type
+# <a name="thumbnail-resource-type"></a>Miniaturansicht Ressourcentyp
 
-The **thumbnail** resource type represents a thumbnail for an image, video, document, or any file or folder on OneDrive that has a graphical representation.
+Der Ressourcentyp **Miniaturansicht** stellt eine Miniaturansicht für ein Bild, Video, Dokument oder eine beliebige Datei oder Ordner auf OneDrive, die grafisch hat.
 
 ## <a name="properties"></a>Eigenschaften
 
 | Eigenschaft | Typ   | Beschreibung                                  |
 |:---------|:-------|:---------------------------------------------|
-| height   | Int32  | Optional. Die Höhe des Steuerelements in Pixeln.      |
-| URL      | String | The URL used to fetch the thumbnail content. |
-| width    | Int32  | Die Breite oder Höhe des Bilds in Pixel.       |
+| height   | Int32  | Die Höhe der Miniatur, in Pixel.      |
+| URL      | String | Die URL verwendet, um die Miniaturansicht Inhalte abgerufen werden sollen. |
+| width    | Int32  | Die Breite der Miniaturansicht, in Pixel.       |
 
 
 ## <a name="relationships"></a>Beziehungen
 
 | Name    | Typ   | Beschreibung         |
 |:--------|:-------|:--------------------|
-| Inhalt | Stream | The content stream. |
+| Inhalt | Stream | Der Inhaltsstream. |
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

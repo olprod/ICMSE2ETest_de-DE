@@ -1,11 +1,11 @@
-# <a name="list-policies"></a>List Policies
+# <a name="list-policies"></a>Listenrichtlinien
 
-Retrieve all [policy](../resources/policy.md) objects in the directory.
+Rufen Sie [aller Gruppenrichtlinienobjekte in das Verzeichnis ab](../resources/policy.md) .
 
 ### <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Directory.AccessAsUser.All*
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Directory.AccessAsUser.All*
 
-### <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+### <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /policies
@@ -13,26 +13,26 @@ GET /policies
 ### <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-### <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+### <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ### <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and [policy](../resources/policy.md) objects in the response body. If unsuccessful...
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortobjekte Code und [Richtlinie](../resources/policy.md) im Antworttext. Wenn Sie nicht erfolgreich...
 
 ### <a name="example"></a>Beispiel
-The following example retrieves all policies.
+Im folgende Beispiel werden alle Richtlinien abgerufen.
 
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 
 ```http
 GET https://graph.microsoft.com/beta/policies
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 
 ```http
 HTTP/1.1 200 OK

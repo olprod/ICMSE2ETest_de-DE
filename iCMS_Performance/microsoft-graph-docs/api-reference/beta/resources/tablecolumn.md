@@ -1,4 +1,4 @@
-# <a name="tablecolumn-resource-type"></a>TableColumn resource type
+# <a name="tablecolumn-resource-type"></a>TableColumn Ressourcentyp
 
 Stellt eine Spalte in einer Tabelle dar.
 
@@ -7,34 +7,34 @@ Stellt eine Spalte in einer Tabelle dar.
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get TableColumn](../api/tablecolumn_get.md) | [TableColumn](tablecolumn.md) |Read properties and relationships of tableColumn object.|
-|[Update](../api/tablecolumn_update.md) | [TableColumn](tablecolumn.md) |Update TableColumn object. |
-|[Databodyrange](../api/tablecolumn_databodyrange.md)|[Range](range.md)|Ruft das Bereichsobjekt ab, das mit dem Datenteil der Spalte verknüpft ist.|
-|[Headerrowrange](../api/tablecolumn_headerrowrange.md)|[Range](range.md)|Ruft das Bereichsobjekt ab, das mit der Überschriftenzeile der Spalte verknüpft ist.|
-|[Range](../api/tablecolumn_range.md)|[Range](range.md)|Ruft das Bereichsobjekt ab, das mit der gesamten Spalte verknüpft ist.|
-|[Totalrowrange](../api/tablecolumn_totalrowrange.md)|[Range](range.md)|Ruft das Bereichsobjekt ab, das mit der Ergebniszeile der Spalte verknüpft ist.|
-|[delete()](../api/tablecolumn_delete.md)|Keine|Löscht die Spalte aus der Tabelle.|
-|[List](../api/tablecolumn_list.md) | [TableColumn](tablecolumn.md) collection |Get tableColumn object collection. |
-|[Itemat](../api/tablecolumncollection_itemat.md)|[TableColumn](tablecolumn.md)|Ruft eine Spalte anhand ihrer Position in der Auflistung ab.|
-|[Add](../api/tablecolumncollection_add.md)|[TableColumn](tablecolumn.md)|Fügt der Tabelle eine neue Spalte hinzu.|
+|[TableColumn abrufen](../api/tablecolumn_get.md) | [TableColumn-Element](tablecolumn.md) |Lesen Sie Eigenschaften und Beziehungen TableColumn-Objekts.|
+|[Update](../api/tablecolumn_update.md) | [TableColumn-Element](tablecolumn.md) |TableColumn-Objekt zu aktualisieren. |
+|[DataBodyRange](../api/tablecolumn_databodyrange.md)|[Bereich](range.md)|Ruft das Range-Objekt zugeordneten Daten Hauptteil der Spalte ab.|
+|[HeaderRowRange](../api/tablecolumn_headerrowrange.md)|[Bereich](range.md)|Ruft das Range-Objekt, das die Kopfzeile der Spalte zugeordnet.|
+|[Bereich](../api/tablecolumn_range.md)|[Bereich](range.md)|Ruft das Range-Objekt, das die gesamte Spalte zugeordnet.|
+|[Totalrowrange](../api/tablecolumn_totalrowrange.md)|[Bereich](range.md)|Ruft die Ergebniszeile der Spalte zugeordnet Range-Objekts ab.|
+|[Löschen](../api/tablecolumn_delete.md)|Keine|Die Spalte in der Tabelle gelöscht.|
+|[Liste](../api/tablecolumn_list.md) | [TableColumn](tablecolumn.md) -Auflistung |Rufen Sie die Auflistung von TableColumn-Objekts. |
+|[Itemat](../api/tablecolumncollection_itemat.md)|[TableColumn-Element](tablecolumn.md)|Ruft eine Spalte basierend auf seine Position in der Auflistung ab.|
+|[Fügen Sie hinzu](../api/tablecolumncollection_add.md)|[TableColumn-Element](tablecolumn.md)|Der Tabelle hinzugefügt eine neue Spalte.|
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|id|int|Gibt einen eindeutigen Schlüssel an, der die Spalte in der Tabelle angibt. Schreibgeschützt.|
-|Index|int|Gibt die Indexnummer der Spalte in der Spaltenauflistung der Tabelle zurück. Nullindiziert. Schreibgeschützt.|
+|id|int|Gibt einen eindeutigen Schlüssel, der die Spalte in der Tabelle identifiziert. Schreibgeschützt.|
+|Index|int|Gibt die Indexnummer der Spalte in der Tabelle der Columns-Auflistung zurück. 0 (null) indiziert. Schreibgeschützt.|
 |name|string|Gibt den Namen der Tabellenspalte zurück. Schreibgeschützt.|
-|values|json|Stellt die Rohwerte des angegebenen Bereichs dar. Die zurückgegebenen Daten können den Typ Zeichenfolge, Zahl oder ein boolescher Wert sein. Zelle, die einen Fehler enthalten, geben die Fehlerzeichenfolge zurück.|
+|values|json|Die unformatierten Werte des angegebenen Bereichs darstellt. Die zurückgegebenen Daten konnte vom Typ String, Nummer oder ein boolescher Wert sein. Zelle, die Fehler enthalten, gibt die Fehlerzeichenfolge zurück.|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|filter|[Filter](filter.md)|Retrieve the filter applied to the column. Read-only.|
+|filter|[Filter](filter.md)|Abrufen des Filters auf die Spalte angewendet. Schreibgeschützt.|
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

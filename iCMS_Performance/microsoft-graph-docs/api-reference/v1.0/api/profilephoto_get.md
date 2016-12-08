@@ -1,18 +1,18 @@
-# <a name="get-photo"></a>Foto abrufen
+# <a name="get-photo"></a>Abrufen von Fotos
 
-Get the specified [profilePhoto](../resources/profilephoto.md) or its metadata (profilePhoto properties).
+Rufen Sie die angegebenen [ProfilePhoto](../resources/profilephoto.md) oder der Metadaten (ProfilePhoto Eigenschaften).
 
-A GET operation looks for the specified photo in the user's mailbox on Exchange Online.
+Ein GET-Vorgang sucht nach der angegebenen Foto im Postfach des Benutzers auf Exchange Online.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API for:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API für ausführen:
 
-*   Profile photo of any user in the tenant including the signed-in user - *User.ReadBasic.All; User.Read.All; User.ReadWrite.All*
-*   Profile photo of specifically the signed-in user - *User.Read, User.ReadWrite; User.ReadBasic.All; User.Read.All; User.ReadWrite.All*
-* Profile photo of a **group** - *Group.Read.All; Group.ReadWrite.All*
-* Photo of a **contact** - *Contacts.Read; Contacts.ReadWrite*
+*   Profilfotos eines Benutzers in den Mandanten, einschließlich der angemeldeten Benutzers - *User.ReadBasic.All; User.Read.All; User.ReadWrite.All*
+*   Profilfoto des speziell angemeldeten Benutzers - *User.Read, User.ReadWrite; User.ReadBasic.All; User.Read.All; User.ReadWrite.All*
+* Profilfoto einer **Gruppe** - *Group.Read.All; Group.ReadWrite.All*
+* Foto von **wenden Sie sich an** - *Contacts.Read; Contacts.ReadWrite*
 
-## <a name="http-request-to-get-the-photo"></a>HTTP request to get the photo
+## <a name="http-request-to-get-the-photo"></a>HTTP-Anforderung an das Foto erhalten
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/photo/$value
@@ -23,7 +23,7 @@ GET /users/<id | userPrincipalName>/contacts/<id>/photo/$value
 GET /me/contactfolders/<contactFolderId>/contacts/<id>/photo/$value
 GET /users/<id | userPrincipalName>/contactfolders/<contactFolderId>/contacts/<id>/photo/$value
 ```
-## <a name="http-request-to-get-the-metadata-of-the-photo"></a>HTTP request to get the metadata of the photo
+## <a name="http-request-to-get-the-metadata-of-the-photo"></a>HTTP-Anforderung zum Abrufen der Metadaten des Fotos
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/photo
@@ -35,23 +35,23 @@ GET /me/contactfolders/<contactFolderId>/contacts/<id>/photo
 GET /users/<id | userPrincipalName>/contactfolders/<contactFolderId>/contacts/<id>/photo
 ```
 
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer \<token\>. Required. |
+| Autorisierung  | string  | Bearer \<token\>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
-## <a name="response-for-getting-the-photo"></a>Response for getting the photo
-If successful, this method returns a `200 OK` response code and binary data of the requested photo.  If no photo exists, the operation returns `404 Not Found`.
-## <a name="response-for-getting-the-metadata-of-the-photo"></a>Response for getting the metadata of the photo
-If successful, this method returns a `200 OK` response code and [profilePhoto](../resources/profilePhoto.md) object in the response body.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
+## <a name="response-for-getting-the-photo"></a>Antwort zum Abrufen von Fotos
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwort Code und binäre Daten des angeforderten Fotos.  Wenn kein Foto vorhanden ist, gibt der Vorgang `404 Not Found`.
+## <a name="response-for-getting-the-metadata-of-the-photo"></a>Antwort zum Abrufen der Metadaten des Fotos
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortobjekt Code und [ProfilePhoto](../resources/profilePhoto.md) im Antworttext.
 ## <a name="example"></a>Beispiel
-##### <a name="request-1"></a>Request 1
-This request gets the photo for the signed-in user, in the largest available size.
+##### <a name="request-1"></a>Anforderung 1
+Diese Anforderung Ruft das Foto für den angemeldeten Benutzer in die größte verfügbare Größe.
 <!-- {
   "blockType": "ignored"
 }-->
@@ -59,11 +59,11 @@ This request gets the photo for the signed-in user, in the largest available siz
 GET https://graph.microsoft.com/v1.0/me/photo/$value
 ```
 
-##### <a name="response-1"></a>Response 1
-Contains the binary data of the requested photo. The HTTP response code is 200.
+##### <a name="response-1"></a>Antwort 1
+Enthält die binären Daten des angeforderten Fotos. Der HTTP-Antwortcode ist 200.
 
-##### <a name="request-2"></a>Request 2
-This request gets the metadata of the user photo of the signed-in user.
+##### <a name="request-2"></a>Anfordern von 2
+Diese Anforderung Ruft die Metadaten des benutzerfoto des angemeldeten Benutzers ab.
 <!-- {
   "blockType": "ignored"
 }-->
@@ -71,9 +71,9 @@ This request gets the metadata of the user photo of the signed-in user.
 GET https://graph.microsoft.com/v1.0/me/photo
 ```
 
-##### <a name="response-2"></a>Response 2
+##### <a name="response-2"></a>Antwort 2
 
-The following response data shows the photo metadata. Note: The response object shown here may be truncated for brevity.
+Die folgenden Antwortdaten zeigt die Foto-Metadaten. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten.
 <!-- {
   "blockType": "ignored"
 }-->
@@ -92,7 +92,7 @@ Content-type: application/json
 }
 ```
 
-The following response data shows the contents of a response when a photo hasn't already been uploaded for the user. Note: The response object shown here may be truncated for brevity.
+Die folgenden Antwortdaten zeigt den Inhalt einer Antwort, wenn ein Foto für den Benutzer bereits hochgeladen wurden noch nicht. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten.
 
 <!-- {
   "blockType": "ignored"

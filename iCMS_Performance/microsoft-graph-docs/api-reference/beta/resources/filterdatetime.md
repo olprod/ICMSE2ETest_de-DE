@@ -1,20 +1,20 @@
-# <a name="filterdatetime-resource-type"></a>FilterDatetime resource type
+# <a name="filterdatetime-resource-type"></a>Ressourcentyp FilterDatetime
 
-Represents how to filter a date when filtering on values.
+Stellt ein Datum filtern beim auf Werte filtern.
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|date|string|The date in ISO8601 format used to filter data.|
-|specificity|string|How specific the date should be used to keep data. For example, if the date is 2005-04-02 and the specifity is set to "month", the filter operation will keep all rows with a date in the month of april 2009. Possible values are: `Year`, `Monday`, `Day`, `Hour`, `Minute`, `Second`.|
+|date|string|Das Datum im ISO8601-Format verwendet, um Daten zu filtern.|
+|detailgenauigkeit|string|Wie bestimmte das Datum zum verwendet werden soll, bleibt. Angenommen, wenn das Datum 2005-04-02 ist und die Spezifität auf "Month" festgelegt wird, bleiben Filteroperation alle Zeilen mit einem Datum im Monat April 2009. Possible values are: `Year`, `Monday`, `Day`, `Hour`, `Minute`, `Second`.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

@@ -1,31 +1,31 @@
-# <a name="profilephoto-resource-type"></a>profilePhoto resource type
-A profile photo of a user, group or an Outlook contact accessed from Exchange Online. It's binary data not encoded in base-64.
+# <a name="profilephoto-resource-type"></a>Ressourcentyp profilePhoto
+Ein Profilfoto von einem Benutzer, Gruppe oder ein Outlook-Kontakt auf die in Exchange Online zugegriffen. Es ist nicht im Base64-codierte Binärdaten.
 
-The supported sizes of HD photos on Exchange Online are as follows: '48x48', '64x64', '96x96', '120x120', '240x240', '360x360','432x432', '504x504', and '648x648'. 
+Zu den unterstützten Größen von HD-Fotos in Exchange Online sind wie folgt: '48 x 48', "64 x 64", '96 x 96', '120 x 120', '240 x 240', ' 360 x 360', '432 x 432', '504 x 504' und ' 648 x 648'. 
 
 ## <a name="methods"></a>Methoden
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get profilePhoto](../api/profilephoto_get.md) | [profilePhoto](profilephoto.md) |Get the specified **profilePhoto** or its metadata (profilePhoto properties).|
-|[Update](../api/profilephoto_update.md) | [profilePhoto](profilephoto.md)  |Assign a photo to the specified user, group, or contact. The photo should be in binary. It replaces the existing photo, if any.|
+|[Abrufen von profilePhoto](../api/profilephoto_get.md) | [profilePhoto](profilephoto.md) |Rufen Sie die angegebenen **ProfilePhoto** oder der Metadaten (ProfilePhoto Eigenschaften).|
+|[Update](../api/profilephoto_update.md) | [profilePhoto](profilephoto.md)  |Weisen Sie ein Foto der angegebenen Benutzer, Gruppe oder des Kontakts. Das Foto sollte in Binär. Gegebenenfalls das vorhandene Foto ersetzt.|
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|id|string|ReadOnly|
-|height|Int32|The height of the photo. Read-only.|
-|width|Int32|The width of the photo. Read-only.|
+|id|string|Schreibgeschützt.|
+|height|Int32|Die Höhe des Fotos. Schreibgeschützt.|
+|width|Int32|Die Breite des Fotos. Schreibgeschützt.|
 
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

@@ -1,30 +1,30 @@
-# <a name="directorysettingtemplate-resource-type"></a>directorySettingTemplate resource type
+# <a name="directorysettingtemplate-resource-type"></a>Ressourcentyp directorySettingTemplate
 
-Directory setting templates represent system-defined settings available to the tenant. [Directory settings](directorysetting.md) can be created based on the available directorySettingTemplates, and values changed from their preset defaults. Directory setting templates cannot be created, updated or deleted. These settings can represent tenant-wide settings, or can represent specific entity settings.  Currently, the only templates available apply to Office groups, and include settings such as whether users can create groups or invite guests from outside the organization to become members of a group.
+Verzeichnis Einstellung Vorlagen darstellen systemdefinierte Einstellungen für den Mandanten verfügbar. [Directory-Einstellungen](directorysetting.md) können anhand der verfügbaren DirectorySettingTemplates und Werte geändert voreingestellten Standardwerte von erstellt werden. Vorlagen für Verzeichnis festlegen können nicht erstellt, aktualisiert oder gelöscht werden. Diese Einstellungen können Mandanten geltende Einstellungen darstellen, oder bestimmte Entität Einstellungen können darstellen.  Derzeit nur verfügbaren Vorlagen gelten für Office-Gruppen und zählen Einstellungen wie gibt an, ob Benutzer Gruppen erstellen oder Gäste außerhalb der Organisation, die Mitglied einer Gruppe werden einladen können.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get directorySettingTemplate](../api/directorysettingtemplate_get.md) | [directorySettingTemplate](directorysettingtemplate.md) |Read the specific properties of one of the system defined directorySettingTemplate objects.|
-|[List directorySettingTemplate](../api/directorysettingtemplate_list.md) | [Collection of directorySettingTemplate](directorysettingtemplate.md) |List all of the system defined directorySettingTemplate objects.|
+|[Abrufen von directorySettingTemplate](../api/directorysettingtemplate_get.md) | [directorySettingTemplate](directorysettingtemplate.md) |Lesen Sie die bestimmten Eigenschaften des eines der Objekte DirectorySettingTemplate System definiert.|
+|[Liste directorySettingTemplate](../api/directorysettingtemplate_list.md) | [Auflistung von directorySettingTemplate](directorysettingtemplate.md) |Listen Sie aller vom System definierten DirectorySettingTemplate Objekte auf.|
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|description|string|Description of the template. Read-only.|
-|DisplayName|string|Display name of the template. Read-only. |
-|id|string| Unique identifier for the template. Read-only.|
-|values|[settingTemplateValue](settingtemplatevalue.md) collection| Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only. |
+|description|string|Beschreibung der Vorlage. Schreibgeschützt.|
+|displayName|string|Anzeigename der Vorlage. Schreibgeschützt. |
+|id|string| Eindeutiger Bezeichner für die Vorlage. Schreibgeschützt.|
+|values|[SettingTemplateValue](settingtemplatevalue.md) -Auflistung| Auflistung von SettingTemplateValues, die den Satz von verfügbaren Einstellungen, Standardeinstellungen und Typen, die diese Vorlage bilden auflisten.  Schreibgeschützt. |
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

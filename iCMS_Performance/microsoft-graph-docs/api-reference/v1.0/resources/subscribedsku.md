@@ -1,21 +1,21 @@
-# <a name="subscribedsku-resource-type"></a>subscribedSku resource type
+# <a name="subscribedsku-resource-type"></a>Ressourcentyp subscribedSku
 
-Only the read operation is supported on subscribed SKUs; create, update, and delete are not supported. Query filter expressions are not supported. Inherits from [directoryObject](directoryobject.md).
+Nur der Lesevorgang wird unter abonnierten SKUs unterstützt. Erstellen, Update und Delete werden nicht unterstützt. Abfrageausdrücke Filter werden nicht unterstützt. Erbt vom [DirectoryObject](directoryobject.md).
 
 
 ## <a name="methods"></a>Methoden
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get subscribedSku](../api/subscribedsku_get.md) | [subscribedSku](subscribedsku.md) |Read properties and relationships of subscribedSku object.|
+|[SubscribedSku abrufen](../api/subscribedsku_get.md) | [subscribedSku](subscribedsku.md) |Lesen Sie Eigenschaften und Beziehungen des SubscribedSku-Objekts.|
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
 |capabilityStatus|String||
 |consumedUnits|Int32||
-|id|String| Key. Read-only.|
+|id|String| -Taste. Schreibgeschützt.|
 |prepaidUnits|[licenseUnitsDetail](licenseunitsdetail.md)||
-|servicePlans|[servicePlanInfo](serviceplaninfo.md) collection||
+|servicePlans|[ServicePlanInfo](serviceplaninfo.md) -Auflistung||
 |skuId|Guid||
 |skuPartNumber|String||
 |appliesTo|String||
@@ -23,9 +23,9 @@ Only the read operation is supported on subscribed SKUs; create, update, and del
 ## <a name="relationships"></a>Beziehungen
 Keine
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

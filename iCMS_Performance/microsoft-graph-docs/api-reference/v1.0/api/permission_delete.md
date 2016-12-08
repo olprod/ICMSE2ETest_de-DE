@@ -1,14 +1,14 @@
-# <a name="delete-permission"></a>Delete permission
+# <a name="delete-permission"></a>DELETE-Berechtigung
 
-Delete a permission. Only permissions that are not inherited can be deleted. The **inheritedFrom** property must be null. Applications can only delete permissions they have created.
+Löschen Sie eine Berechtigung. Nur die Berechtigungen, die nicht vererbt werden, können gelöscht werden. Die Eigenschaft **InheritedFrom** muss null sein. Anwendungen können nur Berechtigungen löschen, die sie erstellt haben.
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.ReadWrite
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -20,20 +20,20 @@ DELETE /me/drive/items/<id>/permissions/<id>
 
 | Name          | Typ   | Beschreibung                                                                                                                                                                                       |
 |:--------------|:-------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Autorisierung | string | Bearer <token>. Required.                                                                                                                                                                         |
-| if-match      | string | If this request header is included and the eTag (or cTag) provided does not match the current tag on the item, a `412 Precondition Failed` response is returned and the item will not be deleted. |
+| Autorisierung | string | Bearer <token>. Erforderlich.                                                                                                                                                                         |
+| If-Match-      | string | Wenn diese Anforderungsheader enthalten und bereitgestellten eTag (oder cTag) nicht das aktuelle Tag für das Element entspricht eine `412 Precondition Failed` Antwort zurückgegeben wird, und das Element wird nicht gelöscht werden. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `204, No Content` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `204, No Content` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
 
 ##### <a name="request"></a>Anforderung
 
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 
 <!-- {
   "blockType": "request",
@@ -45,7 +45,7 @@ DELETE /me/drive/root/permissions/<id>
 
 ##### <a name="response"></a>Antwort
 
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 
 <!-- {
   "blockType": "response",

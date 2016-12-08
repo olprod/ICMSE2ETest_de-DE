@@ -1,19 +1,19 @@
-# <a name="provisionedplan-resource-type"></a>provisionedPlan resource type
+# <a name="provisionedplan-resource-type"></a>Ressourcentyp provisionedPlan
 
-The **provisionedPlans** property of the [user](user.md) entity and the [organization](organization.md) entity is a collection of **provisionedPlan**.
+Die **ProvisionedPlans** -Eigenschaft der Entität [Benutzer](user.md) und die [Organisation](organization.md) Entität ist eine Auflistung von **ProvisionedPlan**.
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|capabilityStatus|String|For example, “Enabled”.|
-|provisioningStatus|String|For example, “Success”.|
-|Dienst|String|The name of the service; for example, “AccessControlS2S”|
+|capabilityStatus|String|Beispielsweise aktiviert"."|
+|provisioningStatus|String|Beispielsweise "Erfolg".|
+|Dienst|String|Der Name des Diensts. beispielsweise "AccessControlS2S"|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

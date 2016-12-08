@@ -1,37 +1,41 @@
-# <a name="groups-plans-and-tasks"></a>Groups, Plans and Tasks
-The new Office 365 Tasks API enables you to create tasks and assign them to users in a group in Office 365.
+# <a name="groups-plans-and-tasks"></a>Gruppen, Pläne und Aufgaben
+Der neuen Office 365-Aufgaben-API ermöglicht Ihnen das Erstellen von Aufgaben, und weisen Sie diese Benutzer in einer Gruppe im Office 365.
 
-## <a name="basics"></a>Basics
-Before you get started with trying out the Tasks API, it is worth understanding how the main objects in Tasks API relate to each other as well as Office 365 groups.
+## <a name="basics"></a>Grundlagen
+Bevor Sie beginnen, mit der API Aufgaben und probieren Sie lohnt Grundlegendes zur Beziehung zwischen der wichtigsten Objekte im Aufgaben-API und miteinander als auch für Office 365-Gruppen.
 
 ## <a name="groups"></a>Gruppen
-Office 365 groups are the owners of the plans in the Tasks API. Today, each group can own no more than one plan. To get the plans owned by a group, make the HTTP request below.
+Office 365-Gruppen sind die Besitzer der Pläne in der Tasks-API.
+Jede Gruppe kann heute nicht mehr als einen Plan besitzen.
+Um die Pläne Besitz einer Gruppe zu erzielen, sollten Sie die folgenden HTTP-Anforderung.
 
 ```http
 GET /groups/<id>/plans
 ```
-When creating a new plan, you need to make a group its owner by simply setting the `owner` property on a plan object to the id of a group object if the group does not already own a plan. 
+Wenn Sie einen neuen Plan zu erstellen, müssen Sie einer Gruppe Besitzer indem Sie einfach Festlegen der `owner` -Eigenschaft für ein Objekt Plan auf die Id des ein Group-Objekt, wenn die Gruppe nicht bereits einen Plan besitzt. 
 
-**Note that you need to ensure that the user who is creating the plan is a member of the group. When you create a new group using the API, you are not automatically added to the group as a member. This has to be done using a separate API call.** 
+**Hinweis: Sie müssen sicherstellen, dass der Benutzer, der den Plan erstellen ist ein Mitglied der Gruppe ist. Wenn Sie eine neue Gruppe mit der API erstellen, werden Sie nicht automatisch an die Gruppe als Mitglied hinzugefügt. Dies hat, erfolgt eine separate API-Aufruf.** 
 
-## <a name="plans"></a>Plans
-Plans are the containers of tasks. To create a task in a group, set the `planId` property on the task object to the id of the plan objected owned by the group. To retrieve the tasks in a plan, make the HTTP request below.
+## <a name="plans"></a>Pläne
+Pläne sind die Container von Aufgaben. Legen Sie zum Erstellen einer Aufgabe in einer Gruppe, die `planId` Eigenschaft des Task-Objekts auf die Id des Plans erhob Besitz der Gruppe.
+Stellen Sie zum Abrufen der Aufgaben in einem Plan für die folgenden HTTP-Anforderung.
 
 ```http
 GET /plans/<id>/tasks
 ```
-Each plan also has a plan details object which is created together with the plan object. To access the plan details object, make the following HTTP request.
+Jeden Plan hat auch ein Plan Details Objekt die zusammen mit dem Plan Objekt erstellt wird. Um den Plan Details Objekt zuzugreifen, stellen Sie die folgenden HTTP-Anforderung.
 
 ```http
 GET /plans/<id>/details
 ```
 
 ## <a name="tasks"></a>Aufgaben
-Each task can be assigned to a user by setting the `assignedTo` property on the task object to the id of the user object. It also has a task details object which is created together with the task object. To access the task details object, make the following HTTP request.
+Jede Aufgabe kann, die einem Benutzer zugewiesen werden, durch Festlegen der `assignedTo` -Eigenschaft für das Task-Objekt auf die Id des User-Objekts. Es wurde auch ein Task Details-Objekt, die zusammen mit der Task-Objekt erstellt wird. Um die Details Task-Objekt zuzugreifen, stellen Sie die folgenden HTTP-Anforderung.
 
 ```http
 GET /tasks/<id>/details
 ```
 
-## <a name="api-reference"></a>JavaScript-API-Referenz
-Unter den im folgenden aufgeführten Links werden die in den APIs zur Verfügung stehenden Excel-Objekte auf hoher Ebene Excel-Objekte erläutert. Auf jeder Seite sind eine Beschreibung der Eigenschaften, das Verhältnis und verfügbare Methoden des Objekts enthalten. Erkunden Sie diese Links, um mehr zu erfahren.
+## <a name="api-reference"></a>-API-Referenz
+Die Links auf der linken Seite zeigen die Objekte in der API Aufgaben zur Verfügung. Jeder Seite-Verknüpfung enthält eine Beschreibung der Eigenschaften, Beziehungen und Methoden für das Objekt verfügbar.
+Verwenden Sie die Links auf der linken Seite, um mehr zu erfahren.

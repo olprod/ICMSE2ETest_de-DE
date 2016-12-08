@@ -1,38 +1,38 @@
-# <a name="conversation-resource-type"></a>conversation resource type
+# <a name="conversation-resource-type"></a>Ressourcentyp Unterhaltung
 
-A conversation is a collection of [threads](conversationthread.md), and a thread contains posts to that thread. All threads and posts in a conversation share the same subject.
+Eine Unterhaltung ist eine Auflistung von [Threads](conversationthread.md)und ein Thread Beiträge zu diesem Thread enthält. Teilen den gleichen Betreff alle Threads und Beiträge in einer Unterhaltung.
 
 ## <a name="methods"></a>Methoden
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[List conversations](../api/group_list_conversations.md) | [conversation](conversation.md) collection |Get the list of conversations in this group.|
-|[create](../api/group_post_conversations.md) |[Unterhaltung](conversation.md)| Create a new conversation by including a thread and a post.|
-|[Get conversation](../api/conversation_get.md) | [Unterhaltung](conversation.md) |Read properties and relationships of conversation object.|
-|[delete()](../api/conversation_delete.md) | Keine |Delete conversation object. |
-|[List conversation threads](../api/conversation_list_threads.md) |[conversationThread](conversationthread.md) collection| Get all the threads in a group conversation.|
-|[Create conversation thread](../api/conversation_post_threads.md) |[conversationThread](conversationthread.md) collection| Create a thread in the specified conversation.|
+|[Liste Unterhaltungen](../api/group_list_conversations.md) | [Unterhaltung](conversation.md) -Auflistung |Rufen Sie die Liste der Unterhaltungen in dieser Gruppe.|
+|[Erstellen](../api/group_post_conversations.md) |[Unterhaltung](conversation.md)| Erstellen Sie eine neue Unterhaltung durch das Einbeziehen eines Threads und ein Beitrag.|
+|[Abrufen der Unterhaltung](../api/conversation_get.md) | [Unterhaltung](conversation.md) |Lesen Sie Eigenschaften und Beziehungen zwischen Conversation-Objekt.|
+|[Löschen](../api/conversation_delete.md) | Keine |Conversation-Objekt zu löschen. |
+|[Liste Unterhaltung threads](../api/conversation_list_threads.md) |[ConversationThread](conversationthread.md) -Auflistung| Rufen Sie alle Threads in einer gruppenunterhaltung.|
+|[Erstellen von Unterhaltungsthreads](../api/conversation_post_threads.md) |[ConversationThread](conversationthread.md) -Auflistung| Erstellen Sie einen Thread in der angegebenen Unterhaltung.|
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|hasAttachments|Boolean|Indicates whether any of the posts within this Conversation has at least one attachment.|
-|id|String|The conversations's unique identifier. Read-only.|
-|lastDeliveredDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|Vorschau|String|A short summary from the body of the latest post in this converstaion.|
-|Thema|String|The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.|
-|uniqueSenders|String collection|All the users that sent a message to this Conversation.|
+|hasAttachments|Boolean|Gibt an, ob eine der Beiträge in dieser Unterhaltung mindestens eine Anlage enthält.|
+|id|String|Eindeutiger Bezeichner der Unterhaltungen. Schreibgeschützt.|
+|lastDeliveredDateTime|DateTimeOffset|Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Beispielsweise würde Uhr UTC auf 1 Jan 2014 sieht folgendermaßen aus:`'2014-01-01T00:00:00Z'`|
+|Vorschau|String|Eine kurze Zusammenfassung aus dem Textkörper des aktuellen Beitrags in dieser Converstaion.|
+|Thema|String|Das Thema der Unterhaltung. Diese Eigenschaft kann festgelegt werden, wenn die Unterhaltung wird erstellt, aber nicht aktualisiert werden.|
+|uniqueSenders|String-Auflistung|Alle Benutzer, die eine Nachricht zu dieser Unterhaltung gesendet.|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Threads|[conversationThread](conversationthread.md) collection|A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.|
+|Threads|[ConversationThread](conversationthread.md) -Auflistung|Eine Auflistung aller Unterhaltung Threads in der Unterhaltung. Eine Navigationseigenschaft. Schreibgeschützt. NULL-Werte zulässt.|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

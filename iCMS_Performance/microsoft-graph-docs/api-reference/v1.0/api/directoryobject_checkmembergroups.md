@@ -1,10 +1,10 @@
-# <a name="directoryobject-checkmembergroups"></a>directoryObject: checkMemberGroups
+# <a name="directoryobject-checkmembergroups"></a>DirectoryObject: CheckMemberGroups
 
-Check for membership in a specified list of groups, and returns from that list those groups of which the specified user or directory object is a member. This function is transitive.
+Überprüfen Sie für die Mitgliedschaft in einer angegebenen Liste von Gruppen und gibt aus der Liste diesen Gruppen, die dem angegebenen Benutzer oder Verzeichnisobjekt Mitglied ist. Diese Funktion ist transitiv.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API:
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen:
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /users/<id | userPrincipalName>/manager/checkMemberGroups
@@ -14,22 +14,22 @@ POST /contacts/<id>/manager/checkMemberGroups
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
 |groupIds|String||
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and String collection object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode und Zeichenfolge-Auflistungsobjekt in der Antworttext.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "directoryobject_checkmembergroups"
@@ -47,7 +47,7 @@ Content-length: 44
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

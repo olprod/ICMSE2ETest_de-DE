@@ -1,19 +1,19 @@
-# <a name="specialfolder-resource-type"></a>specialFolder resource type
+# <a name="specialfolder-resource-type"></a>SpecialFolder Ressourcentyp
 
-The **SpecialFolder** facet provides information about how a folder can be accessed via the [special folders collection](../api/drive_special.md).
+Die **SpecialFolder** Facetten enthält Informationen zu wie ein Ordners über die [spezielle Folders-Auflistung](../api/drive_special.md)zugegriffen werden kann.
 
-Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder.
+Spezialordner einfache Aliase bekannte Ordner in OneDrive ohne die Notwendigkeit der Ordner durch Pfad Nachschlagen (die Lokalisierung erforderlich wäre) für den Zugriff bereitstellen oder verweisen auf den Ordner mit einer ID Ein Ordner mit Sonderfunktion umbenannt oder an eine andere Position innerhalb des Laufwerks verschoben wird, wird diese Syntax weiterhin den Ordner suchen.
 
-Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist. If a user deletes one, it is recreated when written to again.
+Spezialordner werden automatisch beim ersten erstellt, die eine Anwendung zum Schreiben in ein einziges versucht, sofern er nicht bereits vorhanden. Wenn ein Benutzer eine löscht, wird es neu erstellt, wenn nicht neu geschrieben.
 
-**Note:** If your app has only requested **Files.Read** scope and requests a special folder that doesn't exist, the response will be a `403 Forbidden` error.
+**Hinweis:** Wenn Ihre app nur **Files.Read** Bereich angefordert hat und fordert einen speziellen Ordner, der nicht vorhanden ist, gibt die Antwort wird ein `403 Forbidden` Fehler.
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft  | Typ   | Beschreibung                                                            |
 |:----------|:-------|:-----------------------------------------------------------------------|
-| name      | string | The unique identifier for this item in the `/drive/special` collection |
+| name      | string | Der eindeutige Bezeichner für dieses Element in der `/drive/special` Auflistung |
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
 <!-- {
   "blockType": "resource",
@@ -29,17 +29,17 @@ Special folders are automatically created the first time an application attempts
 
 ```
 
-## <a name="special-folders"></a>Special folders
+## <a name="special-folders"></a>Spezialordner
 
-Here are the special folders available in OneDrive Personal and OneDrive for Business.
+Hier sind die Ordner mit Sonderfunktion in OneDrive persönlich und OneDrive für Unternehmen verfügbar.
 
-| Name        | Folder id    | Beschreibung                                                              |
+| Name        | Ordner-id    | Beschreibung                                                              |
 |:------------|:-------------|:-------------------------------------------------------------------------|
-| App Root    | `approot`    | The application's personal folder. Usually in `/Apps/{Application Name}` |
-| Camera Roll | `cameraroll` | The Camera Roll Backup folder. Not available in OneDrive for Business.   |
-| Documents   | `documents`  | The Documents folder.                                                    |
-| Music       | `music`      | The Music folder. Not available in OneDrive for Business.                |
-| Photos      | `photos`     | The Photos folder.                                                       |
+| App-Stamm    | `approot`    | Persönliche Ordner der Anwendung. In der Regel in`/Apps/{Application Name}` |
+| Kamera Blogroll (engl.) | `cameraroll` | Die Kamera ein Rollback Sicherungsordner. In OneDrive für Unternehmen nicht verfügbar.   |
+| Documents   | `documents`  | Der Ordner Dokumente.                                                    |
+| Musik       | `music`      | Der Ordner Musik. In OneDrive für Unternehmen nicht verfügbar.                |
+| Fotos      | `photos`     | Der Ordner Fotos.                                                       |
 
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

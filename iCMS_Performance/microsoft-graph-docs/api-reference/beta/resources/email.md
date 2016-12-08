@@ -1,10 +1,10 @@
-# <a name="email-resource-type"></a>email resource type
+# <a name="email-resource-type"></a>e-Mail-Ressourcentyp
 
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

@@ -1,11 +1,11 @@
-# <a name="get-a-member"></a>Get a member
+# <a name="get-a-member"></a>Abrufen eines Elements
 
-Use this API to get a specific member (user or group) in an administrative unit.
+Verwenden Sie diese API, um ein bestimmtes Element (Benutzer oder Gruppe) in eine administrative Einheit abzurufen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: *Directory.Read.All* or *Directory.ReadWrite.All* or *Directory.AccessAsUser.All*.
+Die folgenden **Bereiche** sind erforderlich, um diese API ausführen: *Directory.Read.All* oder *Directory.ReadWrite.All* oder *Directory.AccessAsUser.All*.
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 
 ```http
 GET /administrativeUnits/<id>/members/<id>
@@ -13,24 +13,24 @@ GET /administrativeUnits/<id>/members/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Name      |Beschreibung|
 |:----------|:----------|
-| Autorisierung  | Bearer <token>. Required.|
+| Autorisierung  | Bearer <token>. Erforderlich.|
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and a [user](../resources/user.md) or [group](../resources/group.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und einen [Benutzer](../resources/user.md) oder eine [Gruppe](../resources/group.md) -Objekts in der Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 
 ```http
 GET https://graph.microsoft.com/beta/administrativeUnits/<id>/members/<id>
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the respone. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Hier ist ein Beispiel für die Respone. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 
 ```http
 HTTP/1.1 200 OK

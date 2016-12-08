@@ -1,14 +1,14 @@
-# <a name="create-attachment"></a>Create Attachment
+# <a name="create-attachment"></a>Anlage erstellen
 
-Use this API to add an [attachment](../resources/attachment.md) to a post. Since there is currently a limit of 4MB on the total size of each REST request, this limits the size of the attachment you can add to under 4MB.
+Verwenden Sie diese API, um eine [Anlage](../resources/attachment.md) auf einen Beitrag hinzuzufügen. Da es derzeit maximal 4MB für die Gesamtgröße der einzelnen REST-Anforderungen ist, schränkt dies die Größe der Anlage, die Sie unter 4 MB hinzufügen können.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
-* Wählen Sie Group.ReadWrite.All.
+* Group.ReadWrite.All
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
-Attachments for a [post](../resources/post.md) in a [thread](../resources/conversationthread.md) belonging to a [conversation](../resources/conversation.md) of a group.
+Anlagen für einen [Posten](../resources/post.md) in einem [Thread](../resources/conversationthread.md) , gehören zu einer [Unterhaltung](../resources/conversation.md) einer Gruppe.
 ```http
 POST /groups/<id>/threads/<id>/posts/<id>/attachments
 POST /groups/<id>/conversations/<id>/threads/<id>/posts/<id>/attachments
@@ -16,19 +16,19 @@ POST /groups/<id>/conversations/<id>/threads/<id>/posts/<id>/attachments
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [Attachment](../resources/attachment.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Attachment](../resources/attachment.md) -Objekt.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [Attachment](../resources/attachment.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `201, Created` Antwortcode und [Attachment](../resources/attachment.md) -Objekts in der Antworttext.
 
-## <a name="example-file-attachment"></a>Example (file attachment)
+## <a name="example-file-attachment"></a>Beispiel (Dateianlage)
 
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_file_attachment_from_post"
@@ -45,10 +45,10 @@ Content-length: 142
 }
 ```
 
-In the request body, supply a JSON representation of [attachment](../resources/attachment.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Attachment](../resources/attachment.md) -Objekts.
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -69,7 +69,7 @@ Content-length: 162
 }
 ```
 
-## <a name="example-item-attachment"></a>Example (item attachment)
+## <a name="example-item-attachment"></a>Beispiel (Element Attachment)
 
 ##### <a name="request"></a>Anforderung
 <!-- {
@@ -89,7 +89,7 @@ Content-length: 100
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -111,10 +111,11 @@ Content-length: 162
 ```
 
 
-## <a name="example-reference-attachment"></a>Example (reference attachment)
+## <a name="example-reference-attachment"></a>Beispiel (Referenz Attachment)
 
 ##### <a name="request"></a>Anforderung
-Here is an example of a request that adds a reference attachment to an existing post. The attachment points to a folder on OneDrive.
+Es folgt ein Beispiel einer Anforderung, die eine Anlage Verweis auf einen vorhandenen Beitrag hinzufügt.
+Die Anlage verweist auf einen Ordner auf OneDrive.
 <!-- {
   "blockType": "request",
   "name": "create_reference_attachment_from_message"
@@ -136,7 +137,7 @@ Content-length: 319
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of a full response.
+Es folgt ein Beispiel einer vollständigen Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true

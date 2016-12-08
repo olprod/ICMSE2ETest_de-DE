@@ -1,10 +1,10 @@
-# <a name="bucket-resource-type"></a>bucket resource type
+# <a name="bucket-resource-type"></a>Bucket Ressourcentyp
 
-The Bucket resource represents a bucket (or "custom column") for tasks in a plan in Office 365. It is contained in a [plan](plan.md) and can have a collection of [tasks](task.md).
+Die Ressource Bucket stellt ein Bucket (oder "benutzerdefinierte Spalte") für Aufgaben in einem Plan in Office 365. Es kann ist in einem [Plan](plan.md) enthalten und eine Auflistung von [Aufgaben](task.md).
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -26,25 +26,25 @@ Here is a JSON representation of the resource
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|id|String| Read-only. Id of the bucket. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer.md) is done on the service.|
-|name|String| Name des Projekts. |
-|orderHint|String| Used to set the relative order of the buckets in the task board view. Consider three buckets in the order of: `'E'`, `'F'`, `'G'`. To make `'F'` the first bucket, set its `'orderHint'` to smaller than that of `'x'`. The comparison is an ordinal string comparison.|
-|planId|String| Plan id to which the bucket belongs. |
+|id|String| Schreibgeschützt. ID des Bucket. Es ist eine 28 Zeichen lang und Groß-/Kleinschreibung beachtet. [Format Validierung](tasks_identifiers_disclaimer.md) erfolgt für den Dienst.|
+|name|String| Name des Bucket. |
+|orderHint|String| Verwendet, um die relative Reihenfolge der Buckets in der Vorgangsansicht Pinnwand festzulegen. Berücksichtigen Sie drei Buckets in der Reihenfolge der: `'E'`, `'F'`, `'G'`. So tätigen `'F'` der erste Bucket, legen seine `'orderHint'` zu kleiner als der von `'x'`. Vergleich wird ein ordinal Zeichenfolgenvergleich.|
+|"PlanID"|String| Plan-Id zu dem Bucket gehört. |
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Aufgaben|[task](task.md) collection| Read-only. Nullable. Collection of tasks in the bucket. |
+|Aufgaben|Auflistung von [Workflowaufgaben](task.md)| Schreibgeschützt. NULL-Werte zulässt. Auflistung von Aufgaben im Bucket. |
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get bucket](../api/bucket_get.md) | [bucket](bucket.md) |Read properties and relationships of bucket object.|
-|[List tasks](../api/bucket_list_tasks.md) |[task](task.md) collection| Get a task object collection.|
-|[Create bucket](../api/bucket_post_buckets.md) | [bucket](bucket.md)   | Create a new bucket object. |
-|[Update bucket](../api/bucket_update.md) | Keine |Update bucket object. |
-|[Delete bucket](../api/bucket_delete.md) | Keine |Delete bucket object. |
+|[Erste bucket](../api/bucket_get.md) | [Bucket](bucket.md) |Eigenschaften lesen und Beziehungen Bucket-Objekts.|
+|[Listenaufgaben](../api/bucket_list_tasks.md) |Auflistung von [Workflowaufgaben](task.md)| Rufen Sie eine Auflistung von Workflowaufgaben-Objekt.|
+|[Bucket erstellen](../api/bucket_post_buckets.md) | [Bucket](bucket.md)   | Erstellen eines neuen Bucket-Objekts. |
+|[Bucket aktualisieren](../api/bucket_update.md) | Keine |Update-Bucket-Objekt. |
+|[Bucket löschen](../api/bucket_delete.md) | Keine |Bucket-Objekt zu löschen. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

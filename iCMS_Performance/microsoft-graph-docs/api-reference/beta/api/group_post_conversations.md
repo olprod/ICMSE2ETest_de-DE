@@ -1,11 +1,11 @@
-# <a name="create-conversation"></a>Create Conversation
+# <a name="create-conversation"></a>Erstellen der Unterhaltung
 
-Create a new conversation by including a thread and a post. 
+Erstellen Sie eine neue Unterhaltung durch das Einbeziehen eines Threads und ein Beitrag. 
 
-Use [reply thread](conversationthread_reply.md) or [reply post](post_reply.md) to further post to that conversation.
+Verwenden Sie [Antwort Thread](conversationthread_reply.md) oder weitere Beitrag zu dieser Unterhaltung im [Beitrag Antworten](post_reply.md) .
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Group.ReadWrite.All*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** zum Ausführen diese API ist erforderlich: *Group.ReadWrite.All*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /groups/<id>/conversations
@@ -13,19 +13,19 @@ POST /groups/<id>/conversations
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
-| contentType  | application/json  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
+| Inhaltstyp  | Application/json  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [conversation](../resources/conversation.md) object containing a [conversationThread](../resources/conversationThread.md) and a [post](../resources/post.md).
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung der [Conversation](../resources/conversation.md) -Objekt mit einer [ConversationThread](../resources/conversationThread.md) und einer [Buchen](../resources/post.md).
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [conversation](../resources/conversation.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortobjekt Code und [Unterhaltung](../resources/conversation.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_conversation_from_group"
@@ -53,7 +53,7 @@ Content-type: application/json
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

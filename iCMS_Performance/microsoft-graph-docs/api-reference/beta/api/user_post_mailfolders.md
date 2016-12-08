@@ -1,9 +1,9 @@
-# <a name="create-mailfolder"></a>Create MailFolder
+# <a name="create-mailfolder"></a>MailFolder erstellen
 
-Use this API to create a new mail folder.
+Verwenden Sie diese API, um eine neue e-Mail-Ordner zu erstellen.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Mail.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Mail.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /users/<id | userPrincipalName>/mailFolders
@@ -11,23 +11,23 @@ POST /users/<id | userPrincipalName>/mailFolders
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
-| contentType  | application/json  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
+| Inhaltstyp  | Application/json  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters. **displayName** is the only writable property for a [MailFolder](../resources/mailfolder.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus. **DisplayName** ist die nur schreibbare Eigenschaft für ein [MailFolder](../resources/mailfolder.md) -Objekt.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|parentFolderId|String|The folder ID of the parent folder, or the `Inbox`, `Drafts`, `SentItems`, or `DeletedItems` well-known folder name.|
-|DisplayName|String|Der Anzeigename des outlooknv2-Ordners.|
+|parentFolderId|String|Die ID des übergeordneten Ordners, oder die `Inbox`, `Drafts`, `SentItems`, oder `DeletedItems` bekannten Ordnername.|
+|displayName|String|Der Anzeigename des neuen Ordners.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [MailFolder](../resources/mailfolder.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `201, Created` Antwortcode und [MailFolder](../resources/mailfolder.md) -Objekts in der Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_mailfolder_from_user"
@@ -44,7 +44,7 @@ Content-length: 159
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

@@ -1,9 +1,9 @@
-# <a name="range-lastcolumn"></a>Range: LastColumn
+# <a name="range-lastcolumn"></a>Bereich: LastColumn
 
-Ruft die letzte Spalte im Bereich ab. Beispielsweise lautet die letzte Spalte von „B2:D5“ „D2:D5“.
+Ruft die letzte Spalte innerhalb des Bereichs. Die letzte Spalte des "B2:D5" ist beispielsweise "D2:D5".
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /workbook/names(<name>)/range/LastColumn
@@ -14,18 +14,18 @@ POST /workbook/tables(<id|name>)/columns(<id|name>)/range/LastColumn
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
+## <a name="request-body"></a>Anforderungstext
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and [Range](../resources/range.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `200, OK` Antwortcode und [Range](../resources/range.md) -Objekt aus der Antwort.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "range_lastcolumn"
@@ -35,7 +35,7 @@ POST https://graph.microsoft.com/beta/me/drive/items/<id>/workbook/names(<name>)
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

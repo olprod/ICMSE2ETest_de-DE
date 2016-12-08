@@ -1,10 +1,10 @@
-# <a name="activate-directoryrole"></a>Activate directoryRole
+# <a name="activate-directoryrole"></a>DirectoryRole aktivieren
 
-Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. Only the Company Administrators  and the implicit Users directory roles are activated by default. To access and assign members to another directory role, you must first activate it with its corresponding directory role template ([directoryRoleTemplate](../resources/directoryroletemplate.md)).
+Eine Rolle Verzeichnis zu aktivieren. Um eine Rolle Directory lesen oder deren Member aktualisieren möchten, müssen sie zuerst im Mandanten aktiviert werden. Nur die Administratoren im Unternehmen und die impliziten Benutzer Directory Rollen sind standardmäßig aktiviert. Zugriff auf und Zuweisen von Mitgliedern zu einer anderen Verzeichnis Rolle, müssen Sie zuerst mit der entsprechenden Verzeichnis Role-Vorlage ([DirectoryRoleTemplate](../resources/directoryroletemplate.md)) aktivieren.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Directory.ReadWrite.All* or *Directory.AccessAsUser.All*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Directory.ReadWrite.All* oder *Directory.AccessAsUser.All*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /directoryRoles
@@ -13,24 +13,24 @@ POST /directoryRoles
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [directoryRole](../resources/directoryrole.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [DirectoryRole](../resources/directoryrole.md) -Objekts.
 
-The following table shows the properties that are required when you activate a directory role.
+In der folgenden Tabelle werden die Eigenschaften gezeigt, die erforderlich sind, wenn Sie eine Rolle Verzeichnis zu aktivieren.
 
-|Required parameter | Typ | Beschreibung|
+|Erforderliche parameter | Typ | Beschreibung|
 |:---------|:---------|:---------|
-|roleTemplateId | string | The ID of the [directoryRoleTemplate](../resources/directoryroletemplate.md) that the role is based on. This is the only property that may be specified in the request.|
+|roleTemplateId | string | Die ID des der [DirectoryRoleTemplate](../resources/directoryroletemplate.md) , die die Rolle basiert. Dies ist die einzige Eigenschaft, die in der Anforderung angegeben werden kann.|
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [directoryRole](../resources/directoryrole.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortobjekt Code und [DirectoryRole](../resources/directoryrole.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_directoryrole_from_directoryroles"
@@ -46,9 +46,9 @@ Content-length: 153
   "roleTemplateId": "roleTemplateId-value"
 }
 ```
-In the request body, supply a JSON representation of [directoryRole](../resources/directoryrole.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [DirectoryRole](../resources/directoryrole.md) -Objekts.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

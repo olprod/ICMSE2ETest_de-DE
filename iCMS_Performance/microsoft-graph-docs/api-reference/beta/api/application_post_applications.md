@@ -1,10 +1,10 @@
-# <a name="create-application"></a>Benutzerdefinierte Anwendungsseite erstellen
+# <a name="create-application"></a>Anwendung erstellen
 
-Use this API to create a new Application.
+Verwenden Sie diese API, um eine neue Anwendung erstellen.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /applications
@@ -13,18 +13,18 @@ POST /applications
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer {token}. Required. |
+| Autorisierung  | string  | Bearer {Token}. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [application](../resources/application.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Application](../resources/application.md) -Objekts.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [application](../resources/application.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortobjekt Code und [Anwendung](../resources/application.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_application_from_applications"
@@ -65,9 +65,9 @@ Content-length: 717
     "errorUrl": "errorUrl-value"
 }
 ```
-In the request body, supply a JSON representation of [application](../resources/application.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Application](../resources/application.md) -Objekts.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

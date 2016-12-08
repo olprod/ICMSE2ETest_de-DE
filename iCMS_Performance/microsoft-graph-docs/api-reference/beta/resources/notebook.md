@@ -1,10 +1,10 @@
-# <a name="notebook-resource-type"></a>notebook resource type
+# <a name="notebook-resource-type"></a>Notebook-Ressourcentyp
 
-A OneNote notebook.
+Ein OneNote-Notizbuch.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -36,36 +36,36 @@ Here is a JSON representation of the resource
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|createdBy|String|Der Benutzer, der das Notizbuch erstellt hat.|
-|createdTime|DateTimeOffset|The date and time when the notebook was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
-|id|String|Der eindeutige Bezeichner des Notizbuchs.|
-|isDefault|Boolean|Indicates whether this is the user's default notebook. Read-only.|
-|isShared|Boolean|Gibt an, ob das Notizbuch freigegeben ist. Wenn der Wert „true“ lautet, kann der Inhalt des Notizbuch auch von anderen Personen als dem Besitzer angezeigt werden.|
-|lastModifiedBy|String|Der Benutzer, der das Notizbuch zuletzt geändert hat|
-|lastModifiedTime|DateTimeOffset|The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
-|Verknüpfungen|[NotebookLinks](notebooklinks.md)|Links for opening the notebook. The `oneNoteClientURL` link opens the notebook in the OneNote native client if it's installed. The `oneNoteWebURL` link opens the notebook in OneNote Online.|
+|createdBy|String|Der Benutzer, die das Notizbuch erstellt. Schreibgeschützt.|
+|createdTime|DateTimeOffset|Datum und Uhrzeit der Erstellung des Notizbuchs. Der Zeitstempel stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Beispielsweise könnte Uhr UTC auf 1 Jan 2014 wie folgt aussehen: `'2014-01-01T00:00:00Z'`. Schreibgeschützt.|
+|id|String|Der eindeutige Bezeichner des Notizbuchs. Schreibgeschützt.|
+|isDefault|Boolean|Gibt an, ob dies die standardmäßige Notizbuch des Benutzers ist. Schreibgeschützt.|
+|isShared|Boolean|Gibt an, ob das Notizbuch gemeinsam genutzt wird. Wenn true, können von anderen Personen außer dem Besitzer der Inhalt des Notizbuchs angezeigt werden. Schreibgeschützt.|
+|lastModifiedBy|String|Der Benutzer, der letzten des Notizbuchs Änderung. Schreibgeschützt.|
+|ZuletztGeändertUm|DateTimeOffset|Datum und Uhrzeit der letzten des Notizbuchs Änderung. Der Zeitstempel stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Beispielsweise könnte Uhr UTC auf 1 Jan 2014 wie folgt aussehen: `'2014-01-01T00:00:00Z'`. Schreibgeschützt.|
+|Verknüpfungen|[NotebookLinks](notebooklinks.md)|Links zum Öffnen des Notizbuchs. Die `oneNoteClientURL` Link wird das Notizbuch in den OneNote-native Client geöffnet, wenn es installiert ist. Die `oneNoteWebURL` Link wird das Notizbuch in OneNote Online geöffnet.|
 |name|String|Der Name des Notizbuchs.|
-|sectionGroupsUrl|String|The URL for the `sectionGroups` navigation property, which returns all the section groups in the notebook. Read-only.|
-|sectionsUrl|String|The URL for the `sections` navigation property, which returns all the sections in the notebook. Read-only.|
-|self|String|Der Endpunkt, an dem Sie Details zu dem Notizbuch abrufen können.|
-|userRole|String|Possible values are: `Owner`, `Contributor`, `Reader`, `None`. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.|
+|sectionGroupsUrl|String|Die URL für die `sectionGroups` Navigationseigenschaft, die alle Abschnittsgruppen im Notizbuch zurückgibt. Schreibgeschützt.|
+|sectionsUrl|String|Die URL für die `sections` Navigationseigenschaft, die alle Abschnitte im Notizbuch zurückgibt. Schreibgeschützt.|
+|Self|String|Der Endpunkt, in dem Sie Details über das Notizbuch abrufen können. Schreibgeschützt.|
+|userRole|String|Mögliche Werte sind: `Owner`, `Contributor`, `Reader`, `None`. Besitzer stellt Zugriff auf Benutzerebene Besitzer in das Notizbuch. Mitwirkender stellt Lese-/Schreibzugriff auf das Notizbuch. Leser stellt schreibgeschützten Zugriff auf das Notizbuch. Schreibgeschützt.|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|/sectiongroups|SectionGroup-Auflistung|The section groups in the notebook. Read-only. Nullable.|
-|Sections|[Section](section.md) collection|The sections in the notebook. Read-only. Nullable.|
+|sectionGroups|[SectionGroup](sectiongroup.md) -Auflistung|Die Abschnittsgruppen in das Notizbuch. Schreibgeschützt. NULL-Werte zulässt.|
+|Sections|[Section](section.md) -Auflistung|In den Abschnitten im Notizbuch. Schreibgeschützt. NULL-Werte zulässt.|
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get notebook](../api/notebook_get.md) | [Notizbuch](notebook.md) |Read the properties and relationships of the notebook.|
-|[Create section group](../api/notebook_post_sectiongroups.md) |[SectionGroup-Objekt](sectiongroup.md)| Create a section group by posting to the sectionGroups collection in the specified notebook.|
-|[List section groups](../api/notebook_list_sectiongroups.md) |SectionGroup-Auflistung| Get a collection of section groups in the specified notebook.|
-|[Create section](../api/notebook_post_sections.md) |[Section[]](section.md)| Create a section by posting to the sections collection in the specified notebook.|
-|[List sections](../api/notebook_list_sections.md) |[Section](section.md) collection| Get a collection of sections in the specified notebook.|
-|[copyNotebook](../api/notebook_copynotebook.md)| Keine | Copies a notebook.|
+|[Abrufen des Notizbuchs](../api/notebook_get.md) | [Notizbuch](notebook.md) |Lesen Sie die Eigenschaften und Beziehungen des Notizbuchs.|
+|[Erstellen Sie im Abschnittsgruppe](../api/notebook_post_sectiongroups.md) |[SectionGroup](sectiongroup.md)| Erstellen einer Gruppe durch die Veröffentlichung auf der SectionGroups-Auflistung in das angegebene Notizbuch.|
+|[Liste von Abschnittsgruppen](../api/notebook_list_sectiongroups.md) |[SectionGroup](sectiongroup.md) -Auflistung| Rufen Sie eine Auflistung von Abschnittsgruppen in das angegebene Notizbuch.|
+|[Erstellen Sie im Abschnitt](../api/notebook_post_sections.md) |[Abschnitt](section.md)| Erstellen Sie einen Abschnitt durch das Veröffentlichen in der Sections-Auflistung im angegebenen Notizbuch.|
+|[Liste Abschnitten](../api/notebook_list_sections.md) |[Section](section.md) -Auflistung| Rufen Sie eine Auflistung von Abschnitten im angegebenen Notizbuch.|
+|[copyNotebook](../api/notebook_copynotebook.md)| Keine | Kopiert ein Notizbuch.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

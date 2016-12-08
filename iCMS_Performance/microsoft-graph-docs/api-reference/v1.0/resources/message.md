@@ -1,85 +1,86 @@
-# <a name="message-resource-type"></a>message resource type
+# <a name="message-resource-type"></a>Nachricht Ressourcentyp
 
-A message in a mailFolder.
+Eine Nachricht in einer MailFolder.
 
 ## <a name="methods"></a>Methoden
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get message](../api/message_get.md) | [Message](message.md) |Read properties and relationships of message object.|
-|[Create Attachment](../api/message_post_attachments.md) |[Attachment](attachment.md)| Create a new Attachment by posting to the attachments collection.|
-|[List attachments](../api/message_list_attachments.md) |[Attachment](attachment.md) collection| Gets all Attachments on a message.|
-|[Update](../api/message_update.md) | [Message](message.md) |Update message object.|
-|[delete()](../api/message_delete.md) | Keine |Delete message object. |
-|["Copy"](../api/message_copy.md)|[Message](message.md)|Copy a message to a folder.|
-|[createForward](../api/message_createforward.md)|[Message](message.md)|Create a draft of the Forward message. You can then [update](../api/message_update.md) or [send](../api/message_send.md) the draft.|
-|[createReply](../api/message_createreply.md)|[Message](message.md)|Create a draft of the Reply message. You can then [update](../api/message_update.md) or [send](../api/message_send.md) the draft.|
-|[createReplyAll](../api/message_createreplyall.md)|[Message](message.md)|Create a draft of the Reply All message. You can then [update](../api/message_update.md) or [send](../api/message_send.md) the draft.|
-|[forward](../api/message_forward.md)|Keine|Forward a message. The message is then saved in the Sent Items folder.|
-|[Move](../api/message_move.md)|[Message](message.md)|Move the message to a folder. This creates a new copy of the message in the destination folder.|
-|[reply](../api/message_reply.md)|Keine|Reply to the sender of a message. The message is then saved in the Sent Items folder.|
-|[replyAll](../api/message_replyall.md)|Keine|Reply to all recipients of a message. The message is then saved in the Sent Items folder.|
-|[send](../api/message_send.md)|Keine|Sends a previously created message draft. The message is then saved in the Sent Items folder.|
-|[Create data extension](../api/opentypeextension_post_opentypeextension.md) |[openTypeExtension](opentypeextension.md)| Create an open type data extension and add custom properties in a new or existing instance of a resource.|
-|[Get data extension](../api/opentypeextension_get.md) |[openTypeExtension](opentypeextension.md) collection| Get an **openTypeExtension** object or objects identified by name or fully qualified name.|
+|[Meldung wird angezeigt](../api/message_get.md) | [Nachricht](message.md) |Eigenschaften lesen und Beziehungen des Message-Objekts.|
+|[Anlage erstellen](../api/message_post_attachments.md) |[Anlage](attachment.md)| Erstellen Sie eine neue Anlage, indem Sie das Veröffentlichen in der Attachments-Auflistung.|
+|[Anlagen auflisten](../api/message_list_attachments.md) |[Anlage](attachment.md) -Auflistung| Ruft alle Anlagen in einer Nachricht ab.|
+|[Update](../api/message_update.md) | [Nachricht](message.md) |Objekt "Message" zu aktualisieren.|
+|[Löschen](../api/message_delete.md) | Keine |Objekt "Message" gelöscht. |
+|[Kopie](../api/message_copy.md)|[Nachricht](message.md)|Kopieren einer Nachricht in einem Ordner.|
+|[createForward](../api/message_createforward.md)|[Nachricht](message.md)|Erstellen Sie ein Entwurfs oder die Nachricht weiterleiten. Dann können [Aktualisieren](../api/message_update.md) oder den Entwurf [Senden](../api/message_send.md) .|
+|[createReply](../api/message_createreply.md)|[Nachricht](message.md)|Erstellen Sie einen Entwurf für die Antwortnachricht. Dann können [Aktualisieren](../api/message_update.md) oder den Entwurf [Senden](../api/message_send.md) .|
+|[createReplyAll](../api/message_createreplyall.md)|[Nachricht](message.md)|Erstellen Sie ein Entwurfs oder allen Antworten-Nachricht. Dann können [Aktualisieren](../api/message_update.md) oder den Entwurf [Senden](../api/message_send.md) .|
+|[Weiterleiten](../api/message_forward.md)|Keine|Weiterleiten einer Nachricht. Die Nachricht wird im Ordner "Gesendete Elemente" gespeichert.|
+|[Verschieben](../api/message_move.md)|[Nachricht](message.md)|Verschieben der Nachricht in einem Ordner. Dadurch wird eine neue Kopie der Nachricht im Zielordner erstellt.|
+|[Antwort](../api/message_reply.md)|Keine|Antworten Sie an den Absender einer Nachricht. Die Nachricht wird im Ordner "Gesendete Elemente" gespeichert.|
+|[replyAll](../api/message_replyall.md)|Keine|Antworten Sie an alle Empfänger einer Nachricht. Die Nachricht wird im Ordner "Gesendete Elemente" gespeichert.|
+|[Senden](../api/message_send.md)|Keine|Sendet einen zuvor erstellte Nachricht Entwurf. Die Nachricht wird im Ordner "Gesendete Elemente" gespeichert.|
+|[Erstellen von Daten-Erweiterung](../api/opentypeextension_post_opentypeextension.md) |[openTypeExtension](opentypeextension.md)| Erstellen Sie eine Erweiterung der offenen Typ Daten und Hinzufügen von benutzerdefinierten Eigenschaften in einer neuen oder vorhandenen Instanz einer Ressource.|
+|[Abrufen von Daten-Erweiterung](../api/opentypeextension_get.md) |[OpenTypeExtension](opentypeextension.md) -Auflistung| Rufen Sie ein **OpenTypeExtension** oder Objekte nach Name oder den vollqualifizierten Namen identifiziert.|
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|bccRecipients|[recipient](recipient.md) collection|The Bcc: recipients for the message.|
-|body|[itemBody](itembody.md)|Die Einführung im Textkörper der E-Mail-Nachricht.|
-|bodyPreview|String|The first 255 characters of the message body.|
-|Kategorien|String collection|The categories associated with the message.|
-|ccRecipients|[recipient](recipient.md) collection|The Cc: recipients for the message.|
-|changeKey|String|The version of the message.|
-|ConversationID|String|The ID of the conversation the email belongs to.|
-|createdDateTime|DateTimeOffset|Datum und Zeitpunkt der Erstellung des Kommentars.|
-|from|[Recipient](recipient.md)|The mailbox owner and sender of the message.|
-|hasAttachments|Boolean|Indicates whether the message has attachments.|
-|id|String|Unique identifier for the message (note that this value may change if a message is moved or altered)|
-|Importance|String| The importance of the message: `Low`, `Normal`, `High`.|
-|inferenceClassification | String | The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: `focused` or `other`. |
-|Eigenschaft internetMessageId |String |The message ID in the format specified by [RFC2822](http://www.ietf.org/rfc/rfc2822.txt). |
-|isDeliveryReceiptRequested|Boolean|Indicates whether a read receipt is requested for the message.|
-|isDraft|Boolean|Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.|
-|isRead|Boolean|True/False. Gibt an, ob die Nachricht als "Gelesen" markiert wurde.|
-|isReadReceiptRequested|Boolean|Indicates whether a read receipt is requested for the message.|
-|lastModifiedDateTime|DateTimeOffset|Das Datum und die Uhrzeit der letzten Änderung des Abschnitts|
-|parentFolderId|String|The unique identifier for the message's parent mailFolder.|
-|receivedDateTime|DateTimeOffset|The date and time the message was received.|
-|replyTo|[recipient](recipient.md) collection|The email addresses to use when replying.|
-|sender|[Recipient](recipient.md)|The account that is actually used to generate the message.|
-|sentDateTime|DateTimeOffset|Datum und Uhrzeit, wann die Nachricht gesendet wurde.|
+|bccRecipients|[Empfänger](recipient.md) -Auflistung|Bcc: Empfänger der Nachricht.|
+|body|[itemBody](itembody.md)|Der Textkörper der Nachricht.|
+|bodyPreview|String|Die ersten 255 Zeichen des Nachrichtentexts.|
+|Kategorien|String-Auflistung|Die Kategorien, die die Nachricht zugeordnet wird.|
+|ccRecipients|[Empfänger](recipient.md) -Auflistung|Die Cc: Empfänger der Nachricht.|
+|changeKey|String|Die Version der Nachricht.|
+|conversationId|String|Die ID der e-Mail-Unterhaltung gehört.|
+|createdDateTime|DateTimeOffset|Datum und Uhrzeit der Erstellung die Nachricht.|
+|from|[Empfänger](recipient.md)|Der Postfachbesitzer und der Absender der Nachricht.|
+|hasAttachments|Boolean|Gibt an, ob die Nachricht Anlagen enthält.|
+|id|String|Eindeutiger Bezeichner für die Nachricht (Beachten Sie, die diesen Wert ändern kann, wenn eine Nachricht verschoben oder geändert wird)|
+|Bedeutung|String| Die Wichtigkeit der Nachricht: `Low`, `Normal`, `High`.|
+|inferenceClassification | String | Die Klassifizierung der Nachricht für Benutzer, basierend auf abgeleiteten Relevanz oder Wichtigkeit oder auf eine explizite Außerkraftsetzung vorliegt. Mögliche Werte sind: `focused` oder `other`. |
+|internetMessageId |String |Die Nachrichten-ID im Format durch [RFC2822](http://www.ietf.org/rfc/rfc2822.txt)angegeben. |
+|isDeliveryReceiptRequested|Boolean|Gibt an, ob eine lesebestätigung für die Nachricht angefordert wird.|
+|isDraft|Boolean|Gibt an, ob die Nachricht ein Entwurf ist. Eine Nachricht sind Entwürfe, wenn es noch nicht erhalten wurden.|
+|isRead|Boolean|Gibt an, ob die Nachricht gelesen wurde.|
+|isReadReceiptRequested|Boolean|Gibt an, ob eine lesebestätigung für die Nachricht angefordert wird.|
+|lastModifiedDateTime|DateTimeOffset|Datum und Uhrzeit der letzten Änderung die Nachricht.|
+|parentFolderId|String|Der eindeutige Bezeichner für die Nachricht übergeordneten MailFolder.|
+|receivedDateTime|DateTimeOffset|Das Datum und die Zeit, die die Nachricht empfangen wurde.|
+|replyTo|[Empfänger](recipient.md) -Auflistung|Die e-Mail-Adressen beim Antworten verwenden.|
+|Absender|[Empfänger](recipient.md)|Das Konto, das tatsächlich verwendet wird, um die Nachricht zu generieren.|
+|sentDateTime|DateTimeOffset|Das Datum und die Zeit, die die Nachricht gesendet wurde.|
 |Betreff|String|Der Betreff der Nachricht.|
-|toRecipients|[recipient](recipient.md) collection|The To: recipients for the message.|
-|uniqueBody|[itemBody](itembody.md)|The part of the body of the message that is unique to the current message.|
-|webLink|String|The URL to open the message in Outlook Web App.<br><br>You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.<br><br>The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.<br><br>This URL can be accessed from within an iFrame.|
+|toRecipients|[Empfänger](recipient.md) -Auflistung|So: Empfänger der Nachricht.|
+|uniqueBody|[itemBody](itembody.md)|Der Teil des Textkörpers der Nachricht, die für die aktuelle Nachricht eindeutig ist.|
+|webLink|String|Die URL zum Öffnen der Nachricht in Outlook Web App.<br><br>Sie können ein Argument Ispopout fügen Sie am Ende der URL zum Ändern der Anzeige der Nachricht. Wenn Ispopout nicht vorhanden ist oder wenn es auf 1 festgelegt ist, wird die Nachricht in einem Popout-Fenster angezeigt. Wenn Ispopout auf 0 festgelegt ist, wird im Browser in der Outlook Web App-Bereich prüfen die Nachricht angezeigt.<br><br>Die Nachricht wird im Browser geöffnet, wenn Sie mit Ihrem Postfach über Outlook Web App angemeldet sind. Sie werden aufgefordert, anmelden, wenn Sie sich mit den Browser nicht bereits angemeldet sind.<br><br>Diese URL kann innerhalb eines iFrame aus zugegriffen werden.|
 
-**Removing script from the Body property**
+**Entfernen von Skript aus die Body-Eigenschaft**
 
-The message body can be either HTML or text. If the body is HTML, by default, any potentially unsafe HTML (for example, JavaScript) embedded in the Body property would be removed before the body content is returned in a REST response. To get the entire, original HTML content, include the following HTTP request header:
+Der Nachrichtentext kann HTML oder Text sein. Wenn der Textkörper HTML, in der Standardeinstellung ist, würde vor potenziell unsicheren HTML-Code (beispielsweise JavaScript) in die Body-Eigenschaft eingebettete entfernt werden, bevor der Textkörperinhalt eine REST-Antwort zurückgegeben wird.
+Wenn den gesamten ursprünglichen HTML-Code Content erhalten möchten, gehören Sie den folgenden Header der HTTP-Anforderung:
 ```
 Prefer: outlook.allow-unsafe-html
 ```
 
-**Setting the From and Sender properties**
+**Festlegen der From und der Absender Eigenschaften**
 
-When a message is being composed, in most cases, the From and Sender properties represent the same signed-in user, unless either is updated as described in the following scenarios:
+Wenn eine Nachricht aus, in den meisten Fällen From besteht wird und Absender Eigenschaften der gleichen angemeldeten Benutzers, darstellen es sei denn, entweder wird aktualisiert, wie in den folgenden Szenarien beschrieben:
 
-- The **From** property can be changed if the Exchange administrator has assigned **SendAs** rights of the mailbox to some other users. The administrator can do this by selecting **Mailbox Permissions** of the mailbox owner in the Azure Management Portal, or by using the Exchange Admin Center or a Windows PowerShell Add-ADPermission cmdlet. Then, you can programmatically set the **From** property to one of these users who have **SendAs** rights for that mailbox.
-- The **Sender** property can be changed if the mailbox owner has delegated one or more users to be able to send messages from that mailbox. The mailbox owner can delegate in Outlook. When a delegate sends a message on behalf of the mailbox owner, the **Sender** property is set to the delegate’s account, and the **From** property remains as the mailbox owner. Programmatically, you can set the **Sender** property to a user who has got delegate right for that mailbox.
+- Die **von** -Eigenschaft kann geändert werden, wenn der Exchange-Administrator **SendAs** -Rechte des Postfachs einige andere Benutzer zugewiesen hat. Der Administrator kann dies, indem Sie in der Azure-Verwaltungsportal **Postfachberechtigungen** des Postfachbesitzers auswählen oder mithilfe der Exchange-Verwaltungskonsole oder ein Windows PowerShell-Add-ADPermission-Cmdlet ausführen. Klicken Sie dann, können Sie programmgesteuert die **von** -Eigenschaft auf einen dieser Benutzer festlegen, die für dieses Postfach **SendAs** berechtigt.
+- **Sender** -Eigenschaft kann geändert werden, wenn der Postfachbesitzer mindestens einen Benutzer zum Senden von Nachrichten aus dem Postfach können delegiert wurde. Der Postfachbesitzer kann in Outlook delegieren. Wenn Stellvertreter eine Nachricht im Auftrag der Postfachbesitzer sendet, die **Sender** -Eigenschaft wird der Stellvertretung Konto festgelegt und bleibt die Eigenschaft **aus** des Postfachbesitzers. Programmgesteuert können Sie die **Sender** -Eigenschaft für einen Benutzer festlegen, die Delegaten rechts für dieses Postfach erhalten hat, hat.
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Anlagen|[Attachment](attachment.md) collection|The [fileAttachment](fileattachment.md) and [itemAttachment](itemattachment.md) attachments for the message.|
-|Extensions|[Extension](extension.md) collection|The collection of open type data extensions defined for the contact. Read-only. Nullable.|
+|Anlagen|[Anlage](attachment.md) -Auflistung|[FileAttachment](fileattachment.md) und [ItemAttachment](itemattachment.md) Anlagen für die Nachricht.|
+|Erweiterungen|[Erweiterungssammlung](extension.md)|Die Auflistung der geöffneten Typ Daten Erweiterungen für den Kontakt definiert. Schreibgeschützt. NULL-Werte zulässt.|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

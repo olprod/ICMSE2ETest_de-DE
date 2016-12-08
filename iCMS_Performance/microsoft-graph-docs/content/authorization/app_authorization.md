@@ -1,13 +1,14 @@
 
-# <a name="microsoft-graph-app-authorization"></a>Microsoft Graph app authorization
+# <a name="microsoft-graph-app-authorization"></a>Microsoft Graph-app-Autorisierung
 
 
-This article discusses how to authenticate a user, get an access token and renew an access token using a refresh token. The authentication flow can be broken down to two basic steps:
+In diesem Artikel wird erläutert, wie Authentifizieren eines Benutzers, ein Zugriffstoken abzurufen und ein Zugriffstoken verwenden ein Aktualisierungstoken erneuern.
+Der authentifizierungsfluss kann zwei grundlegende Schritte aufgeteilt werden:
 
 1. Anfordern eines Autorisierungscodes
-2. Verwenden des Autorisierungscodes zum Anfordern eines Zugriffstokens. 
+2. Verwenden Sie Autorisierungscode anfordern ein Zugriffstoken und Token zu aktualisieren. 
 
->  Hinweis: Zusammen mit dem Zugriffstoken erhalten Sie ein Aktualisierungstoken. Mit dem Aktualisierungstoken können Sie ein neues Zugriffstoken anfordern, wenn das aktuelle Zugriffstoken abläuft.
+>  **Hinweis**: Sie können die Aktualisierungstoken verwenden, um ein neues Zugriffstoken erwerben, wenn das aktuelle Zugriffstoken läuft ab.
 
 <!--To call the Microsoft Graph API, you have to complete the following tasks.
 
@@ -25,33 +26,33 @@ In this article:
 
  <a name="msg_get_app_authorized"> </a> -->
  
-###<a name="authenticate-a-user-and-get-app-authorized"></a>Authenticate a user and get app authorized
-To get your app authorized, you must get the user authenticated first. You do this by redirecting the user to the Azure Active Directory (Azure AD) authorization endpoint, along with your app information, to sign in to their Office 365 account. Once the user is signed in, and consents to the permissions requested by your app (if the user has not done so already), your app will receive an authorization code required to acquire an OAuth access token.
+###<a name="authenticate-a-user-and-get-app-authorized"></a>Authentifizieren eines Benutzers und erste app autorisiert
+Wenn Ihre app autorisiert erhalten möchten, müssen Sie den Benutzer zuerst authentifiziert abrufen. Zu diesem Zweck die Umleitung an den Endpunkt des Azure Active Directory (AD Azure)-Autorisierung, zusammen mit Ihrer app-Informationen zur Anmeldung bei ihrem Office 365-Konto des Benutzers. Nachdem der Benutzer angemeldet ist, und bewilligen Hiermit die Berechtigungen von Ihrer app angefordert (wenn der Benutzer nicht bereits geschehen ist), erhält Ihre app einen Autorisierungscode erforderlich, um ein OAuth-Zugriffstoken zu erwerben.
 
-> **Note**:  You can do this by calling methods on the [Azure AD Authentication Library (ADAL)](https://msdn.microsoft.com/en-us/library/azure/jj573266.aspx). For more information about authorization flow, see [Authorization Code Grant Flow](https://msdn.microsoft.com/en-us/library/azure/dn645542.aspx).
+> **Hinweis**: Sie können hierzu durch Aufrufen von Methoden für die [Azure AD Authentication-Bibliothek (ADAL)](https://msdn.microsoft.com/en-us/library/azure/jj573266.aspx). Weitere Informationen zu autorisierungsflusses finden Sie unter [Authorization Codefluss erteilen](https://msdn.microsoft.com/en-us/library/azure/dn645542.aspx).
 
-Authorizing an app starts with submitting an HTTPS GET request using the following URL:
+Autorisieren einer app beginnt mit senden eine HTTPS GET-Anforderung mithilfe der folgenden URL:
  
 ```GET https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&redirect_uri=<uri>&client_id=<id>```
 
-**Required query string parameters**
+**Erforderliche Abfragezeichenfolgen-Parameter**
 
 | Parametername  | Wert  | Beschreibung                                                                                            |
 |:----------------|:-------|:-------------------------------------------------------------------------------------------------------|
-| *client_id*     | string | The client ID created for your app. This is your app's **CLIENT ID** value set in the Azure tenant's application registry.                                                                  |
-| *response_type* | string | Specifies the requested response type. In an authorization code grant request, the value must be code. |
-| *redirect_uri*  | string | The redirect URL that the browser is sent to when authentication is complete.  This value must match the app's pre-configured **REPLY URL** value                        |
+| *client_id*     | string | Die Client-ID erstellt, die für Ihre app. Dies ist Ihre app- **CLIENT-ID** -Wert in Azure-Mandanten der Anwendungsregistrierungsdienst festgelegt.                                                                  |
+| *response_type* | string | Gibt die Art der angeforderten Antwort an. In einer Anforderung Autorisierung des Codes Grant muss der Wert Code entsprechen. |
+| *redirect_uri*  | string | Die umleitungs-URL, die der Browser gesendet wird, wenn die Authentifizierung abgeschlossen ist.  Dieser Wert muss die app vorkonfigurierten **ANTWORT-URL** -Wert übereinstimmen.                        |
  
 
 
-The following shows an example of such a request as implemented in a running application:
+Im folgenden finden ein Beispiel für eine solche Anforderung gemäß der Implementierung in einer aktiven Anwendung:
 
 
 ```GET https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&redirect_uri=http%3a%2f%2flocalhost:1339/auth/azureoauth/callback&client_id=8b8539cd-7b75-427f-bef1-4a6264fd4940``` 
 
-This request returns a `200 OK` response and presents the Azure AD account login page. 
+Diese Anforderung gibt eine `200 OK` Antwort und stellt die Azure AD-Konto Anmeldeseite. 
 
-After the user signs in with valid credentials and consents to the permissions granted for the app, the login page sends a `POST` request to Azure. If that request succeeds, Azure responds with a `302 Found` message to forward the call to the app's redirect URI for the app to receive the required access token. The forwarded URI, specified in the response's `Location` header, corresponds to the app's REPLY URL, with two query parameters, `code=...` and `session_state=...` appended to it. The following example shows an excerpt of such a response: 
+Nachdem der Benutzer bei sich über gültige Anmeldeinformationen und Berechtigungen für die app sendet die Anmeldeseite bewilligen Hiermit eine `POST` Anforderung in Azure. Wenn die Anforderung erfolgreich ist, Azure antwortet mit einer `302 Found` Nachricht zum Weiterleiten des Anrufs an der app umleitungs-URI für die app erforderliche Zugriffstoken empfangen. Die weitergeleitete URI in der Antwort angegeben `Location` Kopfzeile, entspricht der app-ANTWORT-URL mit zwei Abfrageparameter verwendet `code=...` und `session_state=...` angehängt wird. Das folgende Beispiel zeigt einen Auszug aus einer solchen Antwort: 
 
 ```no-highlight 
 HTTP/1.1 302 Found
@@ -66,14 +67,14 @@ P3P: CP="DSP CUR OTPi IND OTRi ONL FIN"
 ..... 
 ```
 
-In this example, the app's REPLY URL is `http://localhost:1339/auth/azureoauth/callback`. In processing this response, you must extract the `code` parameter value and use it to acquire the initial OAuth 2.0 access and refresh tokens (see next section).
+In diesem Beispiel wird der app-ANTWORT-URL ist `http://localhost:1339/auth/azureoauth/callback`. Bei der Verarbeitung dieser Antwort, extrahieren Sie die `code` Parameter Wert herunter, und für die anfängliche OAuth 2.0 Zugriff zu erwerben und Aktualisierung von Token (siehe nächsten Abschnitt).
 
-> The `302 Found` response above is different from the `302 Found` response you would get if you started the login process against the `https://login.windows.net/<tenantId>/oauth2/authorize?...` URL. In the latter case, the `302 Found` response forwards your request to `login.microsoftonline.com`.
+> Das `302 Found` Antwort oben unterscheidet sich von der `302 Found` Antwort Sie erhalten, falls Sie anhand den Anmeldevorgang gestartet die `https://login.windows.net/<tenantId>/oauth2/authorize?...` URL. Im letzteren Fall die `302 Found` Antwort leitet die Anforderung an `login.microsoftonline.com`.
  
 <!---<a name="msg_get_app_authenticated"> </a> -->
 
-###<a name="acquire-an-access-token"></a>Abrufen eines Zugriffstokens
-To access Microsoft Graph API resources, your app must include a valid OAuth 2.0 access token in every HTTP request. You can obtain the access token using the following POST request:
+###<a name="acquire-an-access-token"></a>Ein Zugriffstoken erwerben
+Um Microsoft Graph-API-Ressourcen zugreifen zu können, muss Ihre app eine gültige OAuth 2.0-Zugriffstoken jede HTTP-Anforderung enthalten. Sie können das Zugriffstoken verwenden die folgenden POST-Anforderung erhalten:
 
 ```no-highlight 
 POST https://login.microsoftonline.com/common/oauth2/token HTTP/1.1
@@ -81,7 +82,7 @@ content-type : application/x-www-form-urlencoded
 content-length : 144
 ```
  
-This request requires a URL-encoded payload of the following format:
+Diese Anforderung erfordert eine URL-codierte Nutzlast mit der folgenden Syntax:
  
 ```no-highlight 
 grant_type=authorization_code
@@ -92,17 +93,17 @@ grant_type=authorization_code
 &resource=https%3A%2F%2Fgraph.microsoft.com%2F
 ```
 
-**Required query string parameters**
+**Erforderliche Abfragezeichenfolgen-Parameter**
 
 | Parametername  | Wert  | Beschreibung                                                                                            |
 |:----------------|:-------|:-------------------------------------------------------------------------------------------------------|
-| *client_id*     | string | The client ID created for your app.  |
-| *client_secret*  | string | The key created for your app. This value is the same value in the **Keys** section of the app configuration page on the Azure Management Portal|
-| *redirect_uri*  | string | The redirect URL that the browser is sent to when authentication is complete.  |
-| *Code*  | string | The authorization code. The `code` query parameter value returned from the response to the authorization request. |
-| *Ressource*   | string | The resource you want to access. To call the Microsoft Graph API, set this parameter value to "https://graph.microsoft.com/".|
+| *client_id*     | string | Die Client-ID für Ihre app erstellt haben.  |
+| *client_secret*  | string | Der Schlüssel für Ihre app erstellt haben. Dieser Wert ist, den gleichen Wert im Abschnitt **Schlüssel** der app-Konfigurationsseite auf dem Azure-Verwaltungsportal|
+| *redirect_uri*  | string | Die umleitungs-URL, die der Browser gesendet wird, wenn die Authentifizierung abgeschlossen ist.  |
+| *Code*  | string | Den Autorisierungscode an. Die `code` Abfragen der Wert des Parameters aus der Antwort auf die Anforderung Autorisierung zurückgegeben. |
+| *Ressource*   | string | Die Ressource, den, die Sie zugreifen möchten. Legen Sie zum Aufrufen der Microsoft Graph-API in diesem Parameterwert auf "https://graph.microsoft.com/".|
 
-The following snippet shows an example of the request payload used to acquire the initial OAuth 2.0 access token:
+Der folgende Codeausschnitt zeigt ein Beispiel für die Anforderungsnutzlast verwendet, um die anfänglichen OAuth 2.0 Zugriff erhalten token:
 
 ```no-highlight  
 grant_type=authorization_code&
@@ -112,7 +113,7 @@ code=AAABAAAAvPM1KaPlrEqdFSBzjqfTGBLRVQc6BtQmJ_9DQZUg8Tb7TJgTmbTE7AHM93qB5EKc4Bf
 resource=https%3A%2F%2Fgraph.microsoft.com%2F
 ```
 
-When this request succeeds, a `200 OK` response will be returned. An example is shown as follows:
+Wenn diese Anforderung erfolgreich ist, wird eine `200 OK` Antwort zurückgegeben wird. Ein Beispiel ist wie folgt:
 
 ```no-highlight  
 HTTP/1.1 200 OK
@@ -135,19 +136,19 @@ Access-Control-Allow-Origin: *
 ```
 
  
-The response body is a JSON-formatted string containing the access token (`access_token`). You need to supply this token to any ensuing HTTP requests to access Microsoft Graph API resources. 
+Der Antworttext ist eine JSON-formatierte Zeichenfolge, enthält das Zugriffstoken (`access_token`). Sie müssen dieses Token an alle nachfolgenden HTTP-Anforderungen auf Microsoft Graph-API-Ressourcen zugreifen angeben. 
 
-The `scope` property value should match the permissions granted for the app during the app's registration.
+Die `scope` -Eigenschaftswert sollte die Berechtigungen für die app während der Registrierung der app entspricht.
 
-The access token remains valid within the specified time interval (`3599` in the above example) seconds (or 1 hour) from the time of issuance, as specified in the `expires_in` property. The result also contains a refresh token (`refresh_token`) that must be used to renew an expiring or expired access token. 
+Bleibt das Zugriffstoken innerhalb des angegebenen Zeitintervalls gültig (`3599` im obigen Beispiel) Sekunden (oder 1 Stunde) ab dem Zeitpunkt der Veröffentlichungslizenz, als gemäß der `expires_in` Eigenschaft. Das Ergebnis enthält auch ein Aktualisierungstoken (`refresh_token`), die ein Zugriffstoken ablaufende oder abgelaufene erneuern verwendet werden muss. 
 
-In any production code, your app needs to watch for the expiration of these tokens and renew the expiring access token before the refresh token expires. 
+In der Produktionscode muss Ihre app sehen Sie sich für den Ablauf der diese Token und erneuern ablaufende Zugriffstoken vor Ablauf der Aktualisierungstoken. 
 
 
 <!---<a name="msg_renew_access_token using refresh token"> </a> -->
 
-###<a name="renew-expiring-access-token-using-refresh-token"></a>Renew expiring access token using refresh token
-To refresh an expired access token, use a POST request similar to the following example (provided that the refresh token has not expired):
+###<a name="renew-expiring-access-token-using-refresh-token"></a>Erneuern Sie ablaufende Zugriffstoken Aktualisierungstoken verwenden
+Um abgelaufene Zugriffstoken zu aktualisieren, verwenden Sie eine POST-Anforderung ähnlich dem folgenden Beispiel (vorausgesetzt, dass der Aktualisierungstoken nicht abgelaufen):
 
 ```no-highlight  
 POST https://login.microsoftonline.com/common/oauth2/token HTTP/1.1
@@ -164,19 +165,19 @@ grant_type=refresh_token
 &resource=https%3A%2F%2Fgraph.microsoft.com%2F
 ```
 
-**Required query string parameters**
+**Erforderliche Abfragezeichenfolgen-Parameter**
 
 | Parametername  | Wert  | Beschreibung                                                                                                                                         |
 |:----------------|:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
-| *client_id*     | string | The client ID created for your application.  |
-| *redirect_uri*  | string | The redirect URL that the browser is sent to when authentication is complete. This should match the *redirect_uri* value used in the first request. |
-| *client_secret* | string | One of the Keys values created for your application.                                                                                                     |
-| *refreshtoken* | string | The refresh token you received previously.    |
-| *Ressource*      | string | The resource you want to access.|
+| *client_id*     | string | Die Client-ID für die Anwendung erstellt.  |
+| *redirect_uri*  | string | Die umleitungs-URL, die der Browser gesendet wird, wenn die Authentifizierung abgeschlossen ist. Dies sollte den *Redirect_uri* -Wert, der in die erste Anforderung übereinstimmen. |
+| *client_secret* | string | Einer der Schlüssel-Werte für Ihre Anwendung erstellt.                                                                                                     |
+| *refresh_token* | string | Der Aktualisierungstoken, die Sie zuvor erhalten haben.    |
+| *Ressource*      | string | Die Ressource, den, die Sie zugreifen möchten.|
 
-Note that this request is almost identical to the initial token acquisition request. There are two differences in the request payload, namely, the `grant_type` parameter now has the value of `refresh_token` (instead of `code`).
+Hinweis: Diese Anforderung auf die ursprünglichen token Erwerb Anforderung fast identisch ist. Sind zwei Unterschiede in der Anforderungsnutzlast, nämlich die `grant_type` Parameter enthält nun den Wert der `refresh_token` (anstelle von `code`).
  
-The successful response returns the payload of an JSON string similar to the following output:
+Die erfolgreiche Antwort gibt Nutzlast ein JSON-Zeichenfolge zurück, die ähnlich wie die folgende Ausgabe:
 
 ```no-highlight 
 {
@@ -193,9 +194,9 @@ The successful response returns the payload of an JSON string similar to the fol
 }
 ```
  
-Other than the missing `id_token` property, this response body has the identical syntax and semantics as that of the initial token-acquiring response. The life times of the newly returned `access_token` and `refresh_token` values are extended. The new expiration time for the access token is the number of seconds, specified in the `expires_in` value, from the time when the token-refreshing request was submitted successfully. 
+Als die fehlende `id_token` -Eigenschaft; diese Antworttext hat, die identische Syntax und Semantik wie die der ersten Token Erwerb Antwort. Die Zeiten Lebensdauer des neu zurückgegebenen `access_token` und `refresh_token` Werte erweitert werden. Die neue Ablaufzeit für das Zugriffstoken ist die Anzahl der Sekunden, die gemäß der `expires_in` Wert, von dem Zeitpunkt, wann die Anforderung Token aktualisieren erfolgreich übermittelt wurde. 
  
-When the refresh token expires, you cannot renew any expired access token using the just-described POST request. Instead, you must restart the [app authorization and authentication](#msg_get_app_authorized) process.
+Nach Ablauf der Aktualisierungstoken kann keine abgelaufenen Zugriffstoken der soeben beschriebenen POST-Anforderung mit erneuert werden. Stattdessen müssen Sie die [app-Autorisierung und Authentifizierung](#msg_get_app_authorized) neu starten.
 
 
 <!--##Additional Resources##

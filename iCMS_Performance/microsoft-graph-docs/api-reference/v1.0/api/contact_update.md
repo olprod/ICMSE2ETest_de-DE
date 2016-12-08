@@ -1,21 +1,21 @@
-# <a name="update-contact"></a>Update contact
+# <a name="update-contact"></a>Kontakt aktualisieren
 
-Update the properties of a contact object.
+Aktualisieren Sie die Eigenschaften des ein Kontaktobjekt.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Contacts.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Contacts.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
-A [contact](../resources/contact.md) from a user's default [contactFolder](../resources/contactfolder.md).
+[Wenden Sie sich](../resources/contact.md) von einem Benutzer standardmäßig [ContactFolder](../resources/contactfolder.md).
 ```http
 PATCH /me/contacts/<id>
 PATCH /users/<id | userPrincipalName>/contacts/<id>
 ```
-A [contact](../resources/contact.md) from a user's top level [contactFolder](../resources/contactfolder.md).
+[Wenden Sie sich an](../resources/contact.md) von eines Benutzers oberen Ebene [ContactFolder](../resources/contactfolder.md).
 ```http
 PATCH /me/contactFolders/<id>/contacts/<id>
 PATCH /users/<id | userPrincipalName>/contactFolders/<id>/contacts/<id>
 ```
-A [contact](../resources/contact.md) contained in a child folder of a [contactFolder](../resources/mailfolder.md). The example below shows one level of nesting, but a contact can be located in a child of a child and so on.
+[Wenden Sie sich](../resources/contact.md) in einem untergeordneten Ordner von einem [ContactFolder](../resources/mailfolder.md)enthalten. Das folgende Beispiel zeigt eine Ebene von schachteln, aber ein Kontakt kann befindet sich ein untergeordnetes Element des ein untergeordnetes Element und so weiter.
 ```http
 PATCH /me/contactFolder/<id>/childFolders/<id>/.../contacts/<id>
 PATCH /users/<id | userPrincipalName>/contactFolders/<id>/childFolders/<id>/contacts/<id>
@@ -23,54 +23,54 @@ PATCH /users/<id | userPrincipalName>/contactFolders/<id>/childFolders/<id>/cont
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
-| contentType  | application/json. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
+| Inhaltstyp  | Application/Json. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung die Werte für die entsprechenden Felder, die aktualisiert werden soll. Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind werden die vorherigen Werte verwalten oder neu berechnet basierend auf Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandenen Werte enthalten, die nicht geändert haben.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|AssistantName|String|The name of the contact's assistant.|
-|Birthday|DateTimeOffset|The contact's birthday.|
-|BusinessAddress|[PhysicalAddress](../resources/physicaladdress.md)|The contact's business address.|
-|BusinessHomePage|String|The business home page of the contact.|
-|businessPhones|String|The contact's business phone numbers.|
-|Kategorien|String|The categories associated with the contact.|
-|Kinder|String|The names of the contact's children.|
-|CompanyName|String|The name of the contact's company.|
-|Department|String|The contact's department.|
-|DisplayName|String|Der Anzeigename des Benutzers.|
-|Eigenschaft emailAddresses|[EmailAddress](../resources/emailaddress.md) collection|The contact's email addresses.|
-|FileAs|String|The name the contact is filed under.|
-|generation|String|The contact's generation.|
-|givenName|String|The contact's given name.|
-|HomeAddress|[PhysicalAddress](../resources/physicaladdress.md)|The contact's home address.|
-|homePhones|String collection|The contact's home phone numbers.|
-|imAddresses|String|The contact's instant messaging (IM) addresses.|
-|Initials|String|The contact's initials.|
-|JobTitle|String|The contact’s job title.|
-|Vorgesetzter|String|The name of the contact's manager.
-|MiddleName|String|The contact's middle name.|
-|mobilePhone|String|The contact's mobile phone number.|
-|NickName|String|The contact's nickname.|
-|OfficeLocation|String|The location of the contact's office.|
-|OtherAddress|[PhysicalAddress](../resources/physicaladdress.md)|Other addresses for the contact.|
-|parentFolderId|String|The ID of the contact's parent folder.|
-|personalNotes|String|The user's notes about the contact.|
-|Profession|String|The contact's profession.|
-|spouseName|String|The name of the contact's spouse.|
-|surname|String|The contact's surname.|
-|title|String|The contact's title.|
-|YomiCompanyName|String|The phonetic Japanese company name of the contact. This property is optional.|
-|yomiGivenName|String|The phonetic Japanese given name (first name) of the contact. This property is optional.|
-|yomiSurname|String|The phonetic Japanese surname (last name)  of the contact. This property is optional.|
+|assistantName|String|Der Name des Assistenten des Kontakts.|
+|Geburtsdatum|DateTimeOffset|Das Geburtsdatum des Kontakts.|
+|businessAddress|[Physikalische Adresse](../resources/physicaladdress.md)|Business-Adresse des Kontakts.|
+|businessHomePage|String|Die Business-Homepage des Kontakts.|
+|businessPhones|String|Der Kontakt geschäftlichen Telefonnummer.|
+|Kategorien|String|Die Kategorien, die dem Kontakt zugeordnet.|
+|untergeordnete Elemente|String|Die Namen der untergeordneten Elemente des Kontakts.|
+|Firma|String|Der Name der Firma des Kontakts.|
+|Abteilung|String|Die Abteilung des Kontakts.|
+|displayName|String|Anzeigename des Kontakts.|
+|emailAddresses|[EmailAddress](../resources/emailaddress.md) -Auflistung|Der Kontakt-e-Mail-Adressen.|
+|fileAs|String|Der Namen des Kontakts wird unter eingereicht werden.|
+|Generierung|String|Generierung des Kontakts.|
+|Vorname|String|Vorname des Kontakts.|
+|homeAddress|[Physikalische Adresse](../resources/physicaladdress.md)|Die Adresse des Kontakts Startseite.|
+|homePhones|String-Auflistung|Private Rufnummern eines Kontakts.|
+|imAddresses|String|Der Kontakt instant messaging (IM) Adressen.|
+|Initialen|String|Initialen des Kontakts.|
+|jobTitle|String|Position des Kontakts.|
+|Vorgesetzter|String|Der Name des Vorgesetzten des Kontakts.
+|middleName|String|Vorname des Kontakts.|
+|mobilePhone|String|Die Mobiltelefonnummer des Kontakts.|
+|Spitzname|String|Spitzname des Kontakts.|
+|officeLocation|String|Der Speicherort der Office des Kontakts.|
+|otherAddress|[Physikalische Adresse](../resources/physicaladdress.md)|Andere Adressen für den Kontakt.|
+|parentFolderId|String|Die ID des übergeordneten Ordners des Kontakts.|
+|personalNotes|String|Der Benutzer Notizen zum Kontakt.|
+|Beruf|String|Der Beruf des Kontakts.|
+|spouseName|String|Der Name des Kontakts Partner/in.|
+|Nachname|String|Den Nachnamen des Kontakts.|
+|title|String|Titel des Kontakts.|
+|yomiCompanyName|String|Der phonetische Japanisch Firmenname des Kontakts an. Diese Eigenschaft ist optional.|
+|yomiGivenName|String|Dem phonetischen japanische angegebenen Namen (Vorname) des Kontakts. Diese Eigenschaft ist optional.|
+|yomiSurname|String|Der phonetische Japanisch Nachname (Nachname) des Kontakts. Diese Eigenschaft ist optional.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and an updated [contact](../resources/contact.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und eine aktualisierte [wenden Sie sich an](../resources/contact.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_contact"
@@ -91,7 +91,7 @@ Content-length: 1977
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

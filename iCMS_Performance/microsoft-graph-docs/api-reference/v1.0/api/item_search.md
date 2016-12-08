@@ -1,16 +1,16 @@
-# <a name="search-for-an-item"></a>Search for an item
+# <a name="search-for-an-item"></a>Suche nach einem Element
 
-Search the hierarchy of items for items matching a query. You can search and/or filter results to find the items your app is looking for.
+Suchen Sie die Hierarchie der Elemente für Elemente mit eine Abfrage übereinstimmen. Sie können Suchen und/oder Nachrichtensymbol Filterergebnissen der Elemente Ihrer app finden.
 
-Search returns matching results from the item specified in the URL and all children of that item. Filtering works on the collection of items returned, which can be either all children when using search, or just the immediate children when using a collection.
+Die Suche gibt übereinstimmende Ergebnisse zurück, aus dem Element in die URL und alle untergeordneten Elemente des betreffenden Elements angegeben. Filtern von Works in der Auflistung der Elemente zurückgegeben, kann entweder alle untergeordneten Elemente, bei der Suche oder nur die unmittelbar untergeordneten Elemente verwenden, wenn Sie eine Auflistung verwenden.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.Read
   * Files.ReadWrite
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```
 GET /me/drive/root/search(q='vacation')
@@ -18,31 +18,31 @@ GET /me/drive/items/{item-id}/search(q='vacation')
 GET /me/drive/root:/{item-path}:/search(q='vacation')
 ```
 
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 
 ## <a name="request-headers"></a>Anforderungsheader
 
 | Name          | Typ   | Beschreibung               |
 |:--------------|:-------|:--------------------------|
-| Autorisierung | string | Bearer <token>. Required. |
+| Autorisierung | string | Bearer <token>. Erforderlich. |
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
-#### <a name="function-parameters"></a>Function parameters
+#### <a name="function-parameters"></a>Funktionsparameter
 
 | Name | Wert  | Beschreibung                                                                                                                          |
 |:-----|:-------|:-------------------------------------------------------------------------------------------------------------------------------------|
-| `q`  | string | The query text used to search for items. Values may be matched across several fields including filename, metadata, and file content. |
+| `q`  | string | Der Abfragetext, der für die Suche nach Elementen verwendet wird. Werte möglicherweise über mehrere Felder, einschließlich Dateiname, Metadaten und der Inhalt der Datei abgeglichen wird. |
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 
 ##### <a name="request"></a>Anforderung
 
-Here is an example of the request searching the signed in user's OneDrive
+Es folgt ein Beispiel für die Anforderung des angemeldeten Benutzers OneDrive suchen
 <!-- {
   "blockType": "request",
   "name": "item_search"
@@ -52,9 +52,9 @@ GET /me/drive/root/search(q='{search-query}')
 ```
 
 ##### <a name="response"></a>Antwort
-This method returns an object containing an array of [driveItems](../resources/driveitem.md) that match the search criteria. If no items were found, an empty array is returned.
+Diese Methode gibt ein Objekt mit einem Array von [DriveItems](../resources/driveitem.md) , die den Suchkriterien entsprechen. Wenn keine Elemente gefunden wurden, wird ein leeres Array zurückgegeben.
 
-If there are too many matches the response will be paged and an **@odata.nextLink** property will contain a URL to the next page of results. You can use the `top` query parameter to specify the number of items in the page.
+Wenn es sind zu viele Ergebnisse die Antwort ausgelagert werden wird und eine **@odata.nextLink** -Eigenschaft enthält eine URL zu der nächsten Seite der Suchergebnisse. Sie können die `top` Abfrage Parameter, um die Anzahl der Elemente in der Seite angeben.
 
 <!-- {
   "blockType": "response",
@@ -87,7 +87,7 @@ Content-type: application/json
 
 ## <a name="remarks"></a>Hinweise
 
-**Note:** In OneDrive for Business and SharePoint, search does not return the following properties:
+**Hinweis:** In OneDrive für Unternehmen und SharePoint gibt suchen nicht die folgenden Eigenschaften zurück:
 
 * `parentReference`
 

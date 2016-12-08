@@ -1,46 +1,46 @@
-# <a name="person-resource-type"></a>person resource type
+# <a name="person-resource-type"></a>Ressourcentyp Person
 
-An aggregation of information about a person from across mail, contacts and social networks. People can be local contacts, contacts from social networking, your organization's directory, and people from recent communications (such as email and Skype).
+Die Aggregation von Informationen über die von einer Person über e-Mail, Kontakte und sozialen Netzwerken. Personen können lokalen Kontakten, Kontakte aus für soziale Netzwerke, Ihrer Organisation Verzeichnis und Personen von letzte Kommunikation (wie e-Mail und Skype) sein.
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get person](../api/person_get.md) | [person](person.md) |Read properties and relationships of a person object.|
+|[Abrufen der person](../api/person_get.md) | [Person](person.md) |Lesen Sie Eigenschaften und die Beziehungen eines Person-Objekts.|
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Birthday|string|The person's birthday.|
-|CompanyName|string|The name of the person's company.|
-|Department|string|The person's department.|
-|DisplayName|string|Der Anzeigename des Benutzers.|
-|Eigenschaft emailAddresses|[rankedEmailAddress](rankedemailaddress.md) collection|The person's email addresses.|
-|givenName|string|The person's given name.|
-|id|string|The person's unique identifier. Read-only.|
-|isFavorite|boolean|`true` if the user has flagged this person as a favorite.|
-|mailboxType|string|The type of mailbox that is represented by the person's email address.|
-|OfficeLocation|string|The location of the person's office.|
-|personNotes|string|Free-form notes that the the user has taken about this person.|
-|personType|string|The type of person, for example distribution list.|
-|phones|[phone](phone.md) collection|The person's phone numbers.|
-|postalAddresses|[location](location.md) collection|The person's addresses.|
-|Profession|string|The person's profession.|
-|Datenquellen:|[personDataSource](persondatasource.md) collection|The sources the user data comes from, for example Directory or Outlook Contacts.|
-|surname|string|The person's surname.|
-|title|string|The person's title.|
-|userPrincipalName|string|The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard [RFC 822](http://www.ietf.org/rfc/rfc0822.txt). By convention, this should map to the person's email name. The general format is alias@domain.|
-|Websites|[website](website.md) collection|The person's websites.|
-|yomiCompany|string|The phonetic Japanese name of the person's company.|
+|Geburtsdatum|string|Geburtsdatum der Person.|
+|Firma|string|Der Name der Firma der Person.|
+|Abteilung|string|Die Person Abteilung.|
+|displayName|string|Anzeigename der Person.|
+|emailAddresses|[RankedEmailAddress](rankedemailaddress.md) -Auflistung|Die Person e-Mail-Adressen.|
+|Vorname|string|Die Person angegebenen Namen.|
+|id|string|Eindeutiger Bezeichner der Person. Schreibgeschützt.|
+|isFavorite|boolean|`true`Wenn der Benutzer diese Person als Favoriten gekennzeichnet hat.|
+|mailboxType|string|Der Typ des Postfachs an, die durch die e-Mail-Adresse der Person dargestellt wird.|
+|officeLocation|string|Der Speicherort der Office der Person.|
+|personNotes|string|Formfreies weist darauf hin, die der Benutzer über diese Person vorgenommen hat.|
+|personType|string|Der Typ der Person, beispielsweise Verteilerliste.|
+|Telefone|[Telefon](phone.md) -Auflistung|Telefonnummern der Person.|
+|postalAddresses|[Standort](location.md) -Auflistung|Die Person Adressen.|
+|Beruf|string|Die Person Beruf.|
+|Datenquellen|[PersonDataSource](persondatasource.md) -Auflistung|Die Quellen die Benutzerdaten stammen aus, beispielsweise Directory oder Outlook-Kontakte.|
+|Nachname|string|Nachname der Person.|
+|title|string|Titel der Person.|
+|userPrincipalName|string|Der Benutzerprinzipalname (UPN) der Person ein. Der Benutzerprinzipalname ist ein Internet-Schreibweise Anmeldenamen der Person, die basierend auf dem Internet standard [RFC 822](http://www.ietf.org/rfc/rfc0822.txt). Standardmäßig sollte dies die e-Mail-Namen der Person zuordnen. Die allgemeine-Format vorliegtalias@domain.|
+|Websites|[die Websitesammlung](website.md)|Die Person-Websites.|
+|yomiCompany|string|Der phonetische japanische Name der Firma der Person.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

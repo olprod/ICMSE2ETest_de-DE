@@ -1,9 +1,9 @@
-# <a name="create-table"></a>CREATE TABLE
+# <a name="create-table"></a>Tabelle erstellen
 
-Use this API to create a new Table.
+Verwenden Sie diese API, um eine neue Tabelle erstellen.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /workbook/worksheets(<id|name>)/tables/$/add
@@ -12,19 +12,19 @@ POST /workbook/worksheets(<id|name>)/tables/$/add
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [Table](../resources/table.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Table](../resources/table.md) -Objekts.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [Table](../resources/table.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortcode und [Table](../resources/table.md) -Objekt in der Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_table_from_worksheet"
@@ -42,9 +42,9 @@ Content-length: 109
   "style": "style-value"
 }
 ```
-In the request body, supply a JSON representation of [Table](../resources/table.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Table](../resources/table.md) -Objekts.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

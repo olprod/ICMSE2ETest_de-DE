@@ -1,13 +1,13 @@
-# <a name="post-reply"></a>post: reply
+# <a name="post-reply"></a>buchen: Antwort
 
-Reply to a post and add a new post to the specified thread in a group conversation. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Antworten auf eine Nachricht ein, und fügen Sie eine neue Bereitstellung auf den angegebenen Thread bei einer gruppenunterhaltung. Sie können die übergeordnete Unterhaltung und die Thread angeben, in der Anforderung, oder Sie können nur den übergeordneten Thread ohne die Unterhaltung übergeordneten angeben.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
 *Group.Readwrite.All*
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /groups/<id>/threads/<id>/posts/<id>/reply
@@ -17,22 +17,22 @@ POST /groups/<id>/conversations/<id>/threads/<id>/posts/<id>/reply
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|POST|[POST](../resources/post.md)|The new post that is being replied with.|
+|Bereitstellen|[Bereitstellen](../resources/post.md)|Die neue Bereitstellung, die mit beantwortet wird.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "post_reply"
@@ -97,7 +97,7 @@ Content-length: 1131
 
 ##### <a name="response"></a>Antwort
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true

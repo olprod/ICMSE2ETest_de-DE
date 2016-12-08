@@ -1,19 +1,19 @@
-# <a name="sharinginvitation-resource-type"></a>sharingInvitation resource type
+# <a name="sharinginvitation-resource-type"></a>Ressourcentyp sharingInvitation
 
-Represents information about a sharing invitation for a set of permissions. This object is read-only.
+Stellt Informationen über eine freigabeeinladung für einen Satz von Berechtigungen. Dieses Objekt ist schreibgeschützt.
 
 
 ## <a name="properties"></a>Eigenschaften
 
-| Eigenschaftenname  | Typ                          | Beschreibung                                                                                                                   |
+| Name der Eigenschaft  | Typ                          | Beschreibung                                                                                                                   |
 |:---------------|:------------------------------|:------------------------------------------------------------------------------------------------------------------------------|
-| E-Mail          | String                        | The email address provided for the recipient of the sharing invitation. Read-only.                                          |
-| invitedBy      | [identitySet](identityset.md) | Provides information about who sent the invitation that created this permission, if that information is available. Read-only. |
-| signInRequired | Boolean                       | If `true` the recipient of the invitation needs to sign in in order to access the shared item. Read-only.                     |
+| E-Mail          | String                        | Die e-Mail-Adresse für den Empfänger die Einladung zur Freigabe bereitgestellt. Schreibgeschützt.                                          |
+| invitedBy      | [identitySet](identityset.md) | Enthält Informationen zu den Absender der Einladung, das diese Berechtigung erstellt, sofern diese Information verfügbar ist. Schreibgeschützt. |
+| signInRequired | Boolean                       | Wenn `true` der Empfänger der Einladung anmelden, um das freigegebene Element zugreifen muss. Schreibgeschützt.                     |
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

@@ -1,13 +1,13 @@
-# <a name="delete-an-item"></a>Delete - Ein Element löschen.
+# <a name="delete-an-item"></a>Löschen eines Elements
 
-Delete an item by using its ID or path. Note that deleting items using this method will move the items to the Recycle Bin, instead of permanently deleting them.
+Löschen eines Elements mithilfe von dessen ID oder den Pfad an. Beachten Sie, dass Elemente, die mit dieser Methode gelöscht werden die Elemente in den Papierkorb, anstatt Sie dauerhaft löschen verschoben werden.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.ReadWrite
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 
 <!-- { "blockType": "ignored" } -->
 ```
@@ -20,15 +20,15 @@ DELETE /groups/<id>/drive/items/<item-id>
 
 | Name          | Typ   | Beschreibung                                                                                                                                                                                       |
 |:--------------|:-------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Autorisierung | string | Bearer <token>. Required.                                                                                                                                                                         |
-| if-match      | String | If this request header is included and the eTag (or cTag) provided does not match the current tag on the item, a `412 Precondition Failed` response is returned and the item will not be deleted. |
+| Autorisierung | string | Bearer <token>. Erforderlich.                                                                                                                                                                         |
+| If-Match-      | String | Wenn diese Anforderungsheader enthalten und bereitgestellten eTag (oder cTag) nicht das aktuelle Tag für das Element entspricht eine `412 Precondition Failed` Antwort zurückgegeben wird, und das Element wird nicht gelöscht werden. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="example"></a>Beispiel
 
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 
 <!-- {
   "blockType": "request",
@@ -40,7 +40,7 @@ DELETE /me/drive/items/{item-id}
 
 ## <a name="response"></a>Antwort
 
-If successful, this call returns a `204 No Content` response to indicate that resource was deleted and there was nothing to return.
+Wenn erfolgreich ist, dieses Anrufs gibt eine `204 No Content` Antwort an, dass diese Ressource wurde gelöscht und gab es nothing zurückgegeben.
 
 <!-- { "blockType": "response" } -->
 ```http

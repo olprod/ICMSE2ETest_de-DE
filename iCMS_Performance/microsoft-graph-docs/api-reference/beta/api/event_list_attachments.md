@@ -1,12 +1,12 @@
-# <a name="list-attachments"></a>List attachments
+# <a name="list-attachments"></a>Anlagen auflisten
 
-Retrieve a list of [attachment](../resources/attachment.md) objects attached to an event.
+Abrufen einer Liste der [Attachment](../resources/attachment.md) -Objekte, ein Ereignis zugeordnet ist.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.Read* 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** zum Ausführen diese API ist erforderlich: *Calendars.Read* 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
-Attachments for an [event](../resources/event.md) in the user's or group's default [calendar](../resources/calendar.md).
+Anlagen für ein [Ereignis](../resources/event.md) in die des Benutzers oder einer Gruppe standardmäßig [Kalender](../resources/calendar.md).
 ```http
 GET /me/events/<id>/attachments
 GET /users/<id | userPrincipalName>/events/<id>/attachments
@@ -16,7 +16,7 @@ GET /me/calendar/events/<id>/attachments
 GET /users/<id | userPrincipalName>/calendar/events/<id>/attachments
 GET /groups/<id>/calendar/events/<id>/attachments
 ```
-Attachments for an [event](../resources/event.md) in a [calendar](../resources/calendar.md) belonging to the user's default [calendarGroup](../resources/calendargroup.md).
+Anlagen für ein [Ereignis](../resources/event.md) in einem [Kalender](../resources/calendar.md) des Benutzers Standard [CalendarGroup](../resources/calendargroup.md)zugehörigen.
 ```http
 GET /me/calendars/<id>/events/<id>/attachments
 GET /users/<id | userPrincipalName>/calendars/<id>/events/<id>/attachments
@@ -24,15 +24,15 @@ GET /users/<id | userPrincipalName>/calendars/<id>/events/<id>/attachments
 GET /me/calendargroup/calendars/<id>/events/<id>/attachments
 GET /users/<id | userPrincipalName>/calendargroup/calendars/<id>/events/<id>/attachments
 ```
-Attachments for an [event](../resources/event.md) in a [calendar](../resources/calendar.md) belonging to a user's [calendarGroup](../resources/calendargroup.md).
+Anlagen für ein [Ereignis](../resources/event.md) in einem [Kalender](../resources/calendar.md) zu einem Benutzer [CalendarGroup](../resources/calendargroup.md)gehören.
 ```http
 GET /me/calendargroups/<id>/calendars/<id>/events/<id>/attachments
 GET /users/<id | userPrincipalName>/calendargroups/<id>/calendars/<id>/events/<id>/attachments
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 
-In particular, you can use the $expand query parameter to include all of the event attachments inline with the rest of the event properties. For example:
+Insbesondere können Sie die $ Abfragezeichenfolgen-Parameter, um alle das Ereignis Anlagen Inline mit dem Rest der Ereigniseigenschaften erweitern. Beispiel:
 
 ```
 GET https://graph.microsoft.com/beta/me/events/<id>?$expand=attachments
@@ -42,15 +42,15 @@ GET https://graph.microsoft.com/beta/me/events/<id>?$expand=attachments
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and collection of [Attachment](../resources/attachment.md) objects in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und Auflistung von [Attachment](../resources/attachment.md) -Objekte in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_attachments"
@@ -59,7 +59,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/beta/me/events/<id>/attachments
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

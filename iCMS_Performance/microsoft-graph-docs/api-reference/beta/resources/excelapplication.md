@@ -1,27 +1,27 @@
-# <a name="application-resource-type"></a>Application resource type
+# <a name="application-resource-type"></a>Anwendung Ressourcentyp
 
-Stellt die Excel-Anwendung dar, die die Arbeitsmappe verwaltet.
+Stellt die Excel-Anwendung, die die Arbeitsmappe verwaltet.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get Application](../api/excelapplication_get.md) | [Application](application.md) |Read properties and relationships of application object.|
-|[Berechnen](../api/excelapplication_calculate.md)|Keine|Alle in Excel geöffnete Arbeitsmappen werden neu berechnet.|
+|[Abrufen der Anwendung](../api/excelapplication_get.md) | [Anwendung](application.md) |Lesen Sie Eigenschaften und Beziehungen des Application-Objekts.|
+|[Berechnen](../api/excelapplication_calculate.md)|Keine|Neu berechnet alle geöffnete Arbeitsmappen in Excel.|
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|calculationMode|string|Returns the calculation mode used in the workbook. Possible values are: `Automatic`, `AutomaticExceptTables`, `Manual`. Read-only.|
+|calculationMode|string|Gibt den Berechnungsmodus in der Arbeitsmappe verwendet. Mögliche Werte sind: `Automatic`, `AutomaticExceptTables`, `Manual`. Schreibgeschützt.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

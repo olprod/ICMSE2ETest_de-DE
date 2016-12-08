@@ -1,10 +1,10 @@
-# <a name="meetingtimecandidate-resource-type"></a>meetingTimeCandidate resource type
+# <a name="meetingtimecandidate-resource-type"></a>Ressourcentyp meetingTimeCandidate
 
-A meeting suggestion that includes information like meeting time, attendance likelihood, individual availability, and available meeting locations.
+Ein besprechungsvorschlag, das Informationen wie die Besprechungszeit, Anwesenheit Wahrscheinlichkeit, individuelle Präsenz und verfügbaren Besprechung Speicherorte enthält.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -28,12 +28,12 @@ Here is a JSON representation of the resource
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|attendeeAvailability|[attendeeAvailability](attendeeavailability.md) collection|An array that shows the availability status of each attendee for this meeting suggestion.|
-|CONFIDENCE|Double|A percentage that represents the likelhood of all the attendees attending.|
-|locations|[location](location.md) collection|An array that specifies the name and geographic location of each meeting location for this meeting suggestion.|
-|meetingTimeSlot|[timeSlot](timeslot.md)|A time period suggested for the meeting.|
-|organizerAvailability|String| Availability of the meeting organizer for this meeting suggestion. Possible values are: `free`, `tentative`, `busy`, `oof`, `workingElsewhere`, `unknown`.|
-|suggestionHint|String|Reason for suggesting the meeting time.|
+|attendeeAvailability|[AttendeeAvailability](attendeeavailability.md) -Auflistung|Ein Array, das den Verfügbarkeitsstatus der einzelnen Teilnehmer für diese besprechungsvorschlag anzeigt.|
+|Vertrauen|Double|Prozentsatz, der von allen Teilnehmern, die Teilnahme an der Likelhood darstellt.|
+|Speicherorte|[Standort](location.md) -Auflistung|Ein Array, das den Namen und den geografischen Standort der verschiedenen Speicherorte Besprechung für diese besprechungsvorschlag angibt.|
+|meetingTimeSlot|[Zeitrahmen](timeslot.md)|Ein Zeitraum für die Besprechung vorgeschlagen.|
+|organizerAvailability|String| Verfügbarkeit der Organisator der Besprechung für diese besprechungsvorschlag. Possible values are: `free`, `tentative`, `busy`, `oof`, `workingElsewhere`, `unknown`.|
+|suggestionHint|String|Grund für die Besprechungszeit vorschlagen.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

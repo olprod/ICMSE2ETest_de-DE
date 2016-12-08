@@ -1,32 +1,35 @@
-# <a name="upload-large-files-with-an-upload-session"></a>Upload large files with an upload session
+# <a name="upload-large-files-with-an-upload-session"></a>Hochladen von großen Dateien mit einer Sitzung hochladen
 
-Create an upload session to allow your app to upload files up to the maximum file size. An upload session allows your app to upload ranges of the file in sequental API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
+Erstellen Sie eine Sitzung hochladen, um Ihre app zum Hochladen von Dateien, bis die maximale Dateigröße zu ermöglichen.
+Eine Sitzung hochladen kann Ihre app hochzuladenden Bereiche der Datei im sequental API-Anforderungen, wodurch die Übertragung fortgesetzt werden kann, wenn eine Verbindung getrennt wird, während der Upload ausgeführt wird.
 
-To upload a file using an upload session, there are two steps:
+Zum Hochladen einer Datei mit einer Sitzung hochladen umfasst zwei Schritte:
 
-1. [Fordern Sie eine Upload-Sitzung an.](#create-an-upload-session)
-2. [Upload bytes to the upload session](#upload-bytes-to-the-upload-session)
+1. [Erstellen Sie eine Sitzung hochladen](#create-an-upload-session)
+2. [Hochladen von Bytes in der Sitzung hochladen](#upload-bytes-to-the-upload-session)
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.ReadWrite
 
-## <a name="create-an-upload-session"></a>Anfordern einer Upload-Sitzung
+## <a name="create-an-upload-session"></a>Erstellen Sie eine Sitzung hochladen
 
-To begin a large file upload, your app must first request a new upload session. This creates a temporary storage location where the bytes of the file will be saved until the complete file is uploaded. Once the last byte of the file has been uploaded the upload session is completed and the final file is shown in the destination folder.
+Um eine große Dateien hochladen beginnen, muss Ihre app zunächst eine neue Sitzung Upload anfordern.
+Dadurch wird einen temporärer Speicherort, in dem die Bytes der Datei gespeichert wird, bis die vollständige Datei hochgeladen wurde, erstellt.
+Nachdem das letzte Byte der Datei hochgeladen wurde die Sitzung Upload abgeschlossen ist, und die endgültige Datei wird im Zielordner angezeigt.
 
-### <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+### <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/drive/root:/{path-to-item}:/createUploadSession
 POST /me/drive/items/{parent-item-id}:/{filename}:/createUploadSession
 ```
 
-### <a name="request-body"></a>Anforderungstextkörper
-No request body is required. However, you can specify a request body to provide additional data about the file being uploaded.
+### <a name="request-body"></a>Anforderungstext
+Keine Anforderungstext ist erforderlich. Sie können jedoch einen Anforderungstext, um zusätzliche Daten über die hochgeladene Datei bereitzustellen angeben.
 
-For example, to control the behavior if the filename is already taken, you can specify the conflict behavior property in the body of the request.
+Um das Verhalten zu kontrollieren, falls der Dateiname bereits ausgeführt wird, können Sie beispielsweise die Konflikt Verhalten-Eigenschaft im Textkörper der Anforderung angeben.
 
 ```json
 {
@@ -36,15 +39,15 @@ For example, to control the behavior if the filename is already taken, you can s
 }
 ```
 
-### <a name="optional-request-headers"></a>Optional request headers
+### <a name="optional-request-headers"></a>Optionale Anforderungsheader
 
 | Name       | Wert | Beschreibung                                                                                                                                                            |
 |:-----------|:------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *if-match* | ETag  | If this request header is included and the eTag (or cTag) provided does not match the current etag on the item, a `412 Precondition Failed` errr response is returned. |
+| *If-Match-* | ETag  | Wenn diese Anforderungsheader enthalten und bereitgestellt eTag (oder cTag) nicht das aktuelle Etag auf das Element entspricht eine `412 Precondition Failed` Feher Antwort zurückgegeben wird. |
 
 
 ### <a name="response"></a>Antwort
-The response to this request will provide the details of the newly created [uploadSession](../resources/uploadsession.md), which includes the URL used for uploading the parts of the file. 
+Die Antwort auf diese Anforderung bietet die Details der neu erstellten [UploadSession](../resources/uploadsession.md), die die für das Hochladen von den Teilen der Datei verwendete URL enthält. 
 
 ### <a name="example"></a>Beispiel
 
@@ -57,7 +60,7 @@ POST /me/drive/root:/{item-path}:/createUploadSession
 ```
 
 ### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 
 <!-- {
   "blockType": "response",
@@ -75,15 +78,21 @@ Content-Type: application/json
 }
 ```
 
-## <a name="upload-bytes-to-the-upload-session"></a>Upload bytes to the upload session
+## <a name="upload-bytes-to-the-upload-session"></a>Hochladen von Bytes in der Sitzung hochladen
 
-To upload the file, or a portion of the file, your app makes a PUT request to the **uploadUrl** value received in the **createUploadSession** response. You can upload the entire file, or split the file into fragments, as long as the maximum bytes in any given request is less than 60 MiB. The fragments of the file must be uploaded sequentally in order. Uploading fragments out of order will result in an error.
+Um die Datei oder einen Teil der Datei hochzuladen, sendet Ihre app eine PUT-Anforderung an den **UploadUrl** -Wert in der **CreateUploadSession** Antwort empfangen.
+Sie können die gesamte Datei hochladen, oder Teilen Sie die Datei in Fragmente, solange die maximale Bytes pro Anforderung ist kleiner als 60 MiB.
+Die Fragmente der Datei müssen in Reihenfolge sequentally hochgeladen werden.
+Hochladen von außerhalb der Reihenfolge Fragmente führt einen Fehler.
 
-**Note:** If your app splits a file into multiple fragments, the size of each fragment **MUST** be a multiple of 320 KiB. Using a fragment size that does not divide evenly by 320 will result in errors committing some files.
+**Hinweis:** Wenn Ihre app eine Datei in mehrere Fragmente aufgeteilt ist, werden die Größe der einzelnen Fragment **MUSS** ein Vielfaches von 320 KiB. Mit einer Fragmentgröße, die nicht gleichmäßig durch 320 Division wird führt zu Fehlern Ausführen eines Commits für einige Dateien.
 
 ### <a name="example"></a>Beispiel
 
-This example is uploading the first 26 bytes of a 128 byte file. The **Content-Length** header specifies the size of the current request. The **Content-Range** header indicates the range of bytes in the overall file that this request represents. The total length of the file must be known before you can upload the first fragment of the file.
+In diesem Beispiel wird die 26 ersten Byte einer 128-Byte-Datei hochgeladen haben.
+Der **Content-Length** -Header gibt die Größe der aktuellen Anforderung.
+Der **Inhalt Range** -Header gibt an, Bereich von Bytes in der gesamten Datei, die diese Anforderung darstellt.
+Die gesamte Länge der Datei muss bekannt sein, bevor Sie das erste Fragment der Datei hochladen können.
 
 <!-- { "blockType": "request", "name": "upload-fragment-piece", "scopes": "files.readwrite" } -->
 ```
@@ -94,7 +103,8 @@ Content-Range: bytes 0-25/128
 <bytes 0-25 of the file>
 ```
 
-**Important:** Your app must ensure the total file size specified in the **Content-Range** header is the same for all requests. If a fragment declares a different file size, the request will fail.
+**Wichtig:** Ihre app muss sicherstellen die gesamten Dateigröße im Header **Content-Range** angegebene für alle Anfragen identisch ist.
+Die Anforderung schlägt fehl, wenn ein Fragment eine anderen Dateigröße deklariert.
 
 ### <a name="response"></a>Antwort
 <!-- { "blockType": "response", "@odata.type": "microsoft.graph.uploadSession", "truncated": true } -->
@@ -108,20 +118,23 @@ Content-Type: application/json
 }
 ```
 
-Your app can use the **nextExpectedRanges** value to determine where to start the next fragment. You may see multiple ranges specified, indicating parts of the file that the server has not yet received. This is useful if you need to resume a transfer that was interrupted and your client is unsure of the state on the service.
+Ihre app kann den **NextExpectedRanges** Wert verwenden, um zu bestimmen, wo Sie das nächste Fragment beginnen.
+Mangelndes angegeben, mehrere Bereiche, die Teile der Datei, die der Server noch nicht erhalten hat. Dies ist nützlich, wenn Sie benötigen, um eine Übertragung fortzusetzen, die unterbrochen wurde und Ihr Client nicht sicher sind, den Status für den Dienst ist.
 
-You should always determine the fragment size according to the best practices below. Do not assume that **nextExpectedRanges** will return reanges of proper size for an upload fragment. The **nextExpectedRanges** property indicates ranges of the file that have not been received and not a pattern for how you should upload the file.
+Sie sollten immer die Fragmentgröße gemäß den best Practices unten festlegen. Nehmen Sie nicht an, dass diese **NextExpectedRanges** Reanges der richtigen Größe für ein Upload-Fragment zurückgegeben wird. Die **NextExpectedRanges** -Eigenschaft gibt Bereiche der Datei, die nicht empfangen wurden und nicht um ein Muster für wie die Datei hochgeladen werden sollen.
 
-**Hinweise**
+**Hinweise:**
 
-* The `nextExpectedRanges` property won't always list all of the missing ranges.
-* On successful fragment writes, it will return the next range to start from (eg. "523-").
-* On failures when the client sent a fragment the server had already received, the server will respond with `HTTP 416 Requested Range Not Satisfiable`. You can [request upload status](#resuming-an-in-progress-upload) to get a more detailed list of missing ranges.
+* Die `nextExpectedRanges` Eigenschaft wird nicht immer auflisten, alle fehlenden Bereiche.
+* Auf erfolgreiche Fragment Schreibvorgänge wird es in den nächsten Bereich (z. b. Ausgangsvorlage zurückzugeben. "523-").
+* Bei Fehlern bei der Client wurde bereits ein Fragment der Server empfangen gesendet, der Server antwortet mit `HTTP 416 Requested Range Not Satisfiable`. 
+  Sie können die [Anforderung Upload-Status](#resuming-an-in-progress-upload) , um eine ausführlichere Liste der fehlenden Bereichen abrufen.
 
 
-## <a name="completing-a-file"></a>Completing a file
+## <a name="completing-a-file"></a>Abschließen einer Datei
 
-When the last fragment of a file is received the server will response with an `HTTP 201 Created` or `HTTP 200 OK`. The response body will also include the default property set for the **driveItem** representing the completed file.
+Wenn das letzte Fragment einer Datei empfangen wird der Server führt eine Antwort mit einem `HTTP 201 Created` oder `HTTP 200 OK`.
+Der Antworttext enthält auch die Standardeigenschaft für die **DriveItem** , das die abgeschlossene Datei festgelegt.
 
 <!-- { "blockType": "request", "name": "upload-fragment-final", "scopes": "files.readwrite" } -->
 ```
@@ -144,17 +157,19 @@ Content-Type: application/json
   "file": { }
 }
 ```
-**Note:** The item response is truncated for documentation clarity.
+**Hinweis:** Die Antwort Element wird aus Gründen der Übersichtlichkeit Dokumentation Zahl gekürzt.
 
-## <a name="cancel-an-upload-session"></a>Anfordern einer Upload-Sitzung
+## <a name="cancel-an-upload-session"></a>Abbrechen einer Sitzung hochladen
 
-To cancel an upload session send a DELETE request to the upload URL. This cleans up the temporary file holding the data previously uploaded. This should be used in scenarios where the upload is aborted, for example, if the user cancels the transfer.
+Zum Abbrechen eine Sitzung Upload senden eine DELETE-Anforderung an den Upload-URL.
+Dadurch wird die temporäre Datei mit den Daten, die zuvor hochgeladen bereinigt.
+Dies sollte verwendet werden in Szenarien, in dem der Upload, beispielsweise abgebrochen wird, wenn der Benutzer die Übertragung abbricht.
 
-Temporary files and their accompanying upload session are automatically cleaned up after the **expirationDateTime** has passed.
+Temporäre Dateien und die zugehörigen Upload-Sitzungen werden automatisch bereinigt nach Ablauf der **ExpirationDateTime** .
 
 ### <a name="example"></a>Beispiel
 
-The DELETE request will immedately expire the upload session and remove any previously uploaded bytes.
+Die DELETE-Anforderung wird Immedately Ablaufen der Sitzung hochladen und entfernen Sie alle zuvor hochgeladenen Bytes.
 
 <!-- { "blockType": "request", "name": "upload-fragment-cancel", "scopes": "files.readwrite" } -->
 ```http
@@ -168,21 +183,23 @@ DELETE https://tenant-my.sharepoint.com/alkjl1kjklna
 HTTP/1.1 204 No Content
 ```
 
-## <a name="resuming-an-in-progress-upload"></a>Resuming an in-progress upload
+## <a name="resuming-an-in-progress-upload"></a>Wiederaufnehmen einer laufenden hochladen
 
-If an upload request is disconnected or fails before the request is completed, all bytes in that request are ignored. This can occur if the connection between your app and the service is dropped. If this occurs, your app can still resume the file transfer from the previously completed fragment.
+Wenn eine Anforderung Upload getrennt ist oder ein Fehler auftritt, bevor die Anforderung abgeschlossen ist, werden alle Bytes in dieser Anforderung ignoriert.
+Dies kann vorkommen, wenn die Verbindung zwischen Ihrer app und der Dienst beendet wird.
+In diesem Fall kann Ihre app die Übertragung aus dem zuvor abgeschlossenen Fragment wieder aufnehmen.
 
-To find out which byte ranges have been received previously, your app can request the status of an upload session.
+Um herauszufinden, welche Bytebereiche zuvor eingegangen sind, kann Ihre app den Status einer Sitzung Upload anfordern.
 
 ### <a name="example"></a>Beispiel
-Query the status of the upload by sending a GET request to the `uploadUrl`.
+Abfragen des Status des Uploads durch Senden einer GET-Anforderung an die `uploadUrl`.
 
 <!-- { "blockType": "request", "name": "upload-fragment-resume", "scopes": "files.readwrite" } -->
 ```
 GET https://tenant-my.sharepoint.com/alkjl1kjklna
 ```
 
-The server will respond with a list of missing byte ranges that need to be uploaded and the expiration time for the upload session.
+Der Server antwortet mit einer Liste der fehlenden Bytebereiche, die hochgeladen werden müssen und die Ablaufzeit für die Sitzung hochladen.
 
 <!-- { "blockType": "response", "@odata.type": "microsoft.graph.uploadSession", "truncated": true } -->
 ```http
@@ -194,23 +211,26 @@ HTTP/1.1 200 OK
 }
 ```
 
-### <a name="upload-remaining-data"></a>Upload remaining data
-Now that your app knows where to start the upload from, resume the upload by following the steps in [upload bytes to the upload session](#upload-bytes-to-the-upload-session).
+### <a name="upload-remaining-data"></a>Hochladen der verbleibende Daten
+Nun, da Ihre app, wo Sie das Hochladen von beginnen bekannt ist, Fortsetzen des Uploads nach der Anleitung in [Bytes an der Sitzung Upload hochladen](#upload-bytes-to-the-upload-session).
 
 
 ## <a name="best-practices"></a>Bewährte Methoden
 
-* Resume or retry uploads that fail due to connection interruptions or any 5xx errors, including:
+* Fortsetzen oder Retry uploads dieser Fehler aufgrund von Unterbrechungen der Verbindung oder 5xx Fehlern, einschließlich:
   * `500 Internal Server Error`
   * `502 Bad Gateway`
   * `503 Service Unavailable`
   * `504 Gateway Timeout`
-* Use an exponential back off strategy if any 5xx server errors are returned when resuming or retrying upload requests.
-* For other errors, you should not use an exponential back off strategy but limit the number of retry attempts made.
-* Handle `404 Not Found` errors when doing resumable uploads by starting the entire upload over.
-* Use resumable file transfers for files larger than 10 MiB (10 \* 1024 \* 1024 bytes).
-* A fragment size of 10 MiB for stable high speed connections is optimal. For slower or less reliable connections you may get better results from a smaller fragment size. The recommended fragment size is between 5-10 MiB.
-* Use a fragment size that is a multiple of 320 KiB (320 \* 1024 bytes). Failing to use a fragment size that is a multiple of 320 KiB can result in large file transfers failing after the last fragment is uploaded.
+* Verwenden Sie eine exponentielle Back deaktiviert Strategie Wenn beim Fortsetzen oder Wiederholen Upload Anforderungen 5xx Serverfehler zurückgegeben werden.
+* Bei anderen Fehlern sollten Sie keine exponentielle Back deaktiviert Strategie aber Grenzwert verwenden, die Anzahl der Wiederholungsversuche vorgenommen.
+* Behandeln `404 Not Found` Fehler bei der Wiederaufnahme Uploads von den gesamten Upload von vorne beginnen.
+* Wiederaufnahme Datei überträgt für Dateien, die größer als 10 MiB (10 \* 1024 \* 1024 Bytes).
+* Eine Fragmentgröße von 10 MiB für stabil Hochgeschwindigkeits-Verbindungen ist optimal. 
+  Für langsamer oder weniger zuverlässig Verbindungen können von einer kleineren Fragment bessere Ergebnisse angezeigt werden. 
+  Die empfohlene Fragmentgröße ist zwischen 5 bis 10 MiB.
+* Verwenden Sie eine Fragmentgröße, das ist ein Vielfaches von 320 KiB (320 \* 1024 Bytes). 
+  Eine Fragmentgröße verwenden, die ein Vielfaches von 320 ist, ein Fehler kann KiB bewirken große dateiübertragungen, nachdem das letzte Fragment hochgeladen wurde, die Fehler aufweisen.
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

@@ -1,11 +1,11 @@
-# <a name="create-scopedrolemembership"></a>Create scopedRoleMembership
+# <a name="create-scopedrolemembership"></a>ScopedRoleMembership erstellen
 
-Use this API to create a new [scopedRoleMembership](../resources/scopedrolemembership.md). NOTE: Only the *User account administrator* and *Helpdesk administrator* roles are supported for scoped-role memberships.
+Verwenden Sie diese API, um eine neue [ScopedRoleMembership](../resources/scopedrolemembership.md)erstellen. HINWEIS: Nur die *Benutzer Kontoadministrator* und *Helpdeskadministrator* Rollen werden für bezogenen Rollenmitgliedschaften unterstützt.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: *Directory.AccessAsUser.All*
+Die folgenden **Bereiche** sind erforderlich, um diese API ausführen: *Directory.AccessAsUser.All*
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /administrativeUnits/<id>/scopedAdministrators
@@ -13,18 +13,18 @@ POST /administrativeUnits/<id>/scopedAdministrators
 ## <a name="request-headers"></a>Anforderungsheader
 | Name      |Beschreibung|
 |:----------|:----------|
-| Autorisierung  | Bearer <token>. Required.|
+| Autorisierung  | Bearer <token>. Erforderlich.|
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [scopedRoleMembership](../resources/scopedrolemembership.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [ScopedRoleMembership](../resources/scopedrolemembership.md) -Objekts.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [scopedRoleMembership](../resources/scopedrolemembership.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Antwortobjekt Code und [ScopedRoleMembership](../resources/scopedrolemembership.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_scopedrolemembership_from_administrativeunit"
@@ -41,9 +41,9 @@ Content-length: 272
   }
 }
 ```
-In the request body, supply a JSON representation of [scopedRoleMembership](../resources/scopedrolemembership.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [ScopedRoleMembership](../resources/scopedrolemembership.md) -Objekts.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

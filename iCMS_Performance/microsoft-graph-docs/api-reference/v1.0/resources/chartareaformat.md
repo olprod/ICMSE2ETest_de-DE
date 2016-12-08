@@ -1,6 +1,6 @@
-# <a name="chartareaformat-resource-type"></a>ChartAreaFormat resource type
+# <a name="chartareaformat-resource-type"></a>Ressourcentyp ChartAreaFormat
 
-Kapselt die Formateigenschaften für den gesamten Diagrammbereich.
+Die Formateigenschaften für die gesamte Diagrammfläche kapselt.
 
 
 ## <a name="methods"></a>Methoden
@@ -12,8 +12,8 @@ Keine
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|fill|[ChartFill](chartfill.md)|Stellt die Füllung eines Objekts dar, einschließlich Informationen zur Hintergrundformatierung. Schreibgeschützt.|
-|font|[ChartFont-Objekt](chartfont.md)|Stellt die Zeichenformatierung (Schriftart, Schriftgrad, Farbe usw.) für das aktuelle Objekt dar. Schreibgeschützt.|
+|fill|[ChartFill](chartfill.md)|Stellt das Füllformat des ein Objekt, das Informationen über die Formatierung Hintergrund enthält. Schreibgeschützt.|
+|font|[ChartFont](chartfont.md)|Die Schriftattribute (Name der Schriftart, Schriftgrad, Farbe usw.) für das aktuelle Objekt darstellt. Schreibgeschützt.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

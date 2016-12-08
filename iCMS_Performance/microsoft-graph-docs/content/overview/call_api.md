@@ -1,7 +1,7 @@
 # <a name="calling-microsoft-graph"></a>Aufrufen von Microsoft Graph
 
-###<a name="call-microsoft-graph-api-service-via-rest"></a>Aufrufen des Microsoft Graph-API-Diensts über REST
-Wenn Sie auf eine Microsoft Graph-API-Ressource zugreifen oder diese bearbeiten möchten, müssen Sie die Ressourcen-URLs aufrufen und festlegen, indem Sie einen der folgenden für die Ressource zulässigen Vorgänge verwenden.   
+###<a name="call-microsoft-graph-api-service-via-rest"></a>Rufen Sie Microsoft Graph-API-Dienst über REST
+Zugriff und zum Bearbeiten einer Ressource Microsoft Graph-API-aufrufen und anzugeben, die mit einer der folgenden Vorgänge Ressource URLs für die Ressource.   
 
 - GET
 - POST
@@ -9,7 +9,7 @@ Wenn Sie auf eine Microsoft Graph-API-Ressource zugreifen oder diese bearbeiten 
 - PUT
 - DELETE 
 
-Alle Microsoft Graph-API-Anforderungen verwenden das folgende Basis-URL-Muster:
+Alle Anfragen von Microsoft Graph-API verwenden Sie das folgende einfache URL-Muster:
 
 ```
     https://graph.microsoft.com/{version}/{resource}?[odata_query_parameters]
@@ -17,47 +17,47 @@ Alle Microsoft Graph-API-Anforderungen verwenden das folgende Basis-URL-Muster:
 
 Für diese URL:
 
-- https://graph.microsoft.com`https://graph.microsoft.com` ist der Microsoft Graph-API-Endpunkt.
-- {version}`{version}` ist die Zieldienstversion, z. B. v1.0`v1.0` oder beta`beta`.
-- {resource}`{resource}` ist das Ressourcensegment oder der Pfad, z. B
+- `https://graph.microsoft.com`ist der Endpunkt Microsoft Graph-API
+- `{version}`Beispielsweise ist die Zielversion Service `v1.0` oder `beta`.
+- `{resource}`ist die Ressource Segment oder den Pfad, wie
   - `users`, `groups`, `devices`, `organization`
-  - Der Alias me`me`, der den angemeldeten Benutzer auflöst.
-   - Die mit einem Benutzer verknüpften Ressourcen, z. B. me\events, me\drive oder me\messages.
-  - Der Alias myOrganization`myOrganization`, der den Mandanten des bei der Organisation angemeldet Benutzers auflöst.
-- [odata_query_parameters]`[odata_query_parameters]` stellt zusätzliche OData-Abfrageparameter dar, z. B. $filter`$filter` und $select`$select`. 
+  - Der Alias `me`, die in der angemeldeten Benutzers aufgelöst wird
+   - Die Ressourcen, die wie zu einem Benutzer gehören `me/events`, `me/drive` oder`me/messages`
+  - Der Alias `myOrganization`, die in den Mandanten des angemeldeten Benutzers Organisation aufgelöst wird
+- `[odata_query_parameters]`Stellt zusätzliche OData-Abfrageparametern wie `$filter` und`$select` 
 
-Darüber hinaus können Sie den Mandanten als Teil Ihrer Anforderung angeben, was optional und nicht erforderlich ist. Geben Sie bei Verwendung von me`me` nicht den Mandanten an. Eine Übersicht der allgemeinen Anforderungen finden Sie in der [Übersicht](overview.md).
+Darüber hinaus können Sie den Mandanten als Teil Ihrer Anforderung angeben, die optional und nicht erforderlich ist. Bei Verwendung `me`, den Mandanten nicht angeben. Eine Zusammenfassung der allgemeine Anforderungen sind in der [Übersicht über die](overview.md)verfügbaren.
 
 ###<a name="microsoft-graph-api-metadata"></a>Microsoft Graph-API-Metadaten
-Das Dienstdokument ($metadata) wird im Dienststamm veröffentlicht. Über die folgenden URLs können Sie das Dienstdokument für v1.0 und die Betaversionen anzeigen.
+Das Dokument Service ($metadata) wird am Stamm Service veröffentlicht. Beispielsweise können Sie das Dokument Dienst über die folgenden URLs für die 1.0 und Beta anzeigen.
 
-Microsoft Graph-API-Metadaten
+Microsoft Graph-API `v1.0` Metadaten.
 ```
     https://graph.microsoft.com/v1.0/$metadata
 ```
-Microsoft Graph-API-Metadaten
+Microsoft Graph-API `beta` Metadaten.
 ```
     https://graph.microsoft.com/beta/$metadata
 ```
 
-In den Metadaten sind Entitäten, Entitätstypen und Sätze, komplexe Typen und Enumerationen der Microsoft Graph-REST-API enthalten. Mithilfe von Metadaten und verfügbaren Drittanbietertools können Sie serialisierte Objekte erstellen und Clientbibliotheken für die vereinfachte Verwendung der REST API generieren.  
+Die Metadaten können Sie Entitäten, Entitätstypen und legt, komplexe Typen und Enumerationen, die Microsoft Graph REST-API finden Sie unter. Verwenden die Metadaten und Drittanbietertools immer leicht zugänglich sind, können Sie serialisierten Objekte erstellen und generieren Clientbibliotheken für die vereinfachte Verwendung der REST-API.  
 
-Eine Ressourcen-URL wird von dem Microsoft Graph-Entitätsdatenmodell bestimmt. Empfehlungen sind im Entitätsmetadatenschema ($metadata) beschrieben. 
+Eine URL für die Ressource wird durch das Microsoft Graph Entitätsdatenmodell bestimmt. Aufgabenebene ist im Metadatenschema Entität ($metadata) erläutert. 
 
-Bei den Pfad-URL-Ressourcennamen und Abfrageparametern wird Groß-/Kleinschreibung unterschieden. Bei zugewiesenen Werte, Entitäts-IDs und anderen base64-codierte Werten wird zwischen Groß-/Kleinschreibung unterschieden.
+Der Pfad URL Ressourcennamen, Abfrageparameter und Aktionsparameter und Werte sind Groß-/Kleinschreibung nicht beachtet. Allerdings werden Werte, die Sie zuweisen, Entity-IDs und andere Werte base64-codierte Groß-/Kleinschreibung beachtet.
 
-Im folgenden Abschnitt werden einige grundlegende Programmiermuster für API-Aufrufe beschrieben.
+Im folgenden Abschnitt werden einige grundlegende Muster Aufrufe programming an der API angezeigt.
 
-###<a name="navigation-from-a-set-to-a-member"></a>Navigation von einer Sammlung zu einem Element
+###<a name="navigation-from-a-set-to-a-member"></a>Navigationsbereich aus einem Satz an einen member
 
-Zum Anzeigen von Informationen zu einem Benutzer müssen Sie die User`User`-Entität aus der users`users`-Sammlung für den jeweiligen durch seinen Bezeichner angegebenen Benutzer abrufen, indem Sie eine HTTPS-GET-Anforderung verwenden. Für eine User`User`-Entität kann entweder die id`id`- oder userPrincipalName`userPrincipalName`-Eigenschaft als Bezeichner verwendet werden. Im folgenden Anforderungsbeispiel wird der userPrincipalName`userPrincipalName`-Wert als Benutzer-ID verwendet. 
+Um die Informationen über einen Benutzer anzuzeigen, erhalten Sie die `User` Entität aus der `users` -Auflistung, um den betreffenden Benutzer anhand des Bezeichners identifiziert eine HTTPS GET-Anforderung mit. Für eine `User` Entität, entweder die `id` oder `userPrincipalName` Eigenschaft als Bezeichner verwendet werden kann. Die folgende Beispiel für eine Anforderung verwendet die `userPrincipalName` Wert als Id des Benutzers. 
 
 ```no-highlight 
 GET https://graph.microsoft.com/v1.0/users/john.doe@contoso.onmicrosoft.com HTTP/1.1
 Authorization : Bearer <access_token>
 ```
 
-Wenn der Vorgang erfolgreich ist, erhalten Sie den Statuscode 200 OK mit der Benutzerressourcendarstellung in der Nutzlast, wie im Folgenden dargestellt:
+Bei erfolgreicher sollten Sie 200 OK-Antwort mit der Benutzer Ressource Darstellung in der Nutzlast erhalten, wie folgt aussehen:
 
 ```no-highlight 
 HTTP/1.1 200 OK
@@ -79,15 +79,15 @@ content-length: 982
 ```
 
 
-###<a name="projection-from-an-entity-to-properties"></a>Projektion auf eine Entität in Eigenschaften
-Um nur biographische Daten des Benutzers abzurufen, z. B. die vom Benutzer bereitgestellte Beschreibung im Feld _Über mich_ und seine Qualifikationen, können Sie die $select-Abfrageoption zu der vorherigen Anforderung hinzufügen. Beispiel:
+###<a name="projection-from-an-entity-to-properties"></a>Projektion eine Entität auf Eigenschaften
+Abrufen nur Biographische Daten des Benutzers wie des Benutzers _über mich_ Beschreibung und deren Fertigkeiten angegeben festlegen, können Sie die vorherige Anforderung die $select Abfrageoption hinzufügen. Beispielsweise
 
 ```no-highlight 
 GET https://graph.microsoft.com/v1.0/users/john.doe@contoso.onmicrosoft.com?$select=displayName,aboutMe,skills HTTP/1.1
 Authorization : Bearer <access_token>
 ```
 
-Bei erfolgreicher Antwort werden der Statuscode 200 OK zurückgegeben und eine Nutzlast im folgenden Format:
+Die erfolgreiche Antwort gibt die 200 OK-Status und Nutzlast mit der folgenden Syntax:
 
 ```no-highlight 
 HTTP/1.1 200 OK
@@ -106,17 +106,17 @@ content-length: 169
 }
 ```
 
-Statt aller Eigenschaftensätze für die user-Entität werden hier nur die aboutMe-, displayName- und skills-Eigenschaften zurückgegeben.
+Hier wird anstelle der gesamten-Eigenschaft in der `user` Entität, nur die `aboutMe`, `displayName` und `skills` Eigenschaften zurückgegeben werden.
 
-###<a name="traversal-to-another-resource-via-relationship"></a>Durchlaufen einer anderen Ressource anhand der Beziehung
-Ein Vorgesetzter enthält eine directReports`directReports`-Beziehung zu anderen Benutzern, die diesem unterstellt sind. Zum Abfragen der Liste der direkten Mitarbeiter eines Benutzers können Sie die folgende HTTPS-GET-Anforderung zum Navigieren zum gewünschten Ziel über das Durchlaufen von Beziehungen verwenden. 
+###<a name="traversal-to-another-resource-via-relationship"></a>Durchqueren an eine andere Ressource über Beziehung
+Ein Manager enthält ein `directReports` Beziehung mit den anderen Benutzern seine reporting. Um die Liste der die direkten Vorgesetzten eines Benutzers abgefragt, können Sie die folgenden HTTPS GET-Anforderung an das vorgesehene Ziel über Beziehung durchqueren navigieren. 
 
 ```no-highlight 
 GET https://graph.microsoft.com/v1.0/users/john.doe@contoso.onmicrosoft.com/directReports HTTP/1.1
 Authorization : Bearer <access_token>
 ```
 
-Bei erfolgreicher Antwort werden der Statuscode 200 OK zurückgegeben und eine Nutzlast im folgenden Format:
+Die erfolgreiche Antwort gibt die 200 OK-Status und Nutzlast im folgenden Format:
 
 ```no-highlight 
 HTTP/1.1 200 OK
@@ -134,7 +134,7 @@ content-length: 152
 }
 ```
 
-Ebenso können Sie anhand einer Beziehung zu verwandten Ressourcen navigieren. Mit der user => messages`user => messages`-Beziehung können Sie beispielsweise Graph von einem Azure AD-Knoten zu einem Exchange Online-Knoten durchlaufen. Im nachstehenden Beispiel wird gezeigt, wie dies in einem REST-API-Aufruf funktioniert:
+Ebenso können Sie eine Beziehung zum Navigieren zu verwandten Ressourcen folgen. Beispielsweise die `user => messages` Beziehung ermöglicht das Diagramm durchqueren von einem Azure AD-Knoten an einen Exchange Online-Knoten. Die unter diesem Beispiel wird gezeigt, wie Sie dazu im Gespräch REST-API:
 
 
 ```no-highlight 
@@ -143,7 +143,7 @@ Authorization : Bearer <access_token>
 ```
 
     
-Bei erfolgreicher Antwort werden der Statuscode 200 OK zurückgegeben und eine Nutzlast im folgenden Format:
+Die erfolgreiche Antwort gibt die 200 OK-Status und Nutzlast mit der folgenden Syntax:
 
 
 ```no-highlight 
@@ -180,15 +180,15 @@ content-length: 147
 }
 ```
 
-###<a name="projection-from-entities-to-properties"></a>Projektion auf Entitäten in Eigenschaften
-Neben der Projektion auf eine Entität in ihren Eigenschaften können Sie auch die ähnliche $select`$select`-Abfrageoption auf eine Entitätssammlung anwenden, um eine Projektion auf eine Sammlung mit einigen Eigenschaften durchzuführen. Senden Sie zum Abfragen des Namens der Laufwerkelemente vom angemeldeten Benutzer die folgende HTTPS-GET-Anforderung:
+###<a name="projection-from-entities-to-properties"></a>Projektion von Entitäten und Eigenschaften
+Zusätzlich zur Projektion eine einzelne Entität auf seine Eigenschaften, Sie können auch anwenden der ähnliche `$select` Abfrageoption Entität-Auflistung auf diese an eine Auflistung von einige der zugehörigen Eigenschaften project. Der Name des angemeldeten Benutzers Laufwerk Elemente abgefragt werden soll, können Sie beispielsweise die folgenden HTTPS GET-Anforderung übermitteln:
 
 ```no-highlight 
 GET https://graph.microsoft.com/v1.0/me/drive/root/children?$select=name HTTP/1.1
 Authorization : Bearer <access_token>
 ```
 
-Bei einer erfolgreichen Antwort werden der Statuscode 200 OK und eine Nutzlast mit den Namen und Typen der freigegebenen Dateien zurückgegeben, wie im folgenden Beispiel dargestellt:
+Die erfolgreiche Antwort zurückgegeben eine 200 OK-Statuscode und Nutzlast mit den Namen und die Typen der freigegebenen Dateien, wie im folgenden Beispiel dargestellt:
 
 ```no-highlight 
 {
@@ -210,8 +210,8 @@ Bei einer erfolgreichen Antwort werden der Statuscode 200 OK und eine Nutzlast m
 }
 ```
 
-###<a name="query-a-subset-of-users-with-the-filtering-query-option"></a>Abfragen einer Teilmenge von Benutzern mit der Filterabfrageoption
-Wenn Sie nach Mitarbeitern mit einer bestimmten Position innerhalb Ihrer Organisation suchen möchten, können Sie aus der Benutzersammlung eine $filter-Abfrageoption angeben. Nachfolgend ein Beispiel:
+###<a name="query-a-subset-of-users-with-the-filtering-query-option"></a>Abfrage eine Teilmenge der Benutzer mit der Abfrage Filteroption
+Damit die Mitarbeiter in der eine bestimmte Position innerhalb einer Organisation ermittelt wird, können Sie aus der Users-Auflistung navigieren und geben Sie dann eine Abfrageoption $filter. Ein Beispiel ist wie folgt:
 
     
 ```no-highlight 
@@ -219,7 +219,7 @@ GET https://graph.microsoft.com/v1.0/users/?$filter=jobTitle+eq+%27Helper%27 HTT
 Authorization : Bearer <access_token>
 ```
 
-Bei einer erfolgreichen Antwort werden der Statuscode 200 OK und eine Liste von Benutzern mit der angegebenen Position ('Helper'`'Helper'`) zurückgegeben, wie im folgenden Beispiel dargestellt:
+Die erfolgreiche Antwort gibt die 200 OK-Statuscode und eine Liste der Benutzer mit der angegebenen Position (`'Helper'`), wie im folgenden Beispiel gezeigt:
 
 ```no-highlight 
 HTTP/1.1 200 OK
@@ -257,7 +257,7 @@ content-length: 986
 ```
 
 ###<a name="calling-odata-actions-or-functions"></a>Aufrufen von OData-Aktionen oder Funktionen
-Die Microsoft Graph-API unterstützt auch OData-Aktionen und Funktionen,mit denen Ressourcen bearbeitet werden können. Die folgende HTTPS-POST-Anforderung z. B. ermöglicht es dem angemeldeten Benutzer (me`me`), eine E-Mail zu senden:
+Die Microsoft Graph-API unterstützt außerdem OData-Aktionen und Funktionen, die Ressourcen zu bearbeiten. Die folgenden HTTPS-POST-Anforderung kann beispielsweise die angemeldeten Benutzers (`me`) eine e-Mail-Nachricht zu senden:
 ```no-highlight 
 POST https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail HTTP/1.1
 authorization: bearer <access_token>
@@ -290,8 +290,8 @@ content-length: 96
 }
 ```
 
-Die Anforderungsnutzlast enthält die Eingabe für die microsoft.graph.sendMail`microsoft.graph.sendMail`-Aktion, welche auch in $metadata definiert ist.
+Die Anforderungsnutzlast enthält die Eingabe für die `microsoft.graph.sendMail` Aktion, die auch in der $metadata definiert ist.
 
-Dank eines einheitlichen Endpunkts wird in Microsoft Graph die Anwendungsprogrammierschnittstelle für Dienste in der Microsoft-Cloud vereinfacht. Dementsprechend verschwinden die Grenzwerte der andernfalls isolierten Dienste. Als App-Entwickler müssen Sie keine Datenquellen nachverfolgen und keine benutzerdefinierten Schnittstellen zwischen den verschiedenen Datenquellen implementieren. 
+Mit einem einzelnen unified Endpunkt vereinfacht das Microsoft Graph die Application programming Interface für in der Microsoft-Cloud-Dienste. Daher verschwinden die Grenzen der andernfalls Silo-Ed-Dienste. Als Entwickler app sind Sie nicht mehr erforderlich, um die Datenquellen an und benutzerdefinierte Schnittstellen zwischen verschiedenen Datenquellen zu implementieren. 
 
 

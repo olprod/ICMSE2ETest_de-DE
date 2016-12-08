@@ -1,17 +1,17 @@
-# <a name="phone-resource-type"></a>phone resource type
+# <a name="phone-resource-type"></a>Phone Ressourcentyp
 
-Stellt eine in einem Element erkannte Telefonnummer dar.
+Stellt eine Telefonnummer ein.
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|number|string|The phone number.|
-|Typ|String|The type of phone number. Possible values are: `home`, `business`, `mobile`, `other`, `assistant`, `homeFax`, `businessFax`, `otherFax`, `pager`, `radio`.|
+|number|string|Die Telefonnummer.|
+|Typ|String|Der Typ der Telefonnummer. Possible values are: `home`, `business`, `mobile`, `other`, `assistant`, `homeFax`, `businessFax`, `otherFax`, `pager`, `radio`.|
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

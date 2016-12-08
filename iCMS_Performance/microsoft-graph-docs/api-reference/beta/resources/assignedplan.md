@@ -1,20 +1,20 @@
-# <a name="assignedplan-resource-type"></a>assignedPlan resource type
+# <a name="assignedplan-resource-type"></a>Ressourcentyp assignedPlan
 
-The **assignedPlans** property of both the [user](user.md) entity and the [organization](organization.md) entity is a collection of **assignedPlan**.
+Die **AssignedPlans** -Eigenschaft der Entität [Benutzer](user.md) und die [Organisation](organization.md) Entität ist eine Auflistung von **AssignedPlan**.
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|assignedDateTime|DateTimeOffset|The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|capabilityStatus|String|For example, “Enabled”.|
-|Dienst|String|The name of the service; for example, “Exchange”.|
-|servicePlanId|Guid|GUID, die den Recherchedienst identifiziert.|
+|assignedDateTime|DateTimeOffset|Datum und Uhrzeit, zu der der Plan zugewiesen wurde; Beispiel: 2013-01-02T19:32:30Z. Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Beispielsweise würde Uhr UTC auf 1 Jan 2014 sieht folgendermaßen aus:`'2014-01-01T00:00:00Z'`|
+|capabilityStatus|String|Beispielsweise aktiviert"."|
+|Dienst|String|Der Name des Diensts. beispielsweise "Exchange".|
+|servicePlanId|Guid|Eine GUID, die Dienstplan identifiziert.|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

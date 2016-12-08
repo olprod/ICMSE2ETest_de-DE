@@ -1,9 +1,9 @@
-# <a name="list-calendarview"></a>List calendarView
+# <a name="list-calendarview"></a>Liste calendarView
 
-Get the occurrences, exceptions, and single instances of events in a calendar view defined by a time range, from the user's primary calendar or from a different calendar.
+Rufen Sie die vorkommen, Ausnahmen und einzelne Instanzen von Ereignissen in einer Kalenderansicht von einem Zeitbereich, aus dem primären Kalender des Benutzers oder aus einem anderen Kalender definiert.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.Read; Calendars.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Calendars.Read; Calendars.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /users/<id | userPrincipalName>/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
@@ -11,27 +11,27 @@ GET /users/<id | userPrincipalName>/calendarView?startDateTime={start_datetime}&
 
 ## <a name="query-parameters"></a>Abfrageparameter
 
-In the request URL, provide the following required query parameters with values.
+Geben Sie in der URL der Anforderung die folgenden erforderlichen Abfrageparameter mit Werten.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|startDateTime|String|The start date and time of the time range, represented in ISO 8601 format. For example, "2015-11-08T19:00:00.0000000".|
-|endDateTime|String|The end date and time of the time range, represented in ISO 8601 format. For example, "2015-11-08T20:00:00.0000000".|
+|startDateTime|String|Das Startdatum und die Uhrzeit des Zeitraums, dargestellt im ISO 8601-Format dar. Beispielsweise "2015-11-08T19:00:00.0000000".|
+|endDateTime|String|Das Enddatum und die Uhrzeit des Zeitraums, dargestellt im ISO 8601-Format dar. Beispielsweise "2015-11-08T20:00:00.0000000".|
 
-This method also supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+Diese Methode unterstützt auch die [Parameter der OData-Abfrage](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
-| Prefer | string | <Time zone>. Optional, UTC assumed if absent.|
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
+| Bevorzugen | string | <Time zone>. Optional, wird angenommen, UTC If absent.|
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and collection of [Event](../resources/event.md) objects in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortcode und Sammlung von [Ereignisobjekten im Antworttext](../resources/event.md) .
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_calendarview"
@@ -40,7 +40,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/v1.0/me/calendarView
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

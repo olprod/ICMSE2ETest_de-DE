@@ -1,12 +1,12 @@
-# <a name="checklistitemcollection-resource-type"></a>checklistItemCollection resource type
+# <a name="checklistitemcollection-resource-type"></a>Ressourcentyp checklistItemCollection
 
-The ChecklistItemCollection* resource represents the collection of checklist items on a task. It is part of the [task details](taskdetails.md) object. The value in the property-value pair is the [checklistItem](checklistitem.md) object.
+Die Ressource ChecklistItemCollection * stellt die Auflistung der Prüfliste Elemente für einen Vorgang. Es ist Teil des [Aufgabendetails](taskdetails.md) -Objekts. Der Wert in der Eigenschaft-Wert-Paar ist das [ChecklistItem](checklistitem.md) -Objekt.
 
-*Note that this is an Open Type.
+* Beachten Sie, dass dies vom Typ geöffnet ist.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -28,7 +28,7 @@ Here is a JSON representation of the resource
   }
 }
 ```
-// Example
+Beispiel
 
 ```json
 {
@@ -56,7 +56,7 @@ Here is a JSON representation of the resource
 
 
 ## <a name="properties"></a>Eigenschaften
-Properties of an Open Type can be defined by the client. In this case, the client should provide **GUIDs** as properties and their values must be [checklistItem](checklistitem.md) objects. Example is shown above. To remove an item in the checklist, set the value of the property to `null`.
+Eigenschaften vom Typ Open können vom Client definiert werden. In diesem Fall der Client sollte als Eigenschaften **GUIDs** bereitstellen und deren Werte muss [ChecklistItem](checklistitem.md) -Objekte. Beispiel wird oben angezeigt. Wenn ein Element in der Prüfliste entfernen möchten, legen Sie den Wert der Eigenschaft `null`.
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

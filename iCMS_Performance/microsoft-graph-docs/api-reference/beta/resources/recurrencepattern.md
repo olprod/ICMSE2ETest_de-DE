@@ -1,22 +1,22 @@
-# <a name="recurrencepattern-resource-type"></a>recurrencePattern resource type
+# <a name="recurrencepattern-resource-type"></a>RecurrencePattern Ressourcentyp
 
-Der Name eines Ereignisses.
+Die Häufigkeit eines Ereignisses.
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|DAYOFMONTH|Int32|The day of the month that the event occurs on.|
-|daysOfWeek|String collection|A collection of the days of the week that the event occurs on. Possible values are: `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`.|
-|firstdayofweek|String|The day of the week  on which the recurrence starts. Possible values are: `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`.|
-|Index|String|The index of the week in which the recurrence occurs.: `First`, `Second`, `Third`, `Fourth`, `Last`.|
-|interval|Int32|Gibt einen Wert vom Typ Long zurück oder legt diesen fest, der die Anzahl der Einheiten zwischen den auftretenden Serientypen angibt. Wert mit Lese-/Schreibzugriff.|
-|Monat|Int32|The month that the event occurs on.  This is a number from 1 to 12.|
-|Typ|String|The recurrence pattern type: `Daily`, `Weekly`, `AbsoluteMonthly`, `RelativeMonthly`, `AbsoluteYearly`, `RelativeYearly`.|
+|dayOfMonth|Int32|Der Tag des Monats, bei dem das Ereignis auftritt.|
+|daysOfWeek|String-Auflistung|Eine Auflistung der Wochentage, bei dem das Ereignis auftritt. Possible values are: `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`.|
+|firstDayOfWeek|String|Der Tag der Woche auf der die Serie beginnt. Possible values are: `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`.|
+|Index|String|Der Index der Woche, in dem die Serie stattfindet.: `First`, `Second`, `Third`, `Fourth`, `Last`.|
+|Intervall|Int32|Geben Sie die Anzahl der Einheiten einer bestimmten Serie zwischen vorkommen.|
+|Monat|Int32|Der Monat, bei dem das Ereignis auftritt.  Dies ist eine Zahl zwischen 1 und 12.|
+|Typ|String|Den Typ des Serienmusters: `Daily`, `Weekly`, `AbsoluteMonthly`, `RelativeMonthly`, `AbsoluteYearly`, `RelativeYearly`.|
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

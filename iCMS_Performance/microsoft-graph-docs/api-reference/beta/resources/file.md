@@ -1,19 +1,19 @@
-# <a name="file-resource-type"></a>file resource type
+# <a name="file-resource-type"></a>Resource-Dateityp
 
-The **file** resource groups file-related data items into a single structure.
+**File** -Ressource gruppiert dateibezogenen Datenelemente in eine einzelne Struktur.
 
 
 ## <a name="properties"></a>Eigenschaften
 
 | Eigenschaft | Typ                    | Beschreibung                                                                                                                                      |
 |:---------|:------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
-| hashes   | [HashesType](hashes.md) | Hashes of the file's binary content, if available. Read-only.                                                                                    |
-| MIMEType | string                  | The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only. |
+| Hashes   | [HashesType](hashes.md) | Hashes der Inhalt der Datei binary, sofern verfügbar. Schreibgeschützt.                                                                                    |
+| MIME-Typ | string                  | Den MIME-Typ für die Datei. Dies wird durch Logik auf dem Server bestimmt und möglicherweise nicht der Wert bereitgestellt werden, wenn die Datei hochgeladen wurde. Schreibgeschützt. |
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

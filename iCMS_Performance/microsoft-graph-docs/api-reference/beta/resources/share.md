@@ -1,10 +1,10 @@
-# <a name="share-resource-type"></a>share resource type
+# <a name="share-resource-type"></a>Freigeben von Ressourcentyp
 
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -25,24 +25,24 @@ Here is a JSON representation of the resource
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|id|String| ReadOnly|
+|id|String| Schreibgeschützt.|
 |name|String||
 |Besitzer|[identitySet](identityset.md)||
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Items|[driveItem](driveitem.md) collection| Read-only. Nullable.|
+|Items|[DriveItem](driveitem.md) -Auflistung| Schreibgeschützt. NULL-Werte zulässt.|
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get share](../api/share_get.md) | [share](share.md) |Read properties and relationships of share object.|
-|[Erstellen eines Listenelements](../api/share_post_items.md) |[driveItem](driveitem.md)| Create a new item by posting to the items collection.|
-|[List items](../api/share_list_items.md) |[driveItem](driveitem.md) collection| Get a item object collection.|
-|[Update](../api/share_update.md) | [share](share.md)   |Update share object. |
-|[delete()](../api/share_delete.md) | Keine |Delete share object. |
+|[Abrufen der Freigabe](../api/share_get.md) | [Freigeben](share.md) |Lesen Sie Eigenschaften und Beziehungen des Freigabe-Objekts.|
+|[Element erstellen](../api/share_post_items.md) |[driveItem](driveitem.md)| Erstellen Sie ein neues Element, indem Sie das Veröffentlichen in der Items-Auflistung.|
+|[Listenelemente](../api/share_list_items.md) |[DriveItem](driveitem.md) -Auflistung| Rufen Sie eine Auflistung der Item-Objekts.|
+|[Update](../api/share_update.md) | [Freigeben](share.md)   |Update-Freigabe-Objekts. |
+|[Löschen](../api/share_delete.md) | Keine |Freigabe-Objekt zu löschen. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

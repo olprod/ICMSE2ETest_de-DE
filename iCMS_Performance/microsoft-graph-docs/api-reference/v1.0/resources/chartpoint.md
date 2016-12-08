@@ -1,4 +1,4 @@
-# <a name="chartpoint-resource-type"></a>ChartPoint resource type
+# <a name="chartpoint-resource-type"></a>Ressourcentyp ChartPoint
 
 Stellt einen Punkt einer Datenreihe in einem Diagramm dar.
 
@@ -7,23 +7,23 @@ Stellt einen Punkt einer Datenreihe in einem Diagramm dar.
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get ChartPoint](../api/chartpoint_get.md) | [ChartPoint](chartpoint.md) |Read properties and relationships of chartPoint object.|
-|[List](../api/chartpoint_list.md) | [ChartPoint](chartpoint.md) collection |Get chartPoint object collection. |
-|[Itemat](../api/chartpointscollection_itemat.md)|[ChartPoint](chartpoint.md)|Abrufen eines Punkts anhand seiner Position in der Datenreihe.|
+|[Abrufen von ChartPoint](../api/chartpoint_get.md) | [ChartPoint](chartpoint.md) |Lesen Sie Eigenschaften und Beziehungen ChartPoint-Objekts.|
+|[Liste](../api/chartpoint_list.md) | [ChartPoint](chartpoint.md) -Auflistung |Rufen Sie ChartPoint objektauflistung. |
+|[Itemat](../api/chartpointscollection_itemat.md)|[ChartPoint](chartpoint.md)|Abrufen eines Punkts basierend auf ihre Position in der Datenreihe an.|
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|value|object|Gibt den Wert eines Diagrammpunkts zurück. Schreibgeschützt.|
+|value|object|Gibt den Wert eines Diagramms Punkts zurück. Schreibgeschützt.|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Format|[ChartPointFormat](chartpointformat.md)|Kapselt die Formateigenschaften eines Diagrammpunkts. Schreibgeschützt.|
+|Format|[ChartPointFormat](chartpointformat.md)|Kapselt das Format Eigenschaften Datenpunkts. Schreibgeschützt.|
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

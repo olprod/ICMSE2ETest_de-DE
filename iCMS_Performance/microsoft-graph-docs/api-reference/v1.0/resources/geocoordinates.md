@@ -1,21 +1,21 @@
-# <a name="geocoordinates-resource-type"></a>geoCoordinates resource type
+# <a name="geocoordinates-resource-type"></a>Ressourcentyp geoCoordinates
 
-The geographic coordinates and elevation of a location.
+Die geografische Koordinaten und Ausweitung von einem Speicherort.
 
-This resource groups geographic location-related data on OneDrive into a single structure. It is available on the **location** property of item resources that have an associated geographic location.
+Diese Ressource gruppiert geografische Standort-Daten im Zusammenhang mit in OneDrive in einer einzelnen Struktur. Es steht auf der **Location** -Eigenschaft des Elements Ressourcen mit einer zugeordneten geografischen Standort.
 
 
 ## <a name="properties"></a>Eigenschaften
 
 | Eigenschaft  | Typ   | Beschreibung                                                    |
 |:----------|:-------|:---------------------------------------------------------------|
-| Altitude  | Double | The altitude (height), in feet,  above sea level for the item. |
-| Latitude  | Double | The latitude, in decimal, for the item.                        |
-| Longitude | Double | The longitude, in decimal, for the item.                       |
+| Höhe  | Double | Die Höhe (Höhe) in Fuß, über gefährliche Ebene für das Element. |
+| Breitengrad  | Double | Die Breite in dezimaler für das Element.                        |
+| Längengrad | Double | Die Länge Dezimal, für das Element.                       |
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

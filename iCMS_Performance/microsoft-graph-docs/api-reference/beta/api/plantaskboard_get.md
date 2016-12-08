@@ -1,33 +1,33 @@
-# <a name="get-plantaskboard"></a>Get planTaskBoard
+# <a name="get-plantaskboard"></a>Abrufen von planTaskBoard
 
-Retrieve the properties and relationships of plantaskboard object.
+Rufen Sie die Eigenschaften und Beziehungen Plantaskboard-Objekts ab.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
  
-Group.Read.All, Group.ReadWrite.All
+Group.Read.All Group.ReadWrite.All
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /plans/<id>/bucketTaskBoard
 GET /plans/<id>/progressTaskBoard
 GET /plans/<id>/assignedToTaskBoard
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
 Keine
 
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Value should be set to "Bearer (access-token)" |
+| Autorisierung  | string  | Wert sollte auf "Bearer (Zugriffstoken)" festgelegt werden |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [planTaskBoard](../resources/plantaskboard.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortobjekt Code und [PlanTaskBoard](../resources/plantaskboard.md) in den Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_plantaskboard"
@@ -36,7 +36,7 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/beta/plans/<id>/bucketTaskBoard
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true,

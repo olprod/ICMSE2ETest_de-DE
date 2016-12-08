@@ -1,25 +1,25 @@
-# <a name="scopedrolemembership-resource-type"></a>scopedRoleMembership resource type
+# <a name="scopedrolemembership-resource-type"></a>Ressourcentyp scopedRoleMembership
 
-A scoped role membership describes a user's membership of a directory role, that is further scoped to an Administrative Unit (AU).  This provides a mechanism to allow a tenant-wide company adminsistrator to delegate administrative privileges to a user to manage users and groups in a subset of the organization (the subset being defined by an AU). 
+Eine Mitgliedschaft in Datenbankrolle bereichsbezogenen beschreibt des Benutzers Mitgliedschaft einer Directory-Rolle, die weiter zu einer administrativen Unit (AU) ausgelegt ist.  Dies bietet einen Mechanismus, um einen Mandanten gesamte Unternehmen Adminsistrator delegieren Administratorrechte verfügen, um einem Benutzer das Verwalten von Benutzern und Gruppen in einer Teilmenge der Organisation (der Teilmenge von einer AU definiert wird) zu ermöglichen. 
 
 ## <a name="methods"></a>Methoden
-Direct queries to this resource are not supported.  Please see the [adminstrative units](administrativeunit.md) topic to see information on how to query for scoped-role memberships, as well as adding and removing scoped-role memberships. 
+Direkte Abfragen an diese Ressource werden nicht unterstützt.  Finden Sie im Thema [Administrative Einheiten](administrativeunit.md) zu Informationen zum Abfrage für bezogenen Rollenmitgliedschaften sowie hinzufügen und Entfernen von bezogenen-Rollenmitgliedschaften finden Sie unter. 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|administrativeUnitId|string|Unique identifier for the administrative unit that the directory role is scoped to|
-|id|string| Unique identifier for the scoped-role membership. Read-only.|
-|roleId|string| Unique identifier for the directory role that the member is in.|
-|roleMemberInfo|[identityInfo](identityinfo.md)| Role member identity information, representing the user that is a member of this scoped-role.|
+|administrativeUnitId|string|Eindeutiger Bezeichner für die administrative Einheit, der die Directory-Rolle zugeordnet ist|
+|id|string| Eindeutiger Bezeichner für die Mitgliedschaft bezogenen-Rolle. Schreibgeschützt.|
+|roleId|string| Eindeutiger Bezeichner für die Directory-Rolle, der in der Member ist.|
+|roleMemberInfo|[identityInfo](identityinfo.md)| Rolle Mitglied Identitätsinformationen, die den Benutzer, der Mitglied dieser bezogenen-Rolle ist darstellen.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

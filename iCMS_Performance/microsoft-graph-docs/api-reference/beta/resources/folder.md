@@ -1,6 +1,6 @@
-# <a name="folder-resource-type"></a>folder resource type
+# <a name="folder-resource-type"></a>Ordner Ressourcentyp
 
-The **folder** resource groups folder-related data on an item into a single structure.
+Die **Folder** -Ressource werden Daten für ein Element im Zusammenhang mit Ordner in eine einzelne Struktur zusammengefasst.
 
 
 
@@ -8,12 +8,12 @@ The **folder** resource groups folder-related data on an item into a single stru
 
 | Eigenschaft       | Typ  | Beschreibung                                                     |
 |:---------------|:------|:----------------------------------------------------------------|
-| **childCount** | Int64 | Number of children contained immediately within this container. |
+| **childCount** | Int64 | Anzahl der untergeordneten Elemente sofort innerhalb dieses Containers. |
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

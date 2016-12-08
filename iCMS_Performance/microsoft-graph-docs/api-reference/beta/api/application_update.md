@@ -1,9 +1,9 @@
-# <a name="update-application"></a>Update application
+# <a name="update-application"></a>Aktualisieren der Anwendung
 
-Update the properties of application object.
+Aktualisieren Sie die Eigenschaften des Application-Objekts.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /applications/<id>
@@ -11,40 +11,40 @@ PATCH /applications/<id>
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung die Werte für die entsprechenden Felder, die aktualisiert werden soll. Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind verwalten ihre vorherigen Werte oder neu berechnet auf der Grundlage Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandene Werte enthalten, die nicht geändert haben.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|appId|String|The unique identifier for the application.|
-|appRoles|appRole|The collection of application roles that an application may declare. These roles can be assigned to users, groups or service principals.                              **Notes**: Requires version 1.5, not nullable.|
-|availableToOtherOrganizations|Boolean|                **true** if the application is shared with other tenants; otherwise, **false**.|
-|DisplayName|String|Den Anzeigenamen für die benutzerdefinierte Aktion.|
+|appId|String|Der eindeutige Bezeichner für die Anwendung.|
+|appRoles|appRole|Die Auflistung der Anwendungsrollen, die eine Anwendung deklarieren kann. Diese Funktionen können Benutzer, Gruppen oder Dienstprinzipale zugewiesen werden.                              **Notes**: erfordert Version 1.5, nicht NULL-Werte zulässt.|
+|availableToOtherOrganizations|Boolean|                **true,** Wenn die Anwendung mit anderen Mandanten gemeinsam genutzt wird. anderenfalls **false**.|
+|displayName|String|Der Anzeigename für die Anwendung.|
 |errorUrl|String|                              |
-|groupMembershipClaims|String|A bitmask that configures the "groups" claim issued in a user or OAuth 2.0 access token that the application expects. The bitmask values are: 0: None, 1: Security groups and Azure AD roles, 2: Reserved, and 4: Reserved. Setting the bitmask to 7 will get all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of.                              **Notes**: Requires version 1.5.|
-|homepage|String|The URL to the applicationâ€™s homepage.|
-|identifierUris|String|The URIs that identify the application. For more information see, [Application Objects and Service Principal Objects](https://azure.microsoft.com/en-us/documentation/articles/active-directory-application-objects/).                              **Notes:** not nullable, the **any** operator is required for filter expressions on multi-valued properties; for more information, see [Supported Queries, Filters, and Paging Options](https://msdn.microsoft.com/library/azure/dn727074.aspx).|
-|keyCredentials|keyCredential|The collection of key credentials associated with the application                              **Notes:** not nullable|
-|knownClientApplications|Guid|Client applications that are tied to this resource application. Consent to any of the known client applications will result in implicit consent to the resource application through a combined consent dialog (showing the OAuth permission scopes required by the client and the resource).                              **Notes**: Requires version 1.5, not nullable.|
+|groupMembershipClaims|String|Eine Bitmaske, die den "Groups" Anspruch ausgestellt in einen Benutzer oder eine OAuth 2.0-Zugriffstoken, die die Anwendung erwartet konfiguriert. Die Bitmaskenwerte sind: 0: None, 1: Sicherheitsgruppen und Azure AD-Rollen, 2: reserviert und 4: reserviert. Festlegen der Bitmaske auf 7 erhalten alle Sicherheitsgruppen, Verteilergruppen und Azure AD-Directory-Rollen, denen der angemeldeten Benutzer Mitglied ist.                              **Notes**: erfordert Version 1.5.|
+|Homepage|String|Die URL der Ressourcenkennzeichnung™ s Homepage.|
+|identifierUris|String|Die URIs, die die Anwendung zu bestimmen. Weitere Informationen finden Sie unter [Application Objects und Service Principal-Objekte](https://azure.microsoft.com/en-us/documentation/articles/active-directory-application-objects/).                              **Notes:** nicht NULL-Werte zulässt, der **any** -Operator ist erforderlich für Filterausdrücke auf mehrwertige Eigenschaften; Weitere Informationen finden Sie unter [unterstützte Abfragen, Filter, und Paging-Optionen](https://msdn.microsoft.com/library/azure/dn727074.aspx).|
+|keyCredentials|keyCredential|Die Auflistung der wichtigsten Anmeldeinformationen der Anwendung zugeordneten **Notes:** keine Nullwerte zulassen|
+|knownClientApplications|Guid|Clientanwendungen, die für diese Ressource Anwendung gebunden sind. Zustimmung an den bekannten Clientanwendungen führt implizite Zustimmung der Ressource Anwendung über eine kombinierte Zustimmungsdialogfeld (Anzeigen der OAuth-berechtigungsbereiche vom Client und der Ressource erforderlich).                              **Notes**: erfordert Version 1.5, nicht NULL-Werte zulässt.|
 |logoutUrl|String|                              |
-|mainLogo|Stream|The main logo for the application.                              **Notes:** not nullable|
-|oauth2AllowImplicitFlow|Boolean|Specifies whether this web application can request OAuth2.0 implicit flow tokens. The default is **false**.                              **Notes**: Requires version 1.5, not nullable.|
-|oauth2AllowUrlPathMatching|Boolean|Specifies whether, as part of OAuth 2.0 token requests, Azure AD will allow path matching of the redirect URI against the application's **replyUrls**. The default is **false**.                              **Notes**: Requires version 1.5, not nullable.|
-|oauth2Permissions|oAuth2Permission|The collection of OAuth 2.0 permission scopes that the web API (resource) application exposes to client applications. These permission scopes may be granted to client applications during consent.                              **Notes**: Requires version 1.5, not nullable.|
+|mainLogo|Stream|Das Hauptfenster Logo für die Anwendung.                              **Notes:** keine Nullwerte zulassen|
+|oauth2AllowImplicitFlow|Boolean|Gibt an, ob dieser Webanwendung OAuth2.0 implizite Flow Token anfordern kann. Der Standardwert ist **false**.                              **Notes**: erfordert Version 1.5, nicht NULL-Werte zulässt.|
+|oauth2AllowUrlPathMatching|Boolean|Legt fest, ob, als Teil des Tokens Anforderungen OAuth 2.0, Azure AD wird Pfad Abgleich von umleitungs-URI für die Anwendung **ReplyUrls**. Der Standardwert ist **false**.                              **Notes**: erfordert Version 1.5, nicht NULL-Werte zulässt.|
+|oauth2Permissions|oAuth2Permission|Die Auflistung von OAuth 2.0 berechtigungsbereiche, die im Web-API (Ressource) Anwendung Clientanwendungen verfügbar macht. Diese berechtigungsbereiche können während Zustimmung Clientanwendungen gewährt werden.                              **Notes**: erfordert Version 1.5, nicht NULL-Werte zulässt.|
 |oauth2RequirePostResponse|Boolean||
-|passwordCredentials|passwordCredential|The collection of password credentials associated with the application.                              **Notes:** not nullable|
-|publicClient|Boolean|Specifies whether this application is a public client (such as an installed application running on a mobile device).  Default is **false**.|
-|replyUrls|String|Specifies the URLs that user tokens are sent to for sign in, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to.                              **Notes:** not nullable|
-|requiredResourceAccess|requiredResourceAccess|Specifies resources that this application requires access to and the set of OAuth permission scopes and application roles that it needs under each of those resources. This pre-configuration of required resource access drives the consent experience.                              **Notes**: Requires version 1.5, not nullable.|
-|samlMetadataUrl|String|The URL to the SAML metadata for the application.|
+|passwordCredentials|passwordCredential|Die Auflistung von Anmeldeinformationen, die mit der Anwendung verbunden sind.                              **Notes:** nicht Nullwerte zulassen|
+|publicClient|Boolean|Gibt an, ob diese Anwendung einen öffentlichen Client (beispielsweise eine installierte Anwendung, die auf einem mobilen Gerät ausgeführt wird) ist.  Standard ist **false**.|
+|replyUrls|String|Gibt die URLs der Benutzertoken für die Anmeldung an gesendet werden, oder die Umleitung, URIs, dass OAuth 2.0 Autorisierungscodes und Zugriffstoken gesendet werden.                              **Notes:** nicht Nullwerte zulassen|
+|requiredResourceAccess|requiredResourceAccess|Gibt die Ressourcen, die diese Anwendung benötigt Zugriff auf und den Satz von OAuth berechtigungsbereiche und Anwendungsrollen, die unter jeder dieser Ressourcen benötigt werden. Diese vor Konfiguration erforderlich Ressourcenzugriff Laufwerke der Zustimmung wünschen.                              **Notes**: erfordert Version 1.5, nicht NULL-Werte zulässt.|
+|samlMetadataUrl|String|Die URL, die SAML-Metadaten für die Anwendung.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and updated [application](../resources/application.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und aktualisierten [Application](../resources/application.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "update_application"
@@ -87,7 +87,7 @@ Content-length: 636
 }
 ```
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

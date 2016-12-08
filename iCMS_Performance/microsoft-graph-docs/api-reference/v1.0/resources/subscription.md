@@ -1,13 +1,13 @@
-# <a name="subscription-resource-type"></a>subscription resource type
-A subscription allows a client app to receive notifications about data on the Microsoft Graph. Currently subscriptions are enabled for the following datasets:
+# <a name="subscription-resource-type"></a>Abonnement Ressourcentyp
+Ein Abonnement ermöglicht eine Client-app zum Empfangen von Benachrichtigungen zu Daten auf das Microsoft Graph. Abonnements werden derzeit für die folgenden Datasets aktiviert:
 
-1. Mail, events, and contacts from Outlook
-1. Conversations from Office Groups.
+1. E-Mail-Nachrichten, Ereignisse und Kontakte aus Outlook
+1. Unterhaltungen aus Office-Gruppen.
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",
@@ -31,20 +31,20 @@ Here is a JSON representation of the resource.
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|changeType|string|Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: `created`, `updated`, `deleted`. Multiple values can be combined using a comma-separated list.|
-|notificationUrl|string|The URL of the endpoint that will receive the notifications. This URL has to make use of the HTTPS protocol.|
-|Ressource|string|Specifies the resource that will be monitored for changes. Do not include the base URL ("https://graph.microsoft.com/v1.0/").|
-|expirationDateTime|[<ui>DateTime</ui>](http://tools.ietf.org/html/rfc3339)|Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum values.|
-|clientState|string|Specifies the value of the `clientState` property sent by the service in each notification. The maximum length is 255 characters. The client can check that the notification came from the service by comparing the value of the `clientState` property sent with the subscription with the value of the `clientState` property received with each notification.|
-|id|string|Unique identifier for the subscription. Read-only.|
+|changeType|string|Gibt den Typ der Änderung in der abonnierten Ressource, die eine Benachrichtigung auslösen wird. Die unterstützten Werte sind: `created`, `updated`, `deleted`. Eine durch Trennzeichen getrennte Liste mit können mehrere Werte kombiniert werden.|
+|notificationUrl|string|Die URL des Endpunkts, der die Benachrichtigungen erhalten soll. Nutzen Sie die HTTPS muss diese URL Protocol.|
+|Ressource|string|Gibt die Ressource, die für Änderungen überwacht werden. Schließen Sie nicht die base-URL ("https://graph.microsoft.com/v1.0/").|
+|expirationDateTime|[dateTime](http://tools.ietf.org/html/rfc3339)|Gibt an, Datum und Uhrzeit, wenn das Abonnement Webhook abgelaufen ist. Die Uhrzeit in UTC ist und eine bestimmte Zeitspanne von Abonnement-Erstellung variiert für die Ressource abonniert werden kann.  Finden Sie in der folgenden Tabelle ein Maximalwert.|
+|clientState|string|Gibt den Wert der `clientState` Eigenschaft vom Dienst in jeder Benachrichtigung gesendet. Die maximale Länge beträgt 255 Zeichen. Der Client kann prüfen, dass der Dienst durch einen Vergleich des Werts der die Benachrichtigung stammt der `clientState` gesendet mit das Abonnement mit den Wert der Eigenschaft der `clientState` Eigenschaft mit jeder Benachrichtigung empfangen.|
+|id|string|Eindeutiger Bezeichner für das Abonnement. Schreibgeschützt.|
 
-## <a name="maximum-expiration-times-per-resource"></a>Maximum Expiration Times Per Resource
-| Ressource | Maximum Expiration Time |
+## <a name="maximum-expiration-times-per-resource"></a>Maximale Ablauf Mal pro Ressource
+| Ressource | Maximale Ablaufzeit |
 |:---------------------|:--------------------|
-|E-Mails| 4230 minutes.|
-|Kalender| 4230 minutes.|
-|Kontakte| 4230 minutes.|
-|Group conversations| 4230 minutes.|
+|E-Mails| 4230 Minuten.|
+|Kalender| 4230 Minuten.|
+|Kontakte| 4230 Minuten.|
+|Gruppe Unterhaltungen| 4230 Minuten.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
@@ -54,10 +54,10 @@ Keine
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Erstellen Sie ein neues Abonnement.](../api/subscription_post_subscriptions.md) | [Abonnement](subscription.md) |Subscribes a listener application to receive notifications when Microsoft Graph data changes.|
-|[Update subscription](../api/subscription_update.md) | [Abonnement](subscription.md) |Renews a subscription by updating its expiration time.|
-|[Get subscription](../api/subscription_get.md) | [Abonnement](subscription.md) |Reads properties and relationships of subscription object.|
-|[Delete subscription](../api/subscription_delete.md) | Keine |Löscht ein Sicherheitsobjekt.|
+|[Abonnement erstellen](../api/subscription_post_subscriptions.md) | [Abonnement](subscription.md) |Abonniert eine Listener-Anwendung, zum Empfangen von Benachrichtigungen bei Microsoft Graph Daten ändert.|
+|[Update-Abonnement](../api/subscription_update.md) | [Abonnement](subscription.md) |Erneuert ein Abonnement durch den Ablaufzeitpunkt aktualisieren.|
+|[Erhalten-Abonnement](../api/subscription_get.md) | [Abonnement](subscription.md) |Liest Eigenschaften und Beziehungen Abonnement-Objekts.|
+|[Abonnement löschen](../api/subscription_delete.md) | Keine |Löscht ein Abonnementobjekt.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

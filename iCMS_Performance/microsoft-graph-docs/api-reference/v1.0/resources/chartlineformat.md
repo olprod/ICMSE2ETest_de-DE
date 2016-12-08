@@ -1,28 +1,28 @@
-# <a name="chartlineformat-resource-type"></a>ChartLineFormat resource type
+# <a name="chartlineformat-resource-type"></a>Ressourcentyp ChartLineFormat
 
-Kapselt die Formatierungsoptionen für Linienelemente.
+Enapsulates die Formatierungsoptionen für Zeile Elemente.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get ChartLineFormat](../api/chartlineformat_get.md) | [ChartLineFormat](chartlineformat.md) |Read properties and relationships of chartLineFormat object.|
-|[Update](../api/chartlineformat_update.md) | [ChartLineFormat](chartlineformat.md) |Update ChartLineFormat object. |
-|[clear()](../api/chartlineformat_clear.md)|Keine|Löschen der Linienformatierung eines Diagrammelements.|
+|[Abrufen von ChartLineFormat](../api/chartlineformat_get.md) | [ChartLineFormat](chartlineformat.md) |Lesen Sie Eigenschaften und Beziehungen des ChartLineFormat-Objekts.|
+|[Update](../api/chartlineformat_update.md) | [ChartLineFormat](chartlineformat.md) |ChartLineFormat-Objekt zu aktualisieren. |
+|[Deaktivieren](../api/chartlineformat_clear.md)|Keine|Deaktivieren Sie das Format Zeile eines Diagrammelements.|
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|color|string|HTML-Farbcode, der die Farbe der Linien im Diagramm darstellt.|
+|color|string|HTML-Farbcode, die Farbe der Zeilen im Diagramm darstellt.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",

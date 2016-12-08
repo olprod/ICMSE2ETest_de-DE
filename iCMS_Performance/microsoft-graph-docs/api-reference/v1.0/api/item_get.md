@@ -1,14 +1,14 @@
-# <a name="get-a-driveitem-resource"></a>Get a driveItem resource
+# <a name="get-a-driveitem-resource"></a>Abrufen einer Ressource driveItem
 
-Retrieve the metadata for a driveItem in a drive by file system path or unique id.
+Rufen Sie die Metadaten für eine DriveItem in ein Laufwerk mithilfe Dateisystempfads oder eindeutige Id ab.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.Read
   * Files.ReadWrite
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/drive/items/<item-id>
@@ -16,28 +16,28 @@ GET /me/drive/root:/<item-path>
 GET /groups/<group-id>/drive/items/<item-id>
 ```
 
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 
 ## <a name="request-headers"></a>Anforderungsheader
 
 | Name          | Wert  | Beschreibung                                                                                                                                              |
 |:--------------|:-------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Autorisierung | string | Bearer <token>. Required.                                                                                                                                |
-| if-none-match | String | If this request header is included and the eTag (or cTag) provided matches the current tag on the file, an `HTTP 304 Not Modified` response is returned. |
+| Autorisierung | string | Bearer <token>. Erforderlich.                                                                                                                                |
+| If-none-match | String | Wenn diese Kopfzeile der Anforderung enthalten ist und bereitgestellt eTag (oder cTag) das aktuelle Tag für die Datei entspricht ein `HTTP 304 Not Modified` Antwort zurückgegeben wird. |
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [item](../resources/driveitem.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortobjekt Code und [Element](../resources/driveitem.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_item"
@@ -47,7 +47,7 @@ GET /me/drive/items/{item-id}
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -89,18 +89,19 @@ Content-type: application/json
 
 ## <a name="notes"></a>Hinweise
 
-You can use the [`expand`](https://dev.onedrive.com/odata/optional-query-parameters.htm#expanding-collections) query string parameter to include the children of an item in the same call as retrieving the metadata of an item.
+Sie können den [`expand`](https://dev.onedrive.com/odata/optional-query-parameters.htm#expanding-collections) Abfragen Zeichenfolgenparameter um die untergeordneten Elemente eines Elements in einem Anruf als Abrufen der Metadaten eines Elements enthalten.
 
-## <a name="head-requests"></a>HEAD requests
+## <a name="head-requests"></a>HEAD-Anfragen
 
-In most cases, a HEAD request will behave the same way as a GET request. There are a couple differences:
+In den meisten Fällen verhält sich eine HEAD-Anforderung die gleiche Weise wie eine GET-Anforderung. Es gibt einige Unterschiede:
 
-1. HEAD requests will only return the corresponding GET request's headers. This is standard practice for a HEAD response.
-2. HEAD requests will not automatically provision a [special folder](../resources/specialfolder.md). Instead, if a special folder is not present, a `404` error will be returned.
+1. HEAD-Anfragen werden nur Kopfzeilen für die entsprechenden GET-Anforderung zurück. Dies ist üblicherweise eine HEAD-Antwort.
+2. HEAD-Anfragen werden nicht automatisch auf einen [Ordner mit Sonderfunktion](../resources/specialfolder.md)bereit.
+   Stattdessen, wenn Sie ein Ordner mit Sonderfunktion nicht vorhanden ist, ist ein `404` Fehlermeldung zurückgegeben.
 
-In this example, you can see that requesting the root resource of a drive will respond with simply `200 OK`.
+In diesem Beispiel können Sie sehen, dass die Stammressource eines Laufwerks anfordern mit einfach Antworten `200 OK`.
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 
 <!-- {"blockType": "request", "name": "head-root"} -->
 ```

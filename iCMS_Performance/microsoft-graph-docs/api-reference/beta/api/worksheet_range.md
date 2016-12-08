@@ -1,9 +1,9 @@
-# <a name="worksheet-range"></a>Worksheet: Range
+# <a name="worksheet-range"></a>Arbeitsblatt: Bereich
 
-Ruft das durch die Adresse oder den Namen angegebene Bereichsobjekt ab.
+Ruft den Namen oder die Adresse angegeben Range-Objekt ab.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen: 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /workbook/worksheets(<id|name>)/Range
@@ -12,23 +12,23 @@ POST /workbook/worksheets(<id|name>)/Range
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|address|string|Optional. Die Adresse oder der Name des Bereichs. Wenn nichts angegeben ist, wird der gesamte Arbeitsblattbereich zurückgegeben.|
+|address|string|Optional Die Adresse oder der Name des Bereichs. Wenn nicht angegeben, wird der gesamte Arbeitsblattbereich zurückgegeben.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and [Range](../resources/range.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `200, OK` Antwortcode und [Range](../resources/range.md) -Objekt aus der Antwort.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "worksheet_range"
@@ -44,7 +44,7 @@ Content-length: 32
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

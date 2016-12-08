@@ -1,26 +1,26 @@
-# <a name="referenceattachment-resource-type"></a>referenceAttachment resource type
+# <a name="referenceattachment-resource-type"></a>Ressourcentyp referenceAttachment
 
-A link to a file (such as a text file or Word document) on a OneDrive for Business cloud drive or other supported storage locations, attached to an event, message, or post.
+Ein Link zu einer Datei (beispielsweise eine Textdatei oder Word-Dokument) auf eine OneDrive for Business Cloud Laufwerk oder andere unterstützt Speicherorte, ein Ereignis, eine Nachricht oder ein Beitrag zugeordnet ist.
 
-Derived from [attachment](attachment.md).
+[Anlage](attachment.md)abgeleitet.
 
 ## <a name="methods"></a>Methoden
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get referenceAttachment](../api/referenceattachment_get.md) | [referenceAttachment](referenceattachment.md) |Read properties and relationships of referenceAttachment object.|
-|[delete()](../api/attachment_delete.md) | Keine |Delete referenceAttachment object. |
+|[Abrufen von referenceAttachment](../api/referenceattachment_get.md) | [referenceAttachment](referenceattachment.md) |Lesen Sie Eigenschaften und Beziehungen des ReferenceAttachment-Objekts.|
+|[Löschen](../api/attachment_delete.md) | Keine |ReferenceAttachment-Objekt zu löschen. |
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|contentType|String|Ruft den MIME-Inhaltstyp der Anlage ab.|
-|id|String|The attachment ID.  Read-only.|
-|Eigenschaft "isInline"|Boolean|Set to true if the attachment appears inline in the body of the embedding object.|
-|lastModifiedDateTime|DateTimeOffset|The date and time when the attachment was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|name|String|The text that is displayed below the icon representing the embedded attachment. This does not need to be the actual file name.|
-|size|Int32|Ruft die Größe der Anlage in Byte ab.|
+|contentType|String|Der Inhaltstyp der Anlage.|
+|id|String|Die Anlage-ID  Schreibgeschützt.|
+|isInline|Boolean|Legen Sie auf "true" Wenn die Anlage Inline im Textkörper der das Einbetten von-Objekt angezeigt wird.|
+|lastModifiedDateTime|DateTimeOffset|Datum und Uhrzeit der letzten die Anlage Änderung. Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Beispielsweise würde Uhr UTC auf 1 Jan 2014 sieht folgendermaßen aus:`'2014-01-01T00:00:00Z'`|
+|name|String|Der Text, der unterhalb des Symbols, das die eingebettete Anlage darstellt angezeigt wird. Dies muss nicht der tatsächliche Dateiname sein.|
+|size|Int32|Die Größe der Anlage in Byte.|
 
 
 ## <a name="relationships"></a>Beziehungen
@@ -28,9 +28,9 @@ Keine
 
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

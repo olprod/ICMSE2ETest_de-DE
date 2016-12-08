@@ -1,10 +1,10 @@
-# <a name="attendeebase-resource-type"></a>attendeeBase resource type
+# <a name="attendeebase-resource-type"></a>Ressourcentyp attendeeBase
 
-The type of attendee.
+Der Typ des Teilnehmers.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -23,7 +23,7 @@ Here is a JSON representation of the resource
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Typ|String| The type of attendee. Possible values are: `Required`, `Optional`, `Resource`. Currently if the attendee is a person, [findMeetingTimes](../api/user_findmeetingtimes.md) always considers the person is of the `Required` type.|
+|Typ|String| Der Typ des Teilnehmers. Mögliche Werte sind: `Required`, `Optional`, `Resource`. Derzeit Wenn Teilnehmer einer Person ist, [FindMeetingTimes](../api/user_findmeetingtimes.md) immer berücksichtigt die Person ist, der die `Required` Typ.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

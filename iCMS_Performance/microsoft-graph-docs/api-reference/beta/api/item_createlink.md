@@ -1,17 +1,17 @@
-# <a name="create-a-sharing-link-for-a-driveitem"></a>Create a sharing link for a driveItem
+# <a name="create-a-sharing-link-for-a-driveitem"></a>Erstellen Sie einen Link Freigabe für eine driveItem
 
-You can use **createLink** action to share an item via a link.
+**CreateLink** -Aktion können Sie ein Element über einen Link freigeben.
 
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application. If a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
+Die Aktion **CreateLink** erstellt eine neue Verknüpfung für die Freigabe, sofern der angegebenen Linktyp für die aufrufende Anwendung nicht bereits vorhanden ist. Wenn eine Freigabe Verknüpfung des angegebenen Typs für die app bereits vorhanden ist, werden die vorhandene Verknüpfung auf der Freigabe zurückgegeben.
 
-Items inherit permissions from their ancestors.
+Elementen erben die Berechtigungen von ihrer Vorgänger.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.ReadWrite
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/drive/items/{item-id}/createLink
@@ -23,47 +23,47 @@ POST /groups/<id>/drive/items/<item-id>/createLink
 
 | Name          | Typ   | Beschreibung               |
 |:--------------|:-------|:--------------------------|
-| Autorisierung | string | Bearer <token>. Required. |
+| Autorisierung | string | Bearer <token>. Erforderlich. |
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-The body of the request defines the type of sharing link your application is looking for. The request should be a JSON object with this property.
+## <a name="request-body"></a>Anforderungstext
+Der Text der Anforderung definiert den Typ der Verknüpfung, die für Ihre Anwendung Ansichtsseite Freigabe. Die Anforderung sollte mit dieser Eigenschaft ein JSON-Objekt sein.
 
 | Name   | Typ   | Beschreibung                                                          |
 |:-------|:-------|:---------------------------------------------------------------------|
-| **Typ** | string | The type of sharing link to create. Either `view`, `edit`, or `embed`. |
-| **Bereich** | string | The scope of link to create. Either `anonymous` or `organization`. Optional. |
+| **Typ** | string | Der Typ der Freigabe Link zu erstellen. Either `view`, `edit`, or `embed`. |
+| **Bereich** | string | Der Bereich der Link zu erstellen. Entweder `anonymous` oder `organization`. Optional |
 
-## <a name="link-types"></a>Link types
-The following values are allowed for the **type** parameter.
+## <a name="link-types"></a>Link-Typen
+**Type** -Parameter sind die folgenden Werte zulässig.
 
-| Type value | Beschreibung                                                                                  |
+| Wert der Type | Beschreibung                                                                                  |
 |:-----------|:---------------------------------------------------------------------------------------------|
-| `view`     | Creates a read-only link to the item.                                                        |
-| `edit`     | Creates a read-write link to the item.                                                       |
-| `embed`    | Creates an embeddable link to the item. This option is only available for OneDrive Personal. |
+| `view`     | Erstellt eine Verknüpfung schreibgeschützt für das Element.                                                        |
+| `edit`     | Erstellt eine Verknüpfung Lese-/ Schreibzugriff auf das Element.                                                       |
+| `embed`    | Erstellt einen embeddable Link zum Element. Diese Option ist nur verfügbar für OneDrive Personal. |
 
-## <a name="scope-types"></a>Scope types
-The following values are allowed for the **scope** parameter. This is an optional parameter. If the **scope** parameter is not specified, the most permissive link available will be created.
+## <a name="scope-types"></a>Bereichs-Typen
+Die folgenden Werte sind für **die Bereichsparameter** zulässig. Dies ist ein optionaler Parameter. Wenn der **Bereich** -Parameter nicht angegeben wird, wird der am wenigsten restriktiven Link erstellt werden.
 
-| Type value     | Beschreibung                                                                                                                   |
+| Wert der Type     | Beschreibung                                                                                                                   |
 |:---------------|:------------------------------------------------------------------------------------------------------------------------------|
-| `anonymous`    | Creates a link to the item accessible to anyone. Anonymous links may be disabled by the tenant administrator.                 |
-| `organization` | Creates a link to the item accessible within an organization. Organization link scope is not available for OneDrive Personal. |
+| `anonymous`    | Erstellt eine Verknüpfung mit dem Element für alle Benutzer zugänglich ist. Anonyme Links können vom mandantenadministrator deaktiviert werden.                 |
+| `organization` | Erstellt eine Verknüpfung mit dem Element in einer Organisation zugegriffen werden kann. Organisation Link Bereich ist nicht verfügbar für OneDrive Personal. |
 
 ## <a name="response"></a>Antwort
 
-If successful, this method returns a single [Permission](../resources/permission.md) resource in the response body that represents the requested sharing link permission.
+Bei erfolgreicher gibt diese Methode eine einzelne [Berechtigung](../resources/permission.md) Ressource in den Antworttext, der die angeforderte Berechtigung der Anwendungsfreigabe Link darstellt.
 
-The service will first look at the current permissions and check if one already exists that has the same **type** for the calling application.
+Der Dienst zuerst sehen Sie sich die aktuellen Berechtigungen und überprüfen Sie, sofern bereits vorhanden, die den gleichen **Typ** für die aufrufende Anwendung hat.
 
-The response will be `201 Created` if a new sharing link is created for the item or  `200 OK` if an existing link is returned.
+Die Antwort wird `201 Created` Wenn einen neuen Funktionen zur Freigabe Verknüpfung für das Element erstellt oder `200 OK` Wenn eine vorhandene Verknüpfung zurückgegeben wird.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 
 <!-- {
   "blockType": "request",
@@ -101,11 +101,11 @@ Content-Type: application/json
 }
 ```
 
-## <a name="creating-company-sharable-links"></a>Creating company sharable links
+## <a name="creating-company-sharable-links"></a>Erstellen von Unternehmen freigegeben werden links
 
-OneDrive for Business and SharePoint support company sharable links. These are similar to anonymous links, except they only work for members of the owning tenant. To create a company sharable link, use the **scope** parameter with a value of `organization`.
+OneDrive für Unternehmen und SharePoint unterstützen Unternehmen freigegeben werden Links. Diese ähneln anonyme Links, außer sie nur für Mitglieder des übergeordneten Mandanten funktionieren. Verwenden Sie zum Erstellen eines Unternehmens freigegeben werden Links **der Bereichsparameter** mit dem Wert `organization`.
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 
 <!-- { "blockType": "request", "name": "create-link-scoped", "scopes": "files.readwrite service.sharepoint" } -->
 ```http
@@ -118,9 +118,9 @@ Content-Type: application/json
 }
 ```
 
-## <a name="http-response"></a>HTTP-Antwortheader
+## <a name="http-response"></a>HTTP-Antwort
 
-The response will be `201 Created` if a new sharing link is created for the item or `200 OK` if an existing link is returned.
+Die Antwort werden `201 Created` Wenn einen neuen Funktionen zur Freigabe Verknüpfung für das Element erstellt oder `200 OK` Wenn eine vorhandene Verknüpfung zurückgegeben wird.
 
 <!-- { "blockType": "response", "@odata.type": "microsoft.graph.permission" } -->
 ```http
@@ -144,13 +144,14 @@ Content-Type: application/json
 
 ## <a name="embeddable-links"></a>Embeddable links
 
-When using the `embed` link type, the webUrl returned can be embedded in an `<iframe>` HTML element. When an embed link is created the `webHtml` property contains the HTML code for an `<iframe>` to host the content.
+Bei Verwendung der `embed` Verknüpfungstyp, der WebUrl zurückgegeben eingebettet werden kann, einer `<iframe>` HTML-Element. Beim Erstellen einer Verknüpfung auf der Embed der `webHtml` -Eigenschaft enthält den HTML-Code für eine `<iframe>` den Inhalt hosten.
 
-**Note:** Embed links are only supported for OneDrive Personal.
+**Hinweis:** Einbetten von Links werden nur für OneDrive Personal unterstützt.
 
-## <a name="programming-notes"></a>Programming Notes
+## <a name="programming-notes"></a>Programmierung Notizen
 
-Sharing links created using this action do not expire. They are visible in the sharing permissions for the item and can be removed by an owner of the item. Sharing links always point to the current version of a item, unless the item is checked out (SharePoint only).
+Anwendungsfreigabe mit dieser Aktion erstellten Hyperlinks laufen nicht ab. Sie sind in die Freigabeberechtigungen für das Element sichtbar und können durch einen Besitzer des Elements entfernt werden.
+Sharing Links zeigen immer auf die aktuelle Version eines Elements, es sei denn, das Element (nur SharePoint) aktiviert ist.
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

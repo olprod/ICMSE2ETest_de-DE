@@ -1,18 +1,18 @@
-# <a name="itemreference-resource-type"></a>itemReference resource type
+# <a name="itemreference-resource-type"></a>ItemReference Ressourcentyp
 
- The data needed to reference a [driveItem](driveitem.md) using the API.
+ Die Daten auf einer [DriveItem](driveitem.md) mithilfe der API zu verweisen.
 
 ## <a name="properties"></a>Eigenschaften
 
 | Eigenschaft | Typ   | Beschreibung                                                                   |
 |:---------|:-------|:------------------------------------------------------------------------------|
-| driveId  | String | Unique identifier of the OneDrive instance that contains the item. Read-only. |
-| id       | String | Unique identifier of the item in the drive. Read-only.            |
-| Pfad     | String | Path that can be used to navigate to the item. Read-only.                     |
+| Laufwerks  | String | Eindeutiger Bezeichner der OneDrive-Instanz, die das Element enthält. Schreibgeschützt. |
+| id       | String | Eindeutiger Bezeichner des Elements in das Laufwerk. Schreibgeschützt.            |
+| Pfad     | String | Pfad, der verwendet werden kann, um das Element zu navigieren. Schreibgeschützt.                     |
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -30,15 +30,15 @@ Here is a JSON representation of the resource
 
 ## <a name="remarks"></a>Hinweise
 
-To address an item from an **itemReference** instance, construct a URL of the format:
+Um ein Element aus einer **ItemReference** Instanz zu beheben, erstellen Sie eine URL im Format:
 
 ```http
 GET https://graph.microsoft.com/v1.0/drives/<driveId>/items/<id>
 ```
 
-The **path** value is an API path relative to the target drive, for example: `/drive/root:/Documents/myfile.docx`.
+Der Wert der **Path** ist ein API-Pfad relativ zu dem Ziellaufwerk, zum Beispiel: `/drive/root:/Documents/myfile.docx`.
 
-To retrieve the human-readable path for a breadcrumb, you can safely ignore everything up to the first `:` in the path string.
+Zum Abrufen des lesbare Pfads für Breadcrumb können Sie ignorieren alles bis zum ersten `:` in der Pfadzeichenfolge.
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

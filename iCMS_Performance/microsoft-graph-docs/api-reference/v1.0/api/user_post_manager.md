@@ -1,11 +1,11 @@
-# <a name="assign-a-manager"></a>Assign a manager
+# <a name="assign-a-manager"></a>Zuweisen eines Managers
 
-Use this API to assign a user's manager.
-> Note: You cannot assign direct reports - instead use this API.
+Verwenden Sie diese API zum Vorgesetzten des Benutzers zuweisen.
+> Hinweis: Sie können keine zuweisen Mitarbeiter - stattdessen verwenden diese API.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *User.ReadWrite* or *User.ReadWrite.All*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** zum Ausführen diese API ist erforderlich: *User.ReadWrite* oder *User.ReadWrite.All*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 PUT /users/<id>/manager/$ref
@@ -13,18 +13,18 @@ PUT /users/<id>/manager/$ref
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [directoryObject](../resources/directoryobject.md) or [user](../resources/user.md) object to be added.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung der [DirectoryObject](../resources/directoryobject.md) oder [Benutzer](../resources/user.md) -Objekt hinzugefügt werden soll.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `204, No Content` response code. It does not return anything in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `204, No Content` Antwortcode. Es gibt keine Suchzeichenfolge im Antworttext zurück.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_directoryobject_from_group"
@@ -38,9 +38,9 @@ Content-length: xxx
   "@odata.id": "https://graph.microsoft.com/v1.0/users/<id>"
 }
 ```
-In the request body, supply a JSON representation of [user](../resources/user.md) object to be added.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung der [User](../resources/user.md) -Objekt hinzugefügt werden soll.
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

@@ -1,75 +1,75 @@
-# <a name="eventmessage-resource-type"></a>eventMessage resource type
+# <a name="eventmessage-resource-type"></a>Ressourcentyp eventMessage
 
-A message that represents a meeting request, meeting cancel message, meeting accept message, meeting tentatively accept message, or meeting declined message.
+Eine Nachricht, die eine Besprechung darstellt anfordern, Besprechung absagen Nachricht, Besprechung Nachricht annehmen, Meeting Nachricht mit Vorbehalt annehmen oder Besprechung Nachricht abgelehnt.
 
-An EventMessage is typically found in the Inbox folder where it arrives as the results of either an event organizer creating a meeting or by an attendee responding to a meeting request. You act on event messages in the same way that you act on Message, with some minor differences described in the following table.
+Ein EventMessage befindet sich in der Regel im Ordner Posteingang, wenn es als die Ergebnisse der entweder ein Ereignis Organisator eine Besprechung erstellen oder durch einen Teilnehmer reagieren auf eine Besprechungsanfrage ankommt. Sie wirken sich auf Ereignisnachrichten auf die gleiche Weise, dass Sie auf die Nachricht mit geringfügige Unterschiede in der folgenden Tabelle beschriebenen fungieren.
 
 
 ## <a name="methods"></a>Methoden
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get eventMessage](../api/eventmessage_get.md) | [eventMessage](eventmessage.md) |Read properties and relationships of eventMessage object.|
-|[List attachments](../api/message_list_attachments.md) |[Attachment](attachment.md) collection| Get a Attachment object collection.|
-|[Update](../api/eventmessage_update.md) | [eventMessage](eventmessage.md)  |Update eventMessage object. |
-|[delete()](../api/message_delete.md) | Keine |Delete eventMessage object. |
-|["Copy"](../api/message_copy.md)|[Message](message.md)|Copy a message to a folder.|
-|[createForward](../api/message_createforward.md)|[Message](message.md)|Create a draft of the Forward message. You can then [update](../api/message_update.md) or [send](../api/message_send.md) the draft.|
-|[createReply](../api/message_createreply.md)|[Message](message.md)|Create a draft of the Reply message. You can then [update](../api/message_update.md) or [send](../api/message_send.md) the draft.|
-|[createReplyAll](../api/message_createreplyall.md)|[Message](message.md)|Create a draft of the Reply All message. You can then [update](../api/message_update.md) or [send](../api/message_send.md) the draft.|
-|[forward](../api/message_forward.md)|Keine|Forward a message. The message is then saved in the Sent Items folder.|
-|[Move](../api/message_move.md)|[Message](message.md)|Move a message to a folder. This creates a new copy of the message in the destination folder.|
-|[reply](../api/message_reply.md)|Keine|Reply to the sender of a message. The message is then saved in the Sent Items folder.|
-|[replyAll](../api/message_replyall.md)|Keine|Reply to all recipients of a message. The message is then saved in the Sent Items folder.|
-|[send](../api/message_send.md)|Keine|Sends a previously created message draft. The message is then saved in the Sent Items folder.|
-|[Create data extension](../api/opentypeextension_post_opentypeextension.md) |[openTypeExtension](opentypeextension.md)| Create an open type data extension and add custom properties in a new or existing instance of a resource.|
-|[Get data extension](../api/opentypeextension_get.md) |[openTypeExtension](opentypeextension.md) collection| Get an **openTypeExtension** object or objects identified by name or fully qualified name.|
+|[Abrufen von eventMessage](../api/eventmessage_get.md) | [eventMessage](eventmessage.md) |Lesen Sie Eigenschaften und Beziehungen des EventMessage-Objekts.|
+|[Anlagen auflisten](../api/message_list_attachments.md) |[Anlage](attachment.md) -Auflistung| Rufen Sie eine Auflistung des Attachment-Objekt.|
+|[Update](../api/eventmessage_update.md) | [eventMessage](eventmessage.md)  |Aktualisieren Sie EventMessage-Objekts. |
+|[Löschen](../api/message_delete.md) | Keine |EventMessage-Objekt zu löschen. |
+|[Kopie](../api/message_copy.md)|[Nachricht](message.md)|Kopieren einer Nachricht in einen Ordner.|
+|[createForward](../api/message_createforward.md)|[Nachricht](message.md)|Erstellen Sie ein Entwurfs oder die Nachricht weiterleiten. Sie können dann [Aktualisieren](../api/message_update.md) oder [Senden Sie](../api/message_send.md) den Entwurf.|
+|[createReply](../api/message_createreply.md)|[Nachricht](message.md)|Erstellen Sie einen Entwurf für die Antwortnachricht. Sie können dann [Aktualisieren](../api/message_update.md) oder [Senden Sie](../api/message_send.md) den Entwurf.|
+|[createReplyAll](../api/message_createreplyall.md)|[Nachricht](message.md)|Erstellen Sie ein Entwurfs oder allen Antworten-Nachricht. Sie können dann [Aktualisieren](../api/message_update.md) oder [Senden Sie](../api/message_send.md) den Entwurf.|
+|[Weiterleiten](../api/message_forward.md)|Keine|Weiterleiten einer Nachricht an. Die Nachricht wird im Ordner "Gesendete Elemente" gespeichert.|
+|[Verschieben](../api/message_move.md)|[Nachricht](message.md)|Verschieben von Nachrichten in einen Ordner. Dadurch wird eine neue Kopie der Nachricht im Zielordner erstellt.|
+|[Antwort](../api/message_reply.md)|Keine|Antworten Sie an den Absender einer Nachricht. Die Nachricht wird im Ordner "Gesendete Elemente" gespeichert.|
+|[replyAll](../api/message_replyall.md)|Keine|Antworten Sie an alle Empfänger einer Nachricht. Die Nachricht wird im Ordner "Gesendete Elemente" gespeichert.|
+|[Senden](../api/message_send.md)|Keine|Sendet einen zuvor erstellte Nachricht Entwurf. Die Nachricht wird im Ordner "Gesendete Elemente" gespeichert.|
+|[Erstellen von Daten-Erweiterung](../api/opentypeextension_post_opentypeextension.md) |[openTypeExtension](opentypeextension.md)| Erstellen Sie eine open Typ Daten Erweiterung und Hinzufügen von benutzerdefinierten Eigenschaften in einer neuen oder vorhandenen Instanz einer Ressource.|
+|[Abrufen von Daten-Erweiterung](../api/opentypeextension_get.md) |[OpenTypeExtension](opentypeextension.md) -Auflistung| Rufen Sie ein **OpenTypeExtension** oder Objekte nach Name oder den vollqualifizierten Namen identifiziert.|
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|bccRecipients|[recipient](recipient.md) collection|The Bcc: recipients for the message.|
-|body|[itemBody](itembody.md)|Die Einführung im Textkörper der E-Mail-Nachricht.|
-|bodyPreview|String|The first 255 characters of the message body.|
-|Kategorien|String collection|The categories associated with the message.|
-|ccRecipients|[recipient](recipient.md) collection|The Cc: recipients for the message.|
-|changeKey|String|The version of the message.|
-|ConversationID|String|The ID of the conversation the email belongs to.|
-|createdDateTime|DateTimeOffset|Datum und Zeitpunkt der Erstellung des Kommentars.|
-|from|[Recipient](recipient.md)|The mailbox owner and sender of the message.|
-|hasAttachments|Boolean|Indicates whether the message has attachments.|
+|bccRecipients|[Empfänger](recipient.md) -Auflistung|Bcc: Empfänger der Nachricht.|
+|body|[itemBody](itembody.md)|Der Textkörper der Nachricht.|
+|bodyPreview|String|Die ersten 255 Zeichen des Nachrichtentexts.|
+|Kategorien|Zeichenfolgenauflistung|Die Kategorien, die Nachricht zugeordnet.|
+|ccRecipients|[Empfänger](recipient.md) -Auflistung|Die Cc: Empfänger der Nachricht.|
+|changeKey|String|Die Version der Nachricht.|
+|conversationId|String|Die ID der e-Mail-Unterhaltung gehört.|
+|createdDateTime|DateTimeOffset|Datum und Uhrzeit der Erstellung die Nachricht.|
+|from|[Empfänger](recipient.md)|Der Postfachbesitzer und der Absender der Nachricht.|
+|hasAttachments|Boolean|Gibt an, ob die Nachricht Anlagen enthält.|
 |id|String||
-|Importance|String| The importance of the message: `Low`, `Normal`, `High`.|
-|Eigenschaft internetMessageId |String |The message ID in the format specified by [RFC2822](http://www.ietf.org/rfc/rfc2822.txt). |
-|isDeliveryReceiptRequested|Boolean|Indicates whether a read receipt is requested for the message.|
-|isDraft|Boolean|Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.|
-|isRead|Boolean|True/False. Gibt an, ob die Nachricht als "Gelesen" markiert wurde.|
-|isReadReceiptRequested|Boolean|Indicates whether a read receipt is requested for the message.|
-|lastModifiedDateTime|DateTimeOffset|Das Datum und die Uhrzeit der letzten Änderung des Abschnitts|
-|meetingMessageType|String| The type of event message: `None`, `MeetingRequest`, `MeetingCancelled`, `MeetingAccepted`, `MeetingTenativelyAccepted`, `MeetingDeclined`.|
-|parentFolderId|String|The unique identifier for the message's parent mailFolder.|
-|receivedDateTime|DateTimeOffset|The date and time the message was received.|
-|replyTo|[recipient](recipient.md) collection|The email addresses to use when replying.|
-|sender|[Recipient](recipient.md)|The account that is actually used to generate the message.|
-|sentDateTime|DateTimeOffset|Datum und Uhrzeit, wann die Nachricht gesendet wurde.|
+|Bedeutung|String| Die Priorität der Nachricht: `Low`, `Normal`, `High`.|
+|internetMessageId |String |Die Nachrichten-ID im Format durch [RFC2822](http://www.ietf.org/rfc/rfc2822.txt)angegeben. |
+|isDeliveryReceiptRequested|Boolean|Gibt an, ob eine lesebestätigung für die Nachricht angefordert wird.|
+|isDraft|Boolean|Gibt an, ob die Nachricht ein Entwurf ist. Eine Nachricht ist Entwurf, falls noch nicht erhalten wurden.|
+|isRead|Boolean|Gibt an, ob die Nachricht gelesen wurde.|
+|isReadReceiptRequested|Boolean|Gibt an, ob eine lesebestätigung für die Nachricht angefordert wird.|
+|lastModifiedDateTime|DateTimeOffset|Das Datum und Uhrzeit der letzten Änderung die Nachricht.|
+|meetingMessageType|String| Der Typ der ereignismeldung: `None`, `MeetingRequest`, `MeetingCancelled`, `MeetingAccepted`, `MeetingTenativelyAccepted`, `MeetingDeclined`.|
+|parentFolderId|String|Der eindeutige Bezeichner für die Meldung übergeordneten MailFolder.|
+|receivedDateTime|DateTimeOffset|Das Datum und die Zeit, die die Nachricht empfangen wurde.|
+|replyTo|[Empfänger](recipient.md) -Auflistung|Die e-Mail-Adressen beim Antworten verwenden.|
+|Absender|[Empfänger](recipient.md)|Das Konto, das tatsächlich verwendet wird, um die Nachricht zu generieren.|
+|sentDateTime|DateTimeOffset|Das Datum und die Zeit, die die Nachricht gesendet wurde.|
 |Betreff|String|Der Betreff der Nachricht.|
-|toRecipients|[recipient](recipient.md) collection|The To: recipients for the message.|
-|uniqueBody|[itemBody](itembody.md)|The part of the body of the message that is unique to the current message.|
-|webLink|String|The URL to open the message in Outlook Web App.<br><br>You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.<br><br>The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.<br><br>This URL can be accessed from within an iFrame.|
+|toRecipients|[Empfänger](recipient.md) -Auflistung|So: Empfänger der Nachricht.|
+|uniqueBody|[itemBody](itembody.md)|Der Teil des Textkörpers der Nachricht, die für die aktuelle Nachricht eindeutig ist.|
+|webLink|String|Die URL zum Öffnen der Nachricht in Outlook Web App.<br><br>Sie können ein Argument Ispopout anfügen, an das Ende der URL zu ändern, wie die Nachricht angezeigt wird. Wenn Ispopout nicht vorhanden ist oder wenn es auf 1 festgelegt ist, wird die Nachricht in einem Popout-Fenster angezeigt. Wenn Ispopout auf 0 festgelegt ist, wird im Browser in der Outlook Web App-Bereich prüfen die Nachricht angezeigt.<br><br>Die Nachricht wird im Browser geöffnet, wenn Sie mit Ihrem Postfach über Outlook Web App angemeldet sind. Sie werden aufgefordert, anmelden, wenn Sie sich mit dem Browser nicht bereits angemeldet sind.<br><br>Diese URL kann innerhalb eines iFrame aus zugegriffen werden.|
 
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Anlagen|[Attachment](attachment.md) collection| Read-only. Nullable.|
-|Ereignis|[Ereignis](event.md)| The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.|
-|Extensions|[Extension](extension.md) collection|The collection of open type data extensions defined for the contact. Read-only. Nullable.|
+|Anlagen|[Anlage](attachment.md) -Auflistung| Schreibgeschützt. NULL-Werte zulässt.|
+|Ereignis|[Ereignis](event.md)| Das Ereignis ereignismeldung zugeordnet ist. Die Annahme für Teilnehmer oder raumressourcen ist, dass der Kalenderautomatik festgelegt ist, im Kalender mit ein Ereignis, wenn einer Besprechungsanfrage, dass Ereignisnachrichten eintreffen automatisch aktualisiert wird. Navigationseigenschaft.  Schreibgeschützt.|
+|Erweiterungen|[Erweiterungssammlung](extension.md)|Die Auflistung der geöffneten Typ Daten Erweiterungen für den Kontakt definiert. Schreibgeschützt. NULL-Werte zulässt.|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource  
+Es folgt eine JSON-Darstellung der Ressource  
 
 <!-- {
   "blockType": "resource",

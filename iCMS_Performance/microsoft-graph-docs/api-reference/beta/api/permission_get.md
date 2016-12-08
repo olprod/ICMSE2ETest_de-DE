@@ -1,13 +1,13 @@
-# <a name="get-permission"></a>Get permission
+# <a name="get-permission"></a>Berechtigung
 
-Retrieve the properties and relationships of permission object.
+Rufen Sie die Eigenschaften und Beziehungen der Permission-Objekts ab.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.Read
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -15,28 +15,28 @@ GET /me/drive/items/<item-id>/permissions/<id>
 GET /me/drive/root:/<item-path>:/permissions/<id>
 GET /groups/<group-id>/drive/items/<item-id>/permissions/<id>
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 
 
 ## <a name="request-headers"></a>Anforderungsheader
 
 | Name          | Typ   | Beschreibung               |
 |:--------------|:-------|:--------------------------|
-| Autorisierung | string | Bearer <token>. Required. |
+| Autorisierung | string | Bearer <token>. Erforderlich. |
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [permission](../resources/permission.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode eine `200 OK` Antwortobjekt Code und die [Berechtigung](../resources/permission.md) in der Antworttext.
 
 ## <a name="example"></a>Beispiel
 
 ##### <a name="request"></a>Anforderung
 
-Here is an example of the request to access a permission on the root folder.
+Es folgt ein Beispiel der Anforderung zum Zugriff auf eine Berechtigung im Stammordner aus.
 
 <!-- {
   "blockType": "request",
@@ -46,7 +46,7 @@ Here is an example of the request to access a permission on the root folder.
 GET /me/drive/root/permissions/<id>
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true,

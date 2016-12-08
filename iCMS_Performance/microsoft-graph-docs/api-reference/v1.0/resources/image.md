@@ -1,18 +1,18 @@
-# <a name="image-resource-type"></a>image resource type
+# <a name="image-resource-type"></a>Bildressourcentyp
 
-The **image** resource is available on items that represent a bitmap or image.
+**Die Bildressource** steht für Elemente, die eine Bitmap oder Grafik darstellen.
 
 
 ## <a name="properties"></a>Eigenschaften
 
 | Eigenschaft   | Typ  | Beschreibung                                |
 |:-----------|:------|:-------------------------------------------|
-| **height** | Int32 | Height of the image, in pixels. Read-only. |
-| **width**  | Int32 | Width of the image, in pixels. Read-only.  |
+| **Höhe** | Int32 | Die Höhe des Bilds in Pixeln. Schreibgeschützt. |
+| **Breite**  | Int32 | Breite des Bilds in Pixeln. Schreibgeschützt.  |
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",
@@ -32,7 +32,7 @@ Here is a JSON representation of the resource.
 
 ## <a name="remarks"></a>Hinweise
 
-In OneDrive for Business, this resource is returned on items that are expected to be images based on file extension. This resource returns no properties in OneDrive for Business.
+In OneDrive für Unternehmen ist diese Ressource für Elemente zurückgegeben, die Bilder, die Grundlage für die Erweiterung vorhanden sein. Diese Ressource zurückgegeben keine Eigenschaften in OneDrive for Business.
 
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

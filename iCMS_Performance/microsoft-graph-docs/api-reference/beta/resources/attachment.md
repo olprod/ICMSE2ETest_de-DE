@@ -1,38 +1,38 @@
-# <a name="attachment-resource-type"></a>attachment resource type
+# <a name="attachment-resource-type"></a>Anlage Ressourcentyp
 
-A file, item (contact, event or message), or link to a file, which is attached to an [event](../resources/event.md), [message](../resources/message.md), or [post](../resources/post.md). The  
-corresponding [fileAttachment](../resources/fileattachment.md), [itemAttachment](../resources/itemattachment.md), and [referenceAttachment](../resources/referenceattachment.md) resources are all derived from the **attachment** resource.
+Eine Datei, Element (Kontakt, Ereignis oder einer Nachricht) oder Verknüpfung mit einer Datei, die ein [Ereignis](../resources/event.md), eine [Nachricht](../resources/message.md)oder [Buchen](../resources/post.md)zugeordnet ist. Die Angabe zu  
+entsprechende [FileAttachment](../resources/fileattachment.md) [ItemAttachment](../resources/itemattachment.md)und [ReferenceAttachment](../resources/referenceattachment.md) Ressourcen werden alle von der **Anlage** Ressource abgeleitet.
 
 ## <a name="methods"></a>Methoden
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get attachment](../api/attachment_get.md) | [Attachment](attachment.md) |Read properties and relationships of attachment object.|
-|[Add attachment to an event](../api/event_post_attachments.md) | [Attachment](attachment.md) |Add a file, item, or link attachment to an event.|
-|[Add attachment to a message](../api/message_post_attachments.md) | [Attachment](attachment.md) |Add a file, item, or link attachment to a message.|
-|[Add attachment to a post](../api/post_post_attachments.md) | [Attachment](attachment.md) |Add a file, item, or link attachment to a post.|
-|[List attachments of an event](../api/event_list_attachments.md) | [attachment](attachment.md) collection | Get a list of attachments for an event. |
-|[List attachments of a message](../api/message_list_attachments.md) | [attachment](attachment.md) collection | Get a list of attachments for a message. |
-|[List attachments of a post](../api/post_list_attachments.md) | [attachment](attachment.md) collection | Get a list of attachments for a post. |
-|[delete()](../api/attachment_delete.md) | Keine |Delete attachment object. |
+|[Anlagen abrufen](../api/attachment_get.md) | [Anlage](attachment.md) |Lesen Sie Eigenschaften und Beziehungen zwischen Attachment-Objekt.|
+|[Hinzufügen eines Ereignisses des Attachment-Objekts](../api/event_post_attachments.md) | [Anlage](attachment.md) |Hinzufügen einer Datei, Element oder die Anlage auf ein Ereignis verknüpft.|
+|[Hinzufügen einer Anlage](../api/message_post_attachments.md) | [Anlage](attachment.md) |Hinzufügen einer Datei, Element oder die Anlage an eine Nachricht verknüpft.|
+|[Hinzufügen einer Nachricht in einer Anlage](../api/post_post_attachments.md) | [Anlage](attachment.md) |Hinzufügen einer Datei, item oder Verknüpfen einer Nachricht in einer Anlage.|
+|[Liste der Anlagen eines Ereignisses](../api/event_list_attachments.md) | [Anlage](attachment.md) -Auflistung | Abrufen einer Liste von Anlagen für ein Ereignis. |
+|[Anlagen Auflisten einer Nachricht](../api/message_list_attachments.md) | [Anlage](attachment.md) -Auflistung | Abrufen einer Liste von Anlagen für eine Nachricht an. |
+|[Anlagen Auflisten einer Bereitstellung](../api/post_list_attachments.md) | [Anlage](attachment.md) -Auflistung | Abrufen einer Liste von Anlagen für einen Beitrag. |
+|[Löschen](../api/attachment_delete.md) | Keine |Attachment-Objekt zu löschen. |
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|contentType|String|Der standardmäßige MIME-Dateityp.|
-|id|String| ReadOnly|
-|Eigenschaft "isInline"|Boolean|true`true` wenn die Anlage eine Inlineanlage ist, anderfalls false`false`.|
-|lastModifiedDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|name|String|The display name of the attachment. This does not need to be the actual file name.|
-|size|Int32|The length of the attachment in bytes.|
+|contentType|String|Den MIME-Typ.|
+|id|String| Schreibgeschützt.|
+|isInline|Boolean|`true`Wenn die Anlage eine Inlineanlage ist. andernfalls `false`.|
+|lastModifiedDateTime|DateTimeOffset|Der Zeitstempeltyp stellt Informationen zum Datum und Uhrzeit mit ISO 8601-Format dar und ist immer in UTC-Zeit. Beispielsweise würde Uhr UTC auf 1 Jan 2014 sieht folgendermaßen aus:`'2014-01-01T00:00:00Z'`|
+|name|String|Der Anzeigename der Anlage. Dies muss nicht der tatsächliche Dateiname sein.|
+|size|Int32|Die Länge der Anlage in Byte.|
 
 ## <a name="relationships"></a>Beziehungen
 Keine
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

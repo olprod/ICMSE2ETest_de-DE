@@ -1,17 +1,17 @@
-# <a name="patternedrecurrence-resource-type"></a>patternedRecurrence resource type
+# <a name="patternedrecurrence-resource-type"></a>Ressourcentyp patternedRecurrence
 
-The recurrence pattern and range.
+Das Serienmuster und Bereich.
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|pattern|[RecurrencePattern](recurrencepattern.md)|Der Name eines Ereignisses.|
-|Bereich|[RecurrenceRange](recurrencerange.md)|Der Name eines Ereignisses.|
+|Muster|[RecurrencePattern](recurrencepattern.md)|Die Häufigkeit eines Ereignisses.|
+|Bereich|[RecurrenceRange](recurrencerange.md)|Die Dauer eines Ereignisses.|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

@@ -1,11 +1,11 @@
-# <a name="create-attachment"></a>Create Attachment
+# <a name="create-attachment"></a>Anlage erstellen
 
-Use this API to add an [attachment](../resources/attachment.md) to an event. Since there is currently a limit of 4MB on the total size of each REST request, this limits the size of the attachment you can add to under 4MB.
+Verwenden Sie diese API, um eine [Anlage](../resources/attachment.md) auf ein Ereignis hinzufügen. Da es derzeit maximal 4MB für die Gesamtgröße der einzelnen REST-Anforderungen ist, schränkt dies die Größe der Anlage, die Sie unter 4 MB hinzufügen können.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Calendars.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Calendars.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
-Attachments for an [event](../resources/event.md) in the user's or group's default [calendar](../resources/calendar.md).
+Anlagen für ein [Ereignis](../resources/event.md) in die des Benutzers oder einer Gruppe standardmäßig [Kalender](../resources/calendar.md).
 ```http
 POST /me/events/<id>/attachments
 POST /users/<id | userPrincipalName>/events/<id>/attachments
@@ -15,7 +15,7 @@ POST /me/calendar/events/<id>/attachments
 POST /users/<id | userPrincipalName>/calendar/events/<id>/attachments
 POST /groups/<id>/calendar/events/<id>/attachments
 ```
-Attachments for an [event](../resources/event.md) in a [calendar](../resources/calendar.md) belonging to the user's default [calendarGroup](../resources/calendargroup.md).
+Anlagen für ein [Ereignis](../resources/event.md) in einem [Kalender](../resources/calendar.md) des Benutzers Standard [CalendarGroup](../resources/calendargroup.md)zugehörigen.
 ```http
 POST /me/calendars/<id>/events/<id>/attachments
 POST /users/<id | userPrincipalName>/calendars/<id>/events/<id>/attachments
@@ -23,7 +23,7 @@ POST /users/<id | userPrincipalName>/calendars/<id>/events/<id>/attachments
 POST /me/calendargroup/calendars/<id>/events/<id>/attachments
 POST /users/<id | userPrincipalName>/calendargroup/calendars/<id>/events/<id>/attachments
 ```
-Attachments for an [event](../resources/event.md) in a [calendar](../resources/calendar.md) belonging to a user's [calendarGroup](../resources/calendargroup.md).
+Anlagen für ein [Ereignis](../resources/event.md) in einem [Kalender](../resources/calendar.md) zu einem Benutzer [CalendarGroup](../resources/calendargroup.md)gehören.
 ```http
 POST /me/calendargroups/<id>/calendars/<id>/events/<id>/attachments
 POST /users/<id | userPrincipalName>/calendargroups/<id>/calendars/<id>/events/<id>/attachments
@@ -31,20 +31,20 @@ POST /users/<id | userPrincipalName>/calendargroups/<id>/calendars/<id>/events/<
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
-| contentType | string  | Nature of the data in the body of an entity. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
+| Inhaltstyp | string  | Die Art der Daten im Textkörper einer Entität. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [Attachment](../resources/attachment.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Attachment](../resources/attachment.md) -Objekt.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [Attachment](../resources/attachment.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `201, Created` Antwortcode und [Attachment](../resources/attachment.md) -Objekts in der Antworttext.
 
-## <a name="example-file-attachment"></a>Example (file attachment)
+## <a name="example-file-attachment"></a>Beispiel (Dateianlage)
 
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_file_attachment_from_event"
@@ -61,10 +61,10 @@ Content-length: 142
 }
 ```
 
-In the request body, supply a JSON representation of [attachment](../resources/attachment.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Attachment](../resources/attachment.md) -Objekts.
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -85,11 +85,11 @@ Content-length: 162
 }
 ```
 
-## <a name="example-item-attachment"></a>Example (item attachment)
+## <a name="example-item-attachment"></a>Beispiel (Element Attachment)
 
 ##### <a name="request"></a>Anforderung
 
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 
 <!-- {
   "blockType": "request",
@@ -108,7 +108,7 @@ Content-length: 100
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -129,10 +129,11 @@ Content-length: 162
 }
 ```
 
-## <a name="example-reference-attachment"></a>Example (reference attachment)
+## <a name="example-reference-attachment"></a>Beispiel (Referenz Attachment)
 
 ##### <a name="request"></a>Anforderung
-Here is an example of a request that adds a reference attachment to an existing event. The attachment points to a folder on OneDrive.
+Hier ist ein Beispiel für eine Anforderung, die eine Anlage Verweis auf ein vorhandenes Ereignis hinzugefügt.
+Die Anlage verweist auf einen Ordner auf OneDrive.
 <!-- {
   "blockType": "request",
   "name": "create_reference_attachment_from_event"
@@ -154,7 +155,7 @@ Content-length: 319
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of a full response.
+Es folgt ein Beispiel einer vollständigen Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true

@@ -1,12 +1,12 @@
-# <a name="package-resource-type"></a>package resource type
+# <a name="package-resource-type"></a>Paket Ressourcentyp
 
-The **Package** facet indicates that an item is the top level item in a "package" or a collection of items, that are treated as a collection of data instead of individual items.
+Das **Paket** Facetten gibt an, dass ein Element das Element der obersten Ebene in einem "Paket" oder eine Auflistung von Elementen, die als eine Sammlung von Daten, anstatt einzelne Elemente behandelt werden.
 
-An example of a package is a OneNote notebook. While the notebook is made up of files and folders that represent the contents of the notebook, the top level item that represents the notebook has a **Package** facet to indicate to clients that this is a collection of data that should be treated special.
+Ein Beispiel für ein Paket ist ein OneNote-Notizbuch. Während das Notizbuch von Dateien und Ordnern, die den Inhalt des Notizbuchs darstellen besteht, hat das Element der obersten Ebene, das das Notizbuch darstellt ein **Paket** Facetten Clients an, dass dies ist eine Auflistung von Daten, die spezielle behandelt werden soll.
 
-Items with the **Package** facet do not include a **Folder** or **File** facet but are conceptually similar to an item with a **Folder** facet.
+Elemente mit dem **Paket** Facetten enthalten einen **Ordner** oder eine **Datei** Facetten nicht jedoch ähneln ein Element mit einem **Ordner** Facetten.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
 <!-- { "blockType": "resource", "@odata.type": "microsoft.graph.package" } -->
 ```json
@@ -15,9 +15,9 @@ Items with the **Package** facet do not include a **Folder** or **File** facet b
 }
 ```
 
-| Eigenschaftenname | Typ   | Beschreibung                                                                                                                                                                      |
+| Name der Eigenschaft | Typ   | Beschreibung                                                                                                                                                                      |
 |:--------------|:-------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Typ**      | string | An string indicating the type of package. While `oneNote` is the only currently defined value, you should expect other package types to be returned and handle them accordingly. |
+| **Typ**      | string | Eine Zeichenfolge, die den Typ des Pakets angibt. Während `oneNote` ist der einzige Wert derzeit definierten, sollten Sie erwarten, andere Pakettypen zurückgegeben werden, und sie entsprechend behandelt. |
 
 <!-- {
   "type": "#page.annotation",

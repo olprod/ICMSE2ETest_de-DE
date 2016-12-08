@@ -1,17 +1,17 @@
-# <a name="location-resource-type"></a>location resource type
+# <a name="location-resource-type"></a>Typ des Speicherorts Ressource
 
-Represents location information of an event.
+Standortinformationen eines Ereignisses darstellt.
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft  | Typ   | Beschreibung                                                     |
 |:----------|:-------|:----------------------------------------------------------------|
-| address | [physicalAddress](physicalAddress.md) |The street address of the location. |
-| DisplayName  | String | Der Name der physischen Datei, die mit dem aktuellen Fehler zusammenhängt                       |
+| address | [physikalische Adresse](physicalAddress.md) |Die Straße des Speicherorts. |
+| displayName  | String | Der Name der Standort zugeordnet.                       |
 
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
 <!-- {
   "blockType": "resource",

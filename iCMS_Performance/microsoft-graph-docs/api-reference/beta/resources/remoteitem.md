@@ -1,12 +1,12 @@
-# <a name="remoteitem-resource-type"></a>remoteItem resource type
+# <a name="remoteitem-resource-type"></a>RemoteItem Ressourcentyp
 
-The **remoteItem** resource type indicates that a [driveItem](driveitem.md) references an item that exist in another drive and provides a pointer to that drive.
+Der Ressourcentyp **RemoteItem** gibt an, dass ein [DriveItem](driveitem.md) verweist auf ein Element, das in einem anderen Laufwerk vorhanden und enthält einen Zeiger auf dem Laufwerk.
 
-It is available on the `remoteItem` property of [driveItem](driveitem.md) resources that have been shared and added to a drive, for example, by using the "Add to OneDrive" feature.
+Es steht auf der `remoteItem` -Eigenschaft des [DriveItem](driveitem.md) Ressourcen, die freigegeben haben und das feature mithilfe der "fügen zu OneDrive" beispielsweise auf einem Laufwerk hinzugefügt.
 
-**Note:** Unlike with folders in the same drive, an item moved into a remote item might have its `id` changed.
+**Hinweis:** Im Gegensatz zu mit Ordnern in dem gleichen Laufwerk ein Element in ein Remoteelement verschoben möglicherweise seine `id` geändert.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
 <!-- { "blockType": "resource", "@odata.type": "microsoft.graph.remoteItem", optionalProperties: ["name", "fileSystemInfo", "file", "folder"] } -->
 ```json
@@ -32,24 +32,24 @@ It is available on the `remoteItem` property of [driveItem](driveitem.md) resour
 
 ## <a name="properties"></a>Eigenschaften
 
-| Eigenschaftsname   | Typ                                           | Beschreibung                                                              |
+| Name der Eigenschaft   | Typ                                           | Beschreibung                                                              |
 |:----------------|:-----------------------------------------------|:-------------------------------------------------------------------------|
-| createdBy       | [IdentitySet](identityset.md)            | Identity of the user, device, and application which created the item. Read-only.   |
-| createdDateTime | Timestamp                                | Datum und Uhrzeit der Cubeerstellung. |
-| File            | [File](file.md)                          | Indicates that the remote item is a file. Read-only.                     |
-| fileSystemInfo  | [FileSystemInfo](filesysteminfo.md)      | Information about the remote item from the local file system. Read-only. |
-| Ordner          | [Folder](folder.md)                      | Indicates that the remote item is a folder. Read-only.                   |
-| id              | String                                         | Unique identifier for the remote item in its drive. Read-only.           |
-| lastModifiedBy  | [IdentitySet](identityset,md)           | Identity of the user, device, and application which last modified the item. Read-only. |
-| lastModifiedDateTime | Timestamp                           | Es wird ein Wert vom Typ Date zurückgegeben, der das Datum und die Uhrzeit der letzten Änderung des Outlook-Elements angibt. Schreibgeschützt.  | 
-| name            | String                                         | Optional. Filename of the remote item. Read-only.                        |
-| Paket         | [-Paket](package.md)                    | If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only. |
-| parentReference | [ItemReference](itemreference.md) | Properties of the parent of the remote item. Read-only.                  |
-| sharepointIds   | [SharepointIds](sharepointids.md) | Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.  |
-| size            | Int64                                          | Size of the remote item. Read-only.                                      |
-| specialFolder   | [SpecialFolder-Konstanten](specialfolder.md) | If the current item is also available as a special folder, this facet is returned. Read-only. |
-| webDavUrl       | Url | DAV compatible URL for the item. |
-| WebUrl          | Url | URL that displays the resource in the browser. Read-only. | 
+| createdBy       | [IdentitySet](identityset.md)            | Die Identität des Benutzers, Gerät, und die Anwendung die Erstellung des Elements. Schreibgeschützt.   |
+| createdDateTime | Timestamp                                | Datum und Uhrzeit der Erstellung des Eintrags. Schreibgeschützt. |
+| Datei            | [Datei](file.md)                          | Gibt an, dass das entfernte Element um eine Datei handelt. Schreibgeschützt.                     |
+| fileSystemInfo  | [FileSystemInfo](filesysteminfo.md)      | Informationen über das entfernte Element im lokalen Dateisystem. Schreibgeschützt. |
+| Ordner          | [Ordner](folder.md)                      | Gibt an, dass das entfernte Element um einen Ordner handelt. Schreibgeschützt.                   |
+| id              | String                                         | Eindeutiger Bezeichner für das Remoteelement in dem Laufwerk. Schreibgeschützt.           |
+| lastModifiedBy  | [IdentitySet](identityset,md)           | Das Element Identität der Benutzer, Geräte und Anwendung, die zuletzt geändert hat. Schreibgeschützt. |
+| lastModifiedDateTime | Timestamp                           | Datum und Uhrzeit der letzten des Elements Änderung. Schreibgeschützt.  | 
+| name            | String                                         | Optional Dateiname des remote-Elements. Schreibgeschützt.                        |
+| Paket         | [Paket](package.md)                    | Falls vorhanden, gibt an, dass dieses Element ein Paket anstelle eines Ordners oder einer Datei ist. Pakete werden wie unter Umständen Dateien und Ordner in anderen behandelt. Schreibgeschützt. |
+| parentReference | [ItemReference](itemreference.md) | Eigenschaften der das übergeordnete Objekt des das entfernte Element. Schreibgeschützt.                  |
+| sharepointIds   | [SharepointIds](sharepointids.md) | Der vollständige Satz von Elementbezeichner bietet Interop zwischen Elementen in OneDrive für Unternehmen und SharePoint. Schreibgeschützt.  |
+| size            | Int64                                          | Die Größe des remote-Elements. Schreibgeschützt.                                      |
+| specialFolder   | [SpecialFolder](specialfolder.md) | Wenn das aktuelle Element auch als einen Ordner mit Sonderfunktion verfügbar ist, wird dieser Aspekt zurückgegeben. Schreibgeschützt. |
+| webDavUrl       | Url | DAV-kompatible-URL für das Element. |
+| webUrl          | Url | URL, die die Ressource im Browser angezeigt wird. Schreibgeschützt. | 
 
 
 <!-- {

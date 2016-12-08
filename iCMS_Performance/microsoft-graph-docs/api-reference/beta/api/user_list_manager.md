@@ -1,35 +1,35 @@
-# <a name="list-manager"></a>List manager
+# <a name="list-manager"></a>Listen-manager
 
-Get user's manager. Returns the user or contact assigned as the user's manager.
+Abrufen des Vorgesetzten des Benutzers. Gibt den Benutzer oder Kontakt als den Vorgesetzten des Benutzers zugewiesen.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *User.Read.All; User.ReadWrite.All; Directory.Read.All; Directory.ReadWrite.All; Directory.AccessAsUser.All*
+Einen der folgenden **Bereiche** zum Ausführen diese API ist erforderlich: *User.Read.All; User.ReadWrite.All; Directory.Read.All; Directory.ReadWrite.All; Directory.AccessAsUser.All*
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /users/<id | userPrincipalName>/manager
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert|
 |:-----------|:------|
-| Autorisierung  | Bearer <token>. Required.  |
-| Accept-Methode  | application/json|
+| Autorisierung  | Bearer <token>. Erforderlich.  |
+| Akzeptieren  | Application/json|
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and a [directoryObject](../resources/directoryobject.md) object in the response body.
+Wenn erfolgreich, diese Methode gibt eine `200 OK` Antwortcode und eines [DirectoryObject](../resources/directoryobject.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- { "blockType": "ignored" } -->
 ```http
 GET https://graph.microsoft.com/beta/users/<id|userPrincipalName>/manager
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- { "blockType": "ignored" } -->
 ```http
 HTTP/1.1 200 OK

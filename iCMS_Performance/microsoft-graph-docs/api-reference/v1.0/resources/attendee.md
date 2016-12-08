@@ -1,16 +1,16 @@
-# <a name="attendee-resource-type"></a>attendee resource type
+# <a name="attendee-resource-type"></a>ATTENDEE Ressourcentyp
 
-An event attendee.
+Teilnehmer.
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|status|[ResponseStatus (Eigenschaft)](responsestatus.md)|The attendee's response (none, accepted, declined, etc.) for the event and date-time that the response was sent.|
-|Typ|String|The attendee type: `Required`, `Optional`, `Resource`.|
+|status|[ResponseStatus](responsestatus.md)|Die Antwort des Teilnehmers (keine, akzeptiert, abgelehnt, usw.) für das Ereignis und Datum-Zeit, die die Antwort gesendet wurde.|
+|Typ|String|Der Teilnehmertyp: `Required`, `Optional`, `Resource`.|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

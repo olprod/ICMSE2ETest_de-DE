@@ -1,40 +1,40 @@
-# <a name="get-group"></a>Get group
+# <a name="get-group"></a>Erste Gruppe
 
-Get some of the properties and relationships of a group object.
+Hier einige der Eigenschaften und Beziehungen eines Group-Objekts.
 
-The following properties are not returned by default:
+Folgenden Eigenschaften werden standardmäßig nicht zurückgegeben:
 * AccessType
-* EmailAddress-Eigenschaft
+* EmailAddress
 * AllowExternalSenders
 * AutoSubscribeNewMembers
 * IsSubscribedByMail
 * IsFavorite
 * UnseenCount
 
-You can use the query parameter **$select** to get the value of one or more of these properties for a specific group, except **IsFavorite**. 
+Die Abfrage Parameter **$select** können Sie den Wert eine oder mehrere der folgenden Eigenschaften für eine bestimmte Gruppe, mit Ausnahme von **IsFavorite**abzurufen. 
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Group.Read.All* or *Group.ReadWrite.All*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Group.Read.All* oder *Group.ReadWrite.All*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /groups/<id>
 ```
-## <a name="optional-query-parameters"></a>Optionale OData-Abfrageparameter
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+## <a name="optional-query-parameters"></a>Optional Abfrageparameter
+Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:-----------|:------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and [group](../resources/group.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortobjekt Code und [Gruppe](../resources/group.md) im Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "get_group"
@@ -43,9 +43,9 @@ Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
 GET https://graph.microsoft.com/beta/me/groups/<id>
 ```
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 
-Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

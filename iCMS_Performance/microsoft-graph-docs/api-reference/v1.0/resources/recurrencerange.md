@@ -1,21 +1,21 @@
-# <a name="recurrencerange-resource-type"></a>recurrenceRange resource type
+# <a name="recurrencerange-resource-type"></a>Ressourcentyp recurrenceRange
 
-Der Name eines Ereignisses.
+Die Dauer eines Ereignisses.
 
 ## <a name="properties"></a>Eigenschaften
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|endDate|Date|Das Enddatum der Ressourcenverfügbarkeit.|
-|numberOfOccurrences|Int32|How many times to repeat the event.|
-|recurrenceTimeZone|String |Time zone for the **startDate** and **endDate** properties. |
-|StartDate|Date|Das Startdatum des Vorgangs.|
-|Typ|String|The recurrence range: EndDate = 0, NoEnd = 1, Numbered = 2. Possible values are: `EndDate`, `NoEnd`, `Numbered`.||
+|endDate|Date|Das Enddatum der Datenreihe.|
+|numberOfOccurrences|Int32|Wie oft das Ereignis wiederholt werden sollen.|
+|recurrenceTimeZone|String |Die Zeitzone für die **StartDate** und **EndDate** -Eigenschaften. |
+|startDate|Date|Das Startdatum der Datenreihe.|
+|Typ|String|Den Serienbereich: EndDate = 0, NoEnd = 1, Nummerierung = 2. Mögliche Werte sind: `EndDate`, `NoEnd`, `Numbered`.||
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

@@ -1,10 +1,10 @@
-# <a name="mailfolder-move"></a>mailFolder: move
+# <a name="mailfolder-move"></a>MailFolder: verschieben
 
-Move a mailfolder and its contents to another mailfolder.
+Verschieben Sie ein Mailfolder und seinen Inhalt zu einer anderen Mailfolder.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API: *Mail.ReadWrite*
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *Mail.ReadWrite*
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/mailFolders/<id>/move
@@ -13,23 +13,23 @@ POST /users/<id | userPrincipalName>/mailFolders/<id>/move
 ## <a name="request-headers"></a>Anforderungsheader
 | Kopfzeile       | Wert |
 |:---------------|:--------|
-| Autorisierung  | Bearer <token>. Required.  |
-| contentType  | application/json. Required.  |
+| Autorisierung  | Bearer <token>. Erforderlich.  |
+| Inhaltstyp  | Application/Json. Erforderlich.  |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|destinationId|String|The folder ID, or the *Inbox*, *Drafts*, *SentItems*, or *DeletedItems* well-known folder name.|
+|destinationId|String|Die Ordner-ID oder den Namen der bekannten Ordner *Posteingang*, *Entwürfe*, *Gesendete Elemente*oder *DeletedItems* .|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and [MailFolder](../resources/mailfolder.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `200, OK` Antwortcode und [MailFolder](../resources/mailfolder.md) -Objekts in der Antworttext.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "mailfolder_move"
@@ -45,7 +45,7 @@ Content-length: 44
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

@@ -1,16 +1,17 @@
-# <a name="onenoteidentityset-resource-type"></a>oneNoteIdentitySet resource type
+# <a name="onenoteidentityset-resource-type"></a>Ressourcentyp oneNoteIdentitySet
 
-**Support coming soon**
+**Unterstützung in Kürze verfügbar**
 
-The OneNoteIdentitySet type is a keyed collection of [OneNoteIdentity](onenoteidentity.md) objects. It is used to represent a set of identities associated with various events for a _Notebook_, _Section_ or _Page_, such as  _created by_ or _last modified by_. 
+Der OneNoteIdentitySet-Typ ist eine verschlüsselte Auflistung von [OneNoteIdentity](onenoteidentity.md) -Objekten.
+Es wird verwendet, um einen Satz von Identitäten zugeordnet sind verschiedene Ereignisse für einen _Notizbuch_, einem _Bereich_ oder einer _Seite_, z. B.  _von erstellt_ oder _zuletzt geändert von_darstellen. 
  
-Currently it contains a single key, _**user**_.  In future, keys such as the device or application to change the item may be added.
+Aktuell enthält einen einzelnen Schlüssel, _**Benutzer**_.  Zukünftig möglicherweise Schlüssel wie das Gerät oder einer Anwendung das Element hinzugefügt werden.
 
-In future, this type will be merged with [IdentitySet](identityset.md)
+Dieser Typ wird in Zukunft mit [IdentitySet](identityset.md) zusammengeführt werden sollen
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",
@@ -29,7 +30,7 @@ Here is a JSON representation of the resource.
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|user|[oneNoteIdentity](onenoteidentity.md)|A OneNoteIdentity resource that represents a user.|
+|user|[oneNoteIdentity](onenoteidentity.md)|Eine OneNoteIdentity-Ressource, die einen Benutzer darstellt.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

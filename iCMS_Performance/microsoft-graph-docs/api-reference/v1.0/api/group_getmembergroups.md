@@ -1,11 +1,11 @@
-# <a name="group-getmembergroups"></a>group: getMemberGroups
-Return all the groups that the specified group is a member of. The check is transitive, unlike reading the [memberOf](../api/group_list_memberof.md) navigation property, which returns only the groups that the group is a direct member of.
+# <a name="group-getmembergroups"></a>Gruppe: GetMemberGroups
+Zurückgeben Sie aller Gruppen, denen die angegebene Gruppe ein Mitglied ist. Die Überprüfung ist transitiv, im Gegensatz zum Lesen der [Mitglied](../api/group_list_memberof.md) Navigation-Eigenschaft, die nur die Gruppen zurückgibt, denen die Gruppe ein direktes Mitglied ist.
 
-This function supports Office 365 and other types of groups provisioned in Azure AD. The maximum number of groups each request can return is 2046. Note that Office 365 Groups cannot contain groups. So membership in an Office 365 Group is always direct.
+Diese Funktion unterstützt Office 365 und anderen Arten von Gruppen in Azure Active Directory bereitgestellt werden. Die maximale Anzahl von Gruppen, die jeder Anforderung zurückgeben kann ist 2046. Hinweis: Office 365 Gruppen Gruppen enthalten kann. Die Mitgliedschaft in einer Office 365-Gruppe ist also immer direkt.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /groups/<id>/getMemberGroups
@@ -13,22 +13,22 @@ POST /groups/<id>/getMemberGroups
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|securityEnabledOnly|Boolean|**true** to specify that only security groups that the group is a member of should be returned; **false** to specify that all groups that the group is a member of should be returned.|
+|securityEnabledOnly|Boolean|**true,** um anzugeben, dass nur Sicherheitsgruppen, dass die Gruppe ein Mitglied ist zurückgegeben werden soll. **false,** um anzugeben, dass alle Gruppen, denen die Gruppe ein Mitglied ist zurückgegeben werden sollen.|
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and String collection in the response body that contains the IDs of the groups that the group is a member of.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode und Zeichenfolge-Auflistung im Textkörper Antwort, die die IDs der Gruppen enthält, die die Gruppe ein Mitglied ist.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "group_getmembergroups"
@@ -44,7 +44,7 @@ Content-length: 33
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

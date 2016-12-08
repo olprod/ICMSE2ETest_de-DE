@@ -1,6 +1,6 @@
-# <a name="directoryrole-resource-type"></a>directoryRole resource type
+# <a name="directoryrole-resource-type"></a>Ressourcentyp directoryRole
 
-Represents an Azure AD directory role. Azure AD directory roles are also known as *administrator roles*. For more information about directory (administrator) roles, see [Assigning administrator roles in Azure AD](http://azure.microsoft.com/documentation/articles/active-directory-assign-admin-roles/). With the Microsoft Graph, you can assign users to directory roles to grant them the permissions of the target role. To read a directory role or update its members, it must first be activated in the tenant. Only the Company Administrators directory role is activated by default. To activate other available directory roles you send a POST request with the ID of the [directoryRoleTemplate](directoryroletemplate.md) on which the directory role is based. Inherits from [directoryObject](directoryobject.md).
+Stellt eine Azure AD-Directory-Rolle. Azure Active Directory Directory Rollen sind auch bekannt als *Administratorrollen*. Weitere Informationen zu Rollen Verzeichnis (Administrator) finden Sie unter [Zuweisen von Administratorrollen in Azure Active Directory](http://azure.microsoft.com/documentation/articles/active-directory-assign-admin-roles/). Mit der Microsoft Graph können Sie Directory Rollen erteilen sie die Berechtigungen der Zielrolle Benutzer zuweisen. Um eine Rolle Directory lesen oder deren Member aktualisieren möchten, müssen sie zuerst im Mandanten aktiviert werden. Nur die Administratoren im Unternehmen Directory Rolle ist standardmäßig aktiviert. Zum Aktivieren von anderen verfügbaren Verzeichnis Rollen senden Sie eine POST-Anforderung mit der ID der [DirectoryRoleTemplate](directoryroletemplate.md) , auf dem die Rolle Directory basiert. Erbt vom [DirectoryObject](directoryobject.md).
 
 
 
@@ -8,28 +8,28 @@ Represents an Azure AD directory role. Azure AD directory roles are also known a
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get directoryRole](../api/directoryrole_get.md) | [directoryRole](directoryrole.md) |Read properties and relationships of directoryRole object.|
-|[Create member](../api/directoryrole_post_members.md) |[directoryObject](directoryobject.md)| Add a user to the directory role by posting to the members navigation property.|
-|[List members](../api/directoryrole_list_members.md) |[directoryObject](directoryobject.md) collection| Get the users that are members of the directory role from the members navigation property.|
+|[Abrufen von directoryRole](../api/directoryrole_get.md) | [directoryRole](directoryrole.md) |Lesen Sie Eigenschaften und Beziehungen DirectoryRole-Objekts.|
+|[Element erstellen](../api/directoryrole_post_members.md) |[directoryObject](directoryobject.md)| Hinzufügen eines Benutzers zur Rolle Directory durch die Veröffentlichung auf die Navigationseigenschaft Mitglieder.|
+|[Mitglieder der Liste](../api/directoryrole_list_members.md) |[DirectoryObject](directoryobject.md) -Auflistung| Rufen Sie die Benutzer, die Mitglieder der Rolle Verzeichnis aus der Navigationseigenschaft Mitglieder sind.|
 
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|description|String|The description for the directory role. Read-only. |
-|DisplayName|String|The display name for the directory role. Read-only. |
-|id|String|The unique identifier for the directory role. Inherited from [directoryObject](directoryobject.md). Key, Not nullable, Read-only.|
-|roleTemplateId|String| The **id** of the [directoryRoleTemplate](directoryroletemplate.md) that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. |
+|description|String|Die Beschreibung für die Rolle Verzeichnis. Schreibgeschützt. |
+|displayName|String|Der Anzeigename für die Rolle Verzeichnis. Schreibgeschützt. |
+|id|String|Der eindeutige Bezeichner für die Rolle Verzeichnis. Geerbt von [DirectoryObject](directoryobject.md). Wichtige, nicht NULL-Werte zulässt, schreibgeschützt.|
+|roleTemplateId|String| Die **Id** des der [DirectoryRoleTemplate](directoryroletemplate.md) , die diese Rolle basiert. Die Eigenschaft muss beim Aktivieren von einer Directory Rolle in einem Mandanten mit einer POST-Operation angegeben werden. Nachdem die Rolle Verzeichnis aktiviert ist, ist die Eigenschaft schreibgeschützt. |
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Member|[directoryObject](directoryobject.md) collection|Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.|
+|Member|[DirectoryObject](directoryobject.md) -Auflistung|Benutzer, die Mitglieder dieser Rolle Directory sind. HTTP-Methoden: GET, POST, LÖSCHEN. Schreibgeschützt. NULL-Werte zulässt.|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

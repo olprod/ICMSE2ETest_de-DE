@@ -1,12 +1,12 @@
-# <a name="create-bucket"></a>Create bucket
+# <a name="create-bucket"></a>Erstellen von bucket
 
-Use this API to create a new bucket.
+Verwenden Sie diese API, um eine neue Bucket erstellen.
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
  
-Wählen Sie Group.ReadWrite.All.
+Group.ReadWrite.All
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /buckets
@@ -15,18 +15,18 @@ POST /buckets
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Value should be set to "Bearer (access-token)" |
+| Autorisierung  | string  | Wert sollte auf "Bearer (Zugriffstoken)" festgelegt werden |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply a JSON representation of [bucket](../resources/bucket.md) object.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Bucket](../resources/bucket.md) -Objekts.
 
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `201, Created` response code and [bucket](../resources/bucket.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `201, Created` Code und [Bucket](../resources/bucket.md) Antwortobjekt im Antworttext.
 
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "create_bucket_from_buckets"
@@ -42,9 +42,9 @@ Content-length: 88
   "orderHint": "orderHint-value"
 }
 ```
-In the request body, supply a JSON representation of [bucket](../resources/bucket.md) object.
+Geben Sie im Textkörper Anforderung eine JSON-Darstellung des [Bucket](../resources/bucket.md) -Objekts.
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils. 
+Es folgt ein Beispiel der Antwort. 
 <!-- {
   "blockType": "response",
   "truncated": true,

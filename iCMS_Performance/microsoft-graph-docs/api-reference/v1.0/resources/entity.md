@@ -1,0 +1,50 @@
+# <a name="entity-resource-type"></a>Ressourcentyp Entität
+
+
+## <a name="methods"></a>Methoden
+
+| Methode       | Rückgabetyp  |Beschreibung|
+|:---------------|:--------|:----------|
+|[Abrufen der Entität](../api/entity_get.md) | [Entität](entity.md) |Lesen Sie Eigenschaften und Beziehungen des Entity-Objekt.|
+|[Löschen](../api/entity_delete.md) | Keine |Entity-Objekt gelöscht werden. |
+
+## <a name="properties"></a>Eigenschaften
+| Eigenschaft     | Typ   |Beschreibung|
+|:---------------|:--------|:----------|
+|id|String| Schreibgeschützt.|
+
+## <a name="relationships"></a>Beziehungen
+Keine
+
+
+
+
+
+## <a name="json-representation"></a>JSON-Darstellung
+
+Es folgt eine JSON-Darstellung der Ressource
+
+<!-- {
+  "blockType": "resource",
+  "optionalProperties": [
+
+  ],
+  "@odata.type": "microsoft.graph.entity"
+}-->
+
+```json
+{
+  "id": "string (identifier)"
+}
+
+```
+
+<!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
+2015-10-25 14:57:30 UTC -->
+<!-- {
+  "type": "#page.annotation",
+  "description": "entity resource",
+  "keywords": "",
+  "section": "documentation",
+  "tocPath": ""
+}-->

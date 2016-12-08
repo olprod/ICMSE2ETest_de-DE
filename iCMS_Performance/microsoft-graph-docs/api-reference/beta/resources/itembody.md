@@ -1,17 +1,17 @@
-# <a name="itembody-resource-type"></a>itemBody resource type
+# <a name="itembody-resource-type"></a>Ressourcentyp itemBody
 
-Represents properties of the body of an item, such as a message, event or group post.
+Stellt die Eigenschaften des Textkörpers eines Elements, wie ein Beitrag Meldung, Ereignis oder Gruppe.
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|Inhalt|String|The content of the item.|
-|contentType|String|The type of the content. Possible values are `Text` and `HTML`.|
+|Inhalt|String|Der Inhalt des Artikels.|
+|contentType|String|Der Typ des Inhalts. Mögliche Werte sind `Text` und `HTML`.|
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",

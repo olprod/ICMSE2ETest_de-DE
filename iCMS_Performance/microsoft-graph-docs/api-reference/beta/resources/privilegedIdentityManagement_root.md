@@ -1,28 +1,28 @@
-# <a name="azure-ad-privileged-identity-management"></a>Azure AD Privileged Identity Management
+# <a name="azure-ad-privileged-identity-management"></a>Identitätsmanagement Azure AD-Berechtigungen
 
-Here is the list of methods that are provided by [Privileged Identity Management](https://azure.microsoft.com/en-us/documentation/articles/active-directory-privileged-identity-management-configure/) service.
+Hier wird die Liste der Methoden, die vom [Privilegierten Identity Management](https://azure.microsoft.com/en-us/documentation/articles/active-directory-privileged-identity-management-configure/) -Dienst bereitgestellt werden.
 
-The service is built on top of OData. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.
+Der Dienst wird auf der Basis OData erstellt. Verwenden Sie zum Filtern der Ergebnisse der Abfrage, die standard-OData ``$filter`` Ausdrücke in die URIs.
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[List privilegedOperationEvent](../api/privilegedoperationevent_list.md) | [privilegedOperationEvent](privilegedoperationevent.md) collection |Get privilegedOperationEvent object collection. |
-|[Get privilegedRole](../api/privilegedrole_get.md) |[privilegedRole](privilegedrole.md)| Get a privilegedRole object.|
-|[List privilegedRole](../api/privilegedrole_list.md) | [privilegedRole](privilegedrole.md) collection |Get privilegedRole object collection. |
-|[List role assignments](../api/privilegedrole_list_assignments.md) | [privilegedRoleAssignment](privilegedroleassignment.md) collection |Get privilegedRoleAssignment collection for the particular role. Each privilegedRoleAssignment represents a role assignment to a user.|
-|[selfActivate](../api/privilegedrole_selfactivate.md) | [privilegedRoleAssignment](privilegedroleassignment.md) |Activate the role that is assigned to the requestor.|
-|[selfDeactivate](../api/privilegedrole_selfdeactivate.md) | [privilegedRoleAssignment](privilegedroleassignment.md) |Deactivate the role that is assigned to the requestor.|
-|[Create privilegedRoleAssignment](../api/privilegedroleassignment_post_privilegedroleassignments.md) |[privilegedRoleAssignment](privilegedroleassignment.md)| Create a new privilegedRoleAssignment (role assignment) by posting to the privilegedRoleAssignments collection.|
-|[List privilegedRoleAssignment](../api/privilegedroleassignment_list.md) | [privilegedRoleAssignment](privilegedroleassignment.md) collection |Get privilegedRoleAssignment object collection. The collection contains all role assignments for the organization. Each privilegedRoleAssignment represents a role assignment to a user. |
-|[Get privilegedRoleAssignment](../api/privilegedroleassignment_get.md) | [privilegedRoleAssignment](privilegedroleassignment.md)|Get privilegedRoleAssignment object with the specified assignment id. |
-|[Delete privilegedRoleAssignment](../api/privilegedroleassignment_delete.md) | Keine. |Delete privilegedRoleAssignment object. |
-|[makePermanent](../api/privilegedroleassignment_makepermanent.md) | [privilegedRoleAssignment](privilegedroleassignment.md) |Make the role assignment as permanent. |
-|[makeEligible](../api/privilegedroleassignment_makeeligible.md) | [privilegedRoleAssignment](privilegedroleassignment.md) |Make the role assignment as eligible. |
-|[my](../api/privilegedroleassignment_my.md) | [privilegedRoleAssignment](privilegedroleassignment.md) collection|Get the requestor's role assignments. |
-|[Get privilegedRoleSettings](../api/privilegedrolesettings_get.md) | [privilegedRoleSettings](../resources/privilegedrolesettings.md)|Retrieve the properties of privilegedRoleSettings object. |
-|[Get privilegedRoleSummary](../api/privilegedrolesummary_get.md) | [privilegedRoleSummary](../resources/privilegedrolesummary.md)|Retrieve the privilegedRoleSummary object. |
+|[Liste privilegedOperationEvent](../api/privilegedoperationevent_list.md) | [PrivilegedOperationEvent](privilegedoperationevent.md) -Auflistung |Rufen Sie PrivilegedOperationEvent-Auflistung-Objekts. |
+|[Abrufen von privilegedRole](../api/privilegedrole_get.md) |[privilegedRole](privilegedrole.md)| Rufen Sie ein PrivilegedRole-Objekt.|
+|[Liste privilegedRole](../api/privilegedrole_list.md) | [PrivilegedRole](privilegedrole.md) -Auflistung |Rufen Sie PrivilegedRole-Auflistung-Objekts. |
+|[Liste von rollenzuweisungen](../api/privilegedrole_list_assignments.md) | [PrivilegedRoleAssignment](privilegedroleassignment.md) -Auflistung |PrivilegedRoleAssignment-Auflistung für die bestimmten Rolle abrufen. Jeder PrivilegedRoleAssignment stellt eine rollenzuweisung an einen Benutzer.|
+|[selfActivate](../api/privilegedrole_selfactivate.md) | [privilegedRoleAssignment](privilegedroleassignment.md) |Aktivieren Sie die Rolle, die an den Requestor zugewiesen ist.|
+|[selfDeactivate](../api/privilegedrole_selfdeactivate.md) | [privilegedRoleAssignment](privilegedroleassignment.md) |Deaktivieren Sie die Rolle, die an den Requestor zugewiesen ist.|
+|[Erstellen von privilegedRoleAssignment](../api/privilegedroleassignment_post_privilegedroleassignments.md) |[privilegedRoleAssignment](privilegedroleassignment.md)| Erstellen Sie eine neue PrivilegedRoleAssignment (rollenzuweisung), indem Sie das Veröffentlichen in der PrivilegedRoleAssignments-Auflistung.|
+|[Liste privilegedRoleAssignment](../api/privilegedroleassignment_list.md) | [PrivilegedRoleAssignment](privilegedroleassignment.md) -Auflistung |Rufen Sie PrivilegedRoleAssignment-Auflistung-Objekts. Die Auflistung enthält alle rollenzuweisungen für die Organisation. Jeder PrivilegedRoleAssignment stellt eine rollenzuweisung an einen Benutzer. |
+|[Abrufen von privilegedRoleAssignment](../api/privilegedroleassignment_get.md) | [privilegedRoleAssignment](privilegedroleassignment.md)|Rufen Sie PrivilegedRoleAssignment Objekt mit der Id angegebenen Zuweisung. |
+|[PrivilegedRoleAssignment löschen](../api/privilegedroleassignment_delete.md) | Keine. |Löschen Sie PrivilegedRoleAssignment Objekt. |
+|[makePermanent](../api/privilegedroleassignment_makepermanent.md) | [privilegedRoleAssignment](privilegedroleassignment.md) |Stellen Sie die rollenzuweisung als dauerhaft entfernt. |
+|[makeEligible](../api/privilegedroleassignment_makeeligible.md) | [privilegedRoleAssignment](privilegedroleassignment.md) |Stellen Sie die rollenzuweisung als geeignet. |
+|[Meine](../api/privilegedroleassignment_my.md) | [PrivilegedRoleAssignment](privilegedroleassignment.md) -Auflistung|Rufen Sie das jeweilige Rolle Zuordnungen. |
+|[Abrufen von privilegedRoleSettings](../api/privilegedrolesettings_get.md) | [privilegedRoleSettings](../resources/privilegedrolesettings.md)|Rufen Sie die Eigenschaften des PrivilegedRoleSettings-Objekts ab. |
+|[Abrufen von privilegedRoleSummary](../api/privilegedrolesummary_get.md) | [privilegedRoleSummary](../resources/privilegedrolesummary.md)|Rufen Sie das Objekt PrivilegedRoleSummary. |
 
 
 

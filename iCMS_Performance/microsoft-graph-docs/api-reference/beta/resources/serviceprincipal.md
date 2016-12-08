@@ -1,11 +1,11 @@
-# <a name="serviceprincipal-resource-type"></a>servicePrincipal resource type
+# <a name="serviceprincipal-resource-type"></a>Ressourcentyp servicePrincipal
 
-Represents an instance of an application in a directory. Inherits from [directoryObject](directoryobject.md).
+Stellt eine Instanz einer Anwendung in einem Verzeichnis. Erbt vom [DirectoryObject](directoryobject.md).
 
 
-### <a name="json-representation"></a>JSON representation
+### <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -51,61 +51,61 @@ Here is a JSON representation of the resource
 ### <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ |Beschreibung|
 |:---------------|:--------|:----------|
-|accountEnabled|Boolean| **true** if the service principal account is enabled; otherwise, **false**.            |
-|appDisplayName|String|The display name exposed by the associated application.|
-|appId|String|The unique identifier for the associated application (its **appId** property).|
-|appRoleAssignmentRequired|Boolean|Specifies whether an **appRoleAssignment** to a user or group is required before Azure AD will issue a user or access token to the application. Not nullable. |
-|appRoles|[appRole](approle.md) collection|The application roles exposed by the associated application. For more information see the **appRoles** property definition on the [application](application.md) entity. Not nullable. |
-|DisplayName|String|The display name for the service principal.|
+|accountEnabled|Boolean| **true** Wenn das Dienstkonto für den Prinzipal aktiviert ist. anderenfalls **false**.            |
+|appDisplayName|String|Der Anzeigename, der von der zugeordneten Anwendung verfügbar gemacht werden.|
+|appId|String|Der eindeutige Bezeichner für die zugewiesene Anwendung (die Eigenschaft **AppId** ).|
+|appRoleAssignmentRequired|Boolean|Gibt an, ob eine **AppRoleAssignment** für einen Benutzer oder Gruppe erforderlich ist, bevor Azure AD einen Benutzer oder eine Zugriffstoken für die Anwendung ausstellt. Nicht auf NULL festgelegt. |
+|appRoles|[AppRole](approle.md) -Auflistung|Die Rollen der Anwendung von der zugeordneten Anwendung verfügbar gemacht werden. Weitere Informationen finden Sie in der [Anwendung](application.md) Entität die Eigenschaftendefinition **AppRoles** . Nicht auf NULL festgelegt. |
+|displayName|String|Der Anzeigename für den Dienstprinzipal.|
 |errorUrl|String|            |
-|homepage|String|The URL to the homepage of the associated   application.|
-|keyCredentials|[keyCredential](keycredential.md) collection|The collection of key credentials associated with the service principal. Not nullable.            |
+|Homepage|String|Die URL zur Homepage der zugehörigen Anwendung.|
+|keyCredentials|[KeyCredential](keycredential.md) -Auflistung|Die Auflistung von wichtigen Anmeldeinformationen, die dem Prinzipal Dienst zugeordnet sind. Nicht auf NULL festgelegt.            |
 |logoutUrl|String|            |
-|oauth2Permissions|[oAuth2Permission](oauth2permission.md) collection|The OAuth 2.0 permissions exposed by the associated application. For more information see the **oauth2Permissions** property definition on the [application](application.md) entity. Not nullable.            |
-|id|String|The unique identifier for the service principal. Inherited from [directoryObject](directoryobject.md). Key. Not nullable. Read-only.|
-|passwordCredentials|[passwordCredential](passwordcredential.md) collection|The collection of password credentials associated with the service principal. Not nullable. |
-|preferredTokenSigningKeyThumbprint|String|Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions. |
-|publisherName|String|The display name of the tenant in which the associated application is specified.|
-|replyUrls|String collection|The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable. |
+|oauth2Permissions|[oAuth2Permission](oauth2permission.md) -Auflistung|Die OAuth 2.0-Berechtigungen von der zugeordneten Anwendung verfügbar gemacht werden. Weitere Informationen finden Sie in der Definition der **oauth2Permissions** -Eigenschaft in der [Anwendung](application.md) Entität. Nicht auf NULL festgelegt.            |
+|id|String|Der eindeutige Bezeichner für den Dienstprinzipal. Geerbt von [DirectoryObject](directoryobject.md). -Taste. Nicht auf NULL festgelegt. Schreibgeschützt.|
+|passwordCredentials|[PasswordCredential](passwordcredential.md) -Auflistung|Die Auflistung von Anmeldeinformationen den Dienstprinzipal zugeordnet. Nicht auf NULL festgelegt. |
+|preferredTokenSigningKeyThumbprint|String|Für die interne Verwendung reserviert. Schreiben oder verlassen sich andernfalls auf diese Eigenschaft nicht. Kann in zukünftigen Versionen entfernt werden. |
+|publisherName|String|Der Anzeigename des Mandanten in dem verbundenen Anwendung angegeben wird.|
+|replyUrls|Zeichenfolgenauflistung|Die URLs, dass Benutzertoken, um für die Anmeldung mit der zugeordneten Anwendung oder die Umleitung URIs, dass OAuth 2.0 Autorisierungscodes gesendet werden und Zugriffstoken werden für die zugewiesene Anwendung an. Nicht auf NULL festgelegt. |
 |samlMetadataUrl|String| |
-|servicePrincipalNames|String collection|The URIs that identify the associated application. For more information see, [Application Objects and Service Principal Objects](https://msdn.microsoft.com/en-us/library/azure/dn132633.aspx).The **any** operator is required for filter expressions on multi-valued properties.  Not nullable. |
-|Tags|String collection| Not nullable. |
+|servicePrincipalNames|Zeichenfolgenauflistung|Die URIs, mit denen die zugewiesene Anwendung identifiziert. Weitere Informationen finden Sie unter [Application Objects und Service Principal-Objekte](https://msdn.microsoft.com/en-us/library/azure/dn132633.aspx). **Any** -Operator ist erforderlich für Filterausdrücke auf mehrwertige Eigenschaften.  Nicht auf NULL festgelegt. |
+|Tags|Zeichenfolgenauflistung| Nicht auf NULL festgelegt. |
 
 ### <a name="relationships"></a>Beziehungen
 | Beziehung | Typ |Beschreibung|
 |:---------------|:--------|:----------|
-|appRoleAssignedTo|[appRoleAssignment](approleassignment.md)|Principals (users, groups, and service principals) that are assigned to this service principal. Read-only.|
-|appRoleAssignments|[appRoleAssignment](approleassignment.md) collection|Applications that the service principal is assigned to. Read-only. Nullable.|
-|createdObjects|[directoryObject](directoryobject.md) collection|Directory objects created by this service principal. Read-only. Nullable.|
-|memberOf|[directoryObject](directoryobject.md) collection|Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.|
-|oauth2PermissionGrants|[oAuth2PermissionGrant](oauth2permissiongrant.md) collection|User impersonation grants associated with this service principal. Read-only. Nullable.|
-|ownedObjects|[directoryObject](directoryobject.md) collection|Directory objects that are owned by this service principal. Read-only. Nullable.|
-|owners (Administrator)|[directoryObject](directoryobject.md) collection|Directory objects that are owners of this service principal. The owners are a set of non-admin users who are allowed to modify this object. Read-only. Nullable.|
-|Richtlinie|[policy](policy.md) collection|The policies assigned to this service principal.|
+|appRoleAssignedTo|[appRoleAssignment](approleassignment.md)|Prinzipale (Benutzer, Gruppen und Dienstprinzipale), die diese Dienstprinzipal zugewiesen sind. Schreibgeschützt.|
+|appRoleAssignments|[AppRoleAssignment](approleassignment.md) -Auflistung|Anwendungen, denen der Dienstprinzipal zugewiesen ist. Schreibgeschützt. NULL-Werte zulässt.|
+|createdObjects|[DirectoryObject](directoryobject.md) -Auflistung|Verzeichnis Objekte, die von diesem Dienstprinzipal erstellt. Schreibgeschützt. NULL-Werte zulässt.|
+|Mitglied|[DirectoryObject](directoryobject.md) -Auflistung|Rollen, denen diese Dienstprinzipal ein Mitglied ist. HTTP-Methoden: GET schreibgeschützt. NULL-Werte zulässt.|
+|oauth2PermissionGrants|[oAuth2PermissionGrant](oauth2permissiongrant.md) -Auflistung|Benutzer Identitätswechsel gewährt dieser Dienstprinzipal zugeordnet sind. Schreibgeschützt. NULL-Werte zulässt.|
+|ownedObjects|[DirectoryObject](directoryobject.md) -Auflistung|Directory-Objekte, die diese Dienstprinzipal gehören. Schreibgeschützt. NULL-Werte zulässt.|
+|Besitzer|[DirectoryObject](directoryobject.md) -Auflistung|Directory-Objekte, die Besitzer des Prinzipals Service sind. Die Besitzer sind eine Reihe von nicht-Administratoren, die berechtigt sind, um dieses Objekt zu ändern. Schreibgeschützt. NULL-Werte zulässt.|
+|Richtlinie|Auflistung von [Gruppenrichtlinien](policy.md)|Die Richtlinien, diese Dienstprinzipal zugewiesen sind.|
 
 ### <a name="methods"></a>Methoden
 
 | Methode       | Rückgabetyp  |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get servicePrincipal](../api/serviceprincipal_get.md) | [servicePrincipal](serviceprincipal.md) |Read properties and relationships of servicePrincipal object.|
-|[Create appRoleAssignment](../api/serviceprincipal_post_approleassignments.md) |[appRoleAssignment](approleassignment.md)| Create a new appRoleAssignment by posting to the appRoleAssignments collection.|
-|[List appRoleAssignments](../api/serviceprincipal_list_approleassignments.md) |[appRoleAssignment](approleassignment.md) collection| Get a appRoleAssignment object collection.|
-|[Create createdObject](../api/serviceprincipal_post_createdobjects.md) |[directoryObject](directoryobject.md)| Create a new createdObject by posting to the createdObjects collection.|
-|[List createdObjects](../api/serviceprincipal_list_createdobjects.md) |[directoryObject](directoryobject.md) collection| Get a createdObject object collection.|
-|[Create memberOf](../api/serviceprincipal_post_memberof.md) |[directoryObject](directoryobject.md)| Create a new memberOf by posting to the memberOf collection.|
-|[List memberOf](../api/serviceprincipal_list_memberof.md) |[directoryObject](directoryobject.md) collection| Get a memberOf object collection.|
-|[List assigned policies](../api/policy_list_assigned.md)| [policy](policy.md) collection| Get all policies assigned to this object.|
-|[Create oAuth2PermissionGrant](../api/serviceprincipal_post_oauth2permissiongrants.md) |[oAuth2PermissionGrant](oauth2permissiongrant.md)| Create a new oAuth2PermissionGrant by posting to the oauth2PermissionGrants collection.|
-|[List oauth2PermissionGrants](../api/serviceprincipal_list_oauth2permissiongrants.md) |[oAuth2PermissionGrant](oauth2permissiongrant.md) collection| Get a oAuth2PermissionGrant object collection.|
-|[Create ownedObject](../api/serviceprincipal_post_ownedobjects.md) |[directoryObject](directoryobject.md)| Create a new ownedObject by posting to the ownedObjects collection.|
-|[List ownedObjects](../api/serviceprincipal_list_ownedobjects.md) |[directoryObject](directoryobject.md) collection| Get a ownedObject object collection.|
-|[Create owner](../api/serviceprincipal_post_owners.md) |[directoryObject](directoryobject.md)| Create a new owner by posting to the owners collection.|
-|[List owners](../api/serviceprincipal_list_owners.md) |[directoryObject](directoryobject.md) collection| Get a owner object collection.|
-|[Update](../api/serviceprincipal_update.md) | [servicePrincipal](serviceprincipal.md)  |Update servicePrincipal object. |
-|[delete()](../api/serviceprincipal_delete.md) | Keine |Delete servicePrincipal object. |
-|[checkMemberGroups](../api/serviceprincipal_checkmembergroups.md)|String collection||
-|[getMemberGroups](../api/serviceprincipal_getmembergroups.md)|String collection||
-|[getMemberObjects](../api/serviceprincipal_getmemberobjects.md)|String collection||
+|[Abrufen von servicePrincipal](../api/serviceprincipal_get.md) | [servicePrincipal](serviceprincipal.md) |Lesen Sie Eigenschaften und Beziehungen ServicePrincipal-Objekts.|
+|[Erstellen von appRoleAssignment](../api/serviceprincipal_post_approleassignments.md) |[appRoleAssignment](approleassignment.md)| Erstellen Sie eine neue AppRoleAssignment durch die Veröffentlichung auf der AppRoleAssignments-Auflistung.|
+|[Liste appRoleAssignments](../api/serviceprincipal_list_approleassignments.md) |[AppRoleAssignment](approleassignment.md) -Auflistung| Rufen Sie eine Auflistung der AppRoleAssignment-Objekts.|
+|[Erstellen von createdObject](../api/serviceprincipal_post_createdobjects.md) |[directoryObject](directoryobject.md)| Erstellen Sie eine neue CreatedObject durch die Veröffentlichung auf der CreatedObjects-Auflistung.|
+|[Liste createdObjects](../api/serviceprincipal_list_createdobjects.md) |[DirectoryObject](directoryobject.md) -Auflistung| Rufen Sie eine Auflistung der CreatedObject-Objekts.|
+|[Erstellen von Mitglied](../api/serviceprincipal_post_memberof.md) |[directoryObject](directoryobject.md)| Erstellen Sie ein neues Mitglied, indem Sie das Veröffentlichen in der Auflistung Mitglied.|
+|[Liste Mitglied](../api/serviceprincipal_list_memberof.md) |[DirectoryObject](directoryobject.md) -Auflistung| Get-Auflistung ein Mitglied-Objekts.|
+|[Zugewiesen-Listenrichtlinien](../api/policy_list_assigned.md)| Auflistung von [Gruppenrichtlinien](policy.md)| Rufen Sie alle Richtlinien, die auf dieses Objekt zugewiesen.|
+|[OAuth2PermissionGrant erstellen](../api/serviceprincipal_post_oauth2permissiongrants.md) |[oAuth2PermissionGrant](oauth2permissiongrant.md)| Erstellen Sie eine neue oAuth2PermissionGrant durch die Veröffentlichung auf der oauth2PermissionGrants-Auflistung.|
+|[Liste oauth2PermissionGrants](../api/serviceprincipal_list_oauth2permissiongrants.md) |[oAuth2PermissionGrant](oauth2permissiongrant.md) -Auflistung| Rufen Sie eine Auflistung der oAuth2PermissionGrant-Objekts.|
+|[Erstellen von ownedObject](../api/serviceprincipal_post_ownedobjects.md) |[directoryObject](directoryobject.md)| Erstellen Sie eine neue OwnedObject, indem Sie das Veröffentlichen in der OwnedObjects-Auflistung.|
+|[Liste ownedObjects](../api/serviceprincipal_list_ownedobjects.md) |[DirectoryObject](directoryobject.md) -Auflistung| Rufen Sie eine Auflistung der OwnedObject-Objekts.|
+|[Ersteller-Besitzer](../api/serviceprincipal_post_owners.md) |[directoryObject](directoryobject.md)| Erstellen Sie einen neuen Besitzer, indem Sie das Veröffentlichen in der Besitzer-Auflistung.|
+|[Liste Besitzer](../api/serviceprincipal_list_owners.md) |[DirectoryObject](directoryobject.md) -Auflistung| Rufen Sie einen Besitzer Auflistung-Objekts.|
+|[Update](../api/serviceprincipal_update.md) | [servicePrincipal](serviceprincipal.md)  |ServicePrincipal-Objekt zu aktualisieren. |
+|[Löschen](../api/serviceprincipal_delete.md) | Keine |ServicePrincipal-Objekt zu löschen. |
+|[checkMemberGroups](../api/serviceprincipal_checkmembergroups.md)|Zeichenfolgenauflistung||
+|[getMemberGroups](../api/serviceprincipal_getmembergroups.md)|Zeichenfolgenauflistung||
+|[getMemberObjects](../api/serviceprincipal_getmemberobjects.md)|Zeichenfolgenauflistung||
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

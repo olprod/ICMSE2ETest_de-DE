@@ -1,10 +1,10 @@
-# <a name="plan-resource-type"></a>plan resource type
+# <a name="plan-resource-type"></a>Plan Ressourcentyp
 
-The Plan resource represents a plan in Office 365. A plan can be owned by a [group](group.md) and contains a collection of [tasks](task.md). It also can have a collection of [buckets](bucket.md). Each plan object has a [details](plandetails.md) object which can contain more information about the plan. See [overview](tasks_overview.md) for more information regarding relationships between group, plan and task.
+Die Ressource Plan stellt einen Plan in Office 365. Ein Plan kann eine [Gruppe](group.md) Besitz und enthält eine Auflistung von [Aufgaben](task.md). Sie können auch eine Auflistung von [Buckets](bucket.md)verfügen. Jedes Plan Objekt ist ein [Details](plandetails.md) -Objekt die Weitere Informationen zu den Plan enthalten kann. Finden Sie unter [Übersicht über die](tasks_overview.md) Weitere Informationen zu den Beziehungen zwischen Gruppen, Planen und Aufgabe.
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource
+Es folgt eine JSON-Darstellung der Ressource
 
 <!-- {
   "blockType": "resource",
@@ -31,32 +31,32 @@ Here is a JSON representation of the resource
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|createdBy|String|Read-only. User id by which the plan is created.|
-|id|String| Read-only. Id of the plan. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer.md) is done on the service. |
-|Besitzer|String|[Group](group.md) `id` by which the plan is owned. A valid group must exist before this field can be set. Once set, this can only be updated by the owner.|
-|title|String| Required. Title of the plan. This is usually set the name of the group owning the plan.|
+|createdBy|String|Schreibgeschützt. Benutzer-Id mit dem Plan erstellt wird.|
+|id|String| Schreibgeschützt. ID des Plans. Es ist eine 28 Zeichen lang und Groß-/Kleinschreibung beachtet. [Format Validierung](tasks_identifiers_disclaimer.md) erfolgt für den Dienst. |
+|Besitzer|String|[Gruppe](group.md) `id` nach dem Planen gehört. Eine gültige Gruppe muss vorhanden sein, bevor Sie dieses Feld festgelegt werden kann. Einmal festgelegt ist, kann dies nur vom Besitzer aktualisiert werden.|
+|title|String| Erforderlich. Titel des Plans. In der Regel ist dies der Name der Gruppe der Besitzer des Plans festgelegt.|
 
 ## <a name="relationships"></a>Beziehungen
 | Beziehung | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|assignedToTaskBoard|[planTaskBoard](plantaskboard.md)| Read-only. Used to render the task board view correctly when grouped by assignedTo.|
-|bucketTaskBoard|[planTaskBoard](plantaskboard.md)| Read-only. Used to render the buckets correctly in the task board view.|
-|buckets|[bucket](bucket.md) collection| Read-only. Nullable. Collection of buckets in the plan. |
-|Details|[planDetails](plandetails.md)| Read-only. Additional details about the plan. |
-|progressTaskBoard|[planTaskBoard](plantaskboard.md)| Read-only. Used to render the task board view correctly when grouped by progress.|
-|Aufgaben|[task](task.md) collection| Read-only. Nullable. Collection of tasks in the plan. |
+|assignedToTaskBoard|[planTaskBoard](plantaskboard.md)| Schreibgeschützt. Verwendet, um die Pinnwand Vorgangsansicht ordnungsgemäß gerendert wird, wenn nach AssignedTo gruppiert.|
+|bucketTaskBoard|[planTaskBoard](plantaskboard.md)| Schreibgeschützt. Zum Rendern der Buckets ordnungsgemäß in der Vorgangsansicht Pinnwand verwendet.|
+|Buckets|[Bucket](bucket.md) -Auflistung| Schreibgeschützt. NULL-Werte zulässt. Die Auflistung der Buckets im Plan. |
+|Details|[planDetails](plandetails.md)| Schreibgeschützt. Zusätzliche Informationen zu planen. |
+|progressTaskBoard|[planTaskBoard](plantaskboard.md)| Schreibgeschützt. Verwendet, um die Pinnwand Vorgangsansicht ordnungsgemäß gerendert wird, wenn durch den Fortschritt gruppiert.|
+|Aufgaben|Auflistung von [Workflowaufgaben](task.md)| Schreibgeschützt. NULL-Werte zulässt. Auflistung von Aufgaben in den Plan. |
 
 ## <a name="methods"></a>Methoden
 
 | Methode           | Rückgabetyp    |Beschreibung|
 |:---------------|:--------|:----------|
-|[Get plan](../api/plan_get.md) | [plan](plan.md) |Read properties and relationships of plan object.|
-|[List buckets](../api/plan_list_buckets.md) |[bucket](bucket.md) collection| Get a bucket object collection.|
-|[List tasks](../api/plan_list_tasks.md) |[task](task.md) collection| Get a task object collection. |
-|[Create plan](../api/plan_post_plans.md) | [plan](plan.md) | Erstellen Sie ein neues Abonnement. |
-|[Update plan](../api/plan_update.md) | Keine    |Update plan object. |
-|[Delete plan](../api/plan_delete.md) | Keine |Delete plan object. |
-|[List plans](../api/plan_list.md) | [plan](plan.md) collection | Get a plan object collection. |
+|[Plan abrufen](../api/plan_get.md) | [Plan](plan.md) |Eigenschaften lesen und Beziehungen Plan-Objekts.|
+|[Liste buckets](../api/plan_list_buckets.md) |[Bucket](bucket.md) -Auflistung| Rufen Sie eine Auflistung der Bucket-Objekts.|
+|[Listenaufgaben](../api/plan_list_tasks.md) |Auflistung von [Workflowaufgaben](task.md)| Rufen Sie eine Auflistung von Workflowaufgaben-Objekt. |
+|[Erstellen eines Plans](../api/plan_post_plans.md) | [Plan](plan.md) | Erstellen eines neuen Plans. |
+|[Plan aktualisieren](../api/plan_update.md) | Keine    |Update-Plan-Objekt. |
+|[Plan löschen](../api/plan_delete.md) | Keine |Plan-Objekt zu löschen. |
+|[Liste Pläne](../api/plan_list.md) | [Plan](plan.md) -Auflistung | Rufen Sie eine Auflistung der Plan-Objekts. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

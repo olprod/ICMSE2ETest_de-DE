@@ -1,15 +1,15 @@
-# <a name="move-an-item"></a>Move - Ein Element verschieben.
+# <a name="move-an-item"></a>Verschieben eines Elements
 
-Update the parent folder for an item by ID or path. To move an item, you update its parentReference property.
+Aktualisieren des übergeordneten Ordners für ein Element durch ID oder Pfad. Wenn ein Element verschieben möchten, aktualisieren Sie dessen ParentReference-Eigenschaft.
 
-You can also move an item into another folder by updating the **parentInfo.id** or **parentInfo.path** property to the ID of the target parent.
+Sie können auch ein Element in einen anderen Ordner verschieben, durch die **parentInfo.id** oder **parentInfo.path** -Eigenschaft auf die ID des übergeordneten Ziel aktualisieren.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-One of the following **scopes** is required to execute this API:
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen:
 
   * Files.ReadWrite
 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+## <a name="http-request"></a>HTTP-Anforderung
 
 ```http
 PATCH /me/drive/items/{item-id}
@@ -21,20 +21,21 @@ PATCH /groups/<id>/drive/<item-id>
 
 | Name          | Typ   | Beschreibung                                                                                                                                                         |
 |:--------------|:-------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Autorisierung | string | Bearer <token>. Required.                                                                                                                                           |
-| if-match      | String | If this request header is included and the eTag (or cTag) provided does not match the current eTag on the folder, a `412 Precondition Failed` response is returned. |
+| Autorisierung | string | Bearer <token>. Erforderlich.                                                                                                                                           |
+| If-Match-      | String | Wenn diese Anforderungsheader enthalten und bereitgestellten eTag (oder cTag) nicht das aktuelle eTag für den Ordner entspricht ein `412 Precondition Failed` Antwort zurückgegeben wird. |
 
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, supply the new value for the **parentReference** property. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie den neuen Wert für die **ParentReference** -Eigenschaft im Textkörper Anforderung.
+Vorhandene Eigenschaften, die nicht im Textkörper Anforderung enthalten sind werden die vorherigen Werte verwalten oder neu berechnet basierend auf Änderungen an andere Eigenschaftswerte werden. Für eine optimale Leistung sollten nicht Sie vorhandenen Werte enthalten, die nicht geändert haben.
 
-**Note:** When moving items to the root of a OneDrive you cannot use the `"id:" "root"` syntax. You either need to use the real ID of the root folder, or use `{"path": "/drive/root"}` for the parent reference.
+**Hinweis:** Beim Verschieben von Elementen in den Stamm des einer OneDrive kann nicht verwendet werden die `"id:" "root"` Syntax. Sie müssen entweder die tatsächliche ID des Stammordners verwenden, oder verwenden Sie `{"path": "/drive/root"}` für den übergeordneten Verweis.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns a `200 OK` response code and updated [item](../resources/driveitem.md) object in the response body.
+Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortcode und aktualisierte [Artikel](../resources/driveitem.md) -Objekts in der Antworttext.
 
 ## <a name="example"></a>Beispiel
-This example moves a folder to a new parent path.
+Dieses Beispiel verschiebt einen Ordner in einen neuen übergeordneten Pfad.
 
 <!-- {
   "blockType": "request",
@@ -51,7 +52,7 @@ Content-type: application/json
 ```
 
 ## <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true,

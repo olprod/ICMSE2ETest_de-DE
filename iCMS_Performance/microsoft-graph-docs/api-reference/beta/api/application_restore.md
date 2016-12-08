@@ -1,9 +1,9 @@
-# <a name="application-restore"></a>application: restore
+# <a name="application-restore"></a>Anwendung: Wiederherstellen
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API:
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Die folgenden **Bereiche** sind erforderlich, diese API ausführen:
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /applications/<id>/restore
@@ -12,22 +12,22 @@ POST /applications/<id>/restore
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
 |:---------------|:--------|:----------|
-| Autorisierung  | string  | Bearer <token>. Required. |
+| Autorisierung  | string  | Bearer <token>. Erforderlich. |
 
-## <a name="request-body"></a>Anforderungstextkörper
-In the request body, provide a JSON object with the following parameters.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parametern aus.
 
 | Parameter    | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
 |identifierUris|String||
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and [application](../resources/application.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `200, OK` Antwortobjekt Code und [Anwendung](../resources/application.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "application_restore"
@@ -45,7 +45,7 @@ Content-length: 56
 ```
 
 ##### <a name="response"></a>Antwort
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Antwort.
 <!-- {
   "blockType": "response",
   "truncated": true,

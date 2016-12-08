@@ -1,32 +1,32 @@
-# <a name="privilegedrole-selfdeactivate"></a>privilegedRole: selfDeactivate
+# <a name="privilegedrole-selfdeactivate"></a>PrivilegedRole: SelfDeactivate
 
-Deactivate the role that is assigned to the requestor.
+Deaktivieren Sie die Rolle, die an den Requestor zugewiesen ist.
 ## <a name="prerequisites"></a>Voraussetzungen
-The following **scopes** are required to execute this API: _Directory.AccessAsUser.All_
+Die folgenden **Bereiche** sind erforderlich, um diese API ausführen: _Directory.AccessAsUser.All_
 
-The requestor can only call ```selfDeactivate``` for the role that is assigned to him. 
-## <a name="http-request"></a>Verwenden Sie diese HTTP-Anforderung
+Der Requestor kann nur aufgerufen ```selfDeactivate``` für die Rolle, die ihm zugewiesen ist. 
+## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /privilegedRoles/<id>/selfDeactivate
 ```
 
-Note that ``<id>`` is the target role id.
+Beachten Sie, dass ``<id>`` ist die Id der Ziel-Rolle.
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Beschreibung|
 |:---------------|:----------|
-| Autorisierung  | Bearer <code>|
+| Autorisierung  | Bearer<code>|
 
-## <a name="request-body"></a>Anforderungstextkörper
-Do not supply a request body for this method.
+## <a name="request-body"></a>Anforderungstext
+Geben Sie einen Anforderungstext für diese Methode nicht.
 
 ## <a name="response"></a>Antwort
-If successful, this method returns `200, OK` response code and [privilegedRoleAssignment](../resources/privilegedroleassignment.md) object in the response body.
+Wenn erfolgreich ist, diese Methode gibt `200, OK` Antwortobjekt Code und [PrivilegedRoleAssignment](../resources/privilegedroleassignment.md) im Antworttext.
 
 ## <a name="example"></a>Beispiel
-Here is an example of how to call this API.
+Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
 ##### <a name="request"></a>Anforderung
-Nachfolgend finden Sie ein Beispiel für das Markup des Nummerierungsteils.
+Es folgt ein Beispiel der Anforderung.
 <!-- {
   "blockType": "request",
   "name": "privilegedrole_selfdeactivate"
@@ -36,7 +36,7 @@ POST https://graph.microsoft.com/beta/privilegedRoles/<id>/selfDeactivate
 ```
 
 ##### <a name="response"></a>Antwort
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

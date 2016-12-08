@@ -1,10 +1,10 @@
-# <a name="addin-resource-type"></a>addIn resource type
+# <a name="addin-resource-type"></a>AddIn Ressourcentyp
 
 
 
-## <a name="json-representation"></a>JSON representation
+## <a name="json-representation"></a>JSON-Darstellung
 
-Here is a JSON representation of the resource.
+Es folgt eine JSON-Darstellung der Ressource.
 
 <!-- {
   "blockType": "resource",
@@ -25,8 +25,8 @@ Here is a JSON representation of the resource.
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
-|id|Guid||
-|Eigenschaften|[keyValue](keyvalue.md) collection||
+|id|GUID||
+|Eigenschaften|[KeyValue](keyvalue.md) -Auflistung||
 |Typ|string||
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
