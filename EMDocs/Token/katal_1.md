@@ -1,1 +1,1 @@
-<Token xmlns:xlink="http://www.w3.org/1999/xlink">Windows サーバーの Windows Azure のパック</Token>
+<Token xmlns:xlink="http://www.w3.org/1999/xlink">Führen Sie Windows Azure Absatz Windows Server Pack</Token>

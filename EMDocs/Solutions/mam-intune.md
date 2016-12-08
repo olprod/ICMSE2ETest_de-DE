@@ -1,6 +1,6 @@
 ---
-title: "Intune でのモバイル アプリ管理ポリシーの使用"
-description: "Intune でモバイル アプリ管理ポリシーを使用してアプリを作成し展開します。"
+title: "Usando Políticas de Gerenciamento de Aplicativos Móveis keine Intune"
+description: "Crie e Implante um Aplicativo keine Intune com Uma Política de Gerenciamento de Aplicativos Móveis."
 keywords: 
 author: craigcaseyMSFT
 manager: swadhwa
@@ -12,108 +12,106 @@ ms.technology:
 ms.assetid: 6d7c4104-b85f-407e-8832-0e6bbac934f5
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: c66a8f31c11062ecaff9d6f9c2a58ca7bca27832
-ms.sourcegitcommit: 45ffbe57b8a2ff1ba6d26efde7f4e2fee8495593
+ms.openlocfilehash: 24e3953f0625da90dc42c68703ee2433429efbf8
+ms.sourcegitcommit: 1b0888e015659ad5d1cb408e4af57f1b916d13a3
 translationtype: MT
 ---
-# <a name="intune-"></a>Intune でのモバイル アプリ管理ポリシーの使用
-多くの企業が Microsoft Intune を利用する主な理由の 1 つは、ユーザーの仕事の完了に必要なアプリを展開するためです。 アプリを展開する前に、[デバイスを管理対象にする](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune)必要があります。
+# <a name="usar-polticas-de-gerenciamento-de-aplicativos-mveis-no-intune"></a>Usar Políticas de Gerenciamento de Aplicativos Móveis keine Intune
+Um Dos Motivos Principais Pelos Quais Muitas Empresas Usam o Microsoft Intune ä implantar Aplicativos Que os Usuários Precisam Absatz Realizar Seu Trabalho. Antes de implantar Aplicativos, Você Precisará [Tornar Seus Dispositivos Gerenciados](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune)an.
 
-たとえば、勤務先で Microsoft Word が使われている場合、Windows 用、iOS 用、Android 用など、さまざまなバージョンが存在します。 IT-管理者は、社内データのセキュリティを確保しながら、ユーザーに仕事ができる環境を提供するという目的で、さまざまなデバイスやコンピューター プラットフォーム上の多数のアプリを管理するという難題に直面します。
+Por Exemplo, Se Sua Empresa Usa o Microsoft Word Há Versões Disponíveis Absatz Windows, iOS und Android e Outros. O Desafio Que Você Como um Administrador de TI Enfrenta ä Gerenciar eine Variedade de Aplicativos Disponíveis, langen Muitas Plataformas Diferentes de Computador E de Dispositivo com-o Objetivo de Permitir Que os Usuários Façam Seu Trabalho E, Simultaneamente, Garantir eine Segurança Dos Seus Dados Corporativos.
 
-Intune を Configuration Manager とともに使用している場合は、「[-Konfigurations-Manager のモバイル アプリケーション管理ポリシーを使用してアプリを制御する方法](https://technet.microsoft.com/library/mt131414.aspx?f=255&MSPPError=-2147217396)」をご覧ください。
+SE Estiver Usando o Intune com-o Consulte [wie Steuerelement Apps mithilfe von Mobile Anwendung Informationsverwaltungsrichtlinien im Konfigurations-Manager](https://technet.microsoft.com/library/mt131414.aspx?f=255&MSPPError=-2147217396) -Konfigurations-Manager (Como controlar Aplicativos Usando Políticas de Gerenciamento de Aplicativos Móveis keine Konfigurations-Manager).
 
-モバイル アプリ管理ポリシー (MAM) は以下をサポートします。
-- Android 4 以降を実行するデバイス。
-- iOS 7 以降を実行するデバイス。
-
-> [!NOTE]
-> MAM ポリシーでは、Intune に登録されているデバイスがサポートされます。 Intune で管理されていないデバイスのアプリ管理ポリシーを作成する方法については、「[Microsoft Intune でモバイル アプリケーション管理ポリシーを使用してデータを保護する](https://docs.microsoft.com/intune/deploy-use/protect-app-data-using-mobile-app-management-policies-with-microsoft-intune)」をご覧ください。
-
-他の Intune ポリシーとは異なり、MAM ポリシーは直接展開しません。 代わりに、制限するアプリにポリシーを関連付けます。 アプリがデバイスにデプロイされ、インストールされると、指定した設定が有効になります。
-
-アプリに制限を適用するには、アプリに Microsoft Intune アプリ ソフトウェア開発キット (SDK) を組み込む必要があります。 この種類のアプリを取得するには、次の 2 つの方法があります。
-
-- 
-            **ポリシー管理型アプリを使用する**- アプリ SDK が組み込まれています。 この種類のアプリを追加するには、iTunes ストアや Google wiedergeben などのアプリ ストアからアプリへのリンクを指定します。 それ以上の処理は、この種類のアプリには必要ありません。 サポートされている Microsoft アプリの完全な一覧については、Microsoft Intune アプリケーション パートナー ページの[Microsoft Intune モバイル アプリケーション ギャラリー](https://www.microsoft.com/en-us/cloud-platform/microsoft-intune-partners)をご覧ください。 アプリをクリックし、サポートされるシナリオ、プラットフォーム、アプリのマルチ ID 対応を確認してください。
-- 
-            **"ラップされた" アプリを使用する**- Microsoft Intune アプリ ラッピング ツールを使用して、アプリ SDK を含むように再パッケージされたアプリ。 通常、このツールは、社内で作成された企業アプリの処理に使用されます。 このツールを使用して、アプリ ストアからダウンロードされたアプリを処理することはできません。 次を参照してください。
-  - [Microsoft Intune アプリ ラッピング ツールでモバイル アプリケーション管理のために iOS アプリを準備する](https://docs.microsoft.com/intune/deploy-use/prepare-ios-apps-for-mobile-application-management-with-the-microsoft-intune-app-wrapping-tool)
-  - [Intune アプリ ラッピング ツールでモバイル アプリケーションを管理するために Android アプリを準備する](https://docs.microsoft.com/intune/deploy-use/prepare-android-apps-for-mobile-application-management-with-the-microsoft-intune-app-wrapping-tool)
-
-iOS や Android 用の Outlook アプリなど、管理対象アプリの一部は**複数の ID**をサポートしています。 つまり、Intune により、アプリでは管理設定が会社のアカウントまたはデータのみに適用されます。
-
-Outlook アプリの使用例を次に示します。
-- ユーザーが会社と個人の電子メール アカウントを構成した場合、Intune は、会社のアカウントのみに管理設定を適用し、個人のアカウントは管理しません。
-- Outlook デバイスが廃止された場合や登録解除された場合は、会社の データだけがデバイスから削除されます。
-- 使用する会社のアカウントは、デバイスを Intune に登録するときに使用したものと同じアカウントにする必要があります。
-
-Word、Excel、および PowerPoint も複数の ID をサポートしていますが、企業のものと特定できるデータを OneDrive や SharePoint などのサービスから編集している場合にのみポリシーによる制限があります。
-
-## <a name="-intune-"></a>モバイル アプリ管理ポリシーを使用した Intune でのアプリの作成と展開
-
-- 手順 1: ポリシー管理型アプリへのリンクを取得するか、ラップされたアプリを作成する。
-- 手順 2: クラウド ストレージにアプリを公開する。
-- 手順 3: モバイル アプリ管理ポリシーを作成する。
-- 手順 4: アプリを展開し、アプリをモバイル アプリ管理ポリシーに関連付けるオプションを選択する。
-- 手順 5: アプリの展開を監視する。
-
-### <a name="-1-"></a>手順 1: ポリシー管理型アプリへのリンクを取得するか、ラップされたアプリを作成する
-- 
-            **ポリシー管理型アプリへのリンクを取得するには**- アプリ ストアから、展開するポリシー管理型アプリの URL を見つけてメモします。 たとえば、Microsoft Word für iPad アプリの URL は、[https://itunes.apple.com/jp/app/microsoft-word-for-ipad/id586447913?mt=8](https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8)です。
-- 
-            **ラップされたアプリを作成するには**- 「[Microsoft Intune アプリ ラッピング ツールでモバイル アプリケーション管理のために iOS アプリを準備する](https://docs.microsoft.com/intune/deploy-use/prepare-ios-apps-for-mobile-application-management-with-the-microsoft-intune-app-wrapping-tool)」と「[Intune アプリ ラッピング ツールでモバイル アプリケーション管理のために Android アプリを準備する](https://docs.microsoft.com/intune/deploy-use/prepare-android-apps-for-mobile-application-management-with-the-microsoft-intune-app-wrapping-tool)」の各トピックの情報を活用して、ラップされたアプリを作成します。 このツールでは、クラウド ストレージにアプリを発行するときに使用する処理済みのアプリが作成されます。
-
-### <a name="-2-"></a>手順 2: クラウド ストレージにアプリをアップロードする
-管理対象アプリを公開する手順は、公開するのがポリシー管理型アプリであるか、Microsoft Tool Textumbruch für Intune App für iOS を使用して処理されたアプリであるかによって異なります。
-
-クラウド ストレージにアプリをアップロードする完全な手順については、「[Microsoft Intune でモバイル デバイスのアプリを追加する](https://docs.microsoft.com/intune/deploy-use/add-apps-for-mobile-devices-in-microsoft-intune#add-the-app)」をご覧ください。
-
-### <a name="-3-"></a>手順 3: モバイル アプリ管理ポリシーを作成する
-Azure ポータルは MAM ポリシーを作成するために推奨される管理コンソールです。 Azure ポータルでは、次の MAM シナリオをサポートします。
-- Intune に登録されたデバイス
-- サードパーティの MDM ソリューションで管理されるデバイス
-- MDM ソリューション (BYOD) で管理されないデバイス
-
-MAM ポリシーの作成に Azure ポータルを使用する場合の詳細については、「[Microsoft Intune でのモバイル アプリ管理ポリシーの作成および展開](https://docs.microsoft.com/intune/deploy-use/create-and-deploy-mobile-app-management-policies-with-microsoft-intune)」をご覧ください。
-
-現在、Intune 管理コンソールを使用してデバイスを管理している場合は、Intune に登録済みのデバイスのアプリをサポートする MAM ポリシーを[Intune 管理コンソール](https://docs.microsoft.com/intune/deploy-use/configure-and-deploy-mobile-application-management-policies-in-the-microsoft-intune-console#-step-3-create-a-mobile-application-management-policy)を使用して作成できます。
-
-
-### <a name="-4-"></a>手順 4: アプリを展開し、アプリをモバイル アプリケーション管理ポリシーに関連付けるオプションを選択する
-Azure ポータルを使用している場合、[ユーザーに MAM ポリシーを展開](https://docs.microsoft.com/intune/deploy-use/create-and-deploy-mobile-app-management-policies-with-microsoft-intune#deploy-a-policy-to-users)します。
-
-Intune ポータルを使用している場合、モバイル アプリの管理ページでモバイル アプリ管理ポリシーを選択して、ポリシーをアプリに関連付けた上で、[アプリを展開します](https://docs.microsoft.com/intune/deploy-use/deploy-apps-in-microsoft-intune#deploy-an-app)。
-
-Intune からデバイスの登録を解除すると、ポリシーはアプリからは削除されません。 ポリシーが適用されているアプリは、アプリのアンインストールおよび再インストール後もポリシー設定を保持します。
-
-#### <a name=""></a>アプリが既にデバイスに展開されている場合の対処方法
-
-アプリを展開するときに、対象とするユーザーやデバイスのいずれかにアプリの管理対象外バージョンが既にインストールされている (例: ユーザーがアプリ ストアから Microsoft Word をインストールしている) 状況が発生する場合があります。
-
-この場合は、構成した管理対象バージョンをインストールできるように、管理対象外バージョンを手動でアンインストールするようにユーザーに依頼する必要があります。
-
-ただし、IOS 9 以降を実行するデバイスの場合は、Intune が自動的に、既存アプリの管理を引き継ぐための権限を与えるようユーザーに要求します。 ユーザーが同意すると、アプリは Intune による管理の対象になり、アプリに関連付けられたすべての MAM ポリシーも適用されます。
-
-
-### <a name="-5-mam-"></a>手順 5: MAM ポリシーでアプリの展開を監視する
-次の手順を使用し、Intune コンソールからのアプリの展開を監視し、ポリシーの競合を解決します。
-
-1. 
-            [Microsoft Intune 管理コンソール](https://manage.microsoft.com/)で、**[グループ]**をクリックします。
-2. 次の手順のいずれかを実行します。
-  -  
-            をクリックし、デバイスを確認するユーザーをダブルクリックします。 **[すべてのユーザー]** [ユーザー プロパティ] ページで、**[デバイス]**をクリックし、確認するデバイスをダブルクリックします。
-  -  
-            **[すべてのデバイス] > [すべてのモバイル デバイス]**の順にクリックします。 [デバイス グループのプロパティ] ページで、**[デバイス]**をクリックし、確認するデバイスをダブルクリックします。
-3. [モバイル デバイスのプロパティ] ページで、**[ポリシー]**をクリックして、デバイスに展開されている MAM ポリシーの一覧を表示します。
-4. 状態を表示する MAM ポリシーを選択します。 下のペインで、ポリシーの詳細を表示し、ノードを展開してその設定を表示します。
-5.  各 MAM ポリシーの [状態] 列に、 [準拠] 、 [準拠 (保留中)] [エラー] 、または が表示されます。 選択したポリシーに 1 つまたは複数の設定の競合がある場合、このフィールドに [エラー] が表示されます。
-6.  競合を識別したら、競合するポリシー設定を変更して同じ設定を使用するようにしたり、アプリとユーザーにポリシーを 1 つだけデプロイしたりできます。
+Als Políticas de MAM (Gerenciamento de Aplicativos Móveis) Dão Suporte a:
+- Dispositivos Que Executam o Android 4 e hinteren.
+- Dispositivos Que Executam o iOS 7 e hinteren.
 
 > [!NOTE]
-> アプリケーションを[Azure ポータル](https://docs.microsoft.com/intune/deploy-use/monitor-mobile-app-management-policies-with-microsoft-intune)、または[Intune コンソール](https://docs.microsoft.com/intune/deploy-use/monitor-apps-in-microsoft-intune)を使用して監視するときの概要情報を参照してください。
+> Als Políticas de MAM Dão Suporte eine Dispositivos Registrados com-o Intune. Absatz Saber Mais Sobre Como Criar Políticas de Gerenciamento de Aplicativos Absatz Dispositivos Que Não São Gerenciados Pelo Intune, Veja [Proteger os Dados Aplicativo Usando Políticas de Gerenciamento de Aplicativos Móveis com-o Microsoft Intune führen](https://docs.microsoft.com/intune/deploy-use/protect-app-data-using-mobile-app-management-policies-with-microsoft-intune).
 
-## <a name=""></a>この後の対応
+Diferente de Outras Políticas Aktionen Intune Você Não Implanta Uma Política de MAM Diretamente aus. Dieser Abschnitt Vez Disso Você Associa eine Política Ao Aplicativo Que Deseja Restringir. Quando o Aplicativo ä Implantado E Instalado langen Dispositivos, als Configurações Especificadas Entrarão langen Blue Yonder.
 
-MAM ポリシーに関連付けられているアプリを作成および展開したら、「[MAM のエンド ユーザー エクスペリエンス](end-user-experience-mam.md)」を参照してください。 これで、発生する可能性のあるすべての問題に備えることができます。
+Absatz Aplicar Restrições einer um Aplicativo, o Aplicativo Deve Incorporar o SDK (Software Development Kit) Aplicativo Microsoft Intune führen. Há Dois Métodos de Obter Esse Tipo de Aplicativo:
+
+- 
+            **Usar um Aplicativo Gerenciado Por Política** – Tem o SDK Interno Aplicativo führen. Absatz Adicionar Este Tipo de Aplicativo Especifique link um Absatz o Aplicativo de Uma Loja de Aplicativos, Como eine iTunes Store Ou, o Google wiedergeben. Nenhum Processamento Adicional ä Necessário Absatz Este Tipo de Aplicativo. Absatz-Ver ein Lista Completa de Aplicativos da Microsoft com Suporte, Vá Absatz ein Galeria de Aplicativos Móveis machen Microsoft Intune Na Página de [Parceiros de Aplicativos Microsoft Intune führen](https://www.microsoft.com/en-us/cloud-platform/microsoft-intune-partners). Clique keine Aplicativo Absatz Ver os Cenários e Plataformas com-Suporte e Se o Aplicativo Dá Suporte eine Várias Identidades Ou Não an.
+- 
+            **Usar um Aplicativo "Encapsulado"** – Aplicativos Que São Empacotados Novamente Absatz Incluir o SDK Aplicativo Usando führen Sie eine Ferramenta de Encapsulamento de Aplicativos Microsoft Intune. Normalmente, Essa Ferramenta ä Usada Absatz Processar Aplicativos da Empresa Criados Internamente. Ele Não Pode Server Usado Absatz Processar Aplicativos Que Foram Baixados da Loja de Aplicativos. Consulte:
+  - [Preparar Aplicativos iOS Absatz o Gerenciamento de Aplicativos Móveis com einen Ferramenta de Disposição de Aplicativos führen Sie Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/prepare-ios-apps-for-mobile-application-management-with-the-microsoft-intune-app-wrapping-tool)
+  - [Preparar Aplicativos Android Absatz o Gerenciamento de Aplicativos Móveis com einen Ferramenta de Encapsulamento de Aplicativos Intune](https://docs.microsoft.com/intune/deploy-use/prepare-android-apps-for-mobile-application-management-with-the-microsoft-intune-app-wrapping-tool)
+
+Alguns Aplicativos Gerenciados, Como o Aplicativo führen Outlook Absatz iOS e Android, Dão Suporte eine **Multi-Identidade**. Isso Significa Que Intune Aplica als Configurações de Gerenciamento Somente eine Dados Ou Contas Corporativas keine Aplicativo.
+
+Por Exemplo, Usando o Aplicativo führen Sie Outlook aus:
+- SE o Usuário Configurar Uma ansprechen einer Kundentestgruppe de e-Mail Pessoal e Uma Corporativa, o Intune Aplicará als Configurações de Gerenciamento Apenas À ansprechen einer Kundentestgruppe Corporativa e Não Gerencia A ansprechen einer Kundentestgruppe Pessoal.
+- SE o Dispositivo für Desativado Ou Seu Registrado Cancelado, führen Sie Somente os Dados Corporativos Outlook Serão Removidos Dispositivo.
+- Eine ansprechen einer Kundentestgruppe Corporativa Usada Deve Server eine Mesma ansprechen einer Kundentestgruppe Que Foi Usada Absatz Registrierung o Dispositivo keine Intune.
+
+Word, Excel e PowerPoint Também Dão Suporte eine Identidades Várias Exceto als Restrições de Política Que Se Aplicam Somente Ao Gerenciar e Editar Dados de Identificação Empresarial de Serviço Como um OneDrive Ou SharePoint.
+
+## <a name="criar-e-implantar-um-aplicativo-no-intune-com-uma-poltica-de-gerenciamento-de-aplicativos-mveis"></a>Criar e implantar um Aplicativo keine Intune com Uma Política de Gerenciamento de Aplicativos Móveis
+
+- Etapa 1: Obter o verknüpfen Absatz um Aplicativo Gerenciado Por Política Ou Criar um Aplicativo Encapsulado.
+- Etapa 2: Publicar o Aplicativo langen Seu Espaço de Armazenamento de Nuvem.
+- Etapa 3: Criar Uma Política de Gerenciamento de Aplicativos Móveis.
+- Etapa 4: implantar o Aplicativo Selecionando einer Opção Absatz Associar o Aplicativo ein Uma Política de Gerenciamento de Aplicativos Móveis.
+- Etapa 5: Monitorar einer Implantação führen Aplicativo.
+
+### <a name="etapa-1-obter-o-link-para-um-aplicativo-gerenciado-por-poltica-ou-criar-um-aplicativo-encapsulado"></a>Etapa 1: Obter o verknüpfen Absatz um Aplicativo Gerenciado Por Política Ou Criar um Aplicativo Encapsulado
+- 
+            Führen Sie Aplicativo Gerenciado Por Política Que Você Deseja implantar **Obter Absatz um verknüpfen Absatz um Aplicativo Gerenciado Por Política** - Na Windows Store, Encontre e Anote eine URL.
+Por Exemplo, führen Sie eine URL Aplicativo Microsoft Word Absatz iPad ä [https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8](https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8)
+- 
+            **Absatz Criar um Aplicativo Encapsulado**: Verwenden Sie als Informações Nummern Tópicos [Preparar Aplicativos iOS Absatz o Gerenciamento de Aplicativos Móveis com einen Ferramenta de Disposição führen Aplicativo führen Sie Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/prepare-ios-apps-for-mobile-application-management-with-the-microsoft-intune-app-wrapping-tool) e [Preparar Aplicativos Android Absatz o Gerenciamento de Aplicativos Móveis com einen Ferramenta de Disposição führen Aplicativo führen Intune](https://docs.microsoft.com/intune/deploy-use/prepare-android-apps-for-mobile-application-management-with-the-microsoft-intune-app-wrapping-tool) Absatz Criar um Aplicativo Encapsulado. Ein Ferramenta Cria um Aplicativo Processado Que Será Usado Quando Você Publica o Aplicativo keine Espaço de Armazenamento de Nuvem.
+
+### <a name="etapa-2-carregar-o-aplicativo-em-seu-espao-de-armazenamento-de-nuvem"></a>Etapa 2: Carregar o Aplicativo langen Seu Espaço de Armazenamento de nuvem
+Quando Você Publica um Aplicativo Gerenciado, os Procedimentos Diferem Se Você Estiver Publicando um Aplicativo Gerenciado Por Política Ou um Aplicativo Que Foi Processado Usando eine Ferramenta de Disposição de Aplicativos führen Microsoft Intune Absatz iOS.
+
+Veja [Adicionar Aplicativos Absatz Dispositivos Móveis keine Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps-for-mobile-devices-in-microsoft-intune#add-the-app) Absatz Obter als Etapas Completas Necessárias Absatz Carregar um Aplicativo langen Seu Espaço de Armazenamento de Nuvem.
+
+### <a name="etapa-3-criar-uma-poltica-de-gerenciamento-de-aplicativos-mveis"></a>Etapa 3: Criar Uma Política de Gerenciamento de Aplicativos móveis
+O Portal Azure ä o Konsole de Administração Recomendado Absatz Criar Políticas MAM de. O Portal Aktionen Azure Dá Suporte Aos Seguintes Cenários MAM aus:
+- Dispositivos Registrados keine Intune
+- Dispositivos Gerenciados Por Uma Solução MDM terceirizada
+- Dispositivos Que Não São Gerenciados Por Uma Solução MDM (BYOD).
+
+Veja [Criar e implantar Políticas de Gerenciamento de Aplicativo Móvel com-o Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/create-and-deploy-mobile-app-management-policies-with-microsoft-intune) Absatz Saber Mais Sobre o uso Portal Azure Absatz Criar Uma Política de MAM.
+
+SE keine Momento Você Estiver Usando o Konsole de Administração Intune Absatz Gerenciar Seus Dispositivos Poderá Criar Uma Política MAM Que dê Suporte einer Aplicativos Absatz Dispositivos Registrados keine Intune Usando o [Konsole de Administração Intune führen](https://docs.microsoft.com/intune/deploy-use/configure-and-deploy-mobile-application-management-policies-in-the-microsoft-intune-console#-step-3-create-a-mobile-application-management-policy).
+
+
+### <a name="etapa-4-implantar-o-aplicativo-selecionando-a-opo-para-associar-o-aplicativo-a-uma-poltica-de-gerenciamento-de-aplicativos-mveis"></a>Etapa 4: implantar o Aplicativo, eine Opção Absatz Associar o Aplicativo eine Uma Política de Gerenciamento de Aplicativos Móveis selecionando
+SE Você Estiver Usando o Portal, Azure, [Implante ein Política de MAM Absatz Usuários](https://docs.microsoft.com/intune/deploy-use/create-and-deploy-mobile-app-management-policies-with-microsoft-intune#deploy-a-policy-to-users)folgendermaßen vor.
+
+SE Você Estiver Usando o Portal Intune, [Implante o Aplicativo](https://docs.microsoft.com/intune/deploy-use/deploy-apps-in-microsoft-intune#deploy-an-app), Garantindo Que Você Selecione werden eine Política de Gerenciamento de Aplicativo Móvel NV Página de Gerenciamento de Aplicativo Móvel Absatz Associar eine Política Ao Aplicativo.
+
+SE o Dispositivo Tiver o Registro keine Intune Desfeito, als Políticas Não Serão Removidas Dos Aplicativos. Quaisquer Aplicativos Que Tiverem Políticas Aplicadas Manterão als Configurações de Política, Mesmo Depois de Server Desinstalado e Reinstalado.
+
+#### <a name="o-que-fazer-quando-um-aplicativo-j-est-implantado-em-dispositivos"></a>O Que Fazer Quando um Aplicativo Já Está Implantado langen Dispositivos
+
+Pode haver Situações langen Que Você implantar um Aplicativo e um Dos Usuários Ou Dispositivos de Destino Já Tem Uma Versão Não Gerenciada führen Aplicativo Instalada, Por Exemplo, o Usuário Instalou o Microsoft Word da Loja de Aplicativos.
+
+Nesse Caso, Você Deve Pedir Ao Usuário Absatz Desinstalar Manualmente einer Versão Não Gerenciada Absatz Que Possa Server Instalada ein Versão Gerenciada Que Você Configurou.
+
+Keine Entanto, Absatz Dispositivos Que Executam o iOS 9 e Versões Posteriores, o Intune Automaticamente Solicitará Ao Usuário Permissão Absatz Assumir o Gerenciamento Aplicativo Existente. SE Eles Concordarem o Aplicativo Será Gerenciado Pelo Intune e Qualquer Política de MAM Associada Ao Aplicativo Também Será Aplicada.
+
+
+### <a name="etapa-5-monitorar-a-implantao-do-aplicativo-com-a-poltica-de-mam"></a>Etapa 5: Führen Sie eine Implantação Monitorar Aplicativo com einen Política de MAM
+Betriebssystems Procedimentos eine Seguir Absatz Monitorar eine Implantação Aplicativo Por Meio Konsole Aktionen Intune e Auflösung Conflitos de Política aus.
+
+1. Keine [Konsole de Administração führen Sie Microsoft Intune](https://manage.microsoft.com/)Clique langen **Grupos**.
+2. Uma Attached Seguintes Etapas ausführen:
+  -  Clique langen **Todos os Usuários** e Clique Duas Vezes keine Usuário Cujos Dispositivos Você Deseja Examinar. Na Página Propriedades Usuário Clique langen **Dispositivos** e Clique Duas Vezes führen keine Dispositivo Que Você Deseja Examinar.
+  -  Dieser Abschnitt Clique **Todos os Dispositivos > Todos os Dispositivos Móveis**. Na Página Propriedades Aktionen Grupo de Dispositivos, Clique langen **Dispositivos** e Clique Duas Vezes keine Dispositivo Que Você Deseja Examinar aus.
+3. Na Página Propriedades Dispositivo Móvel, Clique langen **Política** Absatz Ver Uma Lista Attached Políticas de MAM Que Foram Implantados führen keine Dispositivo.
+4. Ein Política de MAM Cujo Status Você Deseja Exibir Selecione. Você Pode Ver Detalhes da Política keine Painel schlechter e Expandir o Nó Absatz Exibir als Configurações.
+5.  Na Coluna Status de Cada Uma Attached Políticas de MAM, Compatível, Compatível (Pendente) Ou Aufgabenschema Será Exibido. SE eine Política Selecionada Tiver Uma Ou Mais Configurações Conflitantes, Aufgabenschema Será Exibido Nesse campo
+6.  Após ter Identificado um Conflito Você Pode Revisar als Configurações de Política Conflitantes Absatz usar eine Mesma Configuração Ou implantar Apenas Uma Política Absatz o Aplicativo e o Usuário.
+
+> [!NOTE]
+> Você Pode Saber Mais Informações Gerais Sobre Monitoramento de Aplicativos Por Meio machen [Portal werden Azure](https://docs.microsoft.com/intune/deploy-use/monitor-mobile-app-management-policies-with-microsoft-intune) Ou Usando o [Konsole Intune führen](https://docs.microsoft.com/intune/deploy-use/monitor-apps-in-microsoft-intune).
+
+## <a name="onde-ir-daqui"></a>Onde Infrarot-daqui
+
+Depois de Criar e implantar um Aplicativo Associado eine Uma Política de MAM, Você Pode Saber Mais Sobre o [Experiência führen Usuário endgültigen de MAM](end-user-experience-mam.md). Isso Ajudará einer Se Preparar Absatz Problemas Que Possam Surgir.

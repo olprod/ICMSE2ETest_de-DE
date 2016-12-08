@@ -1,5 +1,5 @@
 ---
-title: "SaaS の接続要件の特定"
+title: Identificar Requisitos de Conectividade de SaaS
 description: 
 keywords: 
 author: andredm7
@@ -12,59 +12,59 @@ ms.technology:
 ms.assetid: 6afbce4c-7500-4387-a19c-dff52c152097
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: b02f3f667d930f25f74443790f07fb7c53ed87fc
-ms.sourcegitcommit: 45ffbe57b8a2ff1ba6d26efde7f4e2fee8495593
+ms.openlocfilehash: 15d896671f7687e017180bca2ca6acbd8dd0b0be
+ms.sourcegitcommit: 1b0888e015659ad5d1cb408e4af57f1b916d13a3
 translationtype: MT
 ---
-# <a name="saas-"></a>SaaS の接続要件の特定
+# <a name="identificar-requisitos-de-conectividade-de-saas"></a>Identificar Requisitos de Conectividade de SaaS
 
 >[!NOTE]
->このトピックは、大規模な設計の考慮事項ガイドの一部です。 ガイドの先頭から開始する場合は、[メイン トピック](mdm-design-considerations-guide.md)を参照してください。 このガイド全体のダウンロード可能なコピーを入手する場合は、[TechNet ギャラリー](https://gallery.technet.microsoft.com/Mobile-Device-Management-7d401582)にアクセスしてください。
+>Este Tópico Faz Parte de um Guia de Considerações Sobre Mais Amplo entwerfen. Führen Sie SE Você Quiser Começar Início Guia, Confira o [Tópico Prinzipal](mdm-design-considerations-guide.md). Absatz Obter Uma Cópia Baixável Deste Guia Inteiro, Visite ein [Galeria TechNet führen](https://gallery.technet.microsoft.com/Mobile-Device-Management-7d401582).
 
-オンプレミス インフラストラクチャを接続する方法は、すべての MDM ソリューション (365 Intune、Office の MDM、Intune と Configuration Manager のハイブリッド展開) でユーザーとデバイスの-ID を管理する方法に影響します。 Intune と Office 365 の MDM では、Azure Active Directory サービスによって提供されるディレクトリ サービス アーキテクチャを利用します。 Azure とのこの統合により、モバイル デバイス管理ソリューションで ID 管理のサポートを設計するときの柔軟性が大幅に向上します。
+Ein Format Como Você Conecta Sua Infraestrutura lokalen Afetará eine Como Formatieren einer Identidade de Usuário e de Dispositivo Será Gerenciada com-Todas als Soluções de MDM: Intune, führen Sie MDM Absatz Office 365 e Implantações Híbridas Intune e Configuration Manager. Tanto o Intune Quanto o MDM Absatz Office 365 Aproveitam ein Arquitetura de Serviços de Diretório Fornecida Pelos Serviços führen Azure Active Directory. Essa Integração com-o Azure Oferece Bastante Flexibilidade Quando Você Estiver Projetando o Suporte de Gerenciamento de Identidades langen Sua Solução de Gerenciamento de Dispositivos Móveis.
 
-次の図に示すように、オンプレミス ディレクトリ サービスと Azure の接続は、シングル サインオンとディレクトリ アカウントの一元管理を実現する上で重要な要件です。 シングル サインオンによって、オンプレミスとクラウドにある会社のリソースにユーザーが簡単に接続できるようになります。 アカウントを管理する 1 つの場所ができるので、管理者の作業も簡単になります。 モバイル アクセスの場合、Azure とオンプレミス ディレクトリ サービス間でディレクトリ アカウント属性と資格情報を同期することで、ユーザーは Office 365 の MDM または Intune で管理されるリソースにアクセスするためにモバイル デバイスで認証することができます。
+Conforme Mostra als Listas Abaixo, eine Conexão Dos Serviços de Diretório Locais Ao Azure ä o principal Requisito Absatz Habilitar o Anmeldung Único E o Gerenciamento de Contas de Diretório Unificado. O Anmeldung Único Torna Muito Mais Fácil Absatz Seus Usuários Se Conectarem Aos Recursos da Empresa Que Estão Locais e NV Nuvem. Ter um Único lokalen Absatz Gerenciar Contas Facilita o Trabalho Dos Administradores. Absatz o Acesso Móvel Sincronizar Atributos e Credenciais de ansprechen einer Kundentestgruppe de Diretório Entre o Azure e os Serviços Locais de Diretório Permite Que os Usuários Se Autentiquem langen Seus Dispositivos Móveis Absatz Acessar os Recursos Que São Gerenciados Pelo MDM Absatz Office 365 Ou Intune wird.
 
-![統合された ID 管理の概要](./media/MDM_Figure_15.png)
+![Führen Sie Visão Geral Gerenciamento Integrado de identidades](./media/MDM_Figure_15.png)
 
-**統合された ID 管理の概要**
+**Führen Sie Visão Geral Gerenciamento Integrado de identidades**
 
-2 タスク のチェック項目の結果に応じて、モバイル デバイス管理ソリューションのために必要な、SaaS ソリューションとオンプレミス クライアント管理プラットフォームを接続する方法を判断できます。 次の表は、オンプレミス インフラストラクチャを SaaS ソリューションと接続する長所と短所を理解するのに役立ちます。
+Dependendo de Como Você Respondeu Às Perguntas NV Tarefa 2, Você Precisa Conseguir Determinar Como eine Solução de SaaS Precisa Se Conectar à Sua Plataforma de Gerenciamento lokalen de Clientes de Sua Solução de Gerenciamento de Dispositivos Móveis. Als Listas Abaixo Ajudarão Você eine Entender Vantagens e Desvantagens de Conectar Sua Infraestrutura lokal eine Uma Solução de SaaS.
 
-## <a name="intune-"></a>Intune (スタンドアロン)
+## <a name="intune-autnomo"></a>Intune (Autônomo)
 
-**長所**
+**Vantagens**
 
-- ユーザーとデバイスの ID と認証を管理するために、Azure Active Directory と緊密に統合されている
-- 既存のオンプレミス アカウントの資格情報を利用できるユーザー資格情報の自己管理とシングル サインオン エクスペリエンスをサポートしている
-- 数千個の統合済み SaaS アプリケーションへのシングル サインオン アクセスをサポートしている
-- オンプレミス アプリケーションとクラウド アプリケーションの両方に対して、ルールベースの多要素認証 (MEHRSTUFIGER AUTHENTIFIZIERUNG DAS) を適用することで、アプリケーションのアクセス セキュリティをサポートしている
+- Führen Sie Totalmente Integrado Ao Azure Active Directory Absatz Gerenciar eine Identidade e Autenticação Usuário e dispositivo
+- Dá Suporte Ao Autogerenciamento de Credenciais de Usuário e eine Experiências de Anmeldung Único Que Podem Aproveitar als Credenciais Existentes de ansprechen einer Kundentestgruppe lokalen
+- Dá Suporte eine Anmeldung Único Absatz Milhares de Aplicativos SaaS Pré-integrados
+- Dá Suporte À Segurança de Acesso Ao Aplicativo com A Imposição da mehrstufiger Authentifizierung DAS (Autenticação Multifator Baseada langen Regras) Absatz Aplicativos Locais e Na nuvem
 
-**短所**
+**Desvantagens**
 
-- 高度なディレクトリ サービス接続の機能を Azure Active Directory Premium と組み合わせる必要がある
+- Recursos e Funcionalidades Avançados de Conectividade de Serviços de Diretório Exigem o Emparelhamento com-o Azure Active Directory Premium
 
-## <a name="mdm-for-office-365"></a>MDM für Office 365
+## <a name="mdm-para-o-office-365"></a>MDM Absatz o Office 365
 
-**長所**
+**Vantagens**
 
-- ユーザーとデバイスの ID と認証の管理に Azure Active Directory のバックボーンを使用する Office 365 テナントと統合されている
-- サービスと Office 365 の接続の一環として、オンプレミス ディレクトリ サービスを接続できる
-- 既存のオンプレミス アカウントの資格情報を利用できるユーザーの自己管理とシングル サインオン エクスペリエンスをサポートしている
-- Azure mehrstufiger Authentifizierung DAS サービスを使用してデバイス登録で多要素認証をサポートする
+- Que Usam eine Estrutura Azure Active Directory Absatz Gerenciar führen eine Identidade e Autenticação de Usuário e Dispositivo Sie Integrado Aos Locatários führen Sie Office 365
+- OS Serviços Locais de Diretório Podem Server Conectados Como Parte da Conexão Dos Serviços Ao Office 365
+- Dá Suporte Ao Autogerenciamento e eine Experiências de Anmeldung Único Que Podem Aproveitar als Credenciais Existentes de ansprechen einer Kundentestgruppe lokalen
+- Führen Sie Oferece Suporte À Autorização de Multifator Absatz Inscrições de Dispositivos Usando o Serviço mehrstufiger Authentifizierung DAS Azure
 
-**短所**
+**Desvantagens**
 
-- モバイル アプリケーション管理と他の SaaS ソリューションまたはアプリケーションとの統合をサポートしていない
+- Führen Sie Não Dá Suporte À Integração Gerenciamento de Aplicativos Móveis com-Outras Soluções Ou Aplicativos de SaaS
 
-## <a name="-intune-configmgr"></a>ハイブリッド (Intune と Configuration Manager)
+## <a name="hbrido-intune-com-configmgr"></a>Híbrido (Intune com Configuration Manager)
 
-**長所**
+**Vantagens**
 
-- Intune スタンドアロンのすべての長所に加え、次の長所がある。
- - Configuration Manager インフラストラクチャを使用した、オンプレミス ディレクトリ サービスとの直接統合
+- Todas als Vantagens Aktionen Intune Autônomo, Além Attached Seguintes aus:
+ - Führen Sie Integração Direta com-Serviços Locais de Diretório Por Meio da Infraestrutura Configuration Manager
 
-**短所**
+**Desvantagens**
 
-- 現在 Configuration Manager インフラストラクチャが構成されていない組織の場合、Intune と統合する前に、ConfigMgr インフラストラクチャの計画、インストール、構成が必要
-- Configuration Manager を使用する組織の場合、追加のオンプレミス展開要件と構成の変更が必要
+- Führen Sie Absatz als Organizações Que Não Tenham Uma Infraestrutura Configuration Manager Atual Configurada, Será Necessário Planejá-la, Instalá la e Configurá la Antes da Integração com-o Intune
+- Exige Requisitos de Implantação lokalen Adicional e Alterações de Configuração Absatz als Organizações com-o Configuration Manager.

@@ -1,6 +1,6 @@
 ---
-title: "iOS デバイスにおける条件付きアクセスのエンド ユーザー エクスペリエンス"
-description: "iOS デバイスを登録するエンド ユーザー エクスペリエンスです。"
+title: "Führen Sie Experiência Usuário letzten Absatz Acesso Condicional langen Dispositivos iOS"
+description: "Ein Experiência Usuário endgültigen de Registrierung tun um Dispositivo iOS."
 keywords: 
 author: craigcaseyMSFT
 manager: swadhwa
@@ -12,81 +12,80 @@ ms.technology:
 ms.assetid: 3c641ea8-2c0e-490e-b1de-831336f46d19
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: 82e884b5fa9dda9973b57b0fcbee453e602d95b5
-ms.sourcegitcommit: 45ffbe57b8a2ff1ba6d26efde7f4e2fee8495593
+ms.openlocfilehash: 183e8d9169df969a4667e64fe41f70b389ea4e20
+ms.sourcegitcommit: 1b0888e015659ad5d1cb408e4af57f1b916d13a3
 translationtype: MT
 ---
 # <a name="ios"></a>iOS
 
-登録プロセスおよび表示される画面は、エンド ユーザーのデバイスで実行されている OS のバージョンによって多少異なります。 このトピックでは、IOS デバイスを登録するためのエンド ユーザー エクスペリエンスについて説明します。
+O Prozessor de Registro e als Telas Que o Usuário Vê Serão um Pouco Diferentes Dependendo da Versão Möglichkeiten Sistema Operacional langen Execução keine Dispositivo Usuário endgültigen. Este Tópico Descreve eine Experiência Aktionen Usuário letzte Absatz Registrierung Dispositivos iOS aus.
 
-## <a name=""></a>登録
+## <a name="registro"></a>Registro
 
-1.  ユーザーが既に Intune に登録されており準拠している場合は、iOS デバイスでの違いはありません。 引き続き電子メールにアクセスできます。 ユーザーがまだ登録されていない場合は、メール アプリを実行すると、次のような検疫メッセージが表示されます。
+1.  SE um Usuário Já Estiver Registrado keine Intune e für Compatível Ele Não Verá Nenhuma Diferença langen Dispositivos führen iOS: o Acesso Aos Continuará Normalmente-e-Mails. SE o Usuário Ainda Não Estiver Registrado, Ele Verá Uma Mensagem de Quarentena Semelhante eine Este Quando Iniciar Seu Aplicativo de e-Mail:
 
-    ![ユーザーが受信する検疫電子メールのスクリーンショット (iOS デバイス)](./media/ProtectEmail/EUX-iOS-Get-Started.PNG)
+    ![Captura de Tela Mostrando o langen Quarentena Que o Usuário Recebe langen e-Mail um Dispositivo iOS](./media/ProtectEmail/EUX-iOS-Get-Started.PNG)
 
-     をクリックすると、デバイスの登録が開始されます。 **[今すぐ開始]**
+    Ein Usuário Clica langen **Comece Agora Mesmo** Absatz Começar eine Registrierung Seus Dispositivos.
 
-2.  それぞれのアプリ ストアから Intune ポータル サイト アプリをインストールするように求められます。
+2.  Führen Sie Ä Solicitado Que o Usuário instale o Aplicativo Portal da Empresa Intune Na Respectiva Loja de Aplicativos.
 
-    ![Intune ポータル サイトのスクリーン ショット (iOS デバイス)](./media/ProtectEmail/EUX-iOS-intune-Company-Portal.png)
+    ![Captura de Tela Mostrando o Portal da Empresa führen Intune langen um Dispositivo iOS](./media/ProtectEmail/EUX-iOS-intune-Company-Portal.png)
 
-    インストール後、アプリを開き、会社の資格情報を使用してサインインします。
+    O Usuário Abre o Aplicativo e Entra Usando Suas Credenciais da Empresa Depois de Instalado.
 
-3.  [会社アクセスのセットアップ] 画面で**[開始]**をクリックして、デバイスの設定およびデバイスが準拠しているかどうかの確認を開始します。
+3.  Na Tela de Configuração de Acesso da Empresa, o Usuário Clica langen **Iniciar** Absatz Começar ein Configurar Seu Dispositivo e Verificar Se Ele ä Compatível.
 
-    ![[会社アクセスのセットアップ] 画面のスクリーン ショット (iOS デバイス)](./media/ProtectEmail/EUX-iOS-company-AccessSetup.png)
+    ![Captura de Tela Mostrando einer Tela Configuração de Acesso da Empresa langen um Dispositivo iOS](./media/ProtectEmail/EUX-iOS-company-AccessSetup.png)
 
-4.  [デバイスの登録] 画面で**[登録]**をクリックして、デバイスの登録を開始します。
+4.  Na Tela de Registro Aktionen Dispositivo o Usuário Clica langen **Registro** Absatz Registrierung Seu Dispositivo aus.
 
-    ![[デバイスの登録] 画面のスクリーン ショット (iOS デバイス)](./media/ProtectEmail/EUX-iOS-device-Enrollment.png)
+    ![Captura de Tela Mostrando eine Tela Registro Dispositivo langen führen um Dispositivo iOS](./media/ProtectEmail/EUX-iOS-device-Enrollment.png)
 
-    登録中に、モバイル デバイス管理プロファイルがインストールされ、IT 管理者はデバイスをリモートで管理できるようになります。 入力を求められたら、パスワードを入力します。
+    Durante o Registro, o Perfil de Gerenciamento de Dispositivo Móvel ä Instalado Absatz Permitir Que Você, o Administrador de TI Gerencie Remotamente o Dispositivo. O Usuário insere Sua Senha Se Solicitada.
 
-5.  [会社アクセスのセットアップ] 画面で**[続行]**をクリックして、デバイスで準拠状況の確認を開始します。
+5.  Na Tela de Configuração de Acesso da Empresa o Usuário Clica langen **Continuar** Absatz Iniciar eine Verificação de Conformidade Dispositivo.
 
-    ![デバイス登録の成功 (iOS デバイス) と、ユーザーによるポリシー準拠の確認が必要であることを示すスクリーン ショット](./media/ProtectEmail/EUX-iOS-device-Compliance-Check.png)
+    ![Captura de Tela Mostrando Que o Registro de Dispositivo Foi Bem Sucedido langen um Dispositivo iOS e o Usuário Precisa Verificar eine Conformidade](./media/ProtectEmail/EUX-iOS-device-Compliance-Check.png)
 
-    準拠に関して問題がある場合は、問題を解決してから (有効なパスワードの作成など) 、 **[ポリシー準拠状況の確認]**をクリックして続行するように求められます。
+    SE Houver um Problema de Conformidade, Será Solicitado Que o Usuário Resolva o Problema (Como Criar Uma Senha Válida) e, langen Seguida, Clique langen **Verificar Conformidade** Absatz Continuar.
 
-    ![ユーザーによるポリシー準拠問題の解決が必要であることを示すスクリーン ショット (デバイス iOS)](./media/ProtectEmail/EUX-iOS-check-Compliance.png)
+    ![Captura de Tela Mostrando Que o Usuário Deve Auflösung Problemas de Conformidade langen um Dispositivo iOS](./media/ProtectEmail/EUX-iOS-check-Compliance.png)
 
-6.  デバイスが完全に準拠したら、 **[続行]**をクリックして続けます。
+6.  Depois Que o Dispositivo Estiver Totalmente Compatível, o Usuário Clica langen **Continuar** Absatz Continuar.
 
-    ![iOS デバイスがポリシーに準拠し、セットアップが完了したことを示すスクリーン ショット](./media/ProtectEmail/EUX-iOS-compliance-Check-Completed.png)
+    ![Captura de Tela Mostrando Que o-Dispositivo iOS ä-Compatível E ein Instalação Foi concluída](./media/ProtectEmail/EUX-iOS-compliance-Check-Completed.png)
 
-    ユーザーの登録および準拠の確認後、数分以内に電子メールにアクセスできるようになります。
+    Depois Que o Usuário Estiver Registrado e ein Conformidade für Verificada, o Acesso Ao e-Mail Deverá Ficar Disponível Dentro de Alguns Minutos.
 
-これらの手順を実行して登録を行い準拠を確認した後、まだモバイル デバイスから電子メールにアクセスできない場合は、次の追加手順に従って問題を解決してください。
+SE o Usuário Seguir Essas Etapas Absatz Registrierungsstelle e Ficar Compatível e Ainda Não Puder Acessar Seus-e-Mails keine Dispositivo Móvel, Ele Poderá Seguir Estas Etapas Adicionais Absatz Tentar Corrigir o Problema:
 
--   最初に、そのデバイスが登録されていることを確認します。 登録されていない場合は、上記の手順に従います。
+-   Primeiro, Verifique Se Seu Dispositivo Está Registrado. Caso Contrário, o Usuário Deve Seguir als Etapas Acima.
 
--   
-            **[ポリシー準拠状況の確認]**をクリックして、デバイスが準拠していることを確認します。 準拠エラーが識別される場合は、パスワードをリセットするなど、解決策についてモバイル デバイスに固有の指示に従います。
+-   Verifique Se o Dispositivo ä Compatível Clicando langen **Verificar Conformidade**. SE um Aufgabenschema de Conformidade für Identificado, o Usuário Poderá Seguir als Instruções Específicas Absatz Seu Dispositivo Móvel Sobre Como Resolvê-la, Tal Como Redefinir Sua Senha.
 
--   ヘルプ デスクに連絡します。
+-   Ligue Absatz o Suporte Técnico.
 
-## <a name=""></a>問題と解決策
-既定では、8 時間ごとにデバイスがポリシーに準拠しているかどうかがチェックされます。 以前は準拠していたデバイスが、 (たとえば、コンプライアンス ポリシーが追加または変更されたため) 後で準拠しなくなった場合は、次の手順に従ってデバイスの準拠状況を戻すことができます。
+## <a name="problemas-e-solues"></a>Problemas e soluções
+Por Padrão, eine Cada 8 Horas os Dispositivos São Verificados Absatz Verificar Se Eles Ainda São Compatíveis. SE um Dispositivo Que Zeitraum Anteriormente Compatível Considerado Incompatível (Por Exemplo Devido eine Uma Política de Conformidade ter Sido Adicionada Ou Alterada), o Usuário Pode Seguir Estas Etapas Absatz Restaurar eine Conformidade Dispositivo bieten:
 
-1.  デバイスが準拠していないことを示す通知を、電子メールまたはデバイスで受け取ります。 この時点で、デバイスは Exchange で検疫されます。
+1.  O Usuário Recebe eine Notificação Por e-Mail-Ou langen Seu Dispositivo Que Este ä Incompatível. Neste Momento, o Dispositivo Está langen Quarentena keine Exchange.
 
-2.  ユーザーが電子メールにアクセスしようとすると、Intune ポータル サイトから [会社アクセスのセットアップ] 画面にリダイレクトされ、準拠しなくなったことが示されます。
+2.  SE o Usuário Tentar Acessar o e-Mail, Ele Será Redirecionado Absatz a Tela de Configuração de Acesso da Empresa Portal da Empresa Intune langen Que Se ä Mostrado Se Eles Estão für eine de Conformidade führen.
 
-    ![iOS デバイスがポリシーに準拠していないことを示すスクリーン ショット](./media/ProtectEmail/EUX-iOS-fallOut-Compliance.png)
+    ![Captura de Tela Mostrando Que o Dispositivo iOS Se Tornou Não compatível](./media/ProtectEmail/EUX-iOS-fallOut-Compliance.png)
 
-3.   をクリックすると、電子メールへのアクセスを妨げている準拠の問題が示されます。 **[続行]**
+3.  Ein Usuário Clica langen **Continuar** e o Problema de Conformidade Que Está Impedindo Que Ele Acesse o e-Mail ä Mostrado.
 
-    ![ユーザーによるポリシー準拠問題の解決が必要であることを示すスクリーン ショット (iOS デバイス)](./media/ProtectEmail/EUX-iOS-check-Compliance.png)
+    ![Captura de Tela Mostrando Que o Usuário Deve Auflösung Problemas de Conformidade langen um Dispositivo iOS](./media/ProtectEmail/EUX-iOS-check-Compliance.png)
 
-4.  問題を解決した後、 **[ポリシー準拠状況の確認]**をクリックして、問題が解決されたことを確認します。
+4.  Depois Que o Problema Foi Corrigido, Eles Devem Clicar langen **Verificar Conformidade** Absatz Verificar Se o Problema Foi Resolvido.
 
-5.  問題が解決されたら、 **[続行]**をクリックしてプロセスを完了します。
+5.  SE o Problema Estiver Corrigido, o Usuário Clica langen **Continuar** Absatz Concluir o Prozessor.
 
-    ![iOS デバイスがポリシーに準拠し、セットアップが完了したことを示すスクリーン ショット](./media/ProtectEmail/EUX-iOS-compliance-Check-Completed.png)
+    ![Captura de Tela Mostrando Que o-Dispositivo iOS ä-Compatível E ein Instalação Foi concluída](./media/ProtectEmail/EUX-iOS-compliance-Check-Completed.png)
 
-    電子メールへのアクセスは、数分以内に再度使用可能になります。
+    O Acesso Ao e-Mail Deverá Ficar Disponível Novamente Dentro de Alguns Minutos.
 
-### <a name=""></a>この後の対応
-他のモバイル デバイスのエンド ユーザー エクスペリエンスは若干異なります。             [Android](end-user-experience-conditional-access-android.md)および[Windows Phone](end-user-experience-conditional-access-winphone.md)のエンド ユーザー エクスペリエンスについて詳しく説明します。
+### <a name="onde-ir-daqui"></a>Onde Infrarot-daqui
+Ein Experiência Aktionen endgültigen ä Usuário um Pouco Diferente langen Outros Dispositivos Móveis aus. Saiba Mais Sobre eine Experiência Aktionen Usuário letzte Absatz [Android](end-user-experience-conditional-access-android.md) e [Windows Phone](end-user-experience-conditional-access-winphone.md)aus.

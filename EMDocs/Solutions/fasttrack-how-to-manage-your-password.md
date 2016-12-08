@@ -1,6 +1,6 @@
 ---
-title: "パスワードを管理する方法"
-description: "パスワードを管理する方法"
+title: Como Gerenciar Sua senha
+description: "Como Gerenciar Sua Própria senha"
 keywords: 
 author: craigcaseyMSFT
 manager: jeffgilb
@@ -13,60 +13,68 @@ ms.assetid: 162e59f3-33a2-44b5-a59f-24612dc743f3
 ROBOTS: noindex
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: f466d2741d578ca996a88f92305d7f50eea1256b
-ms.sourcegitcommit: 45ffbe57b8a2ff1ba6d26efde7f4e2fee8495593
+ms.openlocfilehash: 60670a413f25be5d11e4dda5a85f70afaca67d8f
+ms.sourcegitcommit: 1b0888e015659ad5d1cb408e4af57f1b916d13a3
 translationtype: MT
 ---
-# <a name=""></a>パスワードを管理する方法
+# <a name="como-gerenciar-sua-prpria-senha"></a>Como Gerenciar Sua Própria senha
 
-組織内の (管理者ではなく) ユーザーで、Office 365 または Microsoft アカウントを使用して仕事のリソースにアクセスしている場合、パスワードに関する一般的な問題の修正方法については、以下のセクションを参照してください。
+SE Você für um Usuário (e Não um Administrador) dieser Abschnitt Uma Organização Que Usa o Office 365 Ou Contas da Microsoft Absatz Acessar Recursos de Trabalho, Leia als Seções Abaixo Absatz Saber Como Corrigir Problemas Comuns com Sua Senha.
 
-## <a name="-"></a>パスワード リセットを登録する方法
-パスワード リセット登録の最も簡単な方法は、[http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)を利用することです。
+## <a name="como-se-registrar-para-redefinio-de-senha"></a>Como Se Registrierungsstelle Absatz Redefinição de senha
+Ein Maneira Mais Rápida Absatz Se Registrierungsstelle Absatz Redefinição de Senha ä Ir até [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup).
 
-1.  
-            [http://AKA.ms/ssprsetup](http://aka.ms/ssprsetup)にアクセスします。
-2.  ユーザー名とパスワードを入力します。
-3.  
-            をクリックして登録するオプションを選択します。 **[今すぐセットアップ]** この例では、**認証用電話**の登録手順を紹介します。 ![ここに説明文を入力](./media/ft-mngPW-1-setup.png)
-4.  ドロップダウンから国コードを選択し、市外局番を含む電話番号を入力します。 ![ここに説明文を入力](./media/ft-mngPW-2-enterNumber.png)![ここに説明文を入力](./media/ft-mngPW-3-enterNumber2.png)
-5.  
-            **[テキスト メッセージを送信する]**または**[電話で確認コードを受け取る]**オプションを選択します。 この例では、**[テキスト メッセージを送信する]**を選択します。 選択すると、6 桁のコードが電話に送信されます。 コードが電話に送信されるまで待ちます。 ![ここに説明文を入力](./media/ft-mngPW-4-textCode.png)
-6.  をクリックします。 コードが届いたら、入力ボックスにコードを入力し、 [確認]
-7.  
-            **ありがとうございました**と表示されたら、完了です。 パスワード リセットに登録した内容は、いつでも[https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com)で参照できます。 ![ここに説明文を入力](./media/ft-mngPW-5-thanks.png)
-
-> [!IMPORTANT]
-> 管理者が、複数のオプションの登録を許可している場合は、電話を紛失した場合や、電子メールにアクセスできなくなった場合に備えて、予備のオプションも登録することを強くお勧めします。
-
-## <a name=""></a>パスワードをリセットする方法
-会社アカウントまたは学校アカウントのサインイン画面から、以下の手順で会社アカウントまたは学校アカウントのパスワードをリセットします。
+1.  Navegue até [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup).
+2.  Digite Seu Nome de Usuário e Senha.
+3.  Escolha Uma Opção NV gleich Se Registrierung Clicando **Configurar Agora**. Nesse Caso, Farei Uma Demonstração Registrando Meu **Telefone de Autenticação**.
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-1-setup.png)
+4.  Selecione o Código de Seu País NV Lista Suspensa e Insira Seu Número de Telefone Completo com-Código de Área.
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-2-enterNumber.png)![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-3-enterNumber2.png)
+5.  Selecione Uma Attached Opções **Enviar Texto** Ou **Telefonar**. Nesse Caso, Selecionarei **Enviar Texto**, Que Enviará um Código de 6 Dígitos Absatz Meu Telefone. Aguarde até Que o Código Chegue langen Seu Telefone.
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-4-textCode.png)
+6.  Após o Código Chegar, Insira-o Na Caixa de Entrada e Clique langen "Verificar".
+7.  Quando Vir **Obrigado**, Você Terminou! Agora, Você Pode usar o Que Registrou Absatz Redefinir Sua Senha ein Qualquer Momento Acessando [https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com).
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-5-thanks.png)
 
 > [!IMPORTANT]
-> この機能は、管理者が有効にしている場合にのみ使用できます。 有効ではない場合、お使いのアカウントではこの機能を使用できないというメッセージが表示されます。 リンクをクリックして、アカウントのロック解除を管理者に依頼することができます。 この場合、 [管理者に連絡]
+> SE Seu Administrador Permitir Se Registrierungsstelle langen Mais de Uma Opção, Será Altamente Recomendável Que Você Também Registre Uma Opção de backup Caso Perca Seu Telefone Ou o Acesso Ao Seu e-Mail.
+
+## <a name="como-redefinir-sua-senha"></a>Como Redefinir Sua senha
+Siga als Etapas Abaixo Absatz Redefinir eine Senha de Sua ansprechen einer Kundentestgruppe Corporativa Ou de Estudante langen Qualquer Tela de Anmeldung da ansprechen einer Kundentestgruppe Corporativa Ou de Estudante.
+
+> [!IMPORTANT]
+> Esse Recurso Só Ficará Disponível Absatz Você Se o Administrador ein Tiver Habilitado. SE Ela Não Estiver Ativada, Você Verá Uma Mensagem Indicando Que Sua ansprechen einer Kundentestgruppe Não Está Habilitada Absatz Esse Recurso. Nesse Caso, Você Pode usar o Link "Entrar langen Contato com-Seu Administrador" Absatz Entrar langen Contato com-Seu Administrador e Desbloquear Sua ansprechen einer Kundentestgruppe.
 >
-管理者がこの機能を有効にしている場合、この機能を使用する前に、まずサインアップする必要があります。 サインアップは、[http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)で行うことができます。
+SE o Administrador Tiver Habilitado Você Absatz Esse Recurso, Primeiro Você Precisará Inscrever Se Antes de Pode usar. Você Pode Fazer Isso Aqui: [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup).
 
-1.  会社アカウントまたは学校アカウントのサインイン ページで、 [アカウントにアクセスできない場合] リンク または [パスワードを忘れた場合] リンクのいずれかをクリックするか、[https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com)に直接アクセスします。 ![ここに説明文を入力](./media/ft-mngPW-6-resetPWbegin.png)
-2.  [どなたですか?] ページに、会社アカウントまたは学校アカウントの ID を入力し、CAPTCHA に正解して自分がロボットではないことを証明します。 ![ここに説明文を入力](./media/ft-mngPW-7-enterID.png)
-3.   をクリックします。 **[次へ]**
-4.  パスワードをリセットするオプションを選択します。 管理者がシステムを構成した方法に応じて、以下の 1 つまたは複数の選択肢が表示されます。
+1.  Dieser Abschnitt Qualquer Tela de da ansprechen einer Kundentestgruppe Corporativa Ou de Estudante anmelden, Clique langen um Dos Links "Não ä Possível Acessar Sua ansprechen einer Kundentestgruppe?" OU "Esqueceu Sua Senha"? OU Navegue Diretamente até [https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com).
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-6-resetPWbegin.png)
+2.  Na Página "Quem ä Você?", eine ID da ansprechen einer Kundentestgruppe Corporativa Ou de Estudante E Insira nachweisen Que Você Não ä um Robô Fornecendo o Captcha.
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-7-enterID.png)
+3.  Dieser Abschnitt Clique **Avançar**.
+4.  Escolha Uma Opção Absatz Redefinir Sua Senha. Dependendo de Como o Administrador Tiver Configurado o Sistema, Você Poderá Ver Uma Ou Mais Attached Seguintes Opções:
  - 
-            **[連絡用電子メール アドレスにメールを送信]** - 6 桁のコードが記載された電子メールが、(選択した) 連絡用電子メール アドレスまたは認証用電子メール アドレスに送信されます。
+            **Inserir o Meu e-Mail Alternativo** – Envia um e-Mail-com um Código de 6 Dígitos Absatz Seu e-Mail-Alternativo Ou e-Mail-de Autenticação (Você Escolhe).
   - 
-            **[携帯電話に SMS 送信]** - 6 桁のコードが記載されたテキストが、(選択した) 携帯電話または認証用電子メール アドレスに送信されます。
+            **Enviar SMS Absatz Meu celular** – Envia um SMS Absatz Seu Telefone um Código de 6 Dígitos Seu Telefone celular Ou e-Mail com de Autenticação (Você Escolhe).
   - 
-            **[携帯電話に発信]** - 携帯電話または認証用電話に電話がかかってきます。 (選択した) # キーを押して通話を確認します。
+            **Ligar Absatz Meu celular** – Telefona Absatz Seu Telefone celular Ou Telefone de Autenticação (Você Escolhe) – Pressione eine Bearbeitungsbibliothek # Absatz Verificar eine Chamada.
  - 
-            **[会社電話に発信]** - 会社電話に電話がかかってきます。 # キーを押して通話を確認します。
+            **Ligar Absatz Meu Telefone Comercial** – Telefona Absatz Seu Telefone Comercial – Pressione eine Bearbeitungsbibliothek # Absatz Verificar eine Chamada.
  - 
-             **[セキュリティの質問に回答する]** - 事前に登録された質問が表示され、それに対して回答します。 ![ここに説明文を入力](./media/ft-mngPW-8-answerQuestions.png)
-5.  ここでは例として**[携帯電話に SMS 送信]**オプションを使用します。 電話主体のオプションを使用している場合、テキストの送信を受ける前に、電話番号を確認する必要があります。 市外局番を含めた電話番号を入力し、**[次へ]**をクリックして正しいことを確認し、テキストを送信します。 ![ここに説明文を入力](./media/ft-mngPW-9-textNumber.png)
-6.  テキストを受信したら、コードの送信元の番号ではなく、メッセージ本文に記載された確認コードを使用します。 テキストが送信されるまでに数分かかることがあります。 しばらくの間、お待ちください。 ![ここに説明文を入力](./media/ft-mngPW-10-verificationCode.png)
-7.  ここで、電話で受け取ったコードを、ページの入力ボックスにコードを入力します。 ![ここに説明文を入力](./media/ft-mngPW-11-enterCode.png)
-8.  管理者が第 2 段階の確認手順を必須にしている場合があります。 この場合、管理者が選択したオプションに応じて手順 4 を繰り返してください。
-9.  [新しいパスワードの選択] 画面で新しいパスワードを選択し、選択内容を確定して、**[完了]**をクリックします。 ![ここに説明文を入力](./media/ft-mngPW-12-clickFinish.png)
-10. 成功ページが表示されたら、準備は完了です。 新しいパスワードでサインインできるようになります。 ![ここに説明文を入力](./media/ft-mngPW-13-success.png)パスワードのリセット中に問題が発生した場合は、 「[自分のパスワードを更新する方法](https://azure.microsoft.com/en-us/documentation/articles/active-directory-passwords-update-your-own-password/#common-problems-and-their-solutions)」を参照してください。
+             **Responder Às Minhas Perguntas de Segurança** – Exibe Suas Perguntas de Segurança Registradas Previamente Absatz Você Responder.
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-8-answerQuestions.png)
+5.  Vamos usar einer Opção **Enviar SMS Absatz Meu celular** Como Exemplo. SE Estiver Usando Uma Opção Baseada langen Telefone, Você Precisará Verificar o Número de Telefone antes de Nós Enviarmos um SMS. Insira Seu Número de Telefone Completo e Clique langen **Avançar** Absatz Confirmar Que Ele Está Correto e Enviar um SMS.
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-9-textNumber.png)
+6.  Quando Receber o Texto Certifique Se de usar o Código de Verificação keine Corpo da Mensagem, Não o Número gleich o Código Foi Enviado. Pode Levar Alguns Minutos Absatz Você Receber o SMS, Então Vá Tomar um Café!
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-10-verificationCode.png)
+7.  Agora, Digite o Código Que Acabou de Receber langen Seu Telefone Na Caixa de Entrada NV Página an.
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-11-enterCode.png)
+8.  O Administrador Pode Exigir Uma Segunda Etapa de Verificação. Nesse Caso, Repita eine Etapa 4 com Uma Opção Diferente Selecionada.
+9.  Na Tela "Escolher Uma Nova Senha", Selecione Uma Nova Senha Confirme Sua Escolha e Clique langen **Concluir**.
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-12-clickFinish.png)
+10. Quando Vir ein Êxito Página Você Estará pronto Absatz Começar! Agora, Você Pode Entrar com Sua Nova Senha.
+![INSERIR TEXTO DESCRITIVO AQUI](./media/ft-mngPW-13-success.png) Teve um Problema Absatz Redefinir Sua Senha? Leia Sobre os [Problemas Comuns e Suas Soluções](https://azure.microsoft.com/en-us/documentation/articles/active-directory-passwords-update-your-own-password/#common-problems-and-their-solutions).
 
-### <a name=""></a>詳細な情報をご希望ですか?
-「[Enterprise Mobilität Suite](https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx)」を参照してください。.
+### <a name="quer-saber-mais"></a>Abfragetyp Saber Mais?
+Confira [Enterprise Mobilität Suite](https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx).

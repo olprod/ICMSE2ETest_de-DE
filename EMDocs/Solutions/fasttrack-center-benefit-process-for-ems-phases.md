@@ -1,5 +1,5 @@
 ---
-title: "Enterprise Mobilität Suite 用 schnelle センター特典のプロセス - フェーズ"
+title: "Prozessor Benefício Aktionen der schnelle Center Absatz o Enterprise Mobilität Suite - Fases aus."
 description: 
 keywords: 
 author: staciebarker
@@ -13,153 +13,151 @@ ms.assetid: e51f030b-8b08-4fea-96c9-d4ded435a264
 ROBOTS: noindex
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: f601be574812c0ca0b64c731324baba73c022abc
-ms.sourcegitcommit: 45ffbe57b8a2ff1ba6d26efde7f4e2fee8495593
+ms.openlocfilehash: 27b636a664b1e7878273105e2c1e5037eec4f7c6
+ms.sourcegitcommit: 1b0888e015659ad5d1cb408e4af57f1b916d13a3
 translationtype: MT
 ---
-# <a name="enterprise-mobility-suite-fasttrack---"></a>Enterprise Mobilität Suite 用 schnelle センター特典のプロセス - フェーズ
+# <a name="processo-do-benefcio-do-fasttrack-center-para-o-enterprise-mobility-suite---fases"></a>Prozessor Benefício Aktionen der schnelle Center Absatz o Enterprise Mobilität Suite - Fases aus.
+Quando Você Usa o [schnelle Center Absatz Enterprise Mobilität Suite zur Abstimmung führen Benefício](fasttrack-center-benefit-for-enterprise-mobility-suite-ems.md) Absatz Preparar, o Azure Active Directory Premium, o Microsoft Intune e/Ou o Absatz uso Azure Rights Management, Há Várias Fases Envolvidas keine Prozessor. Führen Sie als Seções einer Seguir Descrevem Cada Fase Prozessor de Integração.
 
-            [Enterprise Mobility Suite (EMS) 用の FastTrack センター特典](fasttrack-center-benefit-for-enterprise-mobility-suite-ems.md)を使用して、Azure Active Directory Premium、Microsoft Intune、および Azure Rights Management を準備する場合、そのプロセスには複数のフェーズがあります。 次のセクションでは、オンボーディング プロセスの各フェーズについて説明します。
-
-Schnelle オンボーディング プロセスの他の部分については、「[schnelle Center Vorteil-Prozess für Enterprise Mobilität Suite (zur Abstimmung) (Enterprise Mobilität Suite (zur Abstimmung) 用 schnelle センター特典のプロセス)](fasttrack-center-benefit-process-for-enterprise-mobility-suite-ems.md)」を参照してください。
-
-
-次の図に示すように、オンボーディングには 4 つのプライマリ フェーズがあります。
+Absatz verweist Sobre als Outras Partes Prozessor de Integração schnelle Confira [Prozessor Benefício schnelle Center Absatz Enterprise Mobilität Suite zur Abstimmung führen](fasttrack-center-benefit-process-for-enterprise-mobility-suite-ems.md).
 
 
-![Schnelle オンボーディング プロセスの 4 つのフェーズ](./media/ft-2-onboarding-phases.png)
+Eine Integração Tem Quatro Fases Principais, Conforme Mostra ein Figura ein Seguir:
 
 
-## <a name=""></a>開始フェーズ
+![Führen Sie als Quatro Fases Prozessor de Integração schnelle](./media/ft-2-onboarding-phases.png)
 
-適切な数のライセンスを購入した後、購入確認メールのガイダンスに従って、ライセンスを既存または新規のテナントに関連付けます。 Microsoft はお客様が schnelle センター特典の対象かどうかを確認し、対象の方にオンボーディング アシスタンスを提供する旨をお知らせいたします。 これらのサービスを組織で展開する準備ができている場合は、 [der schnelle センター](http://fasttrack.microsoft.com/)からサポートをご依頼いただくこともできます。 サポートを依頼するには、[der schnelle センター](http://fasttrack.microsoft.com/) (http://fasttrack.microsoft.com) にサインインし、ダッシュボードを開き、 [プラン] タブ、 [Intune、Azure Microsoft Active Directory Premium、または Azure Rights Management Premium のサポートを依頼] の順にクリックしてください。 オンボーディング サポートが開始したなら、オンライン会議のスケジュールを立てることになります。
 
-このフェーズで、お客様といっしょにオンボーディング プロセスについて話し合い、データを検証し、キックオフ ミーティングの日付を設定します。
+## <a name="fase-iniciar"></a>Fase Iniciar
 
-![オンボーディングの開始フェーズ](./media/ft-3-initiate-phase.png)
+Depois Que Você Tiver Comprado o Número de Licenças Apropriado, Siga als Diretrizes führen Sie e-Mail-de Confirmação de Compra Absatz Associar als Licenças Ao Seu Locatário Existente Ou hauptsächlich Locatário. Führen Sie eine Microsoft Verificará Sua Qualificação Absatz o Benefício schnelle Center, e Tentará Entrar langen Contato com Você Absatz Oferecer Assistência com einen Integração. Você Também Pode Solicitar Assistência Aktionen [Centro schnelle](http://fasttrack.microsoft.com/) Se Estiver pronto Absatz implantar Esses Serviços langen Sua Organização aus. Absatz Solicitar Assistência, Entre keine [Schnelle Center](http://fasttrack.microsoft.com/) (http://fasttrack.microsoft.com), Acesse o Painel, Clique Na Guia Ofertas e Clique langen "Solicitar Assistência Absatz o Microsoft Intune, o Azure Active Directory Premium Ou o Azure Rights Management Premium". UMA Vez Iniciado o Suporte de Integração, Vamos Definir Uma Agenda de Reuniões online.
 
-## <a name=""></a>評価フェーズ
+Durante Essa Fase, Podemos Discutir o Prozessor de Integração, Verificar os Dados e Programar Uma Reunião Inicial.
 
-オンボーディング プロセスが開始すると、Microsoft はお客様といっしょにソース環境および要件を評価します。 システムを評価して、オンボーディングを行うために変更の必要があるかどうかを判断します。 ツールを実行してデータを収集した後、Microsoft はオンプレミス Active Directory、インターネット ブラウザー、クライアント デバイスのオペレーティング システム、DNS、ネットワーク、インフラストラクチャ、および-ID
+![Fase Inicial da integração](./media/ft-3-initiate-phase.png)
 
-また、対象サービスの導入を成功に導く方法に関するガイダンスも紹介します。
+## <a name="fase-avaliar"></a>Fase Avaliar
 
-現在のセットアップ環境に基づいて、ご使用のソース環境を ZUR ABSTIMMUNG またはその個別のクラウド サービスへと正常にオンボーディングするために必要な最低要件を満たすような修復プランを提供します。 また、修復フェーズのための適切なチェックポイント電話会議を設定します。
+Quando Começar o Prozessor de Integração, ein Microsoft Trabalhará com Você Absatz Avaliar Seu Ambiente de Origem e os Requisitos. Ferramentas Serão Executadas Absatz Avaliar Seu Ambiente e eine Microsoft Vai Guiá-lo Pela Avaliação de Seus Navegadores de Internet, lokale Active Directory, Sistemas Operacionais de Dispositivos führen Cliente, DNS, Rede, Infraestrutura e Sistema de Identidade Absatz Determinar Se São Necessárias Quaisquer Alterações Absatz Integração.
 
-![オンボーディングの評価フェーズ](./media/ft-4-assess-phase.png)
+Ein Microsoft Também Conectará Você com Diretrizes Sobre Como Gerar Uma Adoção Bem Sucedida Dos Serviços Qualificados.
 
-## <a name=""></a>修復フェーズ
-必要であれば、ソース環境で修復プランの作業を行い、各サービスのオンボーディングと導入を行うための要件を満たすことができます。
+COM basieren langen Sua Configuração Atual Forneceremos um Plano de Correção Que Atualizará o Seu Ambiente de Origem Absatz os Requisitos Mínimos Necessários Absatz Uma Integração Bem Sucedida com-o zur Abstimmung Ou Seus Serviços de Nuvem Individuais soll. Também Configuraremos Chamadas de Ponto de Verificação Apropriadas Absatz eine Fase de Correção.
 
-![オンボーディングの修復フェーズ](./media/ft-5-remediate-phase.png)
+![Fase de Avaliação da integração](./media/ft-4-assess-phase.png)
 
-有効化フェーズを開始する前に、修復アクティビティの結果をいっしょに検証して、先に進む準備ができているかを確認します。
+## <a name="fase-corrigir"></a>Fase Corrigir
+SE für Necessário, Você Realizará als Tarefas keine Plano de Correção keine Ambiente de Origem, Absatz Que Você Atenda Aos Requisitos de Integração e Adoção de Cada Serviço.
 
-## <a name=""></a>有効化フェーズ
-すべての修復アクティビティが完了すると、プロジェクトはサービス利用のためのコア インフラストラクチャの構成、および対象となる各 ZUR ABSTIMMUNG クラウド サービスのプロビジョニングへとシフトします。
+![Fase de Correção da integração](./media/ft-5-remediate-phase.png)
 
-**有効化フェーズ - コア機能**
+Antes de Iniciar einer Fase Habilitar, Verificaremos langen Conjunto os Resultados Attached Atividades de Correção Absatz Garantir Que Você Esteja pronto Continuar Absatz.
 
-コア オンボーディングには、サービスのプロビジョニングおよびテナントと-ID の統合が含まれます。 これには、Azure Active Directory Premium、Microsoft Intune、Azure Rights Management Premium など、オンライン サービスをオンボーディングするための基礎を提供するステップも含まれます。
+## <a name="fase-habilitar"></a>Fase Habilitar
+Quando Todas als Atividades de Correção Estiverem Concluídas o Projeto Mudará Absatz ein Configuração da Infraestrutura Básica Absatz Consumo Serviço e Absatz o Provisionamento de Cada Serviço de Nuvem zur Abstimmung führen.
 
-![オンボーディングの有効化フェーズ - コア機能](./media/ft-6-enable-phase-core.png)
+**Habilitar Fase - Principais recursos**
 
-###<a name="---azure-active-directory-premium"></a>有効化フェーズ - Azure Active Directory Premium
+Eine Integração de Núcleo Envolve o Provisionamento de Serviços e ein Integração de Locatário e Identidade. Também Inclui Etapas Absatz Fornecer Uma basieren Absatz ein Integração de Serviços online, Como o Azure Active Directory Premium, o Microsoft Intune e o Azure Rights Management Premium soll.
 
-Azure Active Directory Premium 環境は、必要に応じて、Azure Active Directory verbinden ツール ディレクトリ同期と Active Directory フェデレーション サービス (AD FS) を使用してセットアップできます。
+![Fase de Habilitação da Integração - Principais funcionalidades](./media/ft-6-enable-phase-core.png)
 
-オンプレミス-ID をクラウドに同期する Azure Active Directory Premium シナリオの場合、IT 管理者とユーザーのサブスクリプションへの追加、管理前提条件の構成、Azure Active Directory Premium の設定、Azure Active Directory verbinden ツールによるディレクトリ同期の設定、Azure Active Directory verbinden ツールによる Active Directory フェデレーション サービス (AD FS) の設定、テスト ユーザーの構成、サービスのコア ユース ケースの検証を Microsoft が支援します。
+###<a name="fase-de-habilitao---azure-active-directory-premium"></a>Fase de Habilitação - Azure Active Directory Premium
 
-Azure Active Directory Premium 設定では、次の機能を有効化します。
+O Ambiente Azure Active Directory Premium Pode Server Configurado com einen Sincronização de Diretório da Ferramenta Azure Active Directory verbinden e o AD FS (Serviços de Federação Active Directory) Conforme o Necessário.
 
--   セルフサービスのパスワード リセット (SSPR)
+Absatz Cenários Azure Active Directory Premium Que Incluem führen Sie eine Sincronização de Identidades Locais com einen Nuvem, Nós Ajudaremos Você Adicionando os Administradores de TI e os Usuários à Sua Assinatura, Configurando Pré Requisitos de Gerenciamento Configurando o Azure Active Directory Premium Configurando eine Sincronização de Diretório Usando eine Ferramenta e Azure Active Directory verbinden o AD FS (Serviços de Federação Active Directory) Usando ein Ferramenta Azure Active Directory verbinden , Configurando Usuários de Teste e Validando os Principais Casos de uso Absatz o Serviço.
 
--   Azure 多要素認証 (mehrstufiger Authentifizierung DAS)
+Ein Configuração Azure Active Directory Premium Inclui führen Sie eine Habilitação Dos Seguintes Recursos:
 
--   サービスとしてのソフトウェア (SaaS) アプリケーション-- [Azure Active Directory Marketplace](https://azure.microsoft.com/marketplace/active-directory/)からの 1 つの SaaS アプリケーションのセットアップ
+-   SSPR (Autoatendimento de Redefinição de Senha)
 
--   セルフサービスのグループ管理 (SSGM)
+-   Mehrstufiger Authentifizierung DAS (Autenticação Multifator) Azure
 
--   管理レポート
+-   Aplicativo SaaS (Software Como Serviço) – konfigurieren um Aplicativo SaaS keine [Marketplace Aktionen Azure Active Directory aus](https://azure.microsoft.com/marketplace/active-directory/).
 
-![オンボーディングの有効化フェーズ - AADP](./media/ft-7-enable-phase-aadp.png)
+-   SSGM (Autoatendimento de Gerenciamento de Grupo)
 
-###<a name="-microsoft-intune"></a>有効化フェーズ – Microsoft Intune
+-   Relatórios administrativos
 
-Microsoft Intune の場合、モバイル デバイスとモバイル アプリケーション管理のニーズに基づき、Microsoft Intune を使用してデバイスを管理できるようにする手順をご案内します。 そのために行う実際のステップは、ご使用のソース環境によって異なりますが、一般に以下の作業が含まれます。
+![Fase de Habilitação da Integração - AADP](./media/ft-7-enable-phase-aadp.png)
 
--   エンド ユーザーのライセンシング。 必要に応じて、Microsoft クラウド サービス テナントのボリューム ライセンスをアクティブ化する方法のサポートも提供します。
+###<a name="fase-habilitar---microsoft-intune"></a>Fase Habilitar - Microsoft Intune
 
--   オンプレミスの Active Directory-ID またはクラウド ID のいずれかを活用した、Microsoft Intune で使用される ID の構成。
+Absatz o Microsoft Intune, e COM-Basis langen Seu Dispositivo Móvel e Nas Necessidades de Gerenciamento de Aplicativos Móveis, Vamos Orientá-lo Sobre Como Preparar-Se Absatz usar o Microsoft Intune Absatz Gerenciar Dispositivos. Als Etapas Exatas Dependem de Seu Ambiente de Origem e Podem Incluir:
 
--   Microsoft Intune サブスクリプションへのユーザーの追加、IT 管理者ロールの定義、およびユーザーとデバイスのグループの作成。
+-   Licenciamento Dos Usuários Finais. Quando Necessário, Também Forneceremos Assistência Sobre Como Ativar Licenças de Volume Absatz Seu Locatário de Serviço de Nuvem da Microsoft.
 
--   管理ニーズに基づいたモバイル デバイス管理機関の構成:
+-   Configurando Identidades Que Serão Usadas Pelo Microsoft Intune Aproveitando als Identidades Locais de Nuvem Ou führen Sie Active Directory.
 
-    -   Microsoft Intune が唯一の MDM ソリューションであるか、Office 365 のモバイル デバイス管理と併用される場合は、Microsoft Intune を MDM 機関として設定します。
+-   Führen Sie Microsoft Intune, Definindo Funções de Administrador de TI e Criando Grupos de Usuários e Dispositivos Adicionando Usuários À Sua Assinatura.
 
-    -   System Center Configuration Manager の既存の実装があり、Microsoft Intune を使用した管理機能を拡張しようとする場合は、Configuration Manager を MDM 機関として設定します。
+-   Com langen Suas Necessidades de Gerenciamento Configurando basieren soll eine Autoridade de Gerenciamento de Dispositivo Móvel:
+
+    -   Konfigurieren von o Microsoft Intune Como Sua Autoridade MDM Quando o Microsoft Intune Sua Única Solução MDM Ou Se Estiver langen Conjunto com-o Gerenciamento de Dispositivo Móvel nicht Office 365.
+
+    -   SE Você Tiver Uma Implementação Existente führen Sie System Center Configuration Manager e Quiser Absatz Expandir Seus-Recursos de Gerenciamento-com-o Microsoft Intune, o-Konfigurations-Manager Como Sua Autoridade MDM konfigurieren
 
         > [!NOTE]
-        > エンドユーザー所有のデバイス、共有デバイス、またはキオスク型デバイス全体でモバイル アプリケーション管理のみを活用しようとする場合は、MDM 機関を設定する必要はありません。
+        > SE Você Estiver Procurando Apenas Aproveitar o Gerenciamento de Aplicativo Móvel Nummern Dispositivos Próprios, Dispositivos Compartilhados Ou Dispositivos de Quiosque de Seus Usuários Finais, eine Configuração de Uma Autoridade MDM Não ä Necessária.
 
--   モバイル デバイス管理がスコープ内にある場合は、次の点に関してガイダンスを提供します。
+-   SE o Gerenciamento de Dispositivo Móvel Estiver keine Seu Escopo, Forneceremos Orientações com:
 
-    -   MDM 管理ポリシーの検証に使用するテスト グループの構成。
+    -   Configuração de Grupos de testes führen Sie eine Serem Usados Absatz Validar als Políticas de Gerenciamento MDM
 
-    -   次のような MDM 管理ポリシーとサービスの構成。
+    -   Configuração de Políticas de Gerenciamento Aktionen MDM e Serviços, Como aus:
 
-        -   Web リンクまたはディープ リンクでサポートされているプラットフォームごとのアプリケーション展開。
+        -   Implantação de Aplicativo Absatz Cada Plataforma com Suporte Por Meio de verknüpft, da Web Ou Links Profundos.
 
-        -   条件付きアクセス ポリシー。
+        -   Políticas de Acesso Condicional.
 
-        -   メール、Wi Fi、VPN プロファイルの展開。
+        -   Implantação de e-Mails, Wi-Fi e Perfis VPN.
 
-        -   適用対象となる場合の Microsoft Intune Exchange Connector の設定。
+        -   Führen Sie Microsoft Intune Exchange Connector Quando Aplicável Configuração.
 
-    -   
-            [サポートされているプラットフォーム](https://technet.microsoft.com/library/dn600287.aspx)ごとにデバイスを Microsoft Intune サービスで Microsoft Intune または に登録。-Konfigurations-Manager
+    -   Registro de Dispositivos de Cada [Plataforma com Suporte](https://technet.microsoft.com/library/dn600287.aspx) Absatz o Microsoft Intune Ou o Gerenciador de Configurações com-o Serviço Microsoft Intune.
 
--   モバイル アプリケーション管理 (MAM) がスコープ内にある場合、または MAM ポリシーで既存の Microsoft ソリューションまたはサードパーティ製 MDM ソリューションを補完しようとする場合は、次の点に関するガイダンスを提供します。
+-   SE o Gerenciamento de Aplicativo Móvel (MAM) Estiver keine Seu Escopo, Organisationseinheit Se Você Estiver Procurando daß Seu Microsoft Existente Ou Solução MDM de Terceiros com-Políticas MAM, Forneceremos Orientações com:
 
-    -   サポートされているプラットフォームごとの MAM ポリシーの構成。
+    -   Configuração de Políticas de MAM Absatz Cada Plataforma com-Suporte.
 
-    -   管理対象アプリの条件付きアクセス ポリシーの構成。
+    -   Configuração de Políticas de Acesso Condicional Absatz Aplicativos Gerenciados.
 
-    -   上記の MAM ポリシーを使用した適切なユーザー グループのターゲット設定。
+    -   Direcionamento Dos Grupos de Usuários Apropriado als Políticas MAM Acima com.
 
-    -   マネージ アプリケーションの使用状況レポートの使用。
+    -   Utilização de Relatórios de uso de Aplicativos Gerenciados.
 
--   管理がスコープ内にある場合は、次の点に関してガイダンスを提供します。 PC
+-   SE o Gerenciamento de PCs Estiver keine Seu Escopo, Forneceremos Orientações Absatz:
 
-    -   必要に応じた Intune クライアント ソフトウェアのインストール。
+    -   Quando-Necessário Instalar o Software Cliente Aktionen Intune aus.
 
-    -   Intune で利用できるソフトウェアとハードウェアのレポートの使用。
+    -   Uso Dos Relatórios de Hardware e Software Disponíveis keine Intune.
 
-また、対象サービスの導入を成功に導く方法に関するガイダンスも紹介します。
+Ein Microsoft Também Conectará Você com Diretrizes Sobre Como Gerar Uma Adoção Bem Sucedida Dos Serviços Qualificados.
 
-![オンボーディングの有効化フェーズ - Intune](./media/ft-8-enable-phase-intune.png)
+![Fase de Habilitação da Integração - Intune](./media/ft-8-enable-phase-intune.png)
 
-###<a name="---azure-right-management-premium"></a>有効化フェーズ - Azure richtigen Management Premium
+###<a name="fase-de-habilitao---azure-right-management-premium"></a>Fase de Habilitação - Azure rechts Management Premium
 
-Azure richtigen Management Premium 環境は、必要に応じて、Azure Active Directory verbinden ディレクトリ同期と Active Directory フェデレーション サービス (AD FS) を使用してセットアップできます。
+O Ambiente Azure rechten Management Premium Pode Server Configurado com einen Sincronização de Diretórios Azure Active Directory verbinden e o AD FS (Serviços de Federação Active Directory) Conforme o Necessário.
 
-オンプレミス ID をクラウドに同期する AzRMS シナリオの場合、IT 管理者とユーザーのサブスクリプションへの追加、管理前提条件の構成、Azure richtigen Management Premium の設定、Azure Active Directory verbinden ツールによるディレクトリ同期の設定、Azure Active Directory verbinden による Active Directory フェデレーション サービスの設定、テスト ユーザーの構成、サービスのコア ユース ケースの検証を Microsoft が支援します。
+Führen Sie Absatz Cenários AzRMS Que Incluem Sincronização de Identidades Locais com einen Nuvem, Nós o Ajudaremos Adicionando Administradores de TI e Usuários à Sua Assinatura, Configurando Pré Requisitos de Gerenciamento Configurando o Azure rechts Management Premium Configurando eine Sincronização de Diretórios Usando eine Ferramenta Azure Active Directory verbinden e os Serviços de Federação führen Sie Active Directory Usando o Azure Active Directory verbinden , Configurando Usuários de Teste e Validando os Principais Casos de uso Absatz o Serviço.
 
-AzRMS 設定では、次の機能を有効にします。
+Ein Instalação AzRMS Inclui führen Sie eine Habilitação Dos Recursos eine Seguir:
 
--   AzRMS サービスの有効化
+-   Habilitação de Serviço AzRMS
 
--   Exchange Online と Sharepoint Online の IRM 構成
+-   Führen Sie Configuração IRM Absatz o Exchange Online-e-o Sharepoint Online
 
--   オンプレミスの Exchange およびオンプレミスの Sharepoint との Rights Management コネクタ
+-   Führen Sie Connector Rights Management com-o lokale Exchange-e-o lokalen Sharepoint
 
--   Windows デバイスおよび Windows 以外のデバイス用の RMS 共有アプリケーション
+-   Führen Sie Dispositivos Aplicativo RMS sharing Absatz Dispositivos Windows e Não Windows
 
-![オンボーディングの有効化フェーズ - Azure RMS](./media/ft-7-enable-phase-aadp.png)
+![Fase de Habilitação da Integração - Azure RMS](./media/ft-7-enable-phase-aadp.png)
 
-Schnelle のオンボーディング プロセスの次のパート「[Microsoft の責任](fasttrack-center-benefit-process-for-ems-microsoft-responsibilities.md)」を参照してください。
+Leia Sobre ein Próxima Parte Prozessor de Integração führen schnelle: [Responsabilidades da Microsoft](fasttrack-center-benefit-process-for-ems-microsoft-responsibilities.md)
 
-### <a name=""></a>詳細な情報をご希望ですか?
-「[Enterprise Mobilität Suite](https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx)」を参照してください。.
+### <a name="quer-saber-mais"></a>Abfragetyp Saber Mais?
+Confira [Enterprise Mobilität Suite](https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx).
 

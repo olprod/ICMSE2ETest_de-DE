@@ -1,6 +1,6 @@
 ---
-title: "IT 管理者向けのエンドユーザー Intune 登録手順"
-description: "IT 管理者向けのエンドユーザー Intune 登録手順"
+title: "Instruções de Registro Usuário Final führen keine Intune Absatz Administradores de TI"
+description: "Führen Sie Instruções de Registro Usuário Final keine Intune Absatz Administradores de TI"
 keywords: 
 author: craigcaseyMSFT
 manager: jeffgilb
@@ -13,169 +13,157 @@ ms.assetid: 5c13446e-aa31-47df-ad9d-373be7660197
 ROBOTS: noindex
 ms.reviewer: 
 ms.suite: ems
-ms.openlocfilehash: 2a40e68c5257309563aac6a7bed7a1bff17d99d9
-ms.sourcegitcommit: 45ffbe57b8a2ff1ba6d26efde7f4e2fee8495593
+ms.openlocfilehash: 7a295bcfc3086b09dd57939cba605ede0eb23978
+ms.sourcegitcommit: 1b0888e015659ad5d1cb408e4af57f1b916d13a3
 translationtype: MT
 ---
-# <a name="it-intune-"></a>IT 管理者向けのエンドユーザー Intune 登録手順
+# <a name="instrues-de-registro-do-usurio-final-no-intune-para-administradores-de-ti"></a>Führen Sie Instruções de Registro Usuário Final keine Intune Absatz Administradores de TI
 
-このドキュメントでは、管理者がカスタマイズできる登録手順について説明します。 また、ユーザーが自分の iOS デバイスと Android デバイスを Microsoft Intune™ (Windows デバイス用、Intune で Windows デバイスを使用する方法を参照してください) に登録できるようにする手順についても説明します。 このドキュメントから、ユーザーに最適と思われる部分をコピーすることをお勧めします。 たとえば、デバイス プラットフォームごとに 1 つのドキュメントを作成したり、スクリーンショットを増やしたりすることができます。
+Este Documento Contém Instruções de Registro Que Você Pode Personalizar e Fornecer Aos Usuários Absatz Ajudá-Los eine Registrierung Seus Dispositivos iOS e Android keine Microsoft Intune™ (Absatz Dispositivos Windows Consulte Usando Seu Dispositivo Windows com-o Intune). Recomendamos Que Você Copie als Partes Deste Documento Que Considerar Mais Adequadas Absatz Seus Usuários. Por Exemplo, Você Pode Querer Produzir um Único Documento Absatz Cada Plataforma de Dispositivo Ou Adicionar Mais Capturas de Tela.
 
-このような書面の手順に加え、[http://aka.ms/IntuneUserVideos](http://aka.ms/IntuneUserVideos)に掲載されている Intune エンド ユーザー向けビデオのハイパーリンクを含めることもできます。
+Além Dessas Instruções Escritas Você Também Pode Incluir Hiperlinks Absatz Qualquer um Dos Vídeos Absatz o Usuário endgültigen Intune Encontrados langen [http://aka.ms/IntuneUserVideos](http://aka.ms/IntuneUserVideos)führen.
 
 > [!NOTE]
-> Microsoft、Intune、および Office 365 は、Microsoft Corporation の登録商標です。 iPhone、Mac、および Apple は、Apple, Inc の商標です。 Android は Google Inc の商標です。 Samsung KNOX は Samsung Electronics Co. Ltd の商標です。
+> Microsoft Intune e Office 365 São Marcas Registadas da Microsoft Corporation. iPhone, Mac e Apple São Marcas Registradas da Apple, Inc. Android ä Uma Marca Registrada da Google Inc. Samsung KNOX ä Uma Marca Registrada da Samsung Electronics co., Ltd.
 
-## <a name="intune-"></a>Intune に登録する理由
-登録すると、モバイル デバイスを使用して職場や学校のファイルとデータにアクセスできるようになります。 また、IT 部門が職場や学校のリソースを管理してそれらの安全性を保持する一方で、ユーザーは好みのデバイスを使用して作業を進めることができます。
+## <a name="por-que-se-registrar-no-intune"></a>Por Que Se Registrierungsstelle keine Intune
+Quando Se Registra Você Pode usar Seu Dispositivo Móvel Absatz Acessar Arquivos e Dados de Trabalho Ou de Estudante. O Registro Dos Dispositivos Também Permite Que o Departamento de TI Gerencie Recursos Corporativos Ou de Estudante e os Mantenha Seguros, Dando-Lhe eine Liberdade de usar Seu Dispositivo Preferido Absatz Trabalhar.
 
-職場で自分のデバイスを使用するには、ポータル サイトを使用して Intune に登録します。 インストールする会社のアプリの検索、追加した他のデバイスの確認、IT 管理者の連絡先の検索が簡単になります。 また、使用しているデバイスの管理を IT 管理者に許可することで、デバイスに保存されている会社情報を保護しやすくすることもできます。 登録を開始する前に、Wi-Fi または携帯ネットワークのインターネット接続が良好であることを確認します。
+Absatz usar Seu Dispositivo keine Trabalho, Registre-o keine Intune Usando o Portal da Empresa. Você Poderá, Então, Encontrar Facilmente Aplicativos da Empresa Absatz Instalar Consultar Outros Dispositivos Adicionados e Encontrar Informações de Contato Seu Administrador de TI. Ein Seu Administrador de TI Absatz Gerenciar Seu Dispositivo eine Fim de Ajudar einer Proteger als Informações da Empresa Contidas Nele Você Também Dará. Antes de Iniciar o Registro Confirme Se Você Tem Uma Boa Conexão Wi-Fi Ou celular com ein Internet.
 
-## <a name="intune-intune-android-"></a>Intune ポータル サイト アプリを使用して Intune に Android デバイスを登録する
+## <a name="registre-seu-dispositivo-android-no-intune-usando-o-aplicativo-portal-da-empresa-do-intune"></a>Registre Seu Dispositivo Android keine Intune Usando o Aplicativo Portal da Empresa führen Intune
 
-これらの登録手順は Samsung Knox Android デバイスと、 "ネイティブな" (Samsung Knox 以外の) Android デバイス用の手順です。 Samsung Knox デバイスがあるかどうかを判断するには、**[設定] 、 [端末情報]**の順に選択します。 "Knox" という単語がない場合、デバイスはネイティブ Android デバイスです。 デバイスの画面は、このセクションの画面とは少し異なる可能性があります。
+Essas Etapas de Registro São Absatz Dispositivos Samsung Knox Android e Dispositivos Android "Nativos" (Que Não São Samsung Knox). Absatz Determinar Se Você Tem um Dispositivo Samsung Knox, Vá até **Configurações > Sobre o Telefone**. SE Você Não Vir eine Palavra "Knox" Listada, Terá um Dispositivo Android Nativo. Als Telas Mostradas langen Seu Dispositivo Podem Parecer um Pouco Diferentes Attached Apresentadas Nesta Seção.
 
-Intune にデバイスを登録している最中にエラーが表示された場合は、「[IT 管理者に登録に関するエラーを送信する](https://technet.microsoft.com/en-US/library/mt502762(TechNet.10).aspx#BKMK_andr_send_enroll_errors)」を参照してください。
+SE Receber um Aufgabenschema Ao Tentar Registrierung Seu Dispositivo keine Intune, Consulte [Enviar Objekt de Registro Ao Administrador de TI](https://technet.microsoft.com/en-US/library/mt502762(TechNet.10).aspx#BKMK_andr_send_enroll_errors).
 
-登録の前後に、デバイスの使用方法に適したカテゴリを選ぶように求められる場合があります。 IT-管理者は、このカテゴリを使用してアクセスできるアプリを判断します。
-1.  
-            [Google wiedergeben](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal)から無料の Microsoft Intune ポータル サイト アプリをデバイスにインストールします。
-2.  Microsoft Intune ポータル サイト アプリを開きます。
-3.  ポータル サイトの**[ようこそ]**画面で、**[サインイン]**をタップし、職場または学校アカウントを使用してサインインします。
+Antes Ou Após o Registro Você Poderá Server Solicitado ein Escolher Uma Categoria Que Melhor Descreva Como Você Usa o Dispositivo an. O Administrador de TI Usa Essa Categoria Absatz Ajudar ein Determinar Quais Aplicativos Você Terá Acesso.
+1.  Führen Sie Microsoft Intune langen Seu Dispositivo instale o Aplicativo Gratuito Portal da Empresa NV [Google wiedergeben](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal).
+2.  Führen Sie Microsoft Intune und o Aplicativo Portal da Empresa.
+3.  Na Tela de **Boas Vindas** Portal da Empresa, Toque langen **Entrar** e Entre com Sua ansprechen einer Kundentestgruppe Corporativa Ou de Estudante.
 
-  ![Intune ポータル サイトのサインイン画面のスクリーンショット (Android デバイス)](./media/ft-userEnrollAndroid-1-signUp.png)
+  ![Captura de Tela Mostrando eine Tela de Entrada Portal da Empresa Intune langen werden um Dispositivo Android (engl.)](./media/ft-userEnrollAndroid-1-signUp.png)
 
-4.  IT-管理者によって会社の使用条件が設定されている場合は、**[同意する]**をタップして該当する条項に同意します。
+4.  SE o Seu Administrador de TI Tiver Configurado os Termos e Condições da Empresa, Toque langen **ACEITAR** Absatz Aceitar os Termos.
 
-  ![Android デバイスの使用条件に同意を求めるスクリーンショット](./media/ft-userEnrollAndroid-2-accept.png)
-5.  Android 6.0 以降のデバイスを使用している場合は、この手順を実行してください。 それ以外の場合は、次の手順に進みます。
+  ![Captura de Tela Pedindo Que o Usuário Aceite os Termos e Condições langen um Dispositivo Android (engl.)](./media/ft-userEnrollAndroid-2-accept.png)
+5.  SE Estiver Usando um Dispositivo Android 6.0 Ou hinteren, Siga Esta Etapa. Caso Contrário, Vá Absatz ein Próxima Etapa.
 
-  IT-管理者が特定のポリシーを設定している場合は、次のメッセージのいずれかまたは両方が表示されることがあります。
+  SE o Administrador de TI Tiver Configurado Algumas Políticas, Você Poderá Ver Uma Ou als Duas Mensagens eine Seguir:
 
-  - 
-            **"ポータル サイトに連絡先へのアクセスを許可しますか?"** というメッセージが表示されたら、**[許可]**をタップします。 Microsoft が連絡先にアクセスすることはないため、 [許可] をタップしても問題はありません。 Google がメッセージ テキストを制御しているため、Microsoft では変更できません。 アクセスを許可すると、ポータル サイト アプリがデバイスの問題をトラブルシューティングするために役立つデータ ログへのアクセスのみが許可されます。
+  - SE Vir ein Mensagem **Permitir Que o Portal da Empresa Acesse Seus Contatos?**, Toque langen **PERMITIR**. Ä Seguro Tocar langen PERMITIR, ein Microsoft Nunca Acessa Seus Contatos Porque! O Google Controla o Texto da Mensagem Então ein Microsoft Não Pode Alterá-lo. Quando Você Permite o Acesso Ele Só Permite Que o Aplicativo Portal da Empresa Acesse meldet de Dados Absatz Ajudar eine Solucionar Problemas keine Dispositivo.
 
         ![Screenshot in der Benutzer gefragt, um das Portal Access Kontakten für Android-Gerät zuzulassen](./media/ft-userEnrollAndroid-3-accessContacts.png)
-  - 
-            **"電話での通話とその管理をポータル サイトに許可しますか?"** というメッセージが表示される場合、**[許可]**をタップします。 Microsoft が通話や電話の管理を行うことはないため、 [許可] をタップしても問題はありません。 Google がメッセージ テキストを制御しているため、Microsoft では変更できません。 アクセスを許可しても、会社のポータル アプリが電話番号や IMEI と呼ばれる ID を確認することを許可しているだけです。
+  - SE Ver ein Mensagem **Permitir Que o Portal da Empresa Faça e Gerencie Chamadas?**, Toque langen **PERMITIR**. Ä Seguro Tocar langen PERMITIR, ein Microsoft Nunca Faz Nem Gerencia Suas Chamadas Telefônicas Porque! O Google Controla o Texto da Mensagem Então ein Microsoft Não Pode Alterá-lo. AO Permitir o Acesso, o Que Você Faz ä Permitir Que o Aplicativo Portal da Empresa Veja Seu Número de Telefone E Uma ID Chamada IMEI.
 
         ![Screenshot, der Benutzer zum Portal Telefonanrufe auf Android-Gerät verwalten zulassen](./media/ft-userEnrollAndroid-4-manageCalls.png)
 
-  
-            **[拒否]** をタップすると、次に会社のポータルにサインインしたときにもう一度メッセージが表示されますが、**[今後このメッセージを表示しない]** チェック ボックスをタップすると、メッセージ表示をオフにできます。 後でアクセスを許可する場合、**[設定]、[アプリ]、[ポータル サイト]、[アクセス許可]、[電話]** の順に移動して、アクセス許可を有効にします。
-6.  職場または学校の電子メール アドレスとパスワードを使用してポータル サイト アプリにサインインし、**[サインイン]**をタップします。
+  SE Você Tocar langen **RECUSAR**als Mensagens Serão Exibidas Novamente NV Próxima Vez Que Você Entrar führen Sie keine Aplicativo Portal da Empresa, Mas Você Pode Desativar Mensagens Futuras-Tocando NV Caixa-de Seleção **Nunca Perguntar Novamente**. SE Você Decidir Posteriormente Permitir o Acesso, Acesse **Configurações > Aplicativos > Portal da Empresa > Permissões > Telefone** e Vorbehalt einer Permissão.
+6.  Conecte Se keine Aplicativo Toque langen **Entrar**Portal da Empresa, Usando Sua ansprechen einer Kundentestgruppe e Senha Corporativa Ou de Estudante e, langen Seguida,.
 
-  ![ポータル サイトにサインインするように求めるスクリーンショット (Android デバイス)](./media/ft-userEnrollAndroid-5-signIn.png)
-7.  [会社アクセスのセットアップ] ページで、**[開始]**をタップします。
+  ![Captura de Tela Pedindo Que o Usuário Entre keine Portal da Empresa langen um Dispositivo Android (engl.)](./media/ft-userEnrollAndroid-5-signIn.png)
+7.  Na Tela Configuração de Acesso da Empresa Toque langen **INICIAR**.
 
-  ![[会社アクセスのセットアップ] ページのスクリーンショット (Android デバイス)](./media/ft-userEnrollAndroid-6-beginSetup.png)
-8.  デバイスを登録すると可能になる操作についての説明を確認してから、**[続行]**をタップします。
+  ![Captura de Tela Mostrando einer Página Configuração de Acesso da Empresa langen um Dispositivo Android (engl.)](./media/ft-userEnrollAndroid-6-beginSetup.png)
+8.  Leia Sobre o Que Você Pode Fazer Quando Registra Seu Dispositivo e, langen Seguida, Toque langen **CONTINUAR**.
 
-  ![Android デバイスの登録が推奨される理由に関する情報のスクリーンショット](./media/ft-userEnrollAndroid-7-whyEnroll.png)
-9.  IT 管理者が登録済みのデバイスに関して確認できる情報と確認できない情報についての一覧を確認し、**[続行]**をタップします。
+  ![Captura de Tela Mostrando Informações Sobre Por Que Você Deve Registrierung um Dispositivo Android (engl.)](./media/ft-userEnrollAndroid-7-whyEnroll.png)
+9.  Consulte eine Lista Que o Administrador de TI Pode Ou Não Ver langen Seu Dispositivo Registrado e Toque langen **CONTINUAR**.
 
-  ![Android デバイスのプライバシー ポリシーを示すスクリーンショット](./media/ft-userEnrollAndroid-8-privacy.png)
-10. をタップすると表示される可能性のあるいくつかの項目を確認します。 [登録] 読み終えたら、**[登録]**をタップします。
+  ![Captura de Tela Mostrando eine Política de Privacidade langen um Dispositivo Android (engl.)](./media/ft-userEnrollAndroid-8-privacy.png)
+10. Untersuchen Sie Algumas Attached Coisas Que Você Pode-Ver Depois Que-Tocar langen Registrierung. Quando Terminar einer Leitura Toque langen **REGISTRIERUNG**.
 
-  ![これからの登録手順を示すスクリーン ショット (Android デバイス)](./media/ft-userEnrollAndroid-9-whatNext.png)
-11. [デバイス管理者のアクティブ化] 画面で、**[アクティブ化]**をタップします。
+  ![Captura de Tela Mostrando als Próximas Etapas de Registro langen um Dispositivo Android (engl.)](./media/ft-userEnrollAndroid-9-whatNext.png)
+11. Na Tela Ativar Administrador Dispositivo führen, Clique langen **ATIVAR**.
 
-  ![デバイス管理者をアクティブ化するように求めるスクリーンショット (Android デバイス)](./media/ft-userEnrollAndroid-10-activateAdmin.png)
-12. 画面の指示に従って、PIN またはパスワードを入力します。 このデバイス上で PIN またはパスワードを既に設定している場合は、この画面は表示されず、新しい PIN またはパスワードを入力するように求められます。
+  ![Captura de Tela Solicitando Que o Usuário Vorbehalt o Administrador Dispositivo langen führen um Dispositivo Android (engl.)](./media/ft-userEnrollAndroid-10-activateAdmin.png)
+12. Siga Os fordert Absatz Inserir um PIN Ou Senha. SE Já Tiver Configurado um ANHEFTEN Ou Senha Neste Dispositivo Você Não Verá Esta Tela Ou Será Solicitado einer Inserir um hauptsächlich PIN Ou Senha.
 
-  ![PIN-NUMMER を Android デバイスに入力するように求めるスクリーンショット](./media/ft-userEnrollAndroid-11-enterPIN.png)
-13. と一致する次の手順に従います。 使用しているデバイスの種類 (ネイティブ Android または Samsung Knox) Samsung Knox デバイスを持っていない場合は、ネイティブ Android の手順に従います。 Samsung Knox デバイスがあるかどうかを判断するには、**[設定] 、 [端末情報]**の順に選択します。 "Knox" という単語がない場合、デバイスはネイティブ Android デバイスです。
- - ネイティブ (Samsung Knox 以外): **[証明書の名前指定]**画面で、**[OK]**をタップして既定の証明書を受け入れます。
+  ![Captura de Tela Solicitando Que o Usuário Insira Seu langen ANHEFTEN um Dispositivo Android (engl.)](./media/ft-userEnrollAndroid-11-enterPIN.png)
+13. Siga als Instruções Abaixo Que Corresponde Ao Tipo de Dispositivo Que Você Está Usando (Android Nativo Ou Samsung Knox). SE Não Tiver um Dispositivo Samsung Knox, Siga als Instruções Absatz o Android Nativo. Absatz Determinar Se Você Tem um Dispositivo Samsung Knox, Vá até **Configurações > Sobre o Telefone**. SE Você Não Vir eine Palavra "Knox" Listada, Terá um Dispositivo Android Nativo.
+ - Dispositivo Nativo (Que Não ä Samsung Knox): Na Tela **Nome führen Certificado**Toque langen **OK** Absatz Aceitar o Certificado Padrão.
 
         ![Screenshot prompting the user to accept the default certificate on a native Android device](./media/ft-userEnrollAndroid-12-android.png)
- - Samsung Knox デバイス: をタップします。 **[確認]**
+ - Dispositivo Samsung Knox: Toque langen **CONFIRMAR**
 
         ![Screenshot prompting the user to confirm the privacy policy for a Samsung Knox device](./media/ft-userEnrollAndroid-13-knox.png)
 
- Intune がデバイスを登録している間、次のメッセージが画面に表示されます。
+ Você Verá einer Seguinte Mensagem NV Tela Enquanto o Intune Registra Seu Dispositivo.
 
-  ![Android デバイスが登録されていることを示すスクリーンショット](./media/ft-userEnrollAndroid-14-enrollingDevice.png)
-14.  
-            **[会社アクセスのセットアップ]**画面で、**[続行]**をタップします。 IT 管理者が別のセキュリティ要件 (パスワードの設定など) をセットアップしている場合は、画面の指示に従って、 [会社アクセスのセットアップ] 画面に戻ったときに**[続行]**をタップします。
+  ![Captura de Tela Mostrando Que um Dispositivo Android Está Sendo Registrado](./media/ft-userEnrollAndroid-14-enrollingDevice.png)
+14.  Na Tela **Configuração de Acesso da Empresa**Toque langen **CONTINUAR**. SE o Administrador de TI Configurar Requisitos de Segurança Adicionais, Como eine Necessidade de Definir Uma Senha Siga als Instruções NV Tela e Toque langen **CONTINUAR** Quando Retornar à Tela Configuração de Acesso da Empresa.
 
-  ![Android デバイスが準拠しており、ユーザーに続行を求めるスクリーンショット](./media/ft-userEnrollAndroid-15-coAccessSetup.png)
-15. 
-            をタップします。 **[完了]**
+  ![Captura de Tela Mostrando Que o Dispositivo Android ä Compatível E Solicitando Que o Usuário fortsetzen](./media/ft-userEnrollAndroid-15-coAccessSetup.png)
+15. Dieser Abschnitt Toque **CONCLUÍDO**.
 
-  ![会社アクセスのセットアップ完了時のスクリーン ショット (Android デバイス)](./media/ft-userEnrollAndroid-16-SetupComplete.png)
-16. これでデバイスが Intune に登録され、ポータル サイト アプリに戻ります。
-17. 会社のアプリをインストールするには、最初に**[設定] 、 [セキュリティ]**の順に選び、**[不明なソース]**をオンにします。 アプリをインストールする前に、このオプションをオンにしない場合、次のメッセージが表示されます。 [インストールがブロックされました。 セキュリティ上の理由から、電話は不明のソースから取得したアプリのインストールをブロックするように設定されています。 ] エラー ダイアログの**[設定]**をタップすると、**[不明なソース]**オプションを表示できます。
+  ![Captura de Tela Mostrando Que eine Configuração de Acesso da Empresa Está Concluída langen um Dispositivo Android (engl.)](./media/ft-userEnrollAndroid-16-SetupComplete.png)
+16. O Dispositivo Agora Está Registrado keine Intune, e Você ä Levado de Volta Ao Aplicativo Portal da Empresa.
+17. Antes de Instalar Aplicativos Corporativos Acesse **Configurações > Segurança** e Vorbehalt **Fontes Desconhecidas**. SE Não Ativar Essa Opção antes de Tentar Instalar os Aplicativos Você Verá ein Mensagem "Instalação Bloqueada". Por Motivos de Segurança, Seu Telefone Está Definido Absatz Bloquear als Instalações de Aplicativos Obtidos de Fontes Desconhecidas." Você Pode Tocar langen **Configurações** NV Caixa de Diálogo de Aufgabenschema Absatz Infrarot-Absatz a Opção **Fontes Desconhecidas**.
 
-## <a name="intune-ios-"></a>Intune に iOS デバイスを登録する
-これらの手順を使用して、Intune に iOS デバイスを登録します。 登録の詳細については、「[ポータル サイト アプリをインストールし、Intune にデバイスを登録するとどうなりますか](https://technet.microsoft.com/library/mt598622(TechNet.10).aspx#BKMK_ios_what_happ_enroll)」を参照してください。 Intune にデバイスを登録している最中にエラーが表示された場合は、「[IT 管理者に登録に関するエラーを送信する](https://technet.microsoft.com/library/mt598622(TechNet.10).aspx#BKMK_ios_error_enrolling_tbl)」を参照してください。
+## <a name="registrar-seu-dispositivo-ios-no-intune"></a>Registrierung Seu Dispositivo iOS keine Intune
+Verwenden Sie keine Intune Estas Instruções Absatz Registrierung Seu Dispositivo iOS. Absatz Obter Mais Informações Sobre o Registro, Consulte [O Que Acontece Quando Instalo o Aplicativo Portal da Empresa e Registro Meu Dispositivo keine Intune?](https://technet.microsoft.com/library/mt598622(TechNet.10).aspx#BKMK_ios_what_happ_enroll). SE Receber um Aufgabenschema Ao Tentar Registrierung Seu Dispositivo keine Intune, Consulte [Enviar Objekt de Registro Ao Administrador de TI](https://technet.microsoft.com/library/mt598622(TechNet.10).aspx#BKMK_ios_error_enrolling_tbl).
 
-登録の前後に、デバイスの使用方法に適したカテゴリを選ぶように求められる場合があります。 IT-管理者は、このカテゴリを使用してアクセスできるアプリを判断します。
-1.  App ストアから無料の Microsoft Intune ポータル サイト アプリをデバイスにインストールします。
-2.  Microsoft Intune ポータル サイト アプリを開きます。
-3.  ポータル サイトの**[ようこそ]**画面で、**[サインイン]**をタップし、職場または学校アカウントを使用してサインインします。
+Antes Ou Após o Registro Você Poderá Server Solicitado ein Escolher Uma Categoria Que Melhor Descreva Como Você Usa o Dispositivo an. O Administrador de TI Usa Essa Categoria Absatz Ajudar ein Determinar Quais Aplicativos Você Terá Acesso.
+1.  Instale o Aplicativo Gratuito Portal da Empresa führen Microsoft Intune langen Seu Dispositivo NV App Store.
+2.  Führen Sie Microsoft Intune und o Aplicativo Portal da Empresa.
+3.  Na Tela de **Boas Vindas** Portal da Empresa, Toque langen **Entrar** e Entre com Sua ansprechen einer Kundentestgruppe Corporativa Ou de Estudante.
 
-  ![Intune ポータル サイトのサインイン画面のスクリーンショット (iOS デバイス)](./media/ft-userEnrollIOS-1-signUp.png)
-4.  IT 管理者によって会社の使用条件が設定されている場合は、**[同意する]**をタップして該当する条項に同意します。
-5.  [会社アクセスのセットアップ] ページで、**[開始]**をタップします。
+  ![Captura de Tela Mostrando eine Tela de Entrada Portal da Empresa Intune langen führen um Dispositivo iOS](./media/ft-userEnrollIOS-1-signUp.png)
+4.  SE o Seu Administrador de TI Tiver Configurado os Termos e Condições da Empresa, Toque langen **Aceitar** Absatz Aceitar os Termos.
+5.  Na Tela Configuração de Acesso da Empresa Toque langen **Iniciar**.
 
-  ![iOS デバイスで登録プロセスを始めるように求めるスクリーンショット](./media/ft-userEnrollIOS-2-coAccessSetup.png)
-6.  デバイスを登録すると可能になる操作についての説明を確認してから、**[続行]**をタップします。
+  ![Captura de Tela Solicitando Que o Usuário Inicie o Prozessor de Registro langen um Dispositivo iOS](./media/ft-userEnrollIOS-2-coAccessSetup.png)
+6.  Leia Sobre o Que Você Pode Fazer Quando Registra Seu Dispositivo e, langen Seguida, Toque langen **Continuar**.
 
-  ![iOS デバイスの登録が推奨される理由に関する情報のスクリーンショット](./media/ft-userEnrollIOS-3-whyEnroll.png)
-7.  IT 管理者が登録済みのデバイスに関して確認できる情報と確認できない情報についての一覧を確認し、**[続行]**をタップします。
+  ![Captura de Tela Mostrando Informações Sobre Por Que Você Deve Registrierung um Dispositivo iOS](./media/ft-userEnrollIOS-3-whyEnroll.png)
+7.  Consulte eine Lista Que o Administrador de TI Pode Ou Não Ver langen Seu Dispositivo Registrado e Toque langen **Continuar**.
 
-  ![iOS デバイスのプライバシー ポリシーを示すスクリーンショット](./media/ft-userEnrollIOS-4-privacy.png)
-8.  をタップすると表示される可能性のあるいくつかの項目を確認します。 [登録] 読み終えたら、**[登録]**をタップします。
+  ![Captura de Tela Mostrando eine Política de Privacidade langen um Dispositivo iOS](./media/ft-userEnrollIOS-4-privacy.png)
+8.  Untersuchen Sie Algumas Attached Coisas Que Você Pode-Ver Depois Que-Tocar langen Registrierung. Quando Terminar einer Leitura Toque langen **Registrierung**.
 
-  ![これからの登録手順を示すスクリーン ショット (デバイス iOS)](./media/ft-userEnrollIOS-5-whatNext.png)
-9.  [プロファイルのインストール] 画面で、**[インストール]**をタップし、入力を求められたらパスコードを入力します。
+  ![Captura de Tela Mostrando als Próximas Etapas de Registro langen um Dispositivo iOS](./media/ft-userEnrollIOS-5-whatNext.png)
+9.  Na Tela Instalar Perfil, Toque langen **Instalar** e Insira Sua Senha Se Solicitado.
 
-  ![管理プロファイルをインストールするように求めるスクリーンショット (iOS デバイス)](./media/ft-userEnrollIOS-6-installProfile.png)
-10. 
-            をタップします。 **[インストール]**
+  ![Captura de Tela Solicitando Que o Usuário instale o Perfil de Gerenciamento Absatz um Dispositivo iOS](./media/ft-userEnrollIOS-6-installProfile.png)
+10. Dieser Abschnitt Toque **Instalar**.
 
-  ![[インストール] ボタンをタップして、iOS デバイスにプロファイルをインストールするように求めるスクリーンショット](./media/ft-userEnrollIOS-7-tapInstall.png)
-11. 
-            **[インストール]**をタップすると、警告を読んだことになります。
+  ![Captura de Tela Pedindo Que o Usuário Toque keine langen Botão Instalar Absatz Instalar o Perfil um Dispositivo iOS](./media/ft-userEnrollIOS-7-tapInstall.png)
+11. Toque langen **Instalar** Absatz Indicar Que Você Leu o Aviso.
 
-  ![プロファイル管理警告を読んだことを確認するスクリーンショット (iOS デバイス)](./media/ft-userEnrollIOS-8-readWarning.png)
-12. 
-            **[信頼]**をタップします。
+  ![Captura de Tela Pedindo Que o Usuário Indique Que Leu o Aviso de Gerenciamento de Perfil langen um Dispositivo iOS](./media/ft-userEnrollIOS-8-readWarning.png)
+12. Dieser Abschnitt Toque **Confiar**.
 
-  ![プロファイルのソースを確認するように求めるスクリーンショット (iOS デバイス)](./media/ft-userEnrollIOS-9-tapTrust.png)
-13. プロファイルのインストールが完了したことを示す画面に変わったら、**[完了]**をタップします。 "デバイス登録中" メッセージが画面に表示されます。
+  ![Captura de Tela Pedindo Que o Usuário Confirme einer Origem Perfil langen führen um Dispositivo iOS](./media/ft-userEnrollIOS-9-tapTrust.png)
+13. Quando eine Tela für Alterada Absatz Mostrar Que o Perfil Terminou de Instalar, Toque langen **Concluído**. UMA Mensagem "Registrando Dispositivo" ä Exibida NV Tela.
 
-  ![プロファイルが iOS デバイスにインストールされていることを示すスクリーンショット](./media/ft-userEnrollIOS-10-profileInstalled.png)
-14. ポータル サイトでページを開くことを確認するメッセージが表示されたら、**[開く]**をタップします。
+  ![Captura de Tela Mostrando Que o Perfil Está Instalado langen um Dispositivo iOS](./media/ft-userEnrollIOS-10-profileInstalled.png)
+14. Quando Uma Mensagem für Exibida Perguntando Se Você Deseja Abrir eine Página keine Portal da Empresa Toque langen **Abrir**.
 
-  ![ポータル サイトでページを開くように求めるスクリーンショット (iOS デバイス)](./media/ft-userEnrollIOS-11-openPage.png)
-- [会社アクセスのセットアップ] 画面で、**[続行]**をタップします。 IT-管理者が別のセキュリティ要件 (パスワードの設定など) をセットアップしている場合は、画面の指示に従って、すべてのコンプライアンス要件に対応します。 [会社アクセスのセットアップ] 画面に戻った後、**[続行]**をタップします。
+  ![Captura de Tela Pedindo Que o Usuário und eine Página keine langen Portal da Empresa um Dispositivo iOS](./media/ft-userEnrollIOS-11-openPage.png)
+- Na Tela Configuração de Acesso da Empresa Toque langen **Continuar**. SE o Administrador de TI Configurar Requisitos de Segurança Adicionais, Como eine Necessidade de Definir Uma Senha Siga als Instruções NV Tela até Atender eine Todos os Requisitos de Conformidade e Toque langen **Continuar** Quando Retornar à Tela Configuração de Acesso da Empresa.
 
-  ![iOS デバイスが準拠しており、ユーザーに続行を求めるスクリーンショット](./media/ft-userEnrollIOS-12-coAccessSetup.png)
-15. 
-            をタップします。 **[完了]**
+  ![Captura de Tela Mostrando Que o Dispositivo iOS ä Compatível E Solicitando Que o Usuário fortsetzen](./media/ft-userEnrollIOS-12-coAccessSetup.png)
+15. Dieser Abschnitt Toque **Concluído**.
 
-  ![会社アクセスのセットアップ完了時のスクリーン ショット (iOS デバイス)](./media/ft-userEnrollIOS-13-setupComplete.png)
+  ![Captura de Tela Mostrando Que eine Configuração de Acesso da Empresa Está Concluída langen um Dispositivo iOS](./media/ft-userEnrollIOS-13-setupComplete.png)
 
-これでデバイスが Intune に登録され、ポータル サイト アプリに戻ります。
+O Dispositivo Agora Está Registrado keine Intune, e Você ä Levado de Volta Ao Aplicativo Portal da Empresa.
 
-## <a name="intune-mac-os-x-"></a>Intune に Mac OS X デバイスを登録する
-1.  Safari ブラウザーを使用して、[ポータル Web サイト](https://portal.manage.microsoft.com/)を開き、通知バーをタップします。
-2.  
-            をタップします。 **[このデバイスは登録されていないか、ポータル サイトで特定できません]**
+## <a name="registrar-seu-dispositivo-mac-os-x-no-intune"></a>Registrierung Seu Dispositivo Mac OS X keine Intune
+1.  Usando um Navegador Safari, und o [Website führen Sie Portal da Empresa](https://portal.manage.microsoft.com/), e Toque NV Barra de Notificação.
+2.  Dieser Abschnitt Toque **Este Dispositivo Não Está Registrado Ou o Portal da Empresa Não Pode Identificá-lo**.
 
-  ![ポータル サイトで Macintosh OS X デバイスを特定できないことを示すスクリーンショット](./media/ft-userEnrollMacOSx-1-enrollBegin.png)
-3.  
-            をタップして、デバイスの登録を開始します。 **[インストール]**
+  ![Captura de Tela Mostrando Que o Portal da Empresa Não Pode Identificar um Dispositivo Mac OS X](./media/ft-userEnrollMacOSx-1-enrollBegin.png)
+3.  Toque **Instalar** Absatz Registrierung Seu Dispositivo.
 
-  ![Macintosh OS X デバイスを登録するように求めるスクリーンショット](./media/ft-userEnrollMacOSx-2-enrollDevice.png)
-4.  [管理プロファイルのインストール] ダイアログ ボックスで、**[インストール]**をタップします。 資格情報の入力を求めるダイアログ ボックスが表示された場合は、ユーザー名とパスワードを入力し、**[続行] 、 [インストール]**の順にタップします。
+  ![Captura de Tela Solicitando Que o Usuário Registre o Dispositivo Mac OS X](./media/ft-userEnrollMacOSx-2-enrollDevice.png)
+4.  Na Caixa de Diálogo Instalar o Perfil de Gerenciamento, Toque langen **Instalar**. SE Uma Caixa de Diálogo für Exibida Solicitando Que Você Insira Suas Credenciais, Digite Seu Nome de Usuário e Senha e, langen Seguida, Toque langen **Continuar > Instalar**.
 
-  ![管理プロファイルをインストールするように求めるスクリーンショット (Macintosh OS X デバイス)](./media/ft-userEnrollMacOSx-3-installProfile.png)
+  ![Captura de Tela Solicitando Que o Usuário instale o Perfil de Gerenciamento Absatz um Dispositivo Mac OS X](./media/ft-userEnrollMacOSx-3-installProfile.png)
 
-登録が完了すると、プロファイルが検証されたことを示す管理プロファイル ページが表示されます。
+AO Concluir o Registro, Você Verá Uma Página de Perfil de Gerenciamento Mostrando Que o Perfil Foi Verificado.
 
-  ![管理プロファイルが検証されたことを示すスクリーンショット (Macintosh OS X デバイス)](./media/ft-userEnrollMacOSx-4-profileVerified.png)
+  ![Captura de Tela Mostrando Que o Perfil de Gerenciamento Foi Verificado langen um Dispositivo Mac OS X](./media/ft-userEnrollMacOSx-4-profileVerified.png)
 
-### <a name=""></a>詳細な情報をご希望ですか?
-「[Enterprise Mobilität Suite](https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx)」を参照してください。.
+### <a name="quer-saber-mais"></a>Abfragetyp Saber Mais?
+Confira [Enterprise Mobilität Suite](https://www.microsoft.com/en-us/server-cloud/enterprise-mobility/overview.aspx).
