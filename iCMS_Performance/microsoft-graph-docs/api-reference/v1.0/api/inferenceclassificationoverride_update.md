@@ -1,15 +1,15 @@
 # <a name="update-inferenceclassificationoverride"></a>Inferenceclassificationoverride aktualisieren
 
-Ändern Sie das **ClassifyAs** -Feld einer Außerkraftsetzung wie angegeben. 
+Ändern Sie das **ClassifyAs** Feld einer Außerkraftsetzung wie angegeben. 
 
-Sie können nicht PATCH verwenden, um alle anderen Felder in einer [InferenceClassificationOverride](../resources/inferenceClassificationOverride.md) -Instanz zu ändern. 
+PATCH können Sie um alle anderen Felder in einer Instanz des [InferenceClassificationOverride](../resources/inferenceClassificationOverride.md) zu ändern. 
 
 Wenn eine Außerkraftsetzung für ein Absender vorhanden ist und der Absender seinen Anzeigename geändert, können Sie die [POST](inferenceclassification_post_overrides.md) So erzwingen Sie ein Update in das Namensfeld in der vorhandenen Überschreibung verwenden.
 
-Wenn eine Außerkraftsetzung für ein Absender vorhanden ist und der Absender seinen SMTP-Adresse, und [Löschen von](inferenceclassificationoverride_delete.md) vorhandenen außer Kraft setzen und [Erstellen von ändert](inferenceclassification_post_overrides.md) ist eine neue mit der neuen SMTP-Adresse die einzige Möglichkeit, der die Außerkraftsetzung für diesen Absender "Aktualisieren".
+Wenn eine Außerkraftsetzung für ein Absender vorhanden ist und der Absender seinen SMTP-Adresse, [Löschen](inferenceclassificationoverride_delete.md) der vorhandenen Override und [Erstellen von ändert](inferenceclassification_post_overrides.md) ist eine neue mit der neuen SMTP-Adresse die einzige Möglichkeit, der die Außerkraftsetzung für diesen Absender "Aktualisieren".
 
 ## <a name="prerequisites"></a>Voraussetzungen
-Der folgende **Bereiche** sind erforderlich, um diese API ausführen: *Mail.ReadWrite*
+Die folgenden **Bereiche** sind erforderlich, um diese API ausführen: *Mail.ReadWrite*
 ## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -24,7 +24,7 @@ PATCH /users/<id>/inferenceClassification/overrides/<id>
 | Inhaltstyp | string  | Die Art der Daten im Textkörper einer Entität. Erforderlich. |
 
 ## <a name="request-body"></a>Anforderungstext
-Geben Sie den neuen Wert für **ClassifyAs**im Textkörper Anforderung. Für eine optimale Leistung sollten nicht Sie vorhandene Werte enthalten, die nicht geändert werden.
+Geben Sie im Textkörper Anforderung des neuen Werts für **ClassifyAs**. Für eine optimale Leistung sollten nicht Sie vorhandene Werte enthalten, die nicht geändert werden.
 
 | Eigenschaft     | Typ   |Beschreibung|
 |:---------------|:--------|:----------|
@@ -35,7 +35,7 @@ Geben Sie den neuen Wert für **ClassifyAs**im Textkörper Anforderung. Für ein
 Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortcode und aktualisierte [InferenceClassificationOverride](../resources/inferenceclassificationoverride.md) -Objekts in der Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
-Das folgende Beispiel ändert die Überschreibung für die SMTP-Adresse randiw@adatum.onmicrosoft.com aus `other` auf `focused`.
+Das folgende Beispiel ändert die Außerkraftsetzung für die SMTP-Adresse randiw@adatum.onmicrosoft.com von `other` auf `focused`.
 
 <!-- {
   "blockType": "request",
@@ -50,7 +50,7 @@ Content-type: application/json
 }
 ```
 ##### <a name="response"></a>Antwort
-Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

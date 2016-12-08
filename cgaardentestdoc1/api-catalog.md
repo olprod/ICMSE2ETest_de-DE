@@ -1,32 +1,35 @@
-<a name="-ms-toctitle-office-365-api-office-365-api-office-365-api-api-ms-contentid-6736150c-641e-4e1b-bcc0-6cce0996779d-mstopic-msdate-api-2016-4-21-"></a><<<<<<< ヘッド ms です。 TocTitle: Office 365 の API リファレンス タイトル: Office 365 の API リファレンスの説明: Office 365 の API を検索する参照し、メール、連絡先、および予定表データ、ファイルを操作する Api と、探索サービスの残りの部分とクライアント ライブラリについての情報です。 MS-です。 ContentId: 6736150c-641e-4e1b-bcc0-6cce0996779d ms.topic: ms.date を参照 (API): 2016 年 4 月 21 日 ===
+<<<<<<< HEAD ms. TocTitle: Office 365-API-Referenz Titel: Office 365-API-Referenz Beschreibung: Suchen Sie nach Office 365-API-Referenzen und Informationen zur REST und Client Library-APIs, zur Interaktion mit e-Mails, Kontakte und Kalenderdaten, Dateien und Discovery-Dienst.
+MS. ContentId: 6736150c-641e-4e1b-bcc0-6cce0996779d ms.topic: Verweis (API) ms.date: 21 April 2016=======
 ---
-MS-です。 TOCTitle: Office 365 の API リファレンス タイトル: Office 365 の API リファレンスの説明: Office 365 の API を検索する参照し、残りの部分とクライアント ライブラリの Api についての情報です。 MS-です。 ContentId: 6736150c-641e-4e1b-bcc0-6cce0996779d ms.date: 2016 年 9 月 20 日
->>>>>>> ステージング
+MS. TOCTitle: Titel der Office 365-API-Referenz: Office 365-API-Referenz Beschreibung: Suchen Sie nach Office 365-API-Referenzen und Informationen über REST und Client Bibliotheks-APIs.
+MS. ContentId: 6736150c-641e-4e1b-bcc0-6cce0996779d ms.date: 20 September 2016
+>>>>>>> Staging
 
 [!INCLUDE [Add the O365API repo styles](../includes/controls/addo365apistyles.html)]
 
-# <a name="a-nameoffice-365-api-referenceaoffice-365-api-"></a><a name="office-365-api-reference"></a>Office 365 の API リファレンス 
+# <a name="office-365-api-reference"></a>Office 365-API-Referenz 
     
- _**に適用されます:**オンライン交換 | Office 365 | ビジネスの OneDrive_
+ _**Gilt für:** Exchange Online | Office 365 | OneDrive for Business_
 
-<<<<<<< ヘッド<a name="p-classpreviewnotethis-documentation-covers-features-that-are-currently-in-preview-for-information-about-working-with-preview-features-see-preview-developer-features-on-the-office-365-platformhowtoplatform-development-preview-features-overviewmdp"></a><p class="previewnote">このドキュメントでは、現在プレビューされている機能について説明します。 プレビュー機能の操作方法の詳細については、 [Office 365 のプラットフォームで開発機能のプレビュー](..\howto\platform-development-preview-features-overview.md)を参照してください。</p>
+<<<<<<< KOPF
+<a name="p-classpreviewnotethis-documentation-covers-features-that-are-currently-in-preview-for-information-about-working-with-preview-features-see-preview-developer-features-on-the-office-365-platformhowtoplatform-development-preview-features-overviewmdp"></a><p class="previewnote">In dieser Dokumentation behandelt Features, die derzeit in der Vorschau werden. Informationen über das Arbeiten mit Features Preview finden Sie unter [Funktionen der Preview für Entwickler auf der Office 365-Plattform](..\howto\platform-development-preview-features-overview.md).</p>
 =======
 [!INCLUDE [Use Microsoft Graph](../includes/use-msgraph-note.md)]
 
-Office 365 の Api を使用すると、関心がほとんど--、メール、予定表、連絡先、ユーザーとグループ、ファイル、およびフォルダー - すべての右から、アプリケーション自体の内でする、といった、お客様の Office 365 のデータへのアクセスを提供します。 
+Die Office 365-APIs können Sie bieten Zugriff auf Ihre Kunden Office 365 Daten, einschließlich der Dinge, die sie – ihre e-Mail, Kalender, Kontakte, Benutzer und Gruppen, Dateien und Ordner – alle direkt in Ihrer app selbst wichtig sind. 
             
-間でのすべてのモバイル ソリューション、web、およびデスクトップ ・ プラットフォームから Office 365 の Api にアクセスできます。 ツール、開発プラットフォームに関係なく。 レールに沿って、.NET、PHP、Java、Python や Ruby を使用して Windows 汎用アプリ、iOS のアプリを作成する Web アプリケーションを構築するかどうか、Android の場合、または別のデバイス プラットフォームでは、選択します。
+Sie können die Office 365-APIs aus Lösungen über alle Mobile, Web und desktop-Plattformen zugreifen. Unabhängig davon, Ihre Entwicklungsplattform oder Tools. Damit, ob Sie Webanwendungen mithilfe von .NET, PHP, Java, Python oder Ruby Schienenfahrzeugen oder Erstellen von apps für universelle Apps für Windows, iOS erstellen Android, oder auf einem anderen Geräteplattform Ihrer Wahl ist.
     
-### <a name="a-nameoffice-365-sdks-make-app-development-easieraoffice-365-sdk-"></a><a name="office-365-sdks-make-app-development-easier"></a>Office 365 Sdk 簡単にアプリケーションの開発
+### <a name="office-365-sdks-make-app-development-easier"></a>Office 365-SDKs vereinfachen app-Entwicklung
 
-Office 365 との対話、書き込み、および認証トークン、アクセスする API の適切な Url とクエリを作成するその他のタスクを管理するコードを管理する他の Api を直接プログラミングすることができます。 Visual Studio や Eclipse および Android Studio は、統合、Office 365 の Sdk では、Office 365 の-Api にアクセスするのには記述する必要のあるコードの複雑さを軽減を支援します。
+Sie können Programmieren direkt die REST-APIs interagieren mit Office 365, schreiben und Verwalten von Code, um die Verwaltung von Authentifizierungstoken, erstellen die korrekten URLs und Abfragen für die API, die Sie zugreifen, möchten und andere Aufgaben. Die Office 365-SDKs für Visual Studio, Eclipse und Android Studio oder Xcode, einer Verringerung die Komplexität des Codes Sie auf der Office 365-APIs zugreifen schreiben müssen.
 
-[Office visual Studio の 開発ツール](http://aka.ms/OfficeDevToolsForVS2013)にはには、 .NET が提供する Sdk および Office 365 の他のサービスをラップし、Office 365 のデータへの接続も簡単な方法を提供する JavaScript ライブラリが含まれます。 SDK は、Visual Studio で ASP.NET MVC、ASP.NET Web フォーム、WPF、フォームの獲得、汎用アプリケーション、Cordova と Xamarin のプロジェクトの種類に対して使用できます。 
+Die [Office Developer Tools für Visual Studio](http://aka.ms/OfficeDevToolsForVS2013) enthalten SDKs, die .NET bereitstellen und JavaScript-Bibliotheken, die Text fließt um die Office 365-REST-Dienste, und geben Sie sogar noch einfacher zu Ihrer Office 365-Daten herstellen. Die SDKs stehen für ASP.NET MVC, ASP.NET Web Forms, WPF, Windows Forms, Universal App, Cordova und Xamarin Projekttypen in Visual Studio. 
 
-Android 開発者は、Eclipse および Android Studio Android SDK 現在一般的に利用可能なも同様です。 [Office 365 の Android SDK](https://github.com/OfficeDev/Office-365-SDK-for-Android)-。 参照してください、 
->>>>>>> ステージング
+Für Android Entwickler ist das Android SDK für Eclipse und Android Studio jetzt auch im Allgemeinen verfügbar.  Finden Sie unter der [Office 365 SDK für Android](https://github.com/OfficeDev/Office-365-SDK-for-Android). 
+>>>>>>> Staging
 
-IOS アプリ、iOS (プレビュー) を統合の SDK では、[統合 6](https://developer.apple.com/xcode/)内で目的の C と Swift の両方の言語をサポートしています。 [SDK für IOS の Office 365 の](https://github.com/OfficeDev/Office-365-SDK-for-iOS)を参照してください。 
+Für iOS-apps unterstützt die iOS SDK für Xcode (Preview) Objective-C und Swift Sprachen in [Xcode 6](https://developer.apple.com/xcode/). Finden Sie im [Office 365-SDK für iOS](https://github.com/OfficeDev/Office-365-SDK-for-iOS)aus. 
 
 
 <!--
@@ -46,250 +49,251 @@ IOS アプリ、iOS (プレビュー) を統合の SDK では、[統合 6](https
 -->
 
 
-## <a name="a-namebatching-outlook-rest-requests-previewaoutlook-"></a><a name="batching-outlook-rest-requests-preview"></a>Outlook の他の要求 (プレビュー) をバッチ処理
+## <a name="batching-outlook-rest-requests-preview"></a>Batchverarbeitung von Outlook-REST-Anforderungen (Preview)
 
-[バッチで Outlook の他の要求を送信します。](..\api\batch-outlook-rest-requests.md)
-
-
-## <a name="a-nameoutlook-taskaoutlook-"></a><a name="outlook-task"></a>Outlook のタスク
-[タスク-API](..\api\task-rest-operations.md)
-
-**タスクの操作**&nbsp; 
-[を作成するタスク](..\api\task-rest-operations.md#CreateTasks) | [のタスクを取得する](..\api\task-rest-operations.md#GetTasks) | [タスクを更新する](..\api\task-rest-operations.md#UpdateTasks) | [のタスクを削除](..\api\task-rest-operations.md#DeleteTasks) | 
-[タスクを完了](..\api\task-rest-operations.md#CompleteTasks) | [同期タスクまたはタスク フォルダー](..\api\task-rest-operations.md#SyncTasks) 
+[Senden von Outlook-REST-Anforderungen in batches](..\api\batch-outlook-rest-requests.md)
 
 
-**タスク フォルダーの操作**&nbsp; 
-[タスク フォルダーを作成する](..\api\task-rest-operations.md#CreateTaskFolders) | [タスク フォルダーを取得する](..\api\task-rest-operations.md#GetTaskFolders) | [タスク フォルダーを更新](..\api\task-rest-operations.md#UpdateTaskFolders) | 
-[タスク フォルダーを削除する](..\api\task-rest-operations.md#DeleteTaskFolders) | [同期タスクまたはタスク フォルダー](..\api\task-rest-operations.md#SyncTasks) 
+## <a name="outlook-task"></a>Outlook-Aufgabe
+[Aufgabe API](..\api\task-rest-operations.md)
+
+**Task-Vorgänge** &nbsp; 
+ [Erstellen Aufgaben](..\api\task-rest-operations.md#CreateTasks) | [Aufgaben abrufen](..\api\task-rest-operations.md#GetTasks) | [Aktualisieren von Vorgängen](..\api\task-rest-operations.md#UpdateTasks) | [Löschen von Vorgängen](..\api\task-rest-operations.md#DeleteTasks) | 
+[Ausführen von Aufgaben](..\api\task-rest-operations.md#CompleteTasks) | [Synchronisieren Vorgänge oder Aufgabenordner](..\api\task-rest-operations.md#SyncTasks) 
 
 
-**タスク グループの操作**&nbsp; 
-[を作成するタスクのグループ](..\api\task-rest-operations.md#CreateTaskGroups) | [タスク グループを取得する](..\api\task-rest-operations.md#GetTaskGroups) | [タスク グループを更新](..\api\task-rest-operations.md#UpdateTaskGroups) | 
-[タスク グループを削除](..\api\task-rest-operations.md#DeleteTaskGroups)
+**Aufgabe Ordner Vorgänge** &nbsp; 
+ [Aufgabenordner erstellen](..\api\task-rest-operations.md#CreateTaskFolders) | [Aufgabenordner abrufen](..\api\task-rest-operations.md#GetTaskFolders) | [Aktualisieren Aufgabenordner](..\api\task-rest-operations.md#UpdateTaskFolders) | 
+[Aufgabenordner löschen](..\api\task-rest-operations.md#DeleteTaskFolders) | [Synchronisieren Vorgänge oder Aufgabenordner](..\api\task-rest-operations.md#SyncTasks) 
+
+
+**Aufgabe Gruppe Vorgänge** &nbsp; 
+ [Erstellen Vorgangsgruppen](..\api\task-rest-operations.md#CreateTaskGroups) | [Vorgangsgruppen abrufen](..\api\task-rest-operations.md#GetTaskGroups) | [Aktualisieren Vorgangsgruppen](..\api\task-rest-operations.md#UpdateTaskGroups) | 
+[Vorgangsgruppen löschen](..\api\task-rest-operations.md#DeleteTaskGroups)
 
 
 <a name="bk_people"> </a>
 
-##<a name="a-nameoutlook-people-previewaoutlook-"></a><a name="outlook-people-preview"></a>Outlook ユーザー (プレビュー)
+##<a name="outlook-people-preview"></a>Outlook Personen (Preview)
 
-[API-の人](..\api\people-rest-operations.md)
+[Personen API](..\api\people-rest-operations.md)
 
-**参照:**&nbsp;  
-[閲覧](..\api\people-rest-operations.md#BrowsePeople) | [ページング](..\api\people-rest-operations.md#BrowsePaging) | 
-[並べ替え](..\api\people-rest-operations.md#BrowseSort) | [制限する](..\api\people-rest-operations.md#BrowsePageSize) |
-[選択](..\api\people-rest-operations.md#BrowseSelecting) | [フィルター](..\api\people-rest-operations.md#BrowseFiltering) |
-[フィルタ リングと選択](..\api\people-rest-operations.md#BrowseSelectingAndFiltering)
+**Navigieren:** &nbsp;  
+ [Browsing](..\api\people-rest-operations.md#BrowsePeople) | [Paging](..\api\people-rest-operations.md#BrowsePaging) | 
+[Sortierung](..\api\people-rest-operations.md#BrowseSort) | [Einschränken des Zugriffs durch](..\api\people-rest-operations.md#BrowsePageSize) |
+[auswählen](..\api\people-rest-operations.md#BrowseSelecting) | [Filtern](..\api\people-rest-operations.md#BrowseFiltering) |
+[Filtern und auswählen](..\api\people-rest-operations.md#BrowseSelectingAndFiltering)
 
-**検索:**&nbsp; 
-[トピックを選択して](..\api\people-rest-operations.md#SearchTopic) |
-[、検索のフィルター](..\api\people-rest-operations.md#SearchFilter) |
-[あいまい検索](..\api\people-rest-operations.md#FuzzySearch)
-
-
-
-## <a name="a-nameoffice-365-data-extensionsaoffice-365-"></a><a name="office-365-data-extensions"></a>Office 365 のデータ拡張機能
-
-[データ拡張機能-API](..\api\extensions-rest-operations.md)
-
-**の種類の拡張子を開く:** &nbsp; [で既存の項目を作成する](..\api\extensions-rest-operations.md#CreateExtensionInExistingItem) | [に新しい項目を作成する](..\api\extensions-rest-operations.md#CreateExtensionInNewItem) |
-[を取得](..\api\extensions-rest-operations.md#GetExtension) | [項目は展開](..\api\extensions-rest-operations.md#GetExpandedExtension) |
-[更新](..\api\extensions-rest-operations.md#UpdateExtension) | [削除](..\api\extensions-rest-operations.md#DeleteExtension)
+**Suche:** &nbsp; 
+ [Thema auswählen](..\api\people-rest-operations.md#SearchTopic) |
+[Filtern eine Suche](..\api\people-rest-operations.md#SearchFilter) |
+[Fuzzy-Suche](..\api\people-rest-operations.md#FuzzySearch)
 
 
-## <a name="a-nameoutlook-extended-propertiesaoutlook-"></a><a name="outlook-extended-properties"></a>Outlook の拡張プロパティ
 
-[拡張 API のプロパティ](..\api\extended-properties-rest-operations.md)
+## <a name="office-365-data-extensions"></a>Erweiterungen für Office 365-Daten
 
-**拡張プロパティ**  &nbsp;  [で既存の項目を作成する](..\api\extended-properties-rest-operations.md#CreateExtendedPropertyInExistingItem) | 
-[に新しい項目を作成する](..\api\extended-properties-rest-operations.md#CreateExtendedPropertyInNewItem) | 
-[項目は展開](..\api\extended-properties-rest-operations.md#GetExpandedExtendedProperty) | 
-[フィルター](..\api\extended-properties-rest-operations.md#GetItemByFilteringExtendedProperty)
+[Daten Extensions API](..\api\extensions-rest-operations.md)
+
+**Erweiterungen für Dateitypen öffnen:** &nbsp; [Erstellen in vorhandenen Element](..\api\extensions-rest-operations.md#CreateExtensionInExistingItem) | [erstellen, mit neues Element](..\api\extensions-rest-operations.md#CreateExtensionInNewItem) |
+[Abrufen](..\api\extensions-rest-operations.md#GetExtension) | [Element erweitert abrufen](..\api\extensions-rest-operations.md#GetExpandedExtension) |
+[Update](..\api\extensions-rest-operations.md#UpdateExtension) | [Löschen](..\api\extensions-rest-operations.md#DeleteExtension)
+
+
+## <a name="outlook-extended-properties"></a>Outlook erweiterte Eigenschaften
+
+[Erweiterte Eigenschaften API](..\api\extended-properties-rest-operations.md)
+
+**Erweiterte Eigenschaften**  &nbsp;  [Erstellen in vorhandenen item](..\api\extended-properties-rest-operations.md#CreateExtendedPropertyInExistingItem) | 
+[erstellen, mit neues Element](..\api\extended-properties-rest-operations.md#CreateExtendedPropertyInNewItem) | 
+[Element erweitert abrufen](..\api\extended-properties-rest-operations.md#GetExpandedExtendedProperty) | 
+[Filter](..\api\extended-properties-rest-operations.md#GetItemByFilteringExtendedProperty)
 
 
 
 <a name="bk_mail"> </a>
 
-##<a name="a-nameoutlook-mailaoutlook-"></a><a name="outlook-mail"></a>Outlook メール
+##<a name="outlook-mail"></a>Outlook-mail
 
-[メール-API](..\api\mail-rest-operations.md) 
+[Mail-API](..\api\mail-rest-operations.md) 
 
-**メッセージ:**&nbsp; [を取得](..\api\mail-rest-operations.md#Getmessages) | [の作成と送信](..\api\mail-rest-operations.md#Sendmessages) |
- [への返信](..\api\mail-rest-operations.md#Replytomessages) | [転送](..\api\mail-rest-operations.md#Forwardmessages) |
- [更新](..\api\mail-rest-operations.md#Updatemessages) | [削除](..\api\mail-rest-operations.md#DeleteMessages) |
- [を移動またはコピー](..\api\mail-rest-operations.md#MoveCopymessages)
+**Nachrichten:** &nbsp; [Abrufen](..\api\mail-rest-operations.md#Getmessages) | [Erstellen und senden](..\api\mail-rest-operations.md#Sendmessages) |
+ [Antworten auf](..\api\mail-rest-operations.md#Replytomessages) | [Weiterleiten](..\api\mail-rest-operations.md#Forwardmessages) |
+ [Update](..\api\mail-rest-operations.md#Updatemessages) | [Löschen](..\api\mail-rest-operations.md#DeleteMessages) |
+ [verschieben oder kopieren](..\api\mail-rest-operations.md#MoveCopymessages)
 
-**添付ファイル:**&nbsp;  [を取得](..\api\mail-rest-operations.md#GetAttachments) |
- [作成](..\api\mail-rest-operations.md#CreateAttachments) | [削除](..\api\mail-rest-operations.md#DeleteAttachments)
+**Anlagen:**&nbsp;  [Abrufen](..\api\mail-rest-operations.md#GetAttachments) |
+ [Erstellen](..\api\mail-rest-operations.md#CreateAttachments) | [Löschen](..\api\mail-rest-operations.md#DeleteAttachments)
 
-**フォルダー:**&nbsp;  [を取得](..\api\mail-rest-operations.md#GetFolders) | [を作成する](..\api\mail-rest-operations.md#CreateFolders) | [更新](..\api\mail-rest-operations.md#UpdateFolders) |
- [削除](..\api\mail-rest-operations.md#DeleteFolders) | [を移動またはコピー](..\api\mail-rest-operations.md#MoveCopyFolders)
+**Ordner:**&nbsp;  [Abrufen](..\api\mail-rest-operations.md#GetFolders) | [Erstellen](..\api\mail-rest-operations.md#CreateFolders) | [Update](..\api\mail-rest-operations.md#UpdateFolders) |
+ [Löschen](..\api\mail-rest-operations.md#DeleteFolders) | [verschieben oder kopieren](..\api\mail-rest-operations.md#MoveCopyFolders)
 
 
 <a name="bk_contacts"> </a>
 
-##<a name="a-nameoutlook-contactsaoutlook-"></a><a name="outlook-contacts"></a>Outlook の連絡先
+##<a name="outlook-contacts"></a>Outlook-Kontakte
 
-[連絡先-API](..\api\contacts-rest-operations.md)
+[Kontakte-API](..\api\contacts-rest-operations.md)
 
-**連絡先:**&nbsp;  [を取得](..\api\contacts-rest-operations.md#GetContacts) | [作成](..\api\contacts-rest-operations.md#CreateContacts) |
- [更新](..\api\contacts-rest-operations.md#UpdateContacts) | [削除](..\api\contacts-rest-operations.md#DeleteContacts) 
+**Kontakte:**&nbsp;  [Abrufen](..\api\contacts-rest-operations.md#GetContacts) | [Erstellen](..\api\contacts-rest-operations.md#CreateContacts) |
+ [Update](..\api\contacts-rest-operations.md#UpdateContacts) | [Löschen](..\api\contacts-rest-operations.md#DeleteContacts) 
  
 
-**フォルダーの連絡先:**&nbsp;  [を取得](..\api\contacts-rest-operations.md#GetContactFolders)
+**Wenden Sie sich an Ordnern:**&nbsp;  [Abrufen](..\api\contacts-rest-operations.md#GetContactFolders)
 
 
 <a name="bk_calendar"> </a>
 
-##<a name="a-nameoutlook-calendaraoutlook-"></a><a name="outlook-calendar"></a>Outlook の予定表
+##<a name="outlook-calendar"></a>Outlook-Kalender
 
-[カレンダー-API](..\api\calendar-rest-operations.md)
+[Kalender-API](..\api\calendar-rest-operations.md)
 
-**カレンダー ビュー:**  &nbsp;  [を取得](..\api\calendar-rest-operations.md#GetCalendarView) | [同期](..\api\calendar-rest-operations.md#SyncCalendarView)
+**Kalenderansicht:**  &nbsp;  [Abrufen](..\api\calendar-rest-operations.md#GetCalendarView) | [Sync](..\api\calendar-rest-operations.md#SyncCalendarView)
 
-**イベント:**&nbsp;[を取得](..\api\calendar-rest-operations.md#GetEvents) | [同期](..\api\calendar-rest-operations.md#SyncCalendarView) |
- [作成](..\api\calendar-rest-operations.md#CreateEvents) |
- [更新](..\api\calendar-rest-operations.md#UpdateEvents) | [対応](..\api\calendar-rest-operations.md#RespondToEvents) | 
- [削除](..\api\calendar-rest-operations.md#DeleteEvents)  
+**Ereignisse:** &nbsp; [Abrufen](..\api\calendar-rest-operations.md#GetEvents) | [Sync](..\api\calendar-rest-operations.md#SyncCalendarView) |
+ [Erstellen](..\api\calendar-rest-operations.md#CreateEvents) |
+ [Update](..\api\calendar-rest-operations.md#UpdateEvents) | [reagieren](..\api\calendar-rest-operations.md#RespondToEvents) | 
+ [Löschen](..\api\calendar-rest-operations.md#DeleteEvents)  
 
-**の添付ファイル:**&nbsp; 
- [Abrufen](..\api\calendar-rest-operations.md#GetAttachments) | [Erstellen](..\api\calendar-rest-operations.md#reateAttachments) |
- [Löschen](..\api\calendar-rest-operations.md#DeleteAttachments)
+**Anlagen:** &nbsp; 
+ [Get](..\api\calendar-rest-operations.md#GetAttachments) | [Create](..\api\calendar-rest-operations.md#reateAttachments) |
+ [Delete](..\api\calendar-rest-operations.md#DeleteAttachments)
  
- **アラーム:**&nbsp; 
- [を取得](..\api\calendar-rest-operations.md#GetReminders) | 
- [再通知](..\api\calendar-rest-operations.md#SnoozeReminders) | 
- [を閉じる](..\api\calendar-rest-operations.md#DismissReminders)
+ **Erinnerungen:** &nbsp; 
+  [Abrufen](..\api\calendar-rest-operations.md#GetReminders) | 
+ [erneut erinnern](..\api\calendar-rest-operations.md#SnoozeReminders) | 
+ [Schließen](..\api\calendar-rest-operations.md#DismissReminders)
 
-**カレンダー:**&nbsp;[を取得](..\api\calendar-rest-operations.md#GetCalendars) |
- [作成](..\api\calendar-rest-operations.md#CreateCalendars) | [更新](..\api\calendar-rest-operations.md#UpdateCalendars) |
- [削除](..\api\calendar-rest-operations.md#DeleteCalendars)  
+**Kalender:** &nbsp; [Abrufen](..\api\calendar-rest-operations.md#GetCalendars) |
+ [Erstellen](..\api\calendar-rest-operations.md#CreateCalendars) | [Update](..\api\calendar-rest-operations.md#UpdateCalendars) |
+ [Löschen](..\api\calendar-rest-operations.md#DeleteCalendars)  
 
-**グループの予定表:**&nbsp;   [を取得](..\api\calendar-rest-operations.md#GetCalendarGroups) |
- [を作成する](..\api\calendar-rest-operations.md#CreateCalendarGroups) | [更新](..\api\calendar-rest-operations.md#UpdateCalendarGroups) |
- [削除](..\api\calendar-rest-operations.md#DeleteCalendarGroups)
+**Kalender-Gruppen:**&nbsp;   [Abrufen](..\api\calendar-rest-operations.md#GetCalendarGroups) |
+ [Erstellen](..\api\calendar-rest-operations.md#CreateCalendarGroups) | [Update](..\api\calendar-rest-operations.md#UpdateCalendarGroups) |
+ [Löschen](..\api\calendar-rest-operations.md#DeleteCalendarGroups)
 
 
 
-##<a name="a-nameresource-reference-for-the-mail-calendar-contacts-and-task-apisa-api-"></a><a name="resource-reference-for-the-mail-calendar-contacts-and-task-apis"></a>メール、予定表、連絡先、およびタスクの Api のリソースの参照
+##<a name="resource-reference-for-the-mail-calendar-contacts-and-task-apis"></a>Resource-Referenz für die E-Mail, Kalender, Kontakte und Task-APIs
 
-[リソースの参照](..\API\complex-types-for-mail-contacts-calendar.md) 
+[Resource-Verweis](..\API\complex-types-for-mail-contacts-calendar.md) 
  
- **エンティティ:**&nbsp;[カレンダー](..\api\complex-types-for-mail-contacts-calendar.md#CalendarResource) |
- [CalendarGroup](..\api\complex-types-for-mail-contacts-calendar.md#CalendarGroupResource) | [連絡先](..\api\complex-types-for-mail-contacts-calendar.md#ContactResource) |
- [ContactFolder](..\api\complex-types-for-mail-contacts-calendar.md#ContactFolderResource) | [イベント](..\api\complex-types-for-mail-contacts-calendar.md#EventResource) |
- [EventMessage](..\api\complex-types-for-mail-contacts-calendar.md#EventMessageResource) | [拡張プロパティ](..\api\complex-types-for-mail-contacts-calendar.md#ExtendedProperties) | 
- [FileAttachment](..\api\complex-types-for-mail-contacts-calendar.md#FileAttachmentResource) | [フォルダー](..\api\complex-types-for-mail-contacts-calendar.md#FolderResource) |
- [ItemAttachment](..\api\complex-types-for-mail-contacts-calendar.md#ItemAttachmentResource) | [メッセージ](..\api\complex-types-for-mail-contacts-calendar.md#MessageResource) |
- [タスク (プレビュー)](..\api\complex-types-for-mail-contacts-calendar.md#TaskResource) | [TaskFolder (プレビュー)](..\api\complex-types-for-mail-contacts-calendar.md#TaskFolderResource) | 
- [(プレビュー) をタスク グループ](..\api\complex-types-for-mail-contacts-calendar.md#TaskGroupResource) | 
- [ユーザー](..\api\complex-types-for-mail-contacts-calendar.md#UserResource)   
+ **Entitäten:** &nbsp; [Kalender](..\api\complex-types-for-mail-contacts-calendar.md#CalendarResource) |
+ [CalendarGroup](..\api\complex-types-for-mail-contacts-calendar.md#CalendarGroupResource) | [Kontakt](..\api\complex-types-for-mail-contacts-calendar.md#ContactResource) |
+ [ContactFolder](..\api\complex-types-for-mail-contacts-calendar.md#ContactFolderResource) | [Ereignis](..\api\complex-types-for-mail-contacts-calendar.md#EventResource) |
+ [EventMessage](..\api\complex-types-for-mail-contacts-calendar.md#EventMessageResource) | [Erweiterte Eigenschaften](..\api\complex-types-for-mail-contacts-calendar.md#ExtendedProperties) | 
+ [FileAttachment](..\api\complex-types-for-mail-contacts-calendar.md#FileAttachmentResource) | [Ordner](..\api\complex-types-for-mail-contacts-calendar.md#FolderResource) |
+ [ItemAttachment](..\api\complex-types-for-mail-contacts-calendar.md#ItemAttachmentResource) | [Nachricht](..\api\complex-types-for-mail-contacts-calendar.md#MessageResource) |
+ [Aufgabe (Preview)](..\api\complex-types-for-mail-contacts-calendar.md#TaskResource) | [TaskFolder (Preview)](..\api\complex-types-for-mail-contacts-calendar.md#TaskFolderResource) | 
+ [Projektgruppe beschäftigt (Preview)](..\api\complex-types-for-mail-contacts-calendar.md#TaskGroupResource) | 
+ [Benutzer](..\api\complex-types-for-mail-contacts-calendar.md#UserResource)   
  
- **複合型:**&nbsp;[参加者](..\api\complex-types-for-mail-contacts-calendar.md#Attendee) | 
-。 [AttendeeBase](..\api\complex-types-for-mail-contacts-calendar.md#AttendeeBase) (プレビュー) [AttendeeAvailability](..\api\complex-types-for-mail-contacts-calendar.md#AttendeeAvailability) 。 (プレビュー) [DateTimeTimeZone](..\api\complex-types-for-mail-contacts-calendar.md#DateTimeTimeZoneBeta)  | 
-   [EmailAddress](..\api\complex-types-for-mail-contacts-calendar.md#EmailAddress) | 
+ **Komplexe Typen:** &nbsp; [Attendee](..\api\complex-types-for-mail-contacts-calendar.md#Attendee) | 
+ [AttendeeBase](..\api\complex-types-for-mail-contacts-calendar.md#AttendeeBase) (Preview) |  [AttendeeAvailability](..\api\complex-types-for-mail-contacts-calendar.md#AttendeeAvailability) (Vorschau) |  [DateTimeTimeZone](..\api\complex-types-for-mail-contacts-calendar.md#DateTimeTimeZoneBeta)  | 
+  [EmailAddress](..\api\complex-types-for-mail-contacts-calendar.md#EmailAddress) | 
  [GeoCoordinates](..\api\complex-types-for-mail-contacts-calendar.md#GeoCoordinates) | 
  [ItemBody](..\api\complex-types-for-mail-contacts-calendar.md#ItemBody)  | 
-。 [場所](..\api\complex-types-for-mail-contacts-calendar.md#Location)(プレビュー) [LocationConstraint](..\api\complex-types-for-mail-contacts-calendar.md#LocationConstraint) 。 (プレビュー) [MeetingTimeCandidate](..\api\complex-types-for-mail-contacts-calendar.md#MeetingTimeCandidate) 。 (プレビュー) [PatternedRecurrence](..\api\complex-types-for-mail-contacts-calendar.md#PatternedRecurrence)  | 
-   [Physikalische Adresse](..\api\complex-types-for-mail-contacts-calendar.md#PhysicalAddress) | 
- [受信者](..\api\complex-types-for-mail-contacts-calendar.md#Recipient) | 
+ [Speicherort](..\api\complex-types-for-mail-contacts-calendar.md#Location) (Preview) |  [LocationConstraint](..\api\complex-types-for-mail-contacts-calendar.md#LocationConstraint) (Vorschau) |  [MeetingTimeCandidate](..\api\complex-types-for-mail-contacts-calendar.md#MeetingTimeCandidate) (Vorschau) |  [PatternedRecurrence](..\api\complex-types-for-mail-contacts-calendar.md#PatternedRecurrence)  | 
+  [Physikalische Adresse](..\api\complex-types-for-mail-contacts-calendar.md#PhysicalAddress) | 
+ [Empfänger](..\api\complex-types-for-mail-contacts-calendar.md#Recipient) | 
  [RecurrencePattern](..\api\complex-types-for-mail-contacts-calendar.md#RecurrencePattern) | 
  [RecurrenceRange](..\api\complex-types-for-mail-contacts-calendar.md#RecurrenceRange) | 
  [ResponseStatus](..\api\complex-types-for-mail-contacts-calendar.md#ResponseStatus) | 
-。 [TimeConstraint](..\api\complex-types-for-mail-contacts-calendar.md#TimeConstraint) (プレビュー) [タイム スロット](..\api\complex-types-for-mail-contacts-calendar.md#TimeSlot) 。 (プレビュー) [タイムスタンプ](..\api\complex-types-for-mail-contacts-calendar.md#TimeStamp) (プレビュー)    
+ [TimeConstraint](..\api\complex-types-for-mail-contacts-calendar.md#TimeConstraint) (Preview) |  [Zeitrahmen](..\api\complex-types-for-mail-contacts-calendar.md#TimeSlot) (Vorschau) |  [Zeitstempel](..\api\complex-types-for-mail-contacts-calendar.md#TimeStamp) (Vorschau)    
  
  
- **OData クエリ パラメーター:** &nbsp; [$search](..\api\complex-types-for-mail-contacts-calendar.md#Search) | 
+ **Abfrageparametern OData:** &nbsp; [$search](..\api\complex-types-for-mail-contacts-calendar.md#Search) | 
  [$filter](..\api\complex-types-for-mail-contacts-calendar.md#Filter) | [$select](..\api\complex-types-for-mail-contacts-calendar.md#Select) | 
- [$orderby](..\api\complex-types-for-mail-contacts-calendar.md#OrderBy) | [$top と $skip](..\api\complex-types-for-mail-contacts-calendar.md#TopSkip)   | 
- $ を展開します。 [$count](..\api\complex-types-for-mail-contacts-calendar.md#Count)   
+ [$orderby](..\api\complex-types-for-mail-contacts-calendar.md#OrderBy) | [$top und $skip](..\api\complex-types-for-mail-contacts-calendar.md#TopSkip)  | 
+ $erweitern | [$count](..\api\complex-types-for-mail-contacts-calendar.md#Count)   
 
 <a name="bk_notify"> </a>
 
-##<a name="a-nameoutlook-notificationsaoutlook-"></a><a name="outlook-notifications"></a>Outlook の通知
+##<a name="outlook-notifications"></a>Outlook-Benachrichtigungen
 
-[プッシュ通知-API](../api/notify-rest-operations.md)
+[Pushbenachrichtigungen API](../api/notify-rest-operations.md)
 
-[通知 API のストリーミング](../api/notify-streaming-rest-operations.md) (プレビュー)
+[Streaming Benachrichtigungen API](../api/notify-streaming-rest-operations.md) (Vorschau)
 
 
 <a name="bk_photo"> </a>
 
-##<a name="a-nameoutlook-user-photoaoutlook-"></a><a name="outlook-user-photo"></a>Outlook ユーザーの写真
+##<a name="outlook-user-photo"></a>Outlook-benutzerfoto
 
-[API-のユーザーの写真](../api/photo-rest-operations.md)
+[Benutzerfoto API](../api/photo-rest-operations.md)
  
 
 <a name="bk_discovery"> </a>
 
-##<a name="a-namediscovery-servicea"></a><a name="discovery-service"></a>探索サービス
+##<a name="discovery-service"></a>Suchdienst
 
-[探索サービスの-API](..\api\discovery-service-rest-operations.md)
+[Discovery-Dienst-API](..\api\discovery-service-rest-operations.md)
 
-[最初のサインイン](..\api\discovery-service-rest-operations.md#DiscoveryServiceoperationsInitialsignin) |
- [特定のサービスを検出](..\api\discovery-service-rest-operations.md#DiscoveryServiceoperationsDiscoverspecificservices) | [についてはどのようなサービスが検出可能](..\api\discovery-service-rest-operations.md#DiscoveryServiceoperationsLearnwhatservicesarediscoverable)
+[Anfängliches anmelden](..\api\discovery-service-rest-operations.md#DiscoveryServiceoperationsInitialsignin) |
+ [Discover bestimmte Dienste](..\api\discovery-service-rest-operations.md#DiscoveryServiceoperationsDiscoverspecificservices) | [Hier erfahren Sie, welche Dienste erkannt werden.](..\api\discovery-service-rest-operations.md#DiscoveryServiceoperationsLearnwhatservicesarediscoverable)
 
 
 <a name="bk_files"> </a>
 
-##<a name="a-namefilesa"></a><a name="files"></a>ファイル
+##<a name="files"></a>Dateien
 
 [OneDrive-API](https://dev.onedrive.com/)
 
 
 <a name="bk_video"> </a>
 
-##<a name="a-namevideoa"></a><a name="video"></a>ビデオ 
+##<a name="video"></a>Video 
 
-[ビデオの-API](../api/video-rest-operations.md)
+[Video-API](../api/video-rest-operations.md)
 
-**ビデオ ポータル:**&nbsp;  
-  [の情報を取得します。](..\api\video-rest-operations.md#GetPortalInformation)
+**Video Portal:** &nbsp;  
+   [Informationen abrufen](..\api\video-rest-operations.md#GetPortalInformation)
   
-**チャネル:**&nbsp;  
-  [の情報を取得します。](..\api\video-rest-operations.md#GetChannelsInfo) 
+**Kanäle:** &nbsp;  
+   [Informationen abrufen](..\api\video-rest-operations.md#GetChannelsInfo) 
   
-**ビデオ情報:**&nbsp;  
-  [を取得](..\api\video-rest-operations.md#GetVideoInfo) | [ビデオのメタデータを更新します。 ](..\api\video-rest-operations.md#UpdateVideo) 
+**Video-Informationen:** &nbsp;  
+   [Abrufen](..\api\video-rest-operations.md#GetVideoInfo) | [video-Metadaten aktualisieren](..\api\video-rest-operations.md#UpdateVideo) 
   
-**ビデオ:**&nbsp;  
-  [アップロード](..\api\video-rest-operations.md#UploadVideos) | [削除](..\api\video-rest-operations.md#DeleteVideos) 
+**Videos:** &nbsp;  
+   [Hochladen](..\api\video-rest-operations.md#UploadVideos) | [Löschen](..\api\video-rest-operations.md#DeleteVideos) 
 
-##<a name="a-nameapi-resource-and-service-endpoints-of-office-365-operated-by-21vianeta21vianet-office-365-api"></a><a name="api-resource-and-service-endpoints-of-office-365-operated-by-21vianet"></a>21Vianet によって運営されて Office 365 のリソースとサービス エンドポイントを-API
-[21Vianet によって運営されて Office 365 の API エンドポイント](..\api\o365-china-endpoints.md)
+##<a name="api-resource-and-service-endpoints-of-office-365-operated-by-21vianet"></a>API-Ressource und ein Service Endpoints von Office 365 handelt, das von 21Vianet
+[API-Endpunkten von Office 365 handelt, das von 21Vianet](..\api\o365-china-endpoints.md)
 
-##<a name="a-nameoffice-365-management-apisaoffice-365-api"></a><a name="office-365-management-apis"></a>Office 365 管理-Api
-[はじめに](https://msdn.microsoft.com/library/office/dn707383.aspx) | [サービス通信-API (プレビュー)](https://msdn.microsoft.com/EN-US/library/dn707386.aspx) | [管理アクティビティ API リファレンス (プレビュー)](https://msdn.microsoft.com/library/office/mt227394.aspx) | [レポート Web サービス](https://msdn.microsoft.com/en-us/library/office/jj984325.aspx) 
+##<a name="office-365-management-apis"></a>APIs für die Verwaltung von Office 365
+[Erste Schritte](https://msdn.microsoft.com/library/office/dn707383.aspx) | [Communications-Dienst-API (Preview)](https://msdn.microsoft.com/EN-US/library/dn707386.aspx) | [Management-API-Referenz (Preview)](https://msdn.microsoft.com/library/office/mt227394.aspx) | [-Berichterstattungswebdienst](https://msdn.microsoft.com/en-us/library/office/jj984325.aspx) 
 
-##<a name="a-nameadditional-resourcesa"></a><a name="additional-resources"></a>その他のリソース
+##<a name="additional-resources"></a>Weitere Ressourcen
 
-###<a name="a-nameapi-sandboxaapi-"></a><a name="api-sandbox"></a>API のサンド ボックス
-[この対話型コンソールを使用して Office 365 の Api を表示します。](http://apisandbox.msdn.microsoft.com/)
+###<a name="api-sandbox"></a>Sandkasten-API
+[Erkunden Sie die Office 365-APIs in dieser interaktiven Konsole](http://apisandbox.msdn.microsoft.com/)
 
-###<a name="a-namerest-api-response-status-codesarest-api-"></a><a name="rest-api-response-status-codes"></a>REST-API 応答ステータス コード
+###<a name="rest-api-response-status-codes"></a>REST-API Antwortcodes status
 
-[HTTP-応答ステータス コード](..\howto\http-response-status-codes.md)
+[HTTP-Antwortstatuscodes](..\howto\http-response-status-codes.md)
 
 
-<<<<<<< ヘッド
+<<<<<<< KOPF
 <!--
 **Get started:** &nbsp; <a href="setup-development-environment?aspnet"> ASP.NET MVC apps </a> | <a href="setup-development-environment?javascript"> JavaScript web apps </a> | <a href="setup-development-environment?iOS"> iOS </a> | <a href="setup-development-environment?android"> Android </a>
 -->
 
 
-<a name="get-started-nbsp-aspnet-mvc-appshowtogetting-started-office-365-apismdaspnet-javascript-web-appshowtogetting-started-office-365-apismdjavascript-ioshowtogetting-started-office-365-apismdios-androidhowtogetting-started-office-365-apismdandroid"></a>**開始:** &nbsp; [ASP.NET MVC アプリケーション](..\howto\getting-started-Office-365-APIs.md?aspnet) | [Web アプリケーションを JavaScript](..\howto\getting-started-Office-365-APIs.md?javascript) | [iOS](..\howto\getting-started-Office-365-APIs.md?iOS) | [Android](..\howto\getting-started-Office-365-APIs.md?android)  
+<a name="get-started-nbsp-aspnet-mvc-appshowtogetting-started-office-365-apismdaspnet-javascript-web-appshowtogetting-started-office-365-apismdjavascript-ioshowtogetting-started-office-365-apismdios-androidhowtogetting-started-office-365-apismdandroid"></a>**Steigen:** &nbsp; [ASP.NET MVC-apps](..\howto\getting-started-Office-365-APIs.md?aspnet) | [JavaScript Web apps](..\howto\getting-started-Office-365-APIs.md?javascript) | [iOS](..\howto\getting-started-Office-365-APIs.md?iOS) | [Android](..\howto\getting-started-Office-365-APIs.md?android)  
 =======
-###<a name="office-365-platform-overview"></a>Office 365 のプラットフォームの概要 >>>>>>> ステージング
+###<a name="office-365-platform-overview"></a>Office 365-Plattform (Übersicht)
+>>>>>>> Staging
 
-[Office 365 のプラットフォーム上での開発の概要](..\howto\platform-development-overview.md) | [、Office 365 の開発環境をセットアップします。 ](..\howTo\setup-development-environment.md) 
+[Übersicht über die bei der Entwicklung mit der Office 365-Plattform](..\howto\platform-development-overview.md) | [Einrichten Ihrer Entwicklungsumgebung für Office 365](..\howTo\setup-development-environment.md) 
 
-[Office 365APIs の概要](..\howto\getting-started-Office-365-APIs.md) 
+[Erste Schritte mit Office 365APIs](..\howto\getting-started-Office-365-APIs.md) 
 
-###<a name="a-nameoffice-365-permission-scopesaoffice-365-"></a><a name="office-365-permission-scopes"></a>Office 365 のためのアクセス許可のスコープ
-[すべての Office 365 のアクセス許可のスコープの詳細については](..\howto\application-manifest.md)
+###<a name="office-365-permission-scopes"></a>Office 365-Berechtigungsbereiche
+[Details zu allen berechtigungsbereiche für Office 365](..\howto\application-manifest.md)
 
-###<a name="a-namemicrosoft-partner-center-api-referencea-api-"></a><a name="microsoft-partner-center-api-reference"></a>マイクロソフト ・ パートナー ・ センターの API リファレンス
-パートナーは、 [CSP Commerce REST-API](https://msdn.microsoft.com/en-us/library/partnercenter/dn974944.aspx)を使用して、顧客アカウントを作成、Microsoft Commerce プラットフォームで顧客プロファイルの管理を購入し、受注および顧客のマイクロソフト製品のサブスクリプションを管理します。 
+###<a name="microsoft-partner-center-api-reference"></a>Microsoft Partner Center-API-Referenz
+Partner können mithilfe der [REST-API für CSP Commerce](https://msdn.microsoft.com/en-us/library/partnercenter/dn974944.aspx) Kundenkonten erstellen, verwalten Customer-Benutzerprofilen in die Microsoft-Commerce-Webplattform, und erwerben und Verwalten von Aufträgen und Abonnements von Microsoft-Produkten für ihre Kunden. 
 
 
 

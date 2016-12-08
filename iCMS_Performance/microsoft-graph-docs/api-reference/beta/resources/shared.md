@@ -7,7 +7,7 @@ Gibt an, dass ein Element für andere Personen freigegeben wurde. Enthält Infor
 | Eigenschaft | Typ                          | Beschreibung                                                                                        |
 |:---------|:------------------------------|:---------------------------------------------------------------------------------------------------|
 | Besitzer    | [IdentitySet](identityset.md) | Die Identität des Besitzers des freigegebenen Elements. Schreibgeschützt.                                           |
-| Bereich    | String                        | Gibt den Bereich des Elements wie freigegeben werden: `anonymous`, `organization`, oder `users`. Schreibgeschützt. |
+| Bereich    | String                        | Gibt den Bereich des wie das Element freigegeben werden: `anonymous`, `organization`, oder `users`. Schreibgeschützt. |
 
 ## <a name="scope-values"></a>Bereichswerte
 
@@ -15,7 +15,7 @@ Gibt an, dass ein Element für andere Personen freigegeben wurde. Enthält Infor
 |:-------------|:--------------------------------------------------------------------------------------|
 | Öffentliche       | Das Element wird mithilfe eines Links, das für alle Benutzer mit den Link funktioniert gemeinsam genutzt.               |
 | Organisation | Das Element wird mithilfe eines Links, das für alle Benutzer in den Besitzer Organisation arbeitet gemeinsam genutzt. |
-| Benutzer        | Das Element ist mit nur bestimmte Benutzer freigegeben.                                          |
+| Benutzer        | Das Element ist für bestimmte Benutzer nur freigegeben.                                          |
 
 ## <a name="json-representation"></a>JSON-Darstellung
 

@@ -9,7 +9,7 @@ Die folgenden **Bereiche** sind erforderlich, um diese API ausführen: *Director
 GET /applications/<id>
 ```
 ## <a name="optional-query-parameters"></a>Optional Abfrageparameter
-Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
+Diese Methode unterstützt die [Abfrageparameter OData](http://graph.microsoft.io/docs/overview/query_parameters) , mit denen die Antwort anpassen.
 
 ## <a name="request-headers"></a>Anforderungsheader
 | Name       | Typ | Beschreibung|
@@ -19,7 +19,7 @@ Diese Methode unterstützt die [OData-Abfrage-Parameter](http://graph.microsoft.
 ## <a name="request-body"></a>Anforderungstext
 Geben Sie einen Anforderungstext für diese Methode nicht.
 ## <a name="response"></a>Antwort
-Wenn der Vorgang erfolgreich war, gibt diese Methode einen `200 OK` Antwortobjekt Code und [Anwendungen](../resources/application.md) in der Antworttext.
+Wenn erfolgreich ist, diese Methode gibt einen `200 OK` Antwortobjekt Code und [Anwendung](../resources/application.md) im Antworttext.
 ## <a name="example"></a>Beispiel
 ##### <a name="request"></a>Anforderung
 Es folgt ein Beispiel der Anforderung.
@@ -31,7 +31,7 @@ Es folgt ein Beispiel der Anforderung.
 GET https://graph.microsoft.com/beta/applications/<id>
 ```
 ##### <a name="response"></a>Antwort
-Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,

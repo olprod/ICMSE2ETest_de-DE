@@ -113,7 +113,7 @@ Im erste Beispiel erstellt eine Nachricht und die Erweiterung in einem Anruf. Te
 
   - Der Typ `Microsoft.Graph.OpenTypeExtension`. 
   - Der Name der Erweiterung "Com.Contoso.Referral". 
-  - Zusätzliche Daten, die als 3 benutzerdefinierte Eigenschaften in der JSON-Nutzlast gespeichert werden: `companyName`, `expirationDate`, und `dealValue`.  
+  - Zusätzliche Daten als 3 benutzerdefinierte Eigenschaften in der JSON-Nutzlast gespeichert werden: `companyName`, `expirationDate`, und `dealValue`.  
 
 <!-- {
   "blockType": "request",
@@ -291,7 +291,7 @@ Im dritte Beispiel erstellt eine Erweiterung in der angegebenen Gruppe-Ereignis.
 
 - Der Typ `Microsoft.Graph.OpenTypeExtension`. 
 - Der Name der Erweiterung "Com.Contoso.Deal".
-- Zusätzliche Daten, die als 3 benutzerdefinierte Eigenschaften in der JSON-Nutzlast gespeichert werden: `companyName`, `dealValue`, und `expirationDate`.  
+- Zusätzliche Daten als 3 benutzerdefinierte Eigenschaften in der JSON-Nutzlast gespeichert werden: `companyName`, `dealValue`, und `expirationDate`.  
 
 <!-- {
   "blockType": "request",

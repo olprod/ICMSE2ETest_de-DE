@@ -8,7 +8,7 @@
     * [TableColumn](tablecolumn.md) -Auflistung: eine Auflistung aller Spalten in einer Tabelle. 
     * [TableRow](tablerow.md) -Auflistung: eine Auflistung aller Zeilen in einer Tabelle. 
 * [Diagramm](chart.md): Stellt ein Chart-Objekt in einer Arbeitsmappe, die eine visuelle Darstellung der zugrunde liegenden Daten ist.  
-* [GetNamedItem](nameditem.md): Stellt einen definierten Namen für einen Bereich von Zellen oder ein Wert. Namen primitiven benannte Objekte (wie in der folgenden Typ dargestellt), range-Objekts usw..
+* [GetNamedItem](nameditem.md): Stellt einen definierten Namen für einen Bereich von Zellen oder ein Wert. Namen primitiven benannte Objekte (siehe unten geben Sie im), range-Objekt usw..
   
 
 In der folgenden Abschnitte enthalten wichtige programming Details im Zusammenhang mit Excel-REST-APIs.
@@ -29,8 +29,8 @@ In der folgenden Abschnitte enthalten wichtige programming Details im Zusammenha
 
 ## <a name="authorization-and-scopes"></a>Autorisierung und Bereiche
 
-Der Standard, den oauth2 Autorisierung über Mechanismus verwendet basierend, gilt für Excel-APIs. Alle APIs erfordern die `Authorization: Bearer {access-token}` -HTTP-Header.   
-Finden Sie im Abschnitt Autorisierung von den Dokumenten, um mehr zu erfahren.  
+Der Standard, den oauth2 Autorisierung über Mechanismus verwendet basierend, gilt für Excel-APIs. Alle-APIs erfordern die `Authorization: Bearer {access-token}` HTTP-Header.   
+Finden Sie im Abschnitt Autorisierung der Dokumente, um mehr zu erfahren.  
   
 
 ##### <a name="scopes"></a>Bereiche
@@ -42,7 +42,7 @@ Einen der folgenden Bereiche ist erforderlich, um Excel-API ausführen:
 
 ## <a name="the-basics"></a>Die Grundlagen
 
-Excel-REST-APIs ermöglichen Web- und mobilen Anwendungen zum Lesen und ändern die Arbeitsmappe, die auf den unterstützten Speicher-Plattformen (OneDrive, SharePoint usw.) gespeichert. `Workbook`(oder Excel-Datei) ist das obersten Ebene-Objekt, das für alle anderen Excel-Objekte über Beziehungen besteht aus. Eine Arbeitsmappe wird durch das Identifizieren von des Speicherorts der Datei in der URL über Laufwerk API behandelt. Beispiel:
+Excel-REST-APIs ermöglichen Web- und mobilen Anwendungen zum Lesen und ändern die Arbeitsmappe, die auf den unterstützten Speicher-Plattformen (OneDrive, SharePoint usw.) gespeichert. `Workbook`(oder Excel-Datei) ist Objekt der obersten Ebene, der alle anderen Excel-Objekte über Beziehungen besteht. Eine Arbeitsmappe wird durch das Identifizieren des Speicherorts der Datei in der URL über Laufwerk API behandelt. Beispiel:
 
 `https://graph.microsoft.com/{version}/me/drive/items/{id}/workbook/`  
 `https://graph.microsoft.com/{version}/me/drive/root:/{item-path}:/workbook/`  
@@ -55,17 +55,17 @@ Gibt eine Auflistung von Objekten Arbeitsmappenteils der Arbeitsmappe zurück.
 Excel-APIs können in einem von zwei Modi aufgerufen werden: 
 
 1. Persistent Sitzung: In diesem Modus werden alle Änderungen an der Arbeitsmappe (gespeicherten) beibehalten. Dies ist der normalen Modus des Vorgangs. 
-2. Nicht persistent Sitzung: In diesem Modus werden keine Änderungen, die durch die API Quellspeicherort gespeichert. Excel-Back-End-Server behält stattdessen eine temporäre Kopie der Datei, die die bestimmten API Sitzung vorgenommenen Änderungen widerspiegelt. Sobald die Excel-Sitzung abgelaufen ist, sind die Änderungen verloren. Dieser Modus eignet sich für apps, die möglicherweise führen Sie die Analyse oder Ergebnis der Berechnung oder ein Diagrammbild usw. zu erhalten.; gleichzeitig keinen Einfluss auf den Dokumentstatus selbst.   
+2. Nicht persistent Sitzung: In diesem Modus werden keine Änderungen, die durch die API Quellspeicherort gespeichert. Excel-Back-End-Server behält stattdessen eine temporäre Kopie der Datei, die die bestimmten API Sitzung vorgenommenen Änderungen widerspiegelt. Sobald die Excel-Sitzung abgelaufen ist, sind die Änderungen verloren. Dieser Modus eignet sich für apps, die möglicherweise führen Sie die Analyse oder Ergebnis der Berechnung oder ein Diagrammbild usw. zu erhalten.; zur selben Zeit keinen Einfluss auf den Dokumentstatus selbst.   
 
 Sitzung wird dargestellt, in der API mit `workbook-session-id: {session-id}` Kopfzeile. 
 
-_Ist die Sitzung Kopfzeile erforderlich?_ Nein. Kopfzeile der Sitzung ist nicht erforderlich für eine Excel-API zu arbeiten. Verwenden der Sitzung ist jedoch ratsam, eine bessere Leistung zu erzielen. Wenn keine Kopfzeile Sitzung verwendet wird, beibehalten während der API-Aufruf _ist_ vorgenommene Änderung an der Datei.  
+_Ist die Sitzung Kopfzeile erforderlich?_ Nein. Session-Header ist nicht erforderlich für eine Excel-API zu arbeiten. Verwenden der Sitzung ist jedoch ratsam, eine bessere Leistung zu erzielen. Wenn keine Kopfzeile Sitzung verwendet wird, beibehalten während der API-Aufruf _ist_ vorgenommene Änderung an der Datei.  
 
 #### <a name="api-call-to-get-a-session"></a>API-Aufruf eine Sitzung abgerufen. 
 
 ##### <a name="request"></a>Anforderung 
 
-Übergeben eines JSON-Objekts durch Festlegen der `persistchanges` -Wert für `true` oder `false`. 
+Übergeben Sie ein JSON-Objekt durch Festlegen der `persistchanges` -Wert für `true` oder `false`. 
 
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -95,7 +95,7 @@ content-type: application/json;odata.metadata
 
 ##### <a name="usage"></a>Syntax 
 
-Session-Id aus dem vorherigen Aufruf zurückgegeben wird als eine Kopfzeile auf nachfolgende API Anforderungen in übergeben.  
+Id für eine Sitzung aus dem vorherigen Aufruf zurückgegeben wird als eine Kopfzeile auf nachfolgende API-Anforderungen in übergeben.  
 `workbook-session-id`HTTP-Header. 
 
 <!-- { "blockType": "ignored" } -->
@@ -258,7 +258,7 @@ content-type: application/json;odata.metadata
 }
 ```
 
-#### <a name="get-chart-image"></a>Erste Diagrammabbilds.
+#### <a name="get-chart-image"></a>Abrufen des Diagrammabbilds.
 
 Anforderung 
 <!-- { "blockType": "ignored" } -->
@@ -384,7 +384,7 @@ HTTP code: 200, OK
 content-type: application/json;odata.metadata 
 ```
 
-#### <a name="update-table"></a>Aktualisieren Sie die Tabelle
+#### <a name="update-table"></a>Update-Tabelle
 
 Anforderung 
 <!-- { "blockType": "ignored" } -->
@@ -414,7 +414,7 @@ content-type: application/json;odata.metadata
 }
 ```
 
-#### <a name="get-list-of-table-rows"></a>Hier finden Sie die Liste der Tabellenzeilen
+#### <a name="get-list-of-table-rows"></a>Abrufen der Liste der Tabellenzeilen
 Anforderung 
 
 <!-- { "blockType": "ignored" } -->
@@ -1082,11 +1082,11 @@ content-type: application/json
 
 ## <a name="understanding-nulls-in-excel-api"></a>Grundlegendes zu-NULL-Werte in Excel-API
 
-#### <a name="null-input-in-2-d-array"></a>Null Eingaben in 2D-Diagramme Array
+#### <a name="null-input-in-2-d-array"></a>NULL-Eingabe in 2D-Diagramme Array
 
-`null`Eingabe in zweidimensionales Array (für Werte, Anzahl Format, Formel) wird im Bereich/Tabelle Zeile/Tabelle Spalten Update APIs ignoriert. Keine Aktualisierung stattfinden soll in das vorgesehene Ziel (Zelle) beim `null` Eingabe in Werte oder Format Zahl oder Formel gesendete Werte Raster.
+`null`Input innerhalb zweidimensionales Array (für Werte, -Zahlenformat, Formel) wird im Bereich /-Zeile/Tabelle-Tabellenspalte Update APIs ignoriert. Keine Aktualisierung stattfinden soll in das vorgesehene Ziel (Zelle) beim `null` Eingabe in Werte oder Format Zahl oder Formel gesendete Werte Raster.
 
-Beispiel: In der Reihenfolge, nur Update bestimmte Teile des Bereichs, z. B. einige Zelle der Zahlenformat, und legen Sie beibehalten das vorhandene Zahlenformat in anderen Teilen des Bereichs, gewünschte Zahlenformat benötigt und senden `null` für die anderen Zellen.
+Beispiel: In der Reihenfolge, nur Update bestimmte Teile des Bereichs, z. B. einige Zelle der Zahlenformat, und beibehalten das vorhandene Zahlenformat auf andere Teile des Bereichs, legen Sie gewünschte Zahlenformat benötigt und senden `null` für die anderen Zellen.
 
 In der folgenden Set-Anforderung werden nur einige Teile der Bereich Zahlenformat Beibehaltung der vorhandenen Zahlenformat auf den verbleibenden Teil (durch das Übergeben von null) festgelegt.
 
@@ -1132,7 +1132,7 @@ Beispiel: Ein Bereich kann eine der mehr Zellen bestehen. In Fällen, in dem die
 
 ## <a name="blank-input-and-output"></a>Leere ein- und Ausgabe
 
-Leere Werte in Update Anfragen werden als Anweisung zum Löschen oder Zurücksetzen der jeweiligen-Eigenschaft behandelt. Leerer Wert wird durch zwei doppelte Anführungszeichen ohne Leerzeichen dazwischen liegenden dargestellt. `""`
+Leere Werte in Update Anfragen werden als Anweisung zum Löschen oder Zurücksetzen die entsprechende Eigenschaft behandelt. Leerer Wert wird durch zwei doppelte Anführungszeichen ohne Leerzeichen dazwischen liegenden dargestellt. `""`
 
 Beispiel:
 
@@ -1143,7 +1143,7 @@ Beispiel:
 * Für `formula` und `formulaLocale`, die Formel Werte werden gelöscht.
 
 
-Erwarten Sie für Lesevorgänge um leere Werte erhalten, wenn der Inhalt der Zellen Leerzeichen sind. Wenn die Zelle keine Daten oder einen Wert enthält, gibt die API einen leeren Wert zurück. Leerer Wert wird durch zwei doppelte Anführungszeichen ohne Leerzeichen dazwischen liegenden dargestellt. `""`.
+Erwarten Sie für Lesevorgänge um leere Werte zu erhalten, wenn die Inhalte der Zellen Leerzeichen sind. Wenn die Zelle keine Daten oder einen Wert enthält, gibt die API einen leeren Wert zurück. Leerer Wert wird durch zwei doppelte Anführungszeichen ohne Leerzeichen dazwischen liegenden dargestellt. `""`.
 
 ```json
 {
@@ -1167,11 +1167,11 @@ Unbegrenzt Bereichsadresse enthält Spalten- oder Zeilenfelds-IDs und ID nicht s
 * `C:C`, `A:F`, `A:XFD` (enthält nicht spezifizierte Zeilen)
 * `2:2`, `1:4`, `1:1048546` (nicht spezifizierte Spalten enthält)
 
-Wenn die API macht eine Anforderung zum Abrufen eines unbegrenzten Bereichs (z. B. `getRange('C:C')`, die Antwort zurückgegeben enthält `null` für Zelle level-Eigenschaften wie `values`, `text`, `numberFormat`, `formula`usw... Andere Bereichseigenschaften wie `address`, `cellCount`, usw. wider unbegrenzten Bereich.
+Wenn die API stellt eine Anforderung zum Abrufen eines unbegrenzten Bereichs (z. B. `getRange('C:C')`, enthält die Antwort zurückgegeben wird `null` für Zelle Ebene Eigenschaften wie `values`, `text`, `numberFormat`, `formula`usw... Andere Bereichseigenschaften wie `address`, `cellCount`, usw. wider unbegrenzten Bereich.
 
 #### <a name="write"></a>Write
 
-Zelle Ebene Eigenschaften festlegen (z. B. Werte, NumberFormat usw.) für unbegrenzt Bereich ist wie die Eingabe Anforderung ist zu groß zum Verarbeiten von möglicherweise **nicht zulässig** .
+Zelle Ebene Eigenschaften festlegen (z. B. Werte, NumberFormat usw.) auf unbegrenzt Bereich ist wie die Eingabe Anforderung ist zu groß zum Verarbeiten von möglicherweise **nicht zulässig** .
 
 Beispiel: Die folgenden ist keiner gültigen updateanforderung, da der angeforderte Bereich unbegrenzt ist.
 
@@ -1184,21 +1184,21 @@ PATCH /workbook/worksheets('Sheet1')/range(address="A:B")
 }
 ```
 
-Wenn Sie ein aktualisieren-Vorgang für einen solchen Bereich versucht wird, wird die API einen Fehler zurück.
+Wenn für einen solchen Bereich ein aktualisieren-Vorgang ausgeführt wird, wird die API einen Fehler zurück.
 
 
 ## <a name="large-range"></a>Großen Bereich
 
-Große Bereich impliziert einen Bereich, dessen Größe für einen einzelnen API-Aufruf zu groß ist. Viele Faktoren wie die Anzahl der Zellen, Werte, NumberFormat, Formeln im Bereich enthalten können, dass sie nicht für API Interaktion wird die Antwort so groß stellen. Die API ist einen bewährten Versuch, zurückgeben oder Schreiben in die angeforderten Daten. Allerdings kann sehr groß ist beteiligten aufgrund der großen Ressourcenverwendung ein Fehlerzustand API führen.
+Große Bereich impliziert einen Bereich, dessen Größe für einen einzelnen API-Aufruf zu groß ist. Anzahl der Zellen, Werte, NumberFormat, Formeln im Bereich enthalten viele Faktoren können die Antwort so groß stellen Sie, dass sie nicht für API Interaktion wird. Die API ist einen bewährten Versuch, zurückgeben oder Schreiben in die angeforderten Daten. Allerdings kann sehr groß ist beteiligten aufgrund der großen Ressourcenverwendung ein Fehlerzustand API führen.
 
-Vermeiden Sie eine solche Bedingung, mit lesen oder Schreiben für großen Bereich in mehrere kleinere Bereich werden empfohlen.
+Vermeiden Sie eine solche Bedingung, die mit lesen oder Schreiben für großen Bereich in mehrere kleinere Bereich werden empfohlen.
 
 
-## <a name="single-input-copy"></a>Einzelne Input-Kopie
+## <a name="single-input-copy"></a>Einzelne Input Kopie
 
-Zur Unterstützung der Aktualisierung eines Bereichs mit dieselben Werte wie oder -Zahlenformat oder Anwenden derselben Formel Beispieldokumenten wird in der Set-API die folgende Konventionen verwendet. Dieses Verhalten ähnelt in Excel eingeben von Werten oder Formeln, die einem Bereich in den Modus STRG + EINGABETASTE.
+Um einen Bereich mit den gleichen Werten oder Zahlenformat oder Anwenden derselben Formel Beispieldokumenten aktualisieren zu unterstützen, wird der folgenden Benennungskonvention in die Set-API verwendet. Dieses Verhalten ähnelt in Excel eingeben von Werten oder Formeln, die einem Bereich in den Modus STRG + EINGABETASTE.
 
-Sieht der API für eine *einzelne Zellenwert* und, wenn Ziel Bereichsdimension die Dimension Eingabebereich entspricht, wird es Anwenden des Updates auf den gesamten Bereich im Modell mit dem Wert oder eine Formel, die in der Anforderung bereitgestellten STRG + EINGABETASTE.
+Die API für eine *einzelne Zellenwert* gesucht wird, und wenn Ziel Bereichsdimension die Dimension Eingabebereich entspricht, wird es Anwenden des Updates auf den gesamten Bereich im Modell STRG + EINGABETASTE mit dem Wert oder eine Formel, die in der Anforderung bereitgestellten aus.
 
 #### <a name="examples"></a>Beispiele
 

@@ -2,11 +2,11 @@
 
 Die **SpecialFolder** Facetten enthält Informationen zu wie ein Ordners über die [spezielle Folders-Auflistung](../api/drive_special.md)zugegriffen werden kann.
 
-Spezialordner einfache Aliase bekannte Ordner in OneDrive ohne die Notwendigkeit der Ordner durch Pfad Nachschlagen (die Lokalisierung erforderlich wäre) für den Zugriff bereitstellen oder verweisen auf den Ordner mit einer ID Ein Ordner mit Sonderfunktion umbenannt oder an eine andere Position innerhalb des Laufwerks verschoben wird, wird diese Syntax weiterhin den Ordner suchen.
+Spezialordner bieten einfache Aliase Zugriff auf bekannte Ordner in OneDrive ohne die Notwendigkeit zum Nachschlagen von den Ordner durch Pfad (die Lokalisierung erforderlich ist) oder verweisen auf den Ordner mit einer ID Ein Ordner mit Sonderfunktion umbenannt oder an eine andere Position innerhalb des Laufwerks verschoben wird, wird diese Syntax weiterhin den Ordner suchen.
 
 Spezialordner werden automatisch beim ersten erstellt, die eine Anwendung zum Schreiben in ein einziges versucht, sofern er nicht bereits vorhanden. Wenn ein Benutzer eine löscht, wird es neu erstellt, wenn nicht neu geschrieben.
 
-**Hinweis:** Wenn Ihre app nur **Files.Read** Bereich angefordert hat und fordert einen speziellen Ordner, der nicht vorhanden ist, gibt die Antwort wird ein `403 Forbidden` Fehler.
+**Hinweis:** Wenn Ihre app nur **Files.Read** Bereich angefordert hat und fordert einen speziellen Ordner, der nicht vorhanden ist, wird die Antwort eine `403 Forbidden` Fehler.
 
 ## <a name="properties"></a>Eigenschaften
 | Eigenschaft  | Typ   | Beschreibung                                                            |

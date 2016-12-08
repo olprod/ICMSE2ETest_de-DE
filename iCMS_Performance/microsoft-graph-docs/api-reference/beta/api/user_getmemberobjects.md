@@ -2,7 +2,7 @@
 Zurückgeben Sie aller Gruppen, Directory Rollen und administrative Einheiten, denen der Benutzer Mitglied ist. Die Überprüfung ist transitiv.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-Einen der folgenden **Bereiche** zum Ausführen diese API ist erforderlich: *User.Read; User.ReadWrite; User.Read.All; User.ReadWrite.All; Directory.Read.All; Directory.ReadWrite.All; Directory.AccessAsUser.All*
+Einen der folgenden **Bereiche** ist erforderlich, um diese API ausführen: *User.Read; User.ReadWrite; User.Read.All; User.ReadWrite.All; Directory.Read.All; Directory.ReadWrite.All; Directory.AccessAsUser.All*
 ## <a name="http-request"></a>HTTP-Anforderung
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -22,10 +22,10 @@ Geben Sie im Textkörper Anforderung ein JSON-Objekt mit den folgenden Parameter
 |securityEnabledOnly|Boolean|**true,** um anzugeben, dass nur Sicherheitsgruppen, dass der Benutzer Mitglied ist zurückgegeben werden soll. **false,** um anzugeben, dass alle Gruppen und Directory Rollen, denen der Benutzer Mitglied ist zurückgegeben werden sollen. Hinweis: Die Funktion kann nur auf einem bestimmten Benutzer aufgerufen werden, wenn der Parameter auf **true**festgelegt ist.|
 
 ## <a name="response"></a>Antwort
-Wenn erfolgreich ist, diese Methode gibt `200, OK` Antwortcode und zeichenfolgenauflistung im Textkörper Antwort, die enthält die IDs der Gruppen und Directory Rollen, die der Benutzer Mitglied ist.
+Wenn der Vorgang erfolgreich war, gibt diese Methode `200, OK` Antwortcode und zeichenfolgenauflistung im Textkörper Antwort, die enthält die IDs der Gruppen und Verzeichnis Rollen, die der Benutzer Mitglied ist.
 
 ## <a name="example"></a>Beispiel
-Es folgt ein Beispiel dafür, wie Sie diese API-aufrufen.
+Es folgt ein Beispiel diese API-Aufruf von.
 ##### <a name="request"></a>Anforderung
 Es folgt ein Beispiel der Anforderung.
 <!-- {
@@ -43,7 +43,7 @@ Content-length: 33
 ```
 
 ##### <a name="response"></a>Antwort
-Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Response-Objekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden aus einem tatsächlichen Aufruf zurückgegeben.
+Es folgt ein Beispiel der Antwort. Hinweis: Das hier gezeigte Antwortobjekt der Kürze halber werden möglicherweise abgeschnitten. Alle Eigenschaften werden von einem tatsächlichen Aufruf zurückgegeben.
 <!-- {
   "blockType": "response",
   "truncated": true,
