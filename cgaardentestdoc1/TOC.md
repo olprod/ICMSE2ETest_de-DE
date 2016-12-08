@@ -1,1 +1,1 @@
-# [Índice](index.md)
+# [インデックス](index.md)
