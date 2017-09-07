@@ -1,0 +1,1 @@
+<span data-ttu-id="bd6c6-101">Content: c8cbf962-f972-4878-bedf-ef362814f939</span><span class="sxs-lookup"><span data-stu-id="bd6c6-101">Content: c8cbf962-f972-4878-bedf-ef362814f939</span></span>![Bild](50d50c18-6d20-498a-b2b3-a260685bfb2e.png)
