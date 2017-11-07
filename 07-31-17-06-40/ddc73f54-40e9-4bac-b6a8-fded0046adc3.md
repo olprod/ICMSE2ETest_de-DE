@@ -1,0 +1,2 @@
+Inhalt: 66695039-e300-4f60-8ef8-13070af3f297![Bild](c357c34c-a431-4ff6-a3b3-20b11f355018.png)
+[AZURE.INCLUDE [b-token](16202d41-4102-450e-af75-14f6f7d41c30.md)]

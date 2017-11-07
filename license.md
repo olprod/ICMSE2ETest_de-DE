@@ -1,0 +1,7 @@
+Copyright (c) Microsoft Corporation.  Klicken Sie unter die folgenden Begriffe verteilt:
+ 
+1. Microsoft und alle Beiträge zu diesem Projekt gewährt Ihnen eine Lizenz, unter der jeweiligen Urheberrechte, auf der Microsoft-Documentation unter der [Creative Commons Zuweisung 4.0 International öffentlichen-Lizenz](http://creativecommons.org/licenses/by/4.0/legalcode).  Darüber hinaus in Bezug auf alle in der Dokumentation enthaltenen Beispielcode, Microsoft und solche beteiligte Personen gewährt Ihnen eine zusätzliche Lizenz, unter der jeweiligen gewerbliche Schutzrechte, so verwenden den Code zum Entwickeln oder Entwerfen Ihrer Software für dieses Produkt.
+ 
+2.  Microsoft, Windows, Microsoft Azure und/oder anderen Microsoft-Produkte und Dienste in der Dokumentation zur verwiesen möglicherweise Marken oder Marken der Microsoft in den USA und/oder anderen Ländern. Diese Lizenz gewährt Ihnen keine Rechte beliebige Namen, Logos oder Marken verwendet werden. Microsofts allgemeinen Richtlinien der Marke finden Sie unter [http://go.microsoft.com/fwlink/?LinkID=254653](http://go.microsoft.com/fwlink/?LinkID=254653).
+ 
+3.  Microsoft und alle Autoren Reserven alle anderen Rechte unter Urheberrechte, Patente oder Marken oder durch Verwirkung, Verwirkung noch anderweitig.

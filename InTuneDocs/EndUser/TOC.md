@@ -1,0 +1,5 @@
+# [Microsoft Intune Endbenutzerhilfe]()
+## [Verwenden Ihre IOS- oder Mac OS-Gerät mit Intune](using-your-ios-or-mac-os-x-device-with-intune.md)
+## [Verwenden von Android-Gerät mit Intune](using-your-android-device-with-intune.md)
+## [Verwenden das Windows-Gerät mit Intune](using-your-windows-device-with-intune.md)
+## [Verwendung der Website Intune Unternehmensportal](using-the-intune-company-portal-website.md)
