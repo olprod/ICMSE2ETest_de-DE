@@ -1,1 +1,0 @@
-<Token xmlns:xlink="http://www.w3.org/1999/xlink">WindowsServer に関する重要事項の実績</Token>
